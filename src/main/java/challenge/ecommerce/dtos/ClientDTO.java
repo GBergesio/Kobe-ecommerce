@@ -33,8 +33,8 @@ public class ClientDTO {
         this.email = client.getEmail();
         this.password = client.getPassword();
         this.active = client.isActive();
-        this.purchase = client.getPurchase();
+//        this.purchase = client.getPurchase();
         this.addresses = client.getAddresses();
-        this.post = client.getPost();
+//        this.post = client.getPost();
     }
 }

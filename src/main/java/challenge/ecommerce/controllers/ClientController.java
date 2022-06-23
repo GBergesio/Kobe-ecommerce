@@ -7,6 +7,7 @@ import challenge.ecommerce.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,6 +32,7 @@ public class ClientController {
         return new ResponseEntity<>(clientService.getClientDTO(id), HttpStatus.OK);
     }
 
+    @Transactional
     @PostMapping("/clientRegister")
     public ResponseEntity<Object> register(@RequestBody RegisterDTO registerDTO){
 

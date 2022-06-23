@@ -7,6 +7,7 @@ import challenge.ecommerce.services.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.regex.Pattern;
@@ -24,6 +25,7 @@ public class AddressController {
         return new ResponseEntity<>(addressService.getAddresses(), HttpStatus.OK);
     }
 
+    @Transactional
     @PostMapping("/newAddress")
     ResponseEntity<Object> newAddress(@RequestBody AddressDTO addressDTO){
 
