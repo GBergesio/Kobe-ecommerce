@@ -1,4 +1,4 @@
 package challenge.ecommerce.services;
 
-public class ClientService {
+public interface ClientService {
 }

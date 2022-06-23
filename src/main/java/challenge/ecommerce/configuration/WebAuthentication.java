@@ -2,8 +2,6 @@ package challenge.ecommerce.configuration;
 
 import challenge.ecommerce.enums.UserType;
 import challenge.ecommerce.models.Client;
-import challenge.ecommerce.repositories.ClientRepository;
-import challenge.ecommerce.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
