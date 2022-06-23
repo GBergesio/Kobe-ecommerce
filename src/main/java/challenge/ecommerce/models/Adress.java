@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
-public class Adresse {
+public class Adress {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -22,7 +22,7 @@ public class Adresse {
     @JoinColumn(name="client_id")
     private Client client;
 
-    public Adresse(int zipCode, int streetNumber, String floorApartment, String streetName, String province, String locality) {
+    public Adress(int zipCode, int streetNumber, String floorApartment, String streetName, String province, String locality) {
         this.zipCode = zipCode;
         this.streetNumber = streetNumber;
         this.floorApartment = floorApartment;

@@ -1,6 +1,5 @@
 package challenge.ecommerce.models;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
@@ -32,7 +31,7 @@ public class Client {
     private Set<Post> post = new HashSet<>();
 
     @OneToMany(mappedBy = "client", fetch=FetchType.EAGER)
-    private Set<Adresse> adresse = new HashSet<>();
+    private Set<Adress> adress = new HashSet<>();
 
     public Client(){};
 
