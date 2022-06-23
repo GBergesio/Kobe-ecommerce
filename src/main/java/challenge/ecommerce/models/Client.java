@@ -1,5 +1,6 @@
 package challenge.ecommerce.models;
 
+import challenge.ecommerce.enums.UserType;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
@@ -20,7 +21,10 @@ public class Client {
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
 
+    private boolean active;
     private String name, lastName, email, password;
+
+    private UserType userType;
 
     private long dni;
 
@@ -40,5 +44,7 @@ public class Client {
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.active = false;
+        this.userType = UserType.USER;
     }
 }
