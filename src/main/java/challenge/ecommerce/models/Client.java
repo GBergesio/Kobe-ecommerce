@@ -21,7 +21,7 @@ public class Client {
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
 
-    private String name, lastName, email, password, address;
+    private String name, lastName, email, password;
 
     private long dni;
 
@@ -30,6 +30,9 @@ public class Client {
 
     @OneToMany(mappedBy = "client", fetch=FetchType.EAGER)
     private Set<Post> post = new HashSet<>();
+
+    @OneToMany(mappedBy = "client", fetch=FetchType.EAGER)
+    private Set<Adresse> adresse = new HashSet<>();
 
     public Client(){};
 
