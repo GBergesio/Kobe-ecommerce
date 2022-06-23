@@ -2,6 +2,7 @@ package challenge.ecommerce.configuration;
 
 import challenge.ecommerce.enums.UserType;
 import challenge.ecommerce.models.Client;
+import challenge.ecommerce.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +27,7 @@ public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
 
         auth.userDetailsService(inputName -> {
 
-            Client client = clientService.findByEmail(inputName);
+            Client client = clientService.getByEmail(inputName);
 
             if (client != null) {
                 if (client.getEmail().contains("@kobestore.com") && client.getUserType() == UserType.ADMIN) {
