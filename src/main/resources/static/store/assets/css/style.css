@@ -108,7 +108,7 @@ body {
   font-weight: 400;
   /* font-family: "Poppins", sans-serif; */
   font-family: "fulbo", sans-serif;
-  color: #1f2226;
+  color: var(--tulip-tree);
 }
 
 /* SCROLL */
@@ -139,16 +139,19 @@ h6 {
   font-family: "fulbo", sans-serif;
   font-weight: 400;
   margin-top: 0;
-  color: #1f2226;
+  color: var(--tulip-tree);
 }
 
 p {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
-  color: #333333;
+  color: white;
   margin-bottom: 15px;
   font-family: "Poppins", sans-serif;
+}
+.parrafoModel{
+  color: black;
 }
 
 p:last-child {
@@ -161,7 +164,7 @@ button {
   line-height: inherit;
   text-decoration: none;
   cursor: pointer;
-  color: #1f2226;
+  color: white;
 }
 
 a,
@@ -1435,7 +1438,7 @@ textarea:focus {
 #scrollUp {
   width: 50px;
   height: 50px;
-  background-color: #ff3535;
+  background-color: var(--torch-red);
   color: #fff;
   right: 20px;
   bottom: 60px;
@@ -4169,7 +4172,7 @@ textarea:focus {
 }
 
 .section-title p {
-  color: #5a5a5a;
+  color: white;
   margin: 0 auto;
   width: 38%;
 }
@@ -4660,11 +4663,11 @@ textarea:focus {
   text-decoration: none;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  color: #444;
+  color: white;
 }
 
 .ht-products .ht-product .ht-product-inner .ht-product-content .ht-product-content-inner .ht-product-title a:hover {
-  color: #ff3535;
+  color: var(--torch-red);
 }
 
 .ht-products .ht-product .ht-product-inner .ht-product-content .ht-product-content-inner .ht-product-price {
@@ -4692,7 +4695,7 @@ textarea:focus {
 .ht-products .ht-product .ht-product-inner .ht-product-content .ht-product-content-inner .ht-product-price span.new {
   font-size: 20px;
   margin-right: 8px;
-  color: #ff3535;
+  color: var(--torch-red);
 }
 
 .ht-products .ht-product .ht-product-inner .ht-product-content .ht-product-content-inner .ht-product-ratting-wrap {
@@ -5622,7 +5625,7 @@ textarea:focus {
 .product-details-content .pro-details-quality .cart-plus-minus input.cart-plus-minus-box {
   background: transparent none repeat scroll 0 0;
   border: medium none;
-  color: #8f8f8f;
+  color: white;
   float: left;
   font-size: 14px;
   height: 60px;
@@ -5653,7 +5656,7 @@ textarea:focus {
   font-weight: 600;
   font-size: 13px;
   text-transform: uppercase;
-  background-color: #1f2226;
+  background-color: var(--electric-blue);
   display: inline-block;
   line-height: 1;
   padding: 23px 38px 23px;
@@ -5661,7 +5664,7 @@ textarea:focus {
 }
 
 .product-details-content .pro-details-quality .pro-details-cart a:hover {
-  background-color: #ff3535;
+  background-color: var(--torch-red);
 }
 
 @media only screen and (max-width: 767px) {
@@ -5682,7 +5685,7 @@ textarea:focus {
 
 .product-details-content .pro-details-quality .pro-details-wishlist a {
   font-size: 18px;
-  color: #1f2226;
+  color: white;
 }
 
 .product-details-content .pro-details-quality .pro-details-wishlist a:hover {
@@ -7723,7 +7726,8 @@ textarea:focus {
 }
 
 .product-details-img .product-dec-slider .product-dec-icon {
-  color: #1f2226;
+  color: white;
+  background: var(--torch-red);
   display: inline-block;
   font-size: 13px;
   left: 30px;
@@ -7755,8 +7759,8 @@ textarea:focus {
 }
 
 .product-details-img .product-dec-slider .product-dec-icon:hover {
-  background-color: #ff3535;
-  border: 1px solid #ff3535;
+  background-color: var(--electric-blue);
+  border: 1px solid var(--electric-blue);
   color: #ffffff;
 }
 
@@ -7917,7 +7921,7 @@ textarea:focus {
 }
 
 .description-review-wrapper .description-review-topbar a {
-  color: #444;
+  color: white;
   font-size: 18px;
   text-transform: capitalize;
   line-height: 1;
@@ -7953,7 +7957,7 @@ textarea:focus {
 }
 
 .description-review-wrapper .description-review-topbar a.active {
-  color: #1f2226;
+  color: var(--electric-blue);
   font-weight: 500;
 }
 
@@ -7966,7 +7970,7 @@ textarea:focus {
   position: absolute;
   -webkit-transition: width 300ms ease-out;
   transition: width 300ms ease-out;
-  background-color: #ff3535;
+  background-color: var(--torch-red);
   bottom: 0;
 }
 
@@ -7987,7 +7991,7 @@ textarea:focus {
 }
 
 .description-review-wrapper .description-review-bottom .product-description-wrapper p {
-  color: #333;
+  color: white;
   font-size: 13px;
   margin: 0 0 19px;
   line-height: 26px;
@@ -8026,7 +8030,7 @@ textarea:focus {
   font-size: 14px;
   font-style: italic;
   margin: 0 0 42px;
-  color: #333;
+  color: white;
 }
 
 .description-review-wrapper .description-review-bottom .review-wrapper .single-review .review-content .review-top-wrap {
@@ -8079,14 +8083,14 @@ textarea:focus {
 
 .description-review-wrapper .description-review-bottom .ratting-form-wrapper>span {
   font-size: 13px;
-  color: #333;
+  color: var(--tulip-tree);
   display: block;
   line-height: 1;
   margin: 0 0 9px;
 }
 
 .description-review-wrapper .description-review-bottom .ratting-form-wrapper p {
-  color: #333;
+  color: white;
   font-size: 13px;
   margin: 0;
   font-style: italic;
@@ -8171,14 +8175,14 @@ textarea:focus {
 }
 
 .description-review-wrapper .description-review-bottom .product-anotherinfo-wrapper ul li {
-  color: #333;
+  color: white;
   font-size: 13px;
   list-style: outside none none;
   margin: 0 0 13px;
 }
 
 .description-review-wrapper .description-review-bottom .product-anotherinfo-wrapper ul li span {
-  color: #1f2226;
+  color: var(--tulip-tree);
   display: inline-block;
   font-weight: 500;
   margin: 0 26px 0 0;
@@ -8945,7 +8949,7 @@ h3.cart-page-title {
 }
 
 .login-register-wrapper .login-form-container .login-register-form form .button-box button {
-  background-color: #f2f2f2;
+  background-color: var(--torch-red);
   border: medium none;
   cursor: pointer;
   font-size: 13px;
@@ -8958,7 +8962,7 @@ h3.cart-page-title {
 }
 
 .login-register-wrapper .login-form-container .login-register-form form .button-box button:hover {
-  background-color: #ff3535;
+  background-color: var(--electric-blue);
   color: #fff;
 }
 
@@ -10663,7 +10667,7 @@ h3.cart-page-title {
 
 .myaccount-content .account-details-form .single-input-item button {
   border: none;
-  background-color: #ff3535;
+  background-color: var(--torch-red);
   text-transform: uppercase;
   font-weight: 600;
   padding: 9px 25px;
@@ -10672,7 +10676,7 @@ h3.cart-page-title {
 }
 
 .myaccount-content .account-details-form .single-input-item button:hover {
-  background-color: #1f2226;
+  background-color: var(--electric-blue);
 }
 
 .myaccount-table {
