@@ -1,0 +1,344 @@
+/*-------- 4. Banner style ---------*/
+
+
+.single-banner {
+    position: relative;
+    overflow: hidden;
+    a {
+        img {
+            width: 100%;
+            transform: scale(1);
+            transition: all .5s ease 0s;
+        }
+    }
+    .banner-content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        &.banner-position-1 {
+            left: 75px;
+            @media #{$md-layout} {
+                left: 45px;
+            }
+            @media #{$xs-layout} {
+                left: 20px;
+            }
+            @media #{$sm-layout} {
+                left: 40px;
+            }
+        }
+        &.banner-position-2 {
+            right: 70px;
+            @media #{$lg-layout} {
+                right: 45px;
+            }
+            @media #{$md-layout} {
+                right: 30px;
+            }
+            @media #{$xs-layout} {
+                right: 20px;
+            }
+            @media #{$sm-layout} {
+                right: 40px;
+            }
+        }
+        &.banner-position-3 {
+            left: 46%;
+        }
+        &.banner-position-4 {
+            left: 12%;
+            text-align: right;
+            h2 {
+                margin: 17px 0 36px;
+                @media #{$md-layout} {
+                    margin: 4px 0 10px;
+                }
+                @media #{$xs-layout} {
+                    margin: 6px 0 8px;
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+                @media #{$sm-layout} {
+                    font-size: 28px;
+                    line-height: 35px;
+                    margin: 14px 0 16px;
+                }
+            }
+        }
+        &.banner-position-6 {
+            position: absolute;
+            bottom: 46px;
+            right: 45px;
+            top: inherit;
+            transform: inherit;
+            @media #{$md-layout} {
+                right: 20px;
+            }
+            @media #{$xs-layout} {
+                right: 24px;
+                bottom: 30px;
+            }
+        }
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 26px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: 28px;
+            line-height: 35px;
+            margin: 24px 0 36px;
+            @media #{$lg-layout} {
+                margin: 14px 0 16px;
+            }
+            @media #{$md-layout} {
+                font-size: 20px;
+                line-height: 25px;
+                margin: 4px 0 10px;
+            }
+            @media #{$xs-layout} {
+                margin: 6px 0 8px;
+                font-size: 18px;
+                line-height: 24px;
+            }
+            @media #{$sm-layout} {
+                font-size: 28px;
+                line-height: 35px;
+                margin: 14px 0 16px;
+            }
+        }
+        a {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 12px;
+            display: inline-block;
+            line-height: 1;
+            border-bottom: 1px solid #a5a49d;
+            padding-bottom: 1px;
+            &:hover {
+                border-bottom: 1px solid $theme-color;
+            }
+        }
+    }
+    .banner-content-2 {
+        h4 {
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: .3px;
+            margin: 0;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+        &.banner-position-5 {
+            position: absolute;
+            left: 40px;
+            top: 30px;
+            @media #{$md-layout} {
+                left: 15px;
+            }
+        }
+    }
+    .banner-content-3 {
+        h2 {
+            font-size: 28px;
+            margin: 0 0 18px;
+            line-height: 1;
+            @media #{$md-layout} {
+                font-size: 20px;
+                margin: 0 0 12px;
+            }
+            @media #{$xs-layout} {
+                font-size: 20px;
+                margin: 0 0 12px;
+            }
+        }
+        a {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 12px;
+            display: inline-block;
+            line-height: 1;
+            border-bottom: 1px solid #a5a49d;
+            padding-bottom: 1px;
+            &:hover {
+                border-bottom: 1px solid #ff3535;
+            }
+        }
+        &.banner-position-7 {
+            position: absolute;
+            left: 0px;
+            bottom: 45px;
+            right: 0;
+            text-align: center;
+        }
+    }
+    .banner-content-4 {
+        h3 {
+            font-size: 26px;
+            font-weight: 500;
+            margin: 0;
+            color: #000000;
+            line-height: 36px;
+            @media #{$xs-layout} {
+                line-height: 30px;
+                font-size: 20px;
+            }
+        }
+        &.banner-position-8 {
+            position: absolute;
+            left: 50px;
+            top: 38px;
+            @media #{$xs-layout} {
+                left: 20px;
+                top: 15px;
+            }
+        }
+        &.banner-position-9 {
+            position: absolute;
+            left: 50px;
+            bottom: 44px;
+            @media #{$xs-layout} {
+                left: 20px;
+                bottom: 19px;
+            }
+        }
+    }
+    &:hover a img {
+        transform: scale(1.1);
+    }
+    @media #{$md-layout} {
+        &.mb-130 {
+            margin-bottom: 30px;
+        }
+    }
+    @media #{$xs-layout} {
+        &.mb-130 {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.banner-bg-content {
+    h3 {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 26px;
+        margin: 0;
+        text-transform: uppercase;
+        @media #{$sm-layout} {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+    h2 {
+        font-size: 45px;
+        line-height: 55px;
+        margin: 7px 0 14px;
+        @media #{$md-layout} {
+            font-size: 30px;
+            line-height: 40px;
+        }
+        @media #{$xs-layout} {
+            font-size: 28px;
+            line-height: 40px;
+        }
+        @media #{$sm-layout} {
+            font-size: 22px;
+            line-height: 30px;
+        }
+    }
+    a {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 12px;
+        display: inline-block;
+        line-height: 1;
+        border-bottom: 1px solid #a5a49d;
+        padding-bottom: 1px;
+        &:hover {
+            border-bottom: 1px solid $theme-color;
+        }
+    }
+    @media #{$xl-layout} {
+        &.pl-100 {
+            padding-left: 50px;
+        }
+    }
+    @media #{$lg-layout} {
+        &.pl-100 {
+            padding-left: 0px;
+        }
+    }
+    @media #{$md-layout} {
+        &.pl-100 {
+            padding-left: 0px;
+        }
+    }
+    @media #{$xs-layout} {
+        &.pl-100 {
+            padding-left: 0px;
+        }
+    }
+}
+
+.banner-img-2 {
+    a {
+        img {
+            width: 100%;
+        }
+    }
+    @media #{$xs-layout} {
+        &.pr-10 {
+            padding-right: 0px;
+        }
+        margin-bottom: 30px;
+    }
+    @media #{$sm-layout} {
+        margin-bottom: 0px;
+    }
+}
+
+.banner-h3-wrap {
+    @media #{$md-layout} {
+        &.pl-100 {
+            padding-left: 0px;
+        }
+    }
+    @media #{$xs-layout} {
+        &.pl-100 {
+            padding-left: 0px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

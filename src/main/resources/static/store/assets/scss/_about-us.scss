@@ -1,0 +1,241 @@
+/*-------- 19. About us style ---------*/
+
+
+.story-img {
+    position: relative;
+    img {
+        width: 100%;
+    }
+    .about-logo {
+        margin: 0;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        h3 {
+            background-color: $theme-color;
+            border-radius: 100%;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            margin: 0;
+            position: relative;
+            right: 0;
+            text-align: center;
+            text-transform: uppercase;
+            display: inline-block;
+            width: 185px;
+            height: 185px;
+            line-height: 185px;
+            @media #{$xs-layout} {
+                width: 150px;
+                height: 150px; 
+                line-height: 150px;
+                font-size: 30px;
+            }
+            &::before {
+                border: 1px solid #fff;
+                border-radius: 100%;
+                content: "";
+                height: 152px;
+                left: 17px;
+                line-height: 144px;
+                position: absolute;
+                top: 17px;
+                width: 152px;
+                @media #{$xs-layout} {
+                    width: 130px;
+                    line-height: 130px;
+                    height: 130px;
+                    top: 10px;
+                    left: 10px;
+                }
+            }
+        }
+    }
+}
+
+.story-details {
+    .story-details-top {
+        margin-bottom: 48px;
+        @media #{$xs-layout} {
+            margin-bottom: 30px;
+        }
+        > h2 {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0 0 20px;
+            text-transform: uppercase;
+            @media #{$xs-layout} {
+                font-size: 27px;
+                line-height: 25px;
+                margin: 0 0 12px;
+            }
+            span {
+                color: $theme-color;
+            }
+        }
+    }
+    .story-details-bottom {
+        margin-bottom: 48px;
+        @media #{$xs-layout} {
+            margin-bottom: 30px;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            @media #{$xs-layout} {
+                margin-bottom: 10px;
+            }
+        }
+        p {
+            letter-spacing: 0.4px;
+            line-height: 26px;
+            margin: 0;
+        }
+    }
+    @media #{$md-layout} {
+        &.pl-50 {
+            padding-left: 0;
+        }
+        margin-top: 30px;
+    }
+    @media #{$xs-layout} {
+        &.pl-50 {
+            padding-left: 0;
+        }
+        margin-top: 30px;
+    }
+}
+
+
+.team-wrapper {
+    background-color: #f7f7f7;
+    .team-img {
+        position: relative;
+        a {
+            img {
+                width: 100%;
+            }
+        }
+        .team-action {
+            background: #fff none repeat scroll 0 0;
+            left: 0;
+            opacity: 0;
+            padding: 10px;
+            position: absolute;
+            right: 0;
+            text-align: center;
+            top: 70%;
+            transform: translateY(-50%);
+            transition: all 0.6s ease 0s;
+            width: 100%;
+            z-index: 5;
+            a {
+                border-radius: 50px;
+                color: #fff;
+                display: inline-block;
+                font-size: 14px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                width: 30px;
+                margin: 0 3px;
+                &.facebook {
+                    border: 1px solid #3b5998;
+                    background-color: #3b5998;
+                    &:hover {
+                        background-color: transparent;
+                        color: #3b5998;
+                    }
+                }
+                &.twitter {
+                    border: 1px solid #55acee;
+                    background-color: #55acee;
+                    &:hover {
+                        background-color: transparent;
+                        color: #55acee;
+                    }
+                }
+                &.instagram {
+                    border: 1px solid #c32aa3;
+                    background-color: #c32aa3;
+                    &:hover {
+                        background-color: transparent;
+                        color: #c32aa3;
+                    }
+                }
+            }
+        }
+    }
+    .team-content {
+        padding: 20px 10px 23px;
+        h4 {
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0 0 4px;
+            text-transform: capitalize;
+            @media #{$lg-layout} {
+                font-size: 16px;
+                margin: 0 0 2px;
+            }
+        }
+        span {
+            font-size: 15px;
+            font-style: italic;
+        }
+    }
+    &:hover .team-action {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

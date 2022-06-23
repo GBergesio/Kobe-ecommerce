@@ -1,0 +1,201 @@
+/*-------- 9. Blog style ---------*/
+
+
+.blog-wrap {
+    .blog-img {
+        overflow: hidden;
+        a {
+            img {
+                width: 100%;
+                transform: scale(1);
+                transition: all .5s ease 0s;
+            }
+        }
+    }
+    .blog-content {
+        h3 {
+            font-weight: 500;
+            font-size: 18px;
+            margin: 0;
+            color: #383838;
+            position: relative;
+            &::before {
+                position: absolute;
+                right: 0px;
+                bottom: -20px;
+                width: 15px;
+                height: 1px;
+                background-color: #ebebeb;
+                content: "";
+                width: 81%;
+                left: 0;
+                margin: 0 auto;
+                @media #{$xs-layout} {
+                    width: 95%;
+                }
+            }
+            a {
+                color: #383838;
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+        .blog-meta {
+            ul {
+                li {
+                    display: inline-block; 
+                    margin: 0 14px;
+                    position: relative;
+                    @media #{$lg-layout} {
+                        margin: 0 12px;
+                    }
+                    @media #{$xs-layout} {
+                        margin: 0 10px;
+                    }
+                    &::before {
+                        position: absolute;
+                        right: -22px;
+                        top: 12px;
+                        width: 15px;
+                        height: 1px;
+                        background-color: #999898;
+                        content: "";
+                        transform: rotate(70deg);
+                    }
+                    &:last-child::before {
+                        display: none;
+                    }
+                    a {
+                        font-size: 13px;
+                        color: #919090;
+                        &:hover {
+                            color: $theme-color;
+                        }
+                    }
+                }
+            }
+            &.blog-meta-mrg {
+                margin-bottom: 5px;
+                ul {
+                    li {
+                       margin: 0 24px 0 0; 
+                    }
+                }
+            }
+        }
+        .blog-mrg-border {
+            padding: 15px 0 20px;
+            margin-top: 20px;
+        }
+        p {
+            margin: 0 auto;
+            width: 79%;
+            @media #{$lg-layout} {
+                width: 94%;
+            }
+            @media #{$md-layout} {
+                width: 100%;
+            }
+            @media #{$xs-layout} {
+                width: 100%;
+            }
+            @media #{$sm-layout} {
+                width: 93%;
+            }
+        }
+        &.blog-content-mrg {
+            margin: 0px 50px 0;
+            @media #{$md-layout} {
+                margin: 0px 0px 0;
+            }
+            @media #{$xs-layout} {
+                margin: 0px 0px 0;
+            }
+        }
+        &.blog-content-mrg-2 {
+            margin: 25px 0 0;
+            @media #{$xs-layout} {
+                margin: 12px 0 0;
+            }
+            h3 {
+                &:before {
+                    display: none;
+                }
+            }
+        } 
+    }
+    &:hover .blog-img a img {
+        transform: scale(1.1);
+    }
+    @media #{$md-layout} {
+        &.mr-20 {
+            margin-right: 0;
+        }
+        &.ml-20 {
+            margin-left: 0;
+        }
+    }
+    @media #{$xs-layout} {
+        &.mr-20 {
+            margin-right: 0;
+        }
+        &.ml-20 {
+            margin-left: 0;
+        }
+    }
+}
+
+
+
+.blog-area {
+    @media #{$xs-layout} {
+        &.pt-50 {
+            padding-top: 0px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

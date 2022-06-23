@@ -1,0 +1,127 @@
+/*-------- 8. Feature style ---------*/
+
+
+.single-feature {
+    display: flex;
+    @media #{$xs-layout} {
+        justify-content: center;
+    }
+    .feature-icon {
+        flex: 0 0 63px;
+        margin-right: 25px;
+        margin-top: -30px;
+        img {
+            width: 100%;
+        }
+        @media #{$md-layout} {
+            margin-right: 10px;
+            flex: 0 0 50px;
+        }
+    }
+    .feature-content {
+        h4 {
+            font-size: 18px;
+            letter-spacing: .5px;
+            font-weight: 600;
+            position: relative;
+            margin: 0 0 30px;
+            @media #{$md-layout} {
+                font-size: 16px;
+                letter-spacing: 0px;
+            }
+            &::before {
+                position: absolute;
+                content: "";
+                left: 0px;
+                background-color: #4d5e7c;
+                width: 50px;
+                height: 3px;
+                bottom: -18px;
+            }
+        }
+        p {
+            line-height: 26px;
+            font-size: 16px;
+            margin: 0;
+            color: #1f2226;
+            @media #{$md-layout} {
+                font-size: 13px;
+            }
+        }
+    }
+    &:hover .feature-icon img{
+        animation: 500ms ease-in-out 0s normal none 1 running tada;
+    }
+    @media #{$lg-layout} {
+        &.pl-50 {
+            padding-left: 0;
+        }
+    }
+    @media #{$md-layout} {
+        &.pl-50 {
+            padding-left: 0;
+        }
+    }
+    @media #{$xs-layout} {
+        &.pl-50 {
+            padding-left: 0;
+        }
+    }
+}
+
+.feature-area {
+    @media #{$xs-layout} {
+        &.pb-70 {
+            padding-bottom: 0;
+        }
+    }
+    @media #{$xs-layout} {
+        &.pb-60 {
+            padding-bottom: 5PX;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

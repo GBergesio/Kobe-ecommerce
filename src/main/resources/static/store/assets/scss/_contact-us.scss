@@ -1,0 +1,171 @@
+/*-------- 20. Contact us style ---------*/
+
+.contact-info-area{
+    h2 {
+        font-weight: 600;
+        margin: 0 0 15px;
+        font-size: 35px;
+        line-height: 30px;
+    }
+    p {
+        margin: 0 0 0px;
+        font-size: 15px;
+        color: #1f2226;
+        line-height: 26px
+    }
+    .contact-info-wrap {
+        margin: 60px 0 0;
+        @media #{$xs-layout} {
+            margin: 20px 0 30px;
+        }
+        .single-contact-info {
+            align-items: center;
+            display: flex;
+            margin: 0 0 37px;
+            @media #{$xs-layout} {
+                margin: 0 0 20px;
+            }
+            .contact-info-icon {
+                flex: 0 0 62px;
+                @media #{$lg-layout} {
+                    flex: 0 0 50px;
+                }
+                @media #{$xs-layout} {
+                    flex: 0 0 44px;
+                }
+                i {
+                    font-size: 36px;
+                    color: $theme-color;
+                    position: relative;
+                    top: 4px;
+                    @media #{$xs-layout} {
+                        font-size: 30px;
+                        top: 4px;
+                    }
+                }
+            }
+            .contact-info-content {
+                p {
+                    margin: 0;
+                    font-size: 16px;
+                    @media #{$lg-layout} {
+                        font-size: 15px;
+                    }
+                    @media #{$md-layout} {
+                        font-size: 15px;
+                    }
+                    @media #{$xs-layout} {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-from {
+    box-shadow: 0 25px 45px rgba(1, 2, 2, 0.12);
+    padding: 50px;
+    margin-left: 50px;
+    @media #{$lg-layout} {
+        margin-left: 20px;
+    }
+    @media #{$md-layout} {
+        margin-left: 0px;
+        padding: 30px;
+    }
+    @media #{$xs-layout} {
+        margin-left: 0px;
+        padding: 30px 20px;
+    }
+    input, textarea {
+        background: transparent;
+        border: 1px solid #e5e5e5;
+        font-size: 15px;
+        height: 50px;
+        padding: 2px 24px;
+        margin-bottom: 15px;
+        color: #1f2226;
+    }
+    textarea {
+        height: 120px;
+        padding: 16px 24px 2px;
+    }
+    button {
+        border: none;
+        padding: 0;
+        background-color: transparent;
+        text-align: center;
+        color: #fff;
+        background-color: #1f2226;
+        display: block;
+        width: 100%;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 16px 10px;
+        @media #{$xs-layout} {
+            padding: 13px 10px;
+        }
+        &:hover {
+            background-color: $theme-color;
+        }
+    }
+}
+
+.contact-map {
+    #map {
+        height: 500px;
+        @media #{$xs-layout} {
+            height: 300px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

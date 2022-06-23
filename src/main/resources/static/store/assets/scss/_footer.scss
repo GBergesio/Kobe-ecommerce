@@ -1,0 +1,285 @@
+/*-------- 10. Footer style ---------*/
+
+.footer-top {
+    ul {
+        li {
+            display: inline-block;
+            margin: 0 35px;
+            @media #{$md-layout} {
+                margin: 0 25px;
+            }
+            @media #{$xs-layout} {
+                margin: 0 5px 0px;
+            }
+            a {
+                display: block;
+                line-height: 1;
+                font-size: 16px;
+                font-family: $roboto;
+            }
+        }
+    }
+}
+
+
+.footer-bottom {
+    .footer-social {
+        a {
+            color: #ababab;
+            font-family: $roboto;
+            margin-right: 26px;
+            &:hover {
+                color: $theme-color;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            @media #{$lg-layout} {
+                margin-right: 16px;
+            }
+            @media #{$md-layout} {
+                margin-right: 12px;
+            }
+            @media #{$xs-layout} {
+                margin-right: 7px;
+                margin-left: 7px;
+            }
+        }
+        @media #{$xs-layout} {
+            text-align: center;
+        }
+    }
+    .copyright {
+        p {
+            color: #919191;
+            margin: 0;
+            font-family: $roboto;
+            line-height: 1;
+        }
+    }
+    .copyright-2 {
+        p {
+            color: #444444;
+            margin: 0;
+            font-family: $roboto;
+            line-height: 1;
+            font-size: 16px;
+        }
+        @media #{$xs-layout} {
+            text-align: center;
+        }
+        @media #{$sm-layout} {
+            text-align: inherit;
+        }
+    }
+    .payment-mathod {
+        text-align: right;
+        @media #{$xs-layout} {
+            text-align: center;
+        }
+        a {
+            img {
+                width: auto;
+                @media #{$md-layout} {
+                    width: 100%;
+                }
+                @media #{$xs-layout} {
+                    width: 100%;
+                }
+                @media #{$sm-layout} {
+                    width: auto;
+                }
+            }
+        }
+    }
+    .payment-mathod-2 {
+        text-align: right;
+        @media #{$xs-layout} {
+            text-align: center;
+        }
+        @media #{$sm-layout} {
+            text-align: right;
+        }
+        a {
+            img {
+                width: auto;
+            }
+        }
+    }
+}
+
+.subscribe-style {
+    p {
+        color: #5a5a5a;
+        margin: 0;
+        width: 72%;
+        @media #{$md-layout} {
+            width: 100%;
+        }
+        @media #{$xs-layout} {
+            width: 100%;
+        }
+    }
+    .subscribe-form {
+        .mc-form {
+            position: relative;
+            input {
+                background: transparent none repeat scroll 0 0;
+                border: 1px solid #444444;
+                color: #919090;
+                font-size: 14px;
+                height: 50px;
+                padding: 2px 60px 2px 30px;
+                font-family: $poppins;
+                font-weight: 300;
+                @media #{$md-layout} {
+                    padding: 2px 60px 2px 10px;
+                }
+            }
+            .mc-news {
+                display: none;
+            }
+            .clear {
+                background-color: #222222;
+                display: inline-block;
+                position: absolute;
+                right: 0px;
+                top: 0;
+                z-index: 9;
+                transition: all 0.3s ease 0s;
+                height: 50px;
+                input {
+                    border: medium none;
+                    cursor: pointer;
+                    padding: 0;
+                    width: 50px;
+                    color: $white;
+                }
+                &::before {
+                    color: #fff;
+                    content: "\e06e";
+                    font-family: 'simple-line-icons';
+                    font-size: 20px;
+                    position: absolute;
+                    right: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                &:hover {
+                    background-color: $theme-color;
+                }
+            }
+        }
+    }
+    @media #{$xs-layout} {
+        &.mt-45 {
+            margin-top: 20px;
+        }
+    }
+}
+
+
+.footer-widget {
+    .footer-title {
+        h3 {
+            font-weight: 500;
+            font-size: 18px;
+            color: #444444;
+            margin: 0 0 33px;
+            font-family: $roboto;
+            line-height: 1;
+        }
+    }
+    .footer-list {
+        ul {
+            li {
+                margin-bottom: 21px;
+                &:last-child {
+                   margin-bottom: 0px; 
+                }
+                a {
+                    font-size: 16px;
+                    display: block;
+                    color: #5e5e5e;
+                    font-family: $roboto;
+                    &:hover {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+    @media #{$md-layout} {
+        &.pl-100 {
+            padding-left: 50px;
+        }
+    }
+    @media #{$md-layout} {
+        &.pl-50 {
+            padding-left: 28px;
+        }
+    }
+    @media #{$xs-layout} {
+        &.pl-100 {
+            padding-left: 0px;
+        }
+    }
+    @media #{$xs-layout} {
+        &.pl-50 {
+            padding-left: 0px;
+        }
+    }
+    @media #{$sm-layout} {
+        text-align: inherit;
+    }
+}
+
+
+.footer-top-2 {
+    @media #{$xs-layout} {
+        &.pb-20 {
+            padding-bottom: 5px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

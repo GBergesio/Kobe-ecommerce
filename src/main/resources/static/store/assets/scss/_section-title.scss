@@ -1,0 +1,53 @@
+
+/*-------- 5. Secting title style ---------*/
+
+.section-title {
+    h2 {
+        font-size: 30px;
+        font-weight: 500;
+        letter-spacing: .25px;
+        margin: 0 0 18px;
+        @media #{$xs-layout} {
+            font-size: 27px;
+            margin: 0 0 8px;
+        }
+    }
+    p {
+        color: #5a5a5a;
+        margin: 0 auto;
+        width: 38%;
+        @media #{$lg-layout} {
+            width: 46%;
+        }
+        @media #{$md-layout} {
+            width: 58%;
+        }
+        @media #{$xs-layout} {
+            width: 100%;
+        }
+    }
+    @media #{$xs-layout} {
+        &.pb-60 {
+            padding-bottom: 30px;
+        }
+        &.pb-45 {
+            padding-bottom: 30px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

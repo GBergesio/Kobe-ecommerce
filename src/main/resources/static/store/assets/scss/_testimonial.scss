@@ -1,0 +1,82 @@
+/*-------- 7. Testimonial style ---------*/
+
+
+.testimonial-active {
+    &.owl-carousel {
+        .owl-item {
+            img {
+                display: inline-block;
+                width: auto;
+            }
+        }
+    }
+}
+
+
+.single-testimonial {
+    p {
+        font-size: 16px;
+        line-height: 32px;
+        margin: 30px auto 32px;
+        width: 80%;
+        @media #{$xl-layout} {
+            width: 90%;
+        }
+        @media #{$md-layout} {
+            width: 90%;
+        }
+        @media #{$xs-layout} {
+            width: 100%;
+            margin: 18px auto 25px;
+            font-size: 15px;
+        }
+    }
+    .client-info {
+        display: block;
+        img {
+            
+        }
+        h5 {
+           font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 22px 0 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

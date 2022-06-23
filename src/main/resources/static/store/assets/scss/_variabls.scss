@@ -1,0 +1,28 @@
+// Font Family
+$poppins: 'Poppins', sans-serif;
+$roboto: 'Roboto', sans-serif;
+
+
+// text Colors ---------------
+
+$black: #000000;
+$white: #ffffff;
+$gray: #f1f1f1;
+$red: #f6f7f8;
+$green: #f6f7f8;
+
+
+
+
+// Theme Color
+$theme-color: #ff3535;
+
+
+
+// Responsive Variables 
+$xx-layout : 'only screen and (min-width: 1366px) and (max-width: 1600px)';
+$xl-layout : 'only screen and (min-width: 1200px) and (max-width: 1365px)';
+$lg-layout : 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$md-layout:'only screen and (min-width: 768px) and (max-width: 991px)';
+$xs-layout:'only screen and (max-width: 767px)';
+$sm-layout: 'only screen and (min-width: 576px) and (max-width: 767px)';
