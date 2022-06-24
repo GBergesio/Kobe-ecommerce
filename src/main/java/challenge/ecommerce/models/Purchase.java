@@ -29,6 +29,7 @@ public class Purchase {
     @JoinColumn(name="product_id")
     private Product product;
 
+    public Purchase(){};
     public Purchase(LocalDateTime purchaseDate, String address, int zipCode, Client client, Product product) {
         this.purchaseDate = purchaseDate;
         this.address = address;
@@ -36,4 +37,6 @@ public class Purchase {
         this.client = client;
         this.product = product;
     }
+
+
 }
