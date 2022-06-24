@@ -14,8 +14,6 @@ import java.util.Set;
 @Getter
 @Setter
 public class Client {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
@@ -36,14 +34,7 @@ public class Client {
     private Set<Post> posts = new HashSet<>();
 
     @OneToMany(mappedBy = "client", fetch=FetchType.EAGER)
-//<<<<<<< HEAD
-//    private Set<Adress> address = new HashSet<>();
-//
-//    @OneToMany(mappedBy = "user")
-//    private Set<SecureToken> tokens = new HashSet<>();
-//=======
     private Set<Address> addresses = new HashSet<>();
-//>>>>>>> backgentile
 
     public Client(){};
 
@@ -52,11 +43,15 @@ public class Client {
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-//<<<<<<< HEAD
-        this.userType = UserType.USER;
-//=======
+        this.userType = UserType.CLIENT;
     }
-
+    public Client(String name, String lastName, String email, String password, UserType userType) {
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.userType = userType;
+    }
     public void addAddress (Address address){
         address.setClient(this);
         addresses.add(address);
@@ -70,6 +65,5 @@ public class Client {
     public void addPurchase (Purchase purchase){
         purchase.setClient(this);
         purchases.add(purchase);
-//>>>>>>> backgentile
     }
 }

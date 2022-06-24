@@ -1,13 +1,18 @@
 package challenge.ecommerce.models;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Purchase {
 
     @Id
@@ -25,17 +30,20 @@ public class Purchase {
     @JoinColumn(name="client_id")
     private Client client;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="product_id")
-    private Product product;
+    @OneToMany(mappedBy = "purchase", fetch = FetchType.EAGER)
+    private Set<PurchaseProduct> purchaseProducts = new HashSet<>();
 
-    public Purchase(){};
-    public Purchase(LocalDateTime purchaseDate, String address, int zipCode, Client client, Product product) {
+
+    public Purchase(){}
+    public Purchase(LocalDateTime purchaseDate, String address, int zipCode) {
         this.purchaseDate = purchaseDate;
         this.address = address;
         this.zipCode = zipCode;
-        this.client = client;
-        this.product = product;
+    }
+
+    public void addPurchaseProduct(PurchaseProduct purchaseProduct) {
+        purchaseProduct.setPurchase(this);
+        purchaseProducts.add(purchaseProduct);
     }
 
 

@@ -15,7 +15,6 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-
 public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
 
     @Autowired
@@ -32,29 +31,19 @@ public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
             if (client != null) {
                 if (client.getEmail().contains("@kobestore.com") && client.getUserType() == UserType.ADMIN) {
                     return new User(client.getEmail(), client.getPassword(),
-
                             AuthorityUtils.createAuthorityList("ADMIN"));
-
                 } else {
                     return new User(client.getEmail(), client.getPassword(),
-
                             AuthorityUtils.createAuthorityList("CLIENT"));
-
                 }
-
             } else {
-
                 throw new UsernameNotFoundException("Unknown user: " + inputName);
-
             }
         });
     }
     @Bean
-
     public PasswordEncoder passwordEncoder() {
-
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-
     }
 
 };

@@ -1,5 +1,6 @@
 package challenge.ecommerce.services.implement;
 
+<<<<<<< HEAD
 //<<<<<<< HEAD
 //import challenge.ecommerce.context.AccountVerificationEmailContext;
 //import challenge.ecommerce.core.exception.ClientAlreadyExistException;
@@ -25,10 +26,13 @@ package challenge.ecommerce.services.implement;
 //import java.util.Objects;
 //=======
 import challenge.ecommerce.dtos.ClientDTO;
+=======
+>>>>>>> back-marco
 import challenge.ecommerce.models.Client;
 import challenge.ecommerce.repositories.ClientRepository;
 import challenge.ecommerce.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
@@ -36,10 +40,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 //>>>>>>> backgentile
 
+=======
+import org.springframework.stereotype.Service;
+
+>>>>>>> back-marco
 @Service
 public class ClientServiceImpl implements ClientService {
 
     @Autowired
+<<<<<<< HEAD
     ClientRepository clientRepository;
 
 //<<<<<<< HEAD
@@ -157,4 +166,11 @@ public class ClientServiceImpl implements ClientService {
 //    }
 //=======
 //>>>>>>> backgentile
+=======
+    private ClientRepository clientRepository;
+    @Override
+    public Client getByEmail(String email) {
+        return clientRepository.findByEmail(email);
+    }
+>>>>>>> back-marco
 }
