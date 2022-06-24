@@ -38,11 +38,10 @@ public class PurchaseServiceImpl implements PurchaseService {
 
         for (Map.Entry<Long, Integer> order : purchaseApplicationDto.getOrders().entrySet()) {
             Product product = productService.getById(order.getKey());
-            PurchaseProduct purchaseProduct = purchaseProductRepository.save(new PurchaseProduct(purchase,
-                    product, order.getValue()));
+            purchaseProductRepository.save(new PurchaseProduct(purchase, product, order.getValue()));
             product.setStock(product.getStock() - order.getValue());
             productService.save(product);
-            purchase.addPurchaseProduct(purchaseProduct);
+//            purchase.addPurchaseProduct(purchaseProduct);
         }
 
         purchaseRepository.save(purchase);

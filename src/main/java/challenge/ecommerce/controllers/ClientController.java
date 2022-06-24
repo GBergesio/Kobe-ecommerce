@@ -1,5 +1,6 @@
 package challenge.ecommerce.controllers;
 
+import challenge.ecommerce.dtos.ClientDTO;
 import challenge.ecommerce.dtos.RegisterDTO;
 import challenge.ecommerce.enums.UserType;
 import challenge.ecommerce.models.Client;
@@ -93,7 +94,7 @@ public class ClientController {
     }
     @GetMapping("/clients/current")
     public ResponseEntity<?> getCurrentClient(Authentication authentication){
-        return(new ResponseEntity<>(clientService.getCurrentClient(authentication),HttpStatus.ACCEPTED));
+        return(new ResponseEntity<>(new ClientDTO(clientService.getCurrentClient(authentication)),HttpStatus.ACCEPTED));
     }
 
 }
