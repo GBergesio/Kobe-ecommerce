@@ -50,6 +50,9 @@ public class EcommerceApplication {
 
 			Client admin = new Client("admin", "admin","admin@kobestore.com", passwordEncoder.encode("123"),UserType.ADMIN);
 			clientRepository.save(admin);
+
+			Client client = new Client("client", "client","client@mail", passwordEncoder.encode("123"));
+			clientRepository.save(client);
 		};
 	}
 }

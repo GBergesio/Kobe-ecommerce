@@ -20,10 +20,12 @@ public class PurchaseProduct {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="product_id")
     private Product product;
+    private Integer quantity;
 
     public PurchaseProduct(){}
-    public PurchaseProduct(Purchase purchase, Product product){
+    public PurchaseProduct(Purchase purchase, Product product, Integer quantity){
         this.purchase = purchase;
         this.product = product;
+        this.quantity = quantity;
     }
 }

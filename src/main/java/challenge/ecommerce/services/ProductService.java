@@ -16,5 +16,7 @@ public interface ProductService {
 
     void delete(Product product);
 
+    void save(Product product);
+
 //    boolean existProperty(String propertyName);
 }

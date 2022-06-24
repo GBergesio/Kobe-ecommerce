@@ -58,7 +58,7 @@ public class ProductController {
         return new ResponseEntity<>("product has been deleted successfully", HttpStatus.OK);
     }
 
-    //necestio ayuda con este!
+    //maniana vemos este!
 //    @PatchMapping("/products/modify")
 //    public ResponseEntity<?> modify(@RequestParam String property){
 //        if(property.isEmpty()){
