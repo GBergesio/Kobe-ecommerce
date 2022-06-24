@@ -1,6 +1,7 @@
 package challenge.ecommerce.controllers;
 
 import challenge.ecommerce.dtos.RegisterDTO;
+import challenge.ecommerce.enums.UserType;
 import challenge.ecommerce.models.Client;
 import challenge.ecommerce.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,7 +85,8 @@ public class ClientController {
             return new ResponseEntity<>("Email is already in use", HttpStatus.FORBIDDEN);
         }
 
-        Client client = new Client(registerDTO.getFirstName(), registerDTO.getLastName(), registerDTO.getEmail(), registerDTO.getPassword());
+        Client client = new Client(registerDTO.getFirstName(), registerDTO.getLastName(), registerDTO.getEmail(),
+                clientService.encodePassword(registerDTO.getPassword()), UserType.CLIENT);
         clientService.saveClient(client);
 
         return new ResponseEntity<>("Registered successfully, please activate your email to use your account", HttpStatus.CREATED);

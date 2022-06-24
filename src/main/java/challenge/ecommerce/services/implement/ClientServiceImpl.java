@@ -112,6 +112,11 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    public String encodePassword(String password) {
+        return passwordEncoder.encode(password);
+    }
+
+    @Override
     public boolean checkIfUserExist(String email) {
         return clientRepository.findByEmail(email)!=null ? true : false;
     }

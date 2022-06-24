@@ -25,4 +25,5 @@ public interface ClientService {
     Client getCurrentClient (Authentication authentication);
     void saveClient(Client client);
     Client findByEmail(String email);
+    String encodePassword(String password);
 }
