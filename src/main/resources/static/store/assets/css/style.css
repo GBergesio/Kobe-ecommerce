@@ -8960,12 +8960,12 @@ h3.cart-page-title {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-
+/**/
 .login-register-wrapper .login-form-container .login-register-form form .button-box button:hover {
-  background-color: var(--electric-bluecheckout-login-info form .button-remember-wrap button);
+  background-color: var(--electric-blue);
   color: #fff;
 }
-
+/*/*/
 @media only screen and (max-width: 767px) {
   .login-register-area.pb-100 {
     padding-bottom: 60px;
