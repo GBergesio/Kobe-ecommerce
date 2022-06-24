@@ -47,7 +47,7 @@ public class PurchaseController {
     @PostMapping("/purchases")
     @Transactional
     public ResponseEntity<?> create(Authentication authentication, @RequestBody HashMap<Long, Integer> purchaseApplication){
-        Client client = clientService.getByEmail(authentication.getName());
+        Client client = clientService.findByEmail(authentication.getName());
         if(purchaseApplication.size() == 0){
             return new ResponseEntity<>("Missing data", HttpStatus.FORBIDDEN);
         }
