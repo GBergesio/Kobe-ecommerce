@@ -5,6 +5,7 @@ import challenge.ecommerce.core.exception.ClientAlreadyExistException;
 import challenge.ecommerce.core.exception.InvalidTokenException;
 import challenge.ecommerce.core.exception.UnkownIdentifierException;
 import challenge.ecommerce.data.user.ClientData;
+import challenge.ecommerce.dtos.ClientDTO;
 import challenge.ecommerce.models.Client;
 import challenge.ecommerce.models.SecureToken;
 import challenge.ecommerce.repositories.ClientRepository;
@@ -16,12 +17,16 @@ import org.apache.commons.lang3.BooleanUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.util.StringUtils;
 
 import javax.mail.MessagingException;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
+
 
 @Service
 public class ClientServiceImpl implements ClientService {
@@ -76,15 +81,35 @@ public class ClientServiceImpl implements ClientService {
 
     };
 
-    private void encodePassword(ClientData source, Client target){
+    private void encodePassword(ClientData source, Client target) {
         target.setPassword(passwordEncoder.encode(source.getPassword()));
     }
 
     @Override
-    public Client findByEmail(String email) {
-        return clientRepository.findByEmail(email);
+    public List<ClientDTO> getClientsDTO() {
+        return clientRepository.findAll().stream().map(ClientDTO::new).collect(Collectors.toList());
     }
 
+    @Override
+    public ClientDTO getClientDTO(Long id) {
+        return clientRepository.findById(id).map(ClientDTO::new).orElse(null);
+    }
+
+    @Override
+    public Client getCurrentClient(Authentication authentication) {
+        return clientRepository.findByEmail(authentication.getName());
+    }
+
+    @Override
+    public void saveClient(Client client) {
+        clientRepository.save(client);
+
+    }
+
+    @Override
+    public Client findByEmail(String email){
+            return clientRepository.findByEmail(email);
+    }
 
     @Override
     public boolean checkIfUserExist(String email) {
