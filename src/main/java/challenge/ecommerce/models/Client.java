@@ -30,16 +30,20 @@ public class Client {
     private long dni;
 
     @OneToMany(mappedBy = "client", fetch=FetchType.EAGER)
-    private Set<Purchase> purchase = new HashSet<>();
+    private Set<Purchase> purchases = new HashSet<>();
 
     @OneToMany(mappedBy = "client", fetch=FetchType.EAGER)
-    private Set<Post> post = new HashSet<>();
+    private Set<Post> posts = new HashSet<>();
 
     @OneToMany(mappedBy = "client", fetch=FetchType.EAGER)
-    private Set<Adress> address = new HashSet<>();
-
-    @OneToMany(mappedBy = "user")
-    private Set<SecureToken> tokens = new HashSet<>();
+//<<<<<<< HEAD
+//    private Set<Adress> address = new HashSet<>();
+//
+//    @OneToMany(mappedBy = "user")
+//    private Set<SecureToken> tokens = new HashSet<>();
+//=======
+    private Set<Address> addresses = new HashSet<>();
+//>>>>>>> backgentile
 
     public Client(){};
 
@@ -48,6 +52,24 @@ public class Client {
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+//<<<<<<< HEAD
         this.userType = UserType.USER;
+//=======
+    }
+
+    public void addAddress (Address address){
+        address.setClient(this);
+        addresses.add(address);
+    }
+
+    public void addPost (Post post){
+        post.setClient(this);
+        posts.add(post);
+    }
+
+    public void addPurchase (Purchase purchase){
+        purchase.setClient(this);
+        purchases.add(purchase);
+//>>>>>>> backgentile
     }
 }
