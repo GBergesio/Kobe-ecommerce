@@ -31,6 +31,7 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/api/clients/{id}").hasAuthority("ADMIN")
                 .antMatchers(HttpMethod.GET, "/api/clients", "/api/purchases","/api/addresses").hasAuthority("ADMIN")
                 .antMatchers("/admin/**", "/h2-console/**", "/rest/**").hasAuthority("ADMIN")
+
         ;
 
         http.formLogin()

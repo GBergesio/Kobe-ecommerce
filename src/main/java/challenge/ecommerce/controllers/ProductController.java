@@ -20,7 +20,7 @@ public class ProductController {
 
     @GetMapping ("/products")
     public ResponseEntity<?> getProducts() {
-        return new ResponseEntity<>(productService.getAll().stream().map(ProductDto::new).collect(Collectors.toList()),
+        return new ResponseEntity<>(productService.getAll().stream().filter(product1 -> product1.getStock() > 0).map(ProductDto::new).collect(Collectors.toList()),
                 HttpStatus.OK);
     }
 

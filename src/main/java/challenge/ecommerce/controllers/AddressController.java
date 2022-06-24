@@ -1,6 +1,7 @@
 package challenge.ecommerce.controllers;
 
 import challenge.ecommerce.dtos.AddressDTO;
+import challenge.ecommerce.dtos.NewAddressDTO;
 import challenge.ecommerce.models.Address;
 import challenge.ecommerce.models.Client;
 import challenge.ecommerce.services.AddressService;
@@ -28,28 +29,26 @@ public class AddressController {
     //falta autorizar
     @Transactional
     @PostMapping("/newAddress")
-    ResponseEntity<Object> newAddress(@RequestBody AddressDTO addressDTO){
+    ResponseEntity<Object> newAddress(@RequestBody NewAddressDTO newAddressDTO){
 
-        Pattern patNum = Pattern.compile("[\\d]");
+        Pattern patOnlyLetters = Pattern.compile("^[a-zA-Z\\s+]{1,}");
 
-        Pattern patOnlyLetters = Pattern.compile("[a­zA­Z]");
+        Pattern lettersAndNumbers = Pattern.compile("[\\da-zA-Z\\s+]{1,6}");
 
-        Pattern lettersAndNumbers = Pattern.compile("[\\da-zA-Z]");
+        Matcher FloorApartment = lettersAndNumbers.matcher(newAddressDTO.getFloorApartment());
+        Matcher locality = patOnlyLetters.matcher(newAddressDTO.getLocality());
+        Matcher streetName = patOnlyLetters.matcher(newAddressDTO.getStreetName());
+        Matcher province = patOnlyLetters.matcher(newAddressDTO.getProvince());
 
-        Matcher FloorApartment = lettersAndNumbers.matcher(addressDTO.getFloorApartment());
-        Matcher locality = patOnlyLetters.matcher(addressDTO.getLocality());
-        Matcher streetName = patOnlyLetters.matcher(addressDTO.getStreetName());
-        Matcher province = patOnlyLetters.matcher(addressDTO.getProvince());
-
-        if(addressDTO.getFloorApartment().isEmpty()){
+        if(newAddressDTO.getFloorApartment().isEmpty()){
             return new ResponseEntity<>("Floor Apartment is empty", HttpStatus.FORBIDDEN);
         }
 
         if(!FloorApartment.matches()){
-            return new ResponseEntity<>("Floor Apartment is empty", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("This ir not a valid floor apartment", HttpStatus.FORBIDDEN);
         }
 
-        if(addressDTO.getLocality().isEmpty()){
+        if(newAddressDTO.getLocality().isEmpty()){
             return new ResponseEntity<>("Locality is empty", HttpStatus.FORBIDDEN);
         }
 
@@ -57,15 +56,15 @@ public class AddressController {
             return new ResponseEntity<>("The locality can't contain numbers or symbols", HttpStatus.FORBIDDEN);
         }
 
-        if(addressDTO.getProvince().isEmpty()){
+        if(newAddressDTO.getProvince().isEmpty()){
             return new ResponseEntity<>("Province is empty", HttpStatus.FORBIDDEN);
         }
 
         if(!province.matches()){
-            return new ResponseEntity<>("The name can't contain numbers or symbols", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("The province can't contain numbers or symbols", HttpStatus.FORBIDDEN);
         }
 
-        if(addressDTO.getStreetName().isEmpty()){
+        if(newAddressDTO.getStreetName().isEmpty()){
             return new ResponseEntity<>("Street name is empty", HttpStatus.FORBIDDEN);
         }
 
@@ -73,15 +72,17 @@ public class AddressController {
             return new ResponseEntity<>("The street name can't contain numbers or symbols", HttpStatus.FORBIDDEN);
         }
 
-        if(addressDTO.getStreetNumber() <= 0){
+        if(newAddressDTO.getStreetNumber() <= 0){
             return new ResponseEntity<>("Not a valid street number", HttpStatus.FORBIDDEN);
         }
 
-        if(addressDTO.getZipCode() <= 0){
+        if(newAddressDTO.getZipCode() <= 0){
             return new ResponseEntity<>("Not a valid Zip number", HttpStatus.FORBIDDEN);
         }
 
-        Address address = new Address(addressDTO.getZipCode(), addressDTO.getStreetNumber(), addressDTO.getFloorApartment(), addressDTO.getStreetName(), addressDTO.getProvince(), addressDTO.getLocality());
+
+
+        Address address = new Address(newAddressDTO.getZipCode(), newAddressDTO.getStreetNumber(), newAddressDTO.getFloorApartment(), newAddressDTO.getStreetName(), newAddressDTO.getProvince(), newAddressDTO.getLocality());
         addressService.saveAddress(address);
 
         return new ResponseEntity<>("Address added successfully", HttpStatus.CREATED);
