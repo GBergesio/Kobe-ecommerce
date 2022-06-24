@@ -25,6 +25,8 @@ class WebAuthorization extends WebSecurityConfigurerAdapter {
                 .antMatchers("/web/**").permitAll()
 
                 .antMatchers("/admin/**", "/manager.html", "/h2-console/**").permitAll()
+
+                .antMatchers("/api/**").permitAll()
         ;
 
 

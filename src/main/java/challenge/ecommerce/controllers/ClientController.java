@@ -36,11 +36,11 @@ public class ClientController {
     @PostMapping("/clientRegister")
     public ResponseEntity<Object> register(@RequestBody RegisterDTO registerDTO){
 
-        Pattern patPassword = Pattern.compile("[a­zA­Z]{5,10}");
+        Pattern patPassword = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,}$");
 
-        Pattern patEmail = Pattern.compile("^[\\w­]+(\\.[\\w­]+)*@[A­Za­z0­9]+(\\.[A­Za­z0­9]+)*(\\.[A­Za­z]{2,})$");
+        Pattern patEmail = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
 
-        Pattern patOnlyLetters = Pattern.compile("[a­zA­Z]");
+        Pattern patOnlyLetters = Pattern.compile("^[a-zA-Z]{1,}");
 
         Matcher email = patEmail.matcher(registerDTO.getEmail());
         Matcher name = patOnlyLetters.matcher(registerDTO.getName());
@@ -57,7 +57,7 @@ public class ClientController {
         }
 
         if(registerDTO.getPassword().isEmpty()){
-            return new ResponseEntity<>("Password is empty", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Password must have at least 8 letters and require a number", HttpStatus.FORBIDDEN);
         }
 
         if(!password.matches()){
