@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 @EnableWebSecurity
 @Configuration
-class WebAuthorization extends WebSecurityConfigurerAdapter {
+public class WebAuthorization extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -23,8 +23,10 @@ class WebAuthorization extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
 
                 .antMatchers("/web/**").permitAll()
-
-                .antMatchers("/admin/**", "/manager.html", "/h2-console/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/products","/api/products/category").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/products").hasAuthority("ADMIN")
+                .antMatchers(HttpMethod.PATCH, "/api/products").hasAuthority("ADMIN")
+                .antMatchers("/admin/**", "/h2-console/**","/rest/**").hasAuthority("ADMIN")
         ;
 
 
