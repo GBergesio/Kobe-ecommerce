@@ -8962,7 +8962,7 @@ h3.cart-page-title {
 }
 
 .login-register-wrapper .login-form-container .login-register-form form .button-box button:hover {
-  background-color: var(--electric-blue);
+  background-color: var(--electric-bluecheckout-login-info form .button-remember-wrap button);
   color: #fff;
 }
 
@@ -9956,9 +9956,9 @@ h3.cart-page-title {
 /*-------- 22. Checkout style ---------*/
 .customer-zone>p {
   font-size: 14px;
-  position: relative;
+  position: relative ;
   padding: 14px 30px 14px 60px;
-  background-color: #eeeff2;
+  background-color: var(--midnight-blue);
   margin: 0;
   position: relative;
 }
@@ -10025,7 +10025,8 @@ h3.cart-page-title {
 }
 
 .checkout-login-info form .button-remember-wrap button {
-  border: 1px solid #aaa;
+  border: 1px solid transparent;
+  background-color: var(--torch-red);
   font-size: 13px;
   padding: 10px 30px 9px;
   display: inline-block;
@@ -10036,9 +10037,9 @@ h3.cart-page-title {
 }
 
 .checkout-login-info form .button-remember-wrap button:hover {
-  background-color: #ff3535;
+  background-color: var(--electric-blue);
   color: #fff;
-  border: 1px solid #ff3535;
+  border: 1px solid var(--torch-blue);
 }
 
 .checkout-login-info form .button-remember-wrap .checkout-login-toggle-btn {
@@ -10097,7 +10098,7 @@ h3.cart-page-title {
 }
 
 .checkout-login-info .checkout-login-social ul li a {
-  background-color: #f5f5f5;
+  background-color: var(--torch-red);
   text-transform: uppercase;
   font-weight: 500;
   display: block;
@@ -10121,7 +10122,7 @@ h3.cart-page-title {
 }
 
 .checkout-login-info .checkout-login-social ul li a:hover {
-  background-color: #ff3535;
+  background-color: var(--electric-blue);
   color: #fff;
 }
 
@@ -10162,7 +10163,7 @@ h3.cart-page-title {
 }
 
 .checkout-login-info3 form input[type=submit] {
-  background: #1f2226 none repeat scroll 0 0;
+  background: var(--torch-red) none repeat scroll 0 0;
   border: medium none;
   color: #fff;
   height: 50px;
@@ -10187,7 +10188,10 @@ h3.cart-page-title {
 }
 
 .checkout-login-info3 form input[type=submit]:hover {
-  background-color: #ff3535;
+  background-color: var(--electric-blue);
+}
+.parrafoAmarillo{
+  color: var(--tulip-tree);
 }
 
 .billing-info-wrap h3 {
@@ -10528,7 +10532,7 @@ h3.cart-page-title {
 }
 
 .your-order-area .Place-order a {
-  background-color: #ff3535;
+  background-color: var(--torch-red);
   font-size: 12px;
   display: block;
   cursor: pointer;
@@ -10543,7 +10547,7 @@ h3.cart-page-title {
 }
 
 .your-order-area .Place-order a:hover {
-  background-color: #212529;
+  background-color: var(--electric-blue);
 }
 
 @media only screen and (max-width: 767px) {
