@@ -1,10 +1,10 @@
 const app = Vue.createApp({
-
     data() {
         return {
             message: 'Hello Vue!',
             funkos: [
-                {                   
+                {
+                    id: 1,
                     name: "Funko Pop Harry Potter",
                     tag: "funkos",
                     description: "Funko edicion limitada de Harry Potter",
@@ -15,6 +15,7 @@ const app = Vue.createApp({
                     category: "Personajes"
                 },
                 {
+                    id: 2,
                     name: "Funko Pop Dragon Ball",
                     tag: "funkos",
                     description: "Funko edicion limitada de Dragon Ball",
@@ -25,6 +26,7 @@ const app = Vue.createApp({
                     category: "Personajes"
                 },
                 {
+                    id: 3,
                     name: "Funko Pop YuGiOh - Yugi Moto",
                     tag: "funkos",
                     description: "Funko edicion limitada de YuGiOh",
@@ -35,6 +37,7 @@ const app = Vue.createApp({
                     category: "Personajes"
                 },
                 {
+                    id: 4,
                     name: "Funko Pop SpiderMan",
                     tag: "funkos",
                     description: "Funko edicion limitada de SpiderMan",
@@ -45,6 +48,7 @@ const app = Vue.createApp({
                     category: "Personajes"
                 },
                 {
+                    id: 5,
                     name: "Funko Pop Batman Justice League",
                     tag: "funkos",
                     description: "Funko edicion limitada de Batman ",
@@ -54,13 +58,88 @@ const app = Vue.createApp({
                     stock: 3,
                     category: "Personajes"
                 }
-            ]
+            ],
+
+            // LocalStorage Products
+            cartStorage: [],
+
+            productsCartStorage: [],
+            productsCartId: [],
+
+
+            // LocalStorage Favs
+            favStorage: [],
+
+            productsFavStorage: [],
+            productsFavId: [],
         }
     },
     created() {
 
+        this.productsCartStorage = JSON.parse(localStorage.getItem("cart"))
+        if (this.productsCartStorage) {
+            this.cartStorage = this.productsCartStorage
+        }
+
+
     },
     methods: {
+
+        addProductCart(product) {
+            this.productsCartId = this.cartStorage.map(product => product.id)
+            if (!this.productsCartId.includes(product.id)) {
+                product.quantity = 1
+                this.cartStorage.push(product)
+                localStorage.setItem("cart", JSON.stringify(this.cartStorage))
+            }
+        },
+
+        deleteProductCart(product) {
+            this.productsCartStorage = this.productsCartStorage.filter(prod => prod.id !== product.id)
+            this.cartStorage = this.productsCartStorage
+            localStorage.setItem("cart", JSON.stringify(this.productsCartStorage))
+            console.log(this.cartStorage);
+
+            // if(!this.cartStorage.includes(product.id)) {
+            //     this.cartStorage.pop(product)
+            //     localStorage.setItem("cart", JSON.stringify(this.cartStorage))
+            // }
+            // console.log(this.cartStorage);
+        },
+
+        emptyCart() {
+            this.productsCartStorage = this.productsCartStorage.filter(product => product.id !== product.id)
+            this.cartStorage = this.productsCartStorage
+            localStorage.setItem("cart", JSON.stringify(this.productsCartStorage))
+        },
+
+
+        // removerItemCarrito(producto) {
+        //     this.itemsCarritoEnStorage = this.itemsCarritoEnStorage.filter(prod => prod._id !== producto._id)
+        //     this.productosCarrito = this.itemsCarritoEnStorage
+        //     localStorage.setItem("cart", JSON.stringify(this.itemsCarritoEnStorage))
+        // },
+
+        addProductFav(product) {
+            this.productsFavId = this.favStorage.map(product => product.id)
+            if (!this.productsFavId.includes(product.id)) {
+                product.quantity = 1
+                this.favStorage.push(product)
+                localStorage.setItem("fav", JSON.stringify(this.favStorage))
+            }
+        },
+
+        deleteProductFav(product) {
+            this.productsFavId = this.productsFavStorage
+            if (!this.productsFavId.includes(product.id)) {
+                this.favStorage.pop(product)
+                localStorage.setItem("fav", JSON.stringify(this.favStorage))
+            }
+        }
+
+
+
+
 
     },
     computed: {
