@@ -16,7 +16,7 @@ import java.nio.charset.StandardCharsets;
 @Service
 public class DefaultEmailServiceImpl implements EmailService {
 
-    @Autowired
+
     private JavaMailSender emailSender;
 
     @Autowired
