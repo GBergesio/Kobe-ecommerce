@@ -514,13 +514,13 @@
 
                         <div id="product-1" class="tab-pane active">
                             <div class="ht-products product-slider-active owl-carousel">
+
                                 <!--Product Start Funkos-->
-                                <div
-                                    class="ht-product ht-product-action-on-hover ht-product-category-right-bottom mb-30">
+                                <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom mb-30" v-for="funko in funkos">
                                     <div class="ht-product-inner">
                                         <div class="ht-product-image-wrap">
                                             <a href="product-details.html" class="ht-product-image"> <img
-                                                    src="assets/img/product/product-1.svg"
+                                                    :src='funko.img'
                                                     alt="Universal Product Style">
                                             </a>
                                             <div class="ht-product-action">
@@ -544,27 +544,28 @@
                                         </div>
                                         <div class="ht-product-content">
                                             <div class="ht-product-content-inner">
-                                                <div class="ht-product-categories"><a href="#">Categoria</a></div>
-                                                <h4 class="ht-product-title"><a href="product-details.html">Funko</a>
+                                                <div class="ht-product-categories"><a href="#">{{funko.category}}</a></div>
+                                                <h4 class="ht-product-title"><a href="product-details.html">{{funko.name}}</a>
                                                 </h4>
                                                 <div class="ht-product-price">
-                                                    <span class="new">$65.00</span>
-                                                    <span class="old">$80.00</span>
+                                                    <span class="new">${{funko.discount}}</span>
+                                                    <span class="old">${{funko.price}}</span>
                                                 </div>
                                                 <div class="ht-product-ratting-wrap">
                                                     <span class="ht-product-ratting">
+                                                        <p class="text-light">Stock: {{funko.stock}}</p>
                                                         <span class="ht-product-user-ratting" style="width: 100%;">
+                                                            <!-- <i class="sli sli-star"></i>
                                                             <i class="sli sli-star"></i>
                                                             <i class="sli sli-star"></i>
                                                             <i class="sli sli-star"></i>
-                                                            <i class="sli sli-star"></i>
-                                                            <i class="sli sli-star"></i>
+                                                            <i class="sli sli-star"></i> -->
                                                         </span>
+                                                        <!-- <i class="sli sli-star"></i>
                                                         <i class="sli sli-star"></i>
                                                         <i class="sli sli-star"></i>
                                                         <i class="sli sli-star"></i>
-                                                        <i class="sli sli-star"></i>
-                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i> -->
                                                     </span>
                                                 </div>
                                             </div>

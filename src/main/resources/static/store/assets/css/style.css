@@ -4379,6 +4379,7 @@ textarea:focus {
 
 .ht-products .ht-product .ht-product-inner .ht-product-image-wrap .ht-product-image img {
   width: 100%;
+  height: 20rem;
   -ms-flex-item-align: start;
   align-self: flex-start;
 }
