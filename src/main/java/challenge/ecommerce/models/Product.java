@@ -17,21 +17,22 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
-    private long id;
+    private Long id;
 
-    private String img, description, name, tag;
-
+    private String img;
+    private String description;
+    private String name;
+    private String tag;
     private double price;
-
     private long stock;
-
     private Category category;
+    private Integer discount;
+    private boolean deleted;
 
-    @OneToMany(mappedBy = "product", fetch=FetchType.EAGER)
-    private Set<Purchase> purchase = new HashSet<>();
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+    private Set<PurchaseProduct> purchaseProducts = new HashSet<>();
 
-    public Product(){};
-
+    public Product(){}
     public Product(String img, String description, String name, double price, long stock, Category category, String tag) {
         this.img = img;
         this.description = description;
@@ -40,6 +41,8 @@ public class Product {
         this.stock = stock;
         this.category = category;
         this.tag = tag;
+        this.discount = 0;
+        this.deleted = false;
     }
 
 }
