@@ -1,9 +1,10 @@
 package challenge.ecommerce.dtos;
 
 import challenge.ecommerce.models.Address;
+import lombok.Data;
 import lombok.Getter;
 
-@Getter
+@Data
 public class AddressDTO {
 
     private long id;

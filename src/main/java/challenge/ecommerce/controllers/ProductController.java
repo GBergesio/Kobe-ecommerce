@@ -1,6 +1,6 @@
 package challenge.ecommerce.controllers;
 
-import challenge.ecommerce.dtos.ProductAplicationDto;
+import challenge.ecommerce.dtos.ProductApplicationDto;
 import challenge.ecommerce.dtos.ProductDto;
 import challenge.ecommerce.enums.Category;
 import challenge.ecommerce.models.Product;
@@ -8,7 +8,6 @@ import challenge.ecommerce.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.stream.Collectors;
@@ -31,15 +30,16 @@ public class ProductController {
                 HttpStatus.OK);
     }
     @PostMapping("/products")
-    public ResponseEntity<?> add(@RequestBody ProductAplicationDto productAplicationDto){
-        if(productAplicationDto.isSomePropertyNull()){
+    public ResponseEntity<?> add(@RequestBody ProductApplicationDto productApplicationDto){
+        if(productApplicationDto.isSomePropertyNull()){
             return new ResponseEntity<>("Missing data", HttpStatus.FORBIDDEN);
         }
-        if(productAplicationDto.getPrice() <=0){
+        if(productApplicationDto.getPrice() <= 0){
             return new ResponseEntity<>("the price cannot be negative",HttpStatus.FORBIDDEN);
         }
+        //validar q se pueda construir un enum Category a partir del string provisto en productAplicationDto
 
-        productService.create(productAplicationDto);
+        productService.create(productApplicationDto);
         return new ResponseEntity<>("Product added successfully", HttpStatus.CREATED);
     }
     @PatchMapping ("/products")

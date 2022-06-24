@@ -18,13 +18,13 @@ public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
-    private long id;
+    private Long id;
 
     private LocalDateTime purchaseDate;
 
     private String address;
 
-    private int zipCode;
+    private Integer zipCode;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="client_id")
@@ -34,7 +34,7 @@ public class Purchase {
     private Set<PurchaseProduct> purchaseProducts = new HashSet<>();
 
     public Purchase(){}
-    public Purchase(LocalDateTime purchaseDate, String address, int zipCode) {
+    public Purchase(LocalDateTime purchaseDate, String address, Integer zipCode) {
         this.purchaseDate = purchaseDate;
         this.address = address;
         this.zipCode = zipCode;

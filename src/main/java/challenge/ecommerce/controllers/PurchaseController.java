@@ -1,5 +1,6 @@
 package challenge.ecommerce.controllers;
 
+import challenge.ecommerce.dtos.PurchaseApplicationDto;
 import challenge.ecommerce.dtos.PurchaseDto;
 import challenge.ecommerce.models.Client;
 import challenge.ecommerce.models.Product;
@@ -44,14 +45,18 @@ public class PurchaseController {
                 HttpStatus.OK);
     }
 
+
     @PostMapping("/purchases")
     @Transactional
-    public ResponseEntity<?> create(Authentication authentication, @RequestBody HashMap<Long, Integer> purchaseApplication){
+    public ResponseEntity<?> create(Authentication authentication, @RequestBody PurchaseApplicationDto purchaseApplicationDto){
         Client client = clientService.findByEmail(authentication.getName());
-        if(purchaseApplication.size() == 0){
-            return new ResponseEntity<>("Missing data", HttpStatus.FORBIDDEN);
+        if(purchaseApplicationDto.getOrders().size() == 0){
+            return new ResponseEntity<>("Missing products data", HttpStatus.FORBIDDEN);
         }
-        for (Map.Entry<Long, Integer> order : purchaseApplication.entrySet()) {
+        if(purchaseApplicationDto.getAddress().isEmpty() || purchaseApplicationDto.getZipCode().isEmpty()){
+            return new ResponseEntity<>("Missing address data", HttpStatus.FORBIDDEN);
+        }
+        for (Map.Entry<Long, Integer> order : purchaseApplicationDto.getOrders().entrySet()) {
             Product product = productService.getById(order.getKey());
             if (product == null){
                 return new ResponseEntity<>("One or many products do not exist", HttpStatus.FORBIDDEN);
@@ -61,7 +66,7 @@ public class PurchaseController {
                         HttpStatus.FORBIDDEN);
             }
         }
-        purchaseService.create(client,purchaseApplication);
+        purchaseService.create(client,purchaseApplicationDto);
         return new ResponseEntity<>("Purchase created successfully", HttpStatus.CREATED);
     }
 }

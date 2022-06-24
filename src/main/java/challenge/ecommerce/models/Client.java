@@ -22,7 +22,10 @@ public class Client {
     private long id;
 
     private boolean active;
-    private String name, lastName, email, password;
+    private String name;
+    private String lastName;
+    private String email;
+    private String password;
 
     private UserType userType;
 
@@ -51,7 +54,6 @@ public class Client {
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.active = false;
         this.userType = userType;
     }
     public void addAddress (Address address){

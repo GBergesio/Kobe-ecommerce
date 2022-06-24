@@ -1,10 +1,9 @@
 package challenge.ecommerce.dtos;
 
-import challenge.ecommerce.enums.Category;
 import lombok.Data;
 
 @Data
-public class ProductAplicationDto {
+public class ProductApplicationDto {
     private String img;
     private String description;
     private String name;
@@ -13,7 +12,7 @@ public class ProductAplicationDto {
     private Long stock;
     private String category;
 
-    public ProductAplicationDto(){}
+    public ProductApplicationDto(){}
 
     public boolean isSomePropertyNull(){
         if(this.img == null || this.description == null || this.name == null || this.tag == null

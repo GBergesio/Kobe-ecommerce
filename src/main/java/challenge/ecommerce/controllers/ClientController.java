@@ -7,6 +7,7 @@ import challenge.ecommerce.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +28,7 @@ public class ClientController {
      return new ResponseEntity<>(clientService.getClientsDTO(), HttpStatus.OK);
     }
 
+
     @GetMapping("/clients/{id}")
     ResponseEntity <?> getClientDTO(@PathVariable Long id){
         return new ResponseEntity<>(clientService.getClientDTO(id), HttpStatus.OK);
@@ -43,7 +45,7 @@ public class ClientController {
         Pattern patOnlyLetters = Pattern.compile("[a­zA­Z]");
 
         Matcher email = patEmail.matcher(registerDTO.getEmail());
-        Matcher name = patOnlyLetters.matcher(registerDTO.getName());
+        Matcher name = patOnlyLetters.matcher(registerDTO.getFirstName());
         Matcher lastName = patOnlyLetters.matcher(registerDTO.getLastName());
         Matcher password = patPassword.matcher(registerDTO.getPassword());
 
@@ -64,7 +66,7 @@ public class ClientController {
             return new ResponseEntity<>("Not a valid password", HttpStatus.FORBIDDEN);
         }
 
-        if(registerDTO.getName().isEmpty()){
+        if(registerDTO.getFirstName().isEmpty()){
             return new ResponseEntity<>("Name is empty", HttpStatus.FORBIDDEN);
         }
 
@@ -84,10 +86,14 @@ public class ClientController {
             return new ResponseEntity<>("Email is already in use", HttpStatus.FORBIDDEN);
         }
 
-        Client client = new Client(registerDTO.getName(), registerDTO.getLastName(), registerDTO.getEmail(), registerDTO.getPassword());
+        Client client = new Client(registerDTO.getFirstName(), registerDTO.getLastName(), registerDTO.getEmail(), registerDTO.getPassword());
         clientService.saveClient(client);
 
         return new ResponseEntity<>("Registered successfully, please activate your email to use your account", HttpStatus.CREATED);
+    }
+    @GetMapping("/clients/current")
+    public ResponseEntity<?> getCurrentClient(Authentication authentication){
+        return(new ResponseEntity<>(clientService.getCurrentClient(authentication),HttpStatus.ACCEPTED));
     }
 
 }

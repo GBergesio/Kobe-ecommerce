@@ -25,6 +25,7 @@ public class AddressController {
         return new ResponseEntity<>(addressService.getAddresses(), HttpStatus.OK);
     }
 
+    //falta autorizar
     @Transactional
     @PostMapping("/newAddress")
     ResponseEntity<Object> newAddress(@RequestBody AddressDTO addressDTO){

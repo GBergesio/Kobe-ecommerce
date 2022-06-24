@@ -29,24 +29,28 @@ public class EcommerceApplication {
 		return (args) -> {
 			Product product1 = new Product(
 					"https://st3.depositphotos.com/34053336/35555/i/1600/depositphotos_355551334-stock-photo-library-three-funko-pop-toys.jpg"
-			,"funko de astronauta","Buzz", 1500,10, Category.ActionFigures,"figuras");
+			,"funko de astronauta","Buzz", 1500,10, Category.ACTIONFIGURES,"figuras");
 			productRepository.save(product1);
 
 			Product product2 = new Product("url-img-2","funko de naruto","Naruto", 1800,20,
-					Category.ActionFigures,"figuras");
+					Category.ACTIONFIGURES,"figuras");
 			productRepository.save(product2);
 
 			Product product3 = new Product("url-img-3","funko de gon","Gon", 1700,30,
-					Category.ActionFigures,"figuras");
+					Category.ACTIONFIGURES,"figuras");
 			productRepository.save(product3);
 
 			Product product4 = new Product("url-img-4","Mmanga de naruto tomo 6","Manga de naruto", 1000,16,
-					Category.Manga,"mangas");
+					Category.MANGA,"mangas");
 			productRepository.save(product4);
 
 			Product product5 = new Product("url-img-5","Manga de hxh tomo 9","Manga de Gon", 1000,24,
-					Category.Manga,"mangas");
+					Category.MANGA,"mangas");
 			productRepository.save(product5);
+
+			Product product6 = new Product("url-img-6","Comic de superman vs godzila","Comic de superman vol 4",
+					1100,14, Category.COMIC,"comics");
+			productRepository.save(product6);
 
 			Client admin = new Client("admin", "admin","admin@kobestore.com", passwordEncoder.encode("123"),UserType.ADMIN);
 			clientRepository.save(admin);
