@@ -19,30 +19,32 @@ public class Product {
     @GenericGenerator(name = "native", strategy = "native")
     private Long id;
 
-    private String img;
-    private String description;
     private String name;
-    private String tag;
+    private String description;
+    private String img;
+    private Short stock;
     private Double price;
-    private Long stock;
+    private Byte discount;
+    private String serie;
     private Category category;
-    private Integer discount;
+    private String subcategory;
     private boolean deleted;
 
 //    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
 //    private Set<PurchaseProduct> purchaseProducts = new HashSet<>();
 
     public Product(){}
-    public Product(String img, String description, String name, Double price, Long stock, Category category, String tag) {
-        this.img = img;
-        this.description = description;
+
+    public Product(String name, String description, String img, Short stock, Double price, String serie, Category category, String subcategory) {
         this.name = name;
-        this.price = price;
+        this.description = description;
+        this.img = img;
         this.stock = stock;
+        this.price = price;
+        this.discount = 15;
+        this.serie = serie;
         this.category = category;
-        this.tag = tag;
-        this.discount = 0;
+        this.subcategory = subcategory;
         this.deleted = false;
     }
-
 }

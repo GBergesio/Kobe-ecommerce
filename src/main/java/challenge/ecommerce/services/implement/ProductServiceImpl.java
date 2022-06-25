@@ -30,8 +30,8 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void create(ProductApplicationDto productApplicationDto) {
         productRepository.save(new Product(productApplicationDto.getImg(), productApplicationDto.getDescription(),
-                productApplicationDto.getName(), productApplicationDto.getPrice(), productApplicationDto.getStock(),
-                Category.valueOf(productApplicationDto.getCategory()), productApplicationDto.getTag()));
+                productApplicationDto.getName(), productApplicationDto.getStock(), productApplicationDto.getPrice(),
+                productApplicationDto.getSubcategory(), Category.valueOf(productApplicationDto.getCategory()), productApplicationDto.getSerie()));
     }
 
     @Override

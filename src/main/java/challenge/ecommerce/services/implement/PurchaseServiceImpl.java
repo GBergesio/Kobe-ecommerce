@@ -16,7 +16,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -33,13 +32,13 @@ public class PurchaseServiceImpl implements PurchaseService {
     private ClientService clientService;
     @Override
     public void create(Client client, PurchaseApplicationDto purchaseApplicationDto) {
-        Purchase purchase = purchaseRepository.save(new Purchase(LocalDateTime.now(),
+        Purchase purchase = purchaseRepository.save(new Purchase( purchaseApplicationDto.getTotalAmount(),purchaseApplicationDto.getTypePayment(),LocalDateTime.now(),
                 purchaseApplicationDto.getAddress(), Integer.valueOf(purchaseApplicationDto.getZipCode())));
 
         for (Map.Entry<Long, Integer> order : purchaseApplicationDto.getOrders().entrySet()) {
             Product product = productService.getById(order.getKey());
             purchaseProductRepository.save(new PurchaseProduct(purchase, product, order.getValue()));
-            product.setStock(product.getStock() - order.getValue());
+            product.setStock((short)(product.getStock() - order.getValue()));
             productService.save(product);
 //            purchase.addPurchaseProduct(purchaseProduct);
         }
