@@ -59,7 +59,7 @@ public class EcommerceApplication {
 			Product product10 = new Product("Funko POP! Thor Gold","Figura de Thor Gold en vinilo de 10 cm","https://i.ibb.co/2ZNLfWd/212275-800-auto.webp", (short) 12,5999.0,"Marvel", Category.ACTIONFIGURES, "Funko POP!");
 			productRepository.save(product10);
 
-			//Stataic Figures
+			//Static Figures
 			Product product11 = new Product("Marvel Series - Winter Soldier","Figura estatica de Winter Soldier de 20 cm de altura","https://i.ibb.co/hdx9bNN/entrega-011-P24032-9a-marvel-figurines-1647803149626.webp", (short) 7,6999.0,"Marvel", Category.ACTIONFIGURES, "Static Figures");
 			productRepository.save(product11);
 			Product product12 = new Product("Marvel Series - War Machine","Figura estatica de War Machine de 20 cm de altura","https://i.ibb.co/7nJjFk3/entrega-011-P24031-marvel-figurines-entrega31a-maquina-guerra-1647287255924.webp", (short) 11,6999.0,"Marvel", Category.ACTIONFIGURES, "Static Figures");
@@ -78,7 +78,7 @@ public class EcommerceApplication {
 			productRepository.save(product18);
 			Product product19 = new Product("Marvel Series - Black Panther","Figura estatica de Black Panther de 20 cm de altura","https://i.ibb.co/S076Dbp/entrega-011-P24028-Marvel-Movie-Collection-entrega51-erik-killmonger-a-1654370239943.webp", (short) 8,6999.0,"Marvel", Category.ACTIONFIGURES, "Static Figures");
 			productRepository.save(product19);
-			Product product20 = new Product("Marvel Series - Vison","Figura estatica de Vision de 20 cm de altura","https://i.ibb.co/yQ6f1Cj/entrega-011-P24027-19a-marvel-figurines-1652632580845.webp", (short) 13,6999.0,"Marvel", Category.ACTIONFIGURES, "Static Figures");
+			Product product20 = new Product("Marvel Series - Vison","Figura estatica de Vision de 20 cm de altura","https://i.ibb.co/yQ6f1Cj/entrega-011-P24027-19a-marvel-figurines-1652632580845.webp", (short) 13,6999.0,"Marvel", Category.git add , "Static Figures");
 			productRepository.save(product20);
 		};
 	}

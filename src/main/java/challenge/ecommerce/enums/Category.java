@@ -6,4 +6,5 @@ public enum Category {
     BAZAR,
     CLOTHES,
     GAMES,
+    COVERS
 }
