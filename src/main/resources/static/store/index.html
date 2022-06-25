@@ -52,40 +52,40 @@
                                             <li class="angle-shape"><a href="shop.html"> Categorías <span>new</span>
                                                 </a>
                                                 <ul class="mega-menu">
-                                                    <li><a class="menu-title" href="#">reemplazar</a>
+                                                    <li><a class="menu-title" href="#">Libreria</a>
                                                         <ul>
-                                                            <li><a href="shop.html">Remeras</a></li>
-                                                            <li><a href="shop.html">Hoodies</a></li>
-                                                            <li><a href="shop.html">Camperas</a></li>
-                                                            <li><a href="shop.html">Otros</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a class="menu-title" href="#">Shop Layout</a>
-                                                        <ul>
-                                                            <li><a href="shop-list-style1.html">Mangas</a></li>
-                                                            <li><a href="shop-list-style2.html">Magazines</a></li>
-                                                            <li><a href="shop-list-style3.html">Colecciones
-                                                                    completas</a>
-                                                            </li>
-                                                            <li><a href="shop-list-fullwide.html">list full wide</a>
-                                                            </li>
+                                                            <li><a href="shop.html">Mangas</a></li>
+                                                            <li><a href="shop.html">Magazines</a></li>
+                                                            <li><a href="shop.html">Comics</a></li>
+                                                            <li><a href="shop.html">Colecciones Completas</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a class="menu-title" href="#">Coleccionables</a>
                                                         <ul>
-                                                            <li><a href="product-details.html">Funko Pops</a></li>
-                                                            <li><a href="product-details-tab-2.html">Articulados</a>
-                                                            </li>
-                                                            <li><a href="product-details-tab-3.html">Estáticos</a></li>
-                                                            <li><a href="product-details-gallery.html"></a></li>
+                                                            <li><a href="shop-list-style1.html">Funko Pops</a></li>
+                                                            <li><a href="shop-list-style2.html">Articulados</a></li>
+                                                            <li><a href="shop-list-style3.html">Estáticos</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a class="menu-title" href="#">Bazar</a>
+                                                    <li><a class="menu-title" href="#">Bazar y juegos</a>
                                                         <ul>
-                                                            <li><a href="product-details-sticky.html">Tazas</a></li>
-                                                            <li><a href="product-details-sticky-right.html">Llaveros</a>
+                                                            <li><a href="product-details.html">Tazas</a></li>
+                                                            <li><a href="product-details-tab-2.html">Llaveros</a>
                                                             </li>
-                                                            <li><a href="product-details-slider-box.html">Fundas</a>
+                                                            <li><a href="product-details-tab-3.html">Mouse pad</a></li>
+                                                            <li><a href="product-details-gallery.html">Juegos de
+                                                                    mesa</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a class="menu-title" href="#">Fundas</a>
+                                                        <ul>
+                                                            <li><a href="product-details-sticky.html">Iphone 11</a></li>
+                                                            <li><a href="product-details-sticky-right.html">Iphone
+                                                                    11</a>
+                                                            </li>
+                                                            <li><a href="product-details-slider-box.html">Iphone 12</a>
+                                                            </li>
+                                                            <li><a href="product-details-slider-box.html">Iphone 13</a>
                                                             </li>
                                                         </ul>
                                                     </li>
@@ -120,7 +120,7 @@
                                                 <span class="count-style">{{cartStorage.length}}</span>
                                             </span>
                                             <span class="cart-price">
-                                                $320.00
+                                                ${{sumPrice}}
                                             </span>
                                         </button>
                                         <div class="shopping-cart-content">
@@ -130,23 +130,57 @@
                                             </div>
                                             <ul>
                                                 <li class="single-shopping-cart" v-for="productCart in cartStorage">
-                                                    <div class="shopping-cart-img">
-                                                        <a href="#"><img alt="" :src='productCart.img'></a>
+                                                    <div class="shopping-cart-img col-6">
+                                                        <img :alt='productCart.name' :src='productCart.img'>
                                                         <div class="item-close">
-                                                            <button @click="deleteProductCart(productCart)"><a><i class="sli sli-close"></i></a></button>
+                                                            <button @click="deleteProductCart(productCart)"><a><i
+                                                                        class="sli sli-close"></i></a></button>
                                                         </div>
                                                     </div>
-                                                    <div class="shopping-cart-title">
+                                                    <div class="shopping-cart-title col-6">
                                                         <h4><a href="#">{{productCart.name}}</a></h4>
-                                                        <span>1 x ${{productCart.price}}</span>
+                                                        <span>{{productCart.quantity}} x ${{productCart.price}}</span>
+                                                        <div class="row">
+                                                            <button class="cssbuttons-io-button-disabled mb-2"
+                                                                v-show="productCart.quantity == productCart.stock">
+                                                                <span class="text-light">Agregar</span>
+                                                            </button>
+                                                            <button class="cssbuttons-io-button mb-2"
+                                                                @click="sumCart(productCart)"
+                                                                v-show="productCart.quantity < productCart.stock">
+                                                                <span class="text-light">Agregar</span>
+                                                            </button>
+                                                            <button class="cssbuttons-io-buttonRemove-disabled"
+                                                                v-show="productCart.quantity == 1">
+                                                                <span class="text-light">Remover</span>
+                                                            </button>
+                                                            <button class="cssbuttons-io-buttonRemove"
+                                                                @click="minusCart(productCart)"
+                                                                v-show="productCart.quantity > 1">
+                                                                <span class="text-light">Remover</span>
+                                                            </button>
+
+
+
+
+                                                            <!-- <button class="btn btn-primary w-25 h-25 disabled"
+                                                                v-show="productCart.quantity == productCart.stock">+</button>
+                                                            <button class="btn btn-success w-25 h-25"
+                                                                @click="sumCart(productCart)" v-show="productCart.quantity < productCart.stock">+</button>
+                                                            <button class="btn btn-danger w-25 h-25 disabled"
+                                                                v-show="productCart.quantity == 1">-</button>
+                                                            <button class="btn btn-danger w-25 h-25"
+                                                                @click="minusCart(productCart)" v-show="productCart.quantity > 1">-</button> -->
+                                                        </div>
                                                     </div>
                                                 </li>
                                             </ul>
-                                           
+
                                             <div class="shopping-cart-bottom">
                                                 <div class="shopping-cart-total">
-                                                    <h4>Total : <span class="shop-total">$260.00</span></h4>
-                                                    <button type="button" class="btn btn-danger" @click="emptyCart"><a>Vaciar carrito</a></button>
+                                                    <h4>Total : <span class="shop-total">${{sumPrice}}</span></h4>
+                                                    <button type="button" class="btn btn-danger"
+                                                        @click="emptyCart"><a>Vaciar carrito</a></button>
                                                 </div>
                                                 <div class="shopping-cart-btn btn-hover text-center">
 
@@ -231,7 +265,7 @@
                                                 <span class="count-style">02</span>
                                             </span>
                                             <span class="cart-price">
-                                                $320.00
+                                                ${{sumPrice}}
                                             </span>
                                         </button>
                                         <div class="shopping-cart-content">
@@ -971,7 +1005,10 @@
                                         src="assets/img/banner/dcComics.png" alt=""></a>
                                 <div class="banner-content banner-position-6">
                                     <h2>DC COMICS</h2>
-                                    <a href="product-details.html">Shop Now</a>
+                                    <!-- <a href="product-details.html">Shop Now</a> -->
+                                    <button id="batmanBtn">
+                                        <span>Shop Now</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
