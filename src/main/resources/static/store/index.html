@@ -120,7 +120,7 @@
                                                 <span class="count-style">{{cartStorage.length}}</span>
                                             </span>
                                             <span class="cart-price">
-                                                $320.00
+                                                ${{sumPrice}}
                                             </span>
                                         </button>
                                         <div class="shopping-cart-content">
@@ -130,23 +130,31 @@
                                             </div>
                                             <ul>
                                                 <li class="single-shopping-cart" v-for="productCart in cartStorage">
-                                                    <div class="shopping-cart-img">
-                                                        <a href="#"><img alt="" :src='productCart.img'></a>
+                                                    <div class="shopping-cart-img col-6">
+                                                        <img :alt='productCart.name' :src='productCart.img'>
                                                         <div class="item-close">
-                                                            <button @click="deleteProductCart(productCart)"><a><i class="sli sli-close"></i></a></button>
+                                                            <button @click="deleteProductCart(productCart)"><a><i
+                                                                        class="sli sli-close"></i></a></button>
                                                         </div>
                                                     </div>
-                                                    <div class="shopping-cart-title">
+                                                    <div class="shopping-cart-title col-6">
                                                         <h4><a href="#">{{productCart.name}}</a></h4>
                                                         <span>1 x ${{productCart.price}}</span>
+                                                        <div class="row">
+                                                            <button class="btn btn-warning w-25 h-25"
+                                                                @click="minimo(productCart)">-</button>
+                                                            <button class="btn btn-success w-25 h-25"
+                                                                @click="maximo(productCart)">+</button>
+                                                        </div>
                                                     </div>
                                                 </li>
                                             </ul>
-                                           
+
                                             <div class="shopping-cart-bottom">
                                                 <div class="shopping-cart-total">
-                                                    <h4>Total : <span class="shop-total">$260.00</span></h4>
-                                                    <button type="button" class="btn btn-danger" @click="emptyCart"><a>Vaciar carrito</a></button>
+                                                    <h4>Total : <span class="shop-total">${{sumPrice}}</span></h4>
+                                                    <button type="button" class="btn btn-danger"
+                                                        @click="emptyCart"><a>Vaciar carrito</a></button>
                                                 </div>
                                                 <div class="shopping-cart-btn btn-hover text-center">
 
@@ -231,7 +239,7 @@
                                                 <span class="count-style">02</span>
                                             </span>
                                             <span class="cart-price">
-                                                $320.00
+                                                ${{sumPrice}}
                                             </span>
                                         </button>
                                         <div class="shopping-cart-content">
@@ -971,7 +979,10 @@
                                         src="assets/img/banner/dcComics.png" alt=""></a>
                                 <div class="banner-content banner-position-6">
                                     <h2>DC COMICS</h2>
-                                    <a href="product-details.html">Shop Now</a>
+                                    <!-- <a href="product-details.html">Shop Now</a> -->
+                                    <button id="batmanBtn">
+                                        <span>Shop Now</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
