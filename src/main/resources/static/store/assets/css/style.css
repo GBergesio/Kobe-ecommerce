@@ -9887,7 +9887,7 @@ h3.cart-page-title {
   background-color: transparent;
   text-align: center;
   color: #fff;
-  background-color: #1f2226;
+  background-color:  var(--torch-red);
   display: block;
   width: 100%;
   text-transform: uppercase;
@@ -9903,7 +9903,7 @@ h3.cart-page-title {
 }
 
 .contact-from button:hover {
-  background-color: #ff3535;
+  background-color: var(--electric-blue);
 }
 
 .contact-map #map {
