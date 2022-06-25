@@ -1,6 +1,6 @@
 package challenge.ecommerce.services;
 
-import challenge.ecommerce.dtos.ProductAplicationDto;
+import challenge.ecommerce.dtos.ProductApplicationDto;
 import challenge.ecommerce.enums.Category;
 import challenge.ecommerce.models.Product;
 
@@ -10,7 +10,7 @@ public interface ProductService {
     List<Product> getAll();
     List<Product> getByCategory(Category category);
 
-    void create(ProductAplicationDto productAplicationDto);
+    void create(ProductApplicationDto productApplicationDto);
 
     Product getById(Long id);
 

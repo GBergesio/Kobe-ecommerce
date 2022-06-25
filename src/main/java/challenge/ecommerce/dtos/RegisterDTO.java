@@ -1,17 +1,22 @@
 package challenge.ecommerce.dtos;
 
+import lombok.Data;
 import lombok.Getter;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Getter
+@Data
 public class RegisterDTO {
 
-    private String name, lastName, email, password;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
 
-    public RegisterDTO(String email, String lastName, String password, String name){
+    public RegisterDTO(){}
+    public RegisterDTO(String email, String lastName, String password, String firstName){
         this.email = email;
         this.lastName = lastName;
-        this.name = name;
+        this.firstName = firstName;
         this.password = password;
     }
 }

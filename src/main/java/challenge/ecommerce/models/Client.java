@@ -20,9 +20,16 @@ public class Client {
     private long id;
 
     private boolean active;
-    private String name, lastName, password;
+
+    //Nico que pingo es esto
     @Column(unique = true)
     private String email;
+
+    private String name;
+    private String lastName;
+
+    private String password;
+
     private UserType userType;
 
     private long dni;
@@ -36,15 +43,12 @@ public class Client {
     @OneToMany(mappedBy = "client", fetch=FetchType.EAGER)
     private Set<Address> addresses = new HashSet<>();
 
-    public Client(){};
 
-    public Client(String name, String lastName, String email, String password) {
-        this.name = name;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.userType = UserType.CLIENT;
-    }
+    @OneToMany(mappedBy = "user")
+    private Set<SecureToken> tokens = new HashSet<>();
+
+
+    public Client(){};
     public Client(String name, String lastName, String email, String password, UserType userType) {
         this.name = name;
         this.lastName = lastName;

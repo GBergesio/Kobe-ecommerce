@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.security.PublicKey;
 import java.time.LocalDateTime;
 
 @Entity
@@ -23,6 +24,7 @@ public class Post {
     @JoinColumn(name="client_id")
     private Client client;
 
+    public Post(){}
     public Post(String text, String title, LocalDateTime postDate) {
         this.text = text;
         this.title = title;
