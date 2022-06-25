@@ -13,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.HashMap;
 import java.util.List;
 
 @SpringBootApplication
@@ -27,30 +28,16 @@ public class EcommerceApplication {
 	@Bean
 	public CommandLineRunner initData(ProductRepository productRepository, ClientRepository clientRepository) {
 		return (args) -> {
+			//category: ACTIONFIGURES, tag: funkoPop
 			Product product1 = new Product(
-					"https://st3.depositphotos.com/34053336/35555/i/1600/depositphotos_355551334-stock-photo-library-three-funko-pop-toys.jpg"
-			,"funko de astronauta","Buzz", 1500D,10L, Category.ACTIONFIGURES,"figuras");
+					"url",
+					"description",
+					"name", 5000D,
+					100,
+					Category.ACTIONFIGURES,
+					"funkoPop"
+			);
 			productRepository.save(product1);
-
-			Product product2 = new Product("url-img-2","funko de naruto","Naruto", 1800D,20L,
-					Category.ACTIONFIGURES,"figuras");
-			productRepository.save(product2);
-
-			Product product3 = new Product("url-img-3","funko de gon","Gon", 1700D,30L,
-					Category.ACTIONFIGURES,"figuras");
-			productRepository.save(product3);
-
-			Product product4 = new Product("url-img-4","Mmanga de naruto tomo 6","Manga de naruto", 1000D,16L,
-					Category.MANGA,"mangas");
-			productRepository.save(product4);
-
-			Product product5 = new Product("url-img-5","Manga de hxh tomo 9","Manga de Gon", 1000D,24L,
-					Category.MANGA,"mangas");
-			productRepository.save(product5);
-
-			Product product6 = new Product("url-img-6","Comic de superman vs godzila","Comic de superman vol 4",
-					1100D,14L, Category.COMIC,"comics");
-			productRepository.save(product6);
 
 			Client admin = new Client("admin", "admin","admin@kobestore.com", passwordEncoder.encode("123"),UserType.ADMIN);
 			clientRepository.save(admin);
@@ -59,4 +46,5 @@ public class EcommerceApplication {
 			clientRepository.save(client);
 		};
 	}
+
 }

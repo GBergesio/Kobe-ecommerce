@@ -24,15 +24,13 @@ public class Product {
     private String name;
     private String tag;
     private Double price;
-    private Long stock;
+    private Integer stock;
     private Category category;
-    private Integer discount;
+    private Byte discount;
     private boolean deleted;
 
-//    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
-//    private Set<PurchaseProduct> purchaseProducts = new HashSet<>();
     public Product(){}
-    public Product(String img, String description, String name, Double price, Long stock, Category category, String tag) {
+    public Product(String img, String description, String name, Double price, Integer stock, Category category, String tag) {
         this.img = img;
         this.description = description;
         this.name = name;

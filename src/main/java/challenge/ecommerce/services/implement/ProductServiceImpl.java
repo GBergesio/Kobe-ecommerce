@@ -50,32 +50,4 @@ public class ProductServiceImpl implements ProductService {
         productRepository.save(product);
     }
 
-//    @Override
-//    public boolean existProperty(String propertyName) {
-//        String lowerCaseProperty = propertyName.toLowerCase();
-////        private Category category;
-//        boolean exist = false;
-//        switch (lowerCaseProperty){
-//            case "img":
-//                exist = true;
-//                break;
-//            case "description":
-//                exist = true;
-//                break;
-//            case "name":
-//                exist = true;
-//                break;
-//            case "tag":
-//                exist = true;
-//                break;
-//            case "price":
-//                exist = true;
-//                break;
-//            case "":
-//                exist = true;
-//                break;
-//
-//        }
-//        return false;
-//    }
 }

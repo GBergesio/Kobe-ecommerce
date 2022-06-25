@@ -7,13 +7,14 @@ import lombok.Data;
 @Data
 public class ProductDto {
     private Long id;
+    private Category category;
+    private String tag;
+    private String name;
     private String img;
     private String description;
-    private String name;
-    private String tag;
     private Double price;
-    private Long stock;
-    private Category category;
+    private Integer stock;
+    private Byte discount;
 
     public ProductDto(){}
     public ProductDto(Product product){
@@ -25,5 +26,6 @@ public class ProductDto {
         this.price = product.getPrice();
         this.stock = product.getStock();
         this.category = product.getCategory();
+        this.discount = product.getDiscount();
     }
 }

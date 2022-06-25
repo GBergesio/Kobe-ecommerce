@@ -9,7 +9,7 @@ public class ProductApplicationDto {
     private String name;
     private String tag;
     private Double price;
-    private Long stock;
+    private Integer stock;
     private String category;
 
     public ProductApplicationDto(){}
