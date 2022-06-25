@@ -8,6 +8,7 @@ import challenge.ecommerce.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.stream.Collectors;
@@ -58,12 +59,23 @@ public class ProductController {
         return new ResponseEntity<>("product has been deleted successfully", HttpStatus.OK);
     }
 
-    //maniana vemos este!
-//    @PatchMapping("/products/modify")
-//    public ResponseEntity<?> modify(@RequestParam String property){
-//        if(property.isEmpty()){
-//            return new ResponseEntity<>("Missing data", HttpStatus.FORBIDDEN);
-//        }
-//
-//    }
+
+    @PatchMapping("/products/modify")
+    public ResponseEntity<?> modify(
+            Authentication authentication,
+            @RequestParam(required = false) String price, @RequestParam(required = false) String img,
+            @RequestParam(required = false) String description, @RequestParam(required = false) String stock
+            ){
+
+        if(price == null && img == null && description == null && stock == null){
+            return new ResponseEntity<>("No property was supplied to change", HttpStatus.FORBIDDEN);
+        }
+
+        if(price.isEmpty() || img.isEmpty() || description.isEmpty() || stock.isEmpty()){
+            return new ResponseEntity<>("No property was supplied to change", HttpStatus.FORBIDDEN);
+        }
+
+        return new ResponseEntity<>("Product upgraded successfully",HttpStatus.OK);
+
+    }
 }
