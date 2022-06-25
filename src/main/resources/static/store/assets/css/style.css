@@ -2113,6 +2113,89 @@ textarea:focus {
   letter-spacing: 0.2px;
 }
 
+/* From uiverse.io by @adamgiebl */
+.cssbuttons-io-button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.3em 1.4em 0.3em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgba(20,167,62,1) 0%, rgba(102,247,113,1) 100%);
+  border: none;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+ }
+ 
+ .cssbuttons-io-button svg {
+  margin-right: 6px;
+ }
+
+ .cssbuttons-io-button-disabled {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.3em 1.4em 0.3em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgb(164, 223, 181) 0%, rgb(180, 231, 184) 100%);
+  border: none;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+ }
+ 
+ .cssbuttons-io-button-disabled svg {
+  margin-right: 6px;
+ }
+
+/* 
+///////// remove */
+.cssbuttons-io-buttonRemove {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.3em 1.4em 0.3em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgb(167, 20, 20) 0%, rgb(247, 102, 102) 100%);
+  border: none;
+  /* box-shadow: 0 0.7em 1.5em -0.5em #a7141498; */
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+ }
+ 
+ .cssbuttons-io-buttonRemove-disabled svg {
+  margin-right: 6px;
+ }
+
+ .cssbuttons-io-buttonRemove-disabled {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.3em 1.4em 0.3em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgb(205, 144, 144) 0%, rgb(237, 156, 156) 100%);
+  border: none;
+  /* box-shadow: 0 0.7em 1.5em -0.5em #a7141498; */
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+ }
+ 
+ .cssbuttons-io-buttonRemove svg {
+  margin-right: 6px;
+ }
+ 
+ /* ///////// remove */ 
+
 .cart-wrap .shopping-cart-content ul li:last-child {
   margin-bottom: 0;
 }

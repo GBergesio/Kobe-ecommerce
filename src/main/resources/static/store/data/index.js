@@ -76,6 +76,10 @@ const app = Vue.createApp({
         }
     },
     created() {
+        axios.get(`/api/products`)
+        .then(data =>{
+            this.products = data
+        })
 
         this.productsCartStorage = JSON.parse(localStorage.getItem("cart"))
         if (this.productsCartStorage) {
@@ -117,7 +121,39 @@ const app = Vue.createApp({
             this.cartStorage = [];
             localStorage.removeItem("cart");
         },
+        sumCart(productCart){
+            let localS = JSON.parse(localStorage.getItem("cart"))
+            let localSCopy = [...localS]
+            let localSFilterToModify = localS.filter(product => product.id == productCart.id)
 
+            if(productCart.quantity < productCart.stock){
+                localSFilterToModify[0].quantity = ++productCart.quantity
+            }
+            else{
+                console.log("no se puede agregar mas");
+            }  
+            let localScopyFiltered = localSCopy.filter(prod => prod.id != productCart.id)
+            localScopyFiltered.push(localSFilterToModify[0])
+            localStorage.clear()
+            localStorage.setItem("cart", JSON.stringify(localScopyFiltered))
+        },
+        minusCart(productCart){
+            let localS = JSON.parse(localStorage.getItem("cart"))
+            let localSCopy = [...localS]
+            let localSFilterToModify = localS.filter(product => product.id == productCart.id)
+
+            if(productCart.quantity > 1){
+                localSFilterToModify[0].quantity = --productCart.quantity
+            }
+            else{
+                console.log("no se puede restar mas");
+            }  
+            let localScopyFiltered = localSCopy.filter(prod => prod.id != productCart.id)
+            localScopyFiltered.push(localSFilterToModify[0])
+            localStorage.clear()
+            localStorage.setItem("cart", JSON.stringify(localScopyFiltered))
+            console.log(localSFilterToModify);
+        }
 
 
 
@@ -127,59 +163,10 @@ const app = Vue.createApp({
         sumPrice() {
             let priceProducts = 0
             this.cartStorage.forEach(product => {
-                priceProducts += product.price
+                priceProducts += (product.price) * (product.quantity)
             })
             return priceProducts
         },
 
     },
 }).mount('#app')
-
-
-// no funca
-// addProd(product){
-//     let newProduct = product
-
-//     this.productsCartId = this.cartStorage.map(prod => prod.id)
-//     const addProductToCart = (array) =>{
-//         if (!this.productsCartId.includes(newProduct.id)){
-//             newProduct.quantity = 1;
-//             let productIndex = this.arrayProducts(product.id, array);
-//             newProduct.stock -=1;
-//             newProduct.subtotal = newProduct.quantity * newProduct.price
-
-//             this.cartStorage.push(newProduct);
-
-//             array[productIndex].stock = newProduct.stock;
-//             localStorage.setItem("cart", JSON.stringify(this.cartStorage));
-//             this.subtotalAct();
-//         }
-//         else{
-//             let productEx = this.cartStorage[this.searchProduct(newProduct.id)]
-
-//             let stockIndex = this.arrayProducts(product.id, array);
-//             console.log("Posicion en stock: " + stockIndex);
-
-//             if(productEx.stock != 0){
-//                 productEx.quantity +=1;
-//                 productEx.stock -=1;
-//                 productEx.subtotal = productEx.quantity * productEx.price;
-//                 array[stockIndex].stock = productEx.stock;
-//                 localStorage.setItem("cart", JSON.stringify(this.cartStorage));
-//             }
-//             else{
-//                 console.log("no hay stock, poner Swal");
-//             }
-//         }
-        
-//     }
-//     this.subtotalAct();
-// },
-// subtotalAct(){
-//     let total = 0;
-//     this.cartStorage.forEach(prod => {
-//         total += prod.subtotal
-//     })
-//     this.subtotalCart = total;
-// }
-
