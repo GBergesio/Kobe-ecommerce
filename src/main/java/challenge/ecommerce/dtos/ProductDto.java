@@ -7,25 +7,27 @@ import lombok.Data;
 @Data
 public class ProductDto {
     private Long id;
-    private Category category;
-    private String tag;
     private String name;
-    private String img;
     private String description;
+    private String img;
+    private Short stock;
     private Double price;
-    private Integer stock;
     private Byte discount;
+    private String serie;
+    private Category category;
+    private String subcategory;
 
     public ProductDto(){}
-    public ProductDto(Product product){
+    public ProductDto(Product product) {
         this.id = product.getId();
-        this.img = product.getImg();
-        this.description = product.getDescription();
         this.name = product.getName();
-        this.tag = product.getTag();
-        this.price = product.getPrice();
+        this.description = product.getDescription();
+        this.img = product.getImg();
         this.stock = product.getStock();
-        this.category = product.getCategory();
+        this.price = product.getPrice();
         this.discount = product.getDiscount();
+        this.serie = product.getSerie();
+        this.category = product.getCategory();
+        this.subcategory = product.getSubcategory();
     }
 }

@@ -1,9 +1,10 @@
 package challenge.ecommerce.enums;
 
 public enum Category {
-    MANGA,
-    COMIC,
-    STICKER,
+    BOOKSHOP,
     ACTIONFIGURES,
-    MISCELLANEOUS,
+    BAZAR,
+    CLOTHES,
+    GAMES,
+    COVERS
 }

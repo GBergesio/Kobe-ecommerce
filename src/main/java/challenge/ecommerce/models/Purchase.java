@@ -1,5 +1,6 @@
 package challenge.ecommerce.models;
 
+import challenge.ecommerce.enums.TypePayment;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,10 +21,10 @@ public class Purchase {
     @GenericGenerator(name = "native", strategy = "native")
     private Long id;
 
+    private Double totalAmount;
+    private TypePayment typePayment;
     private LocalDateTime purchaseDate;
-
     private String address;
-
     private Integer zipCode;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -34,11 +35,14 @@ public class Purchase {
     private Set<PurchaseProduct> purchaseProducts = new HashSet<>();
 
     public Purchase(){}
-    public Purchase(LocalDateTime purchaseDate, String address, Integer zipCode) {
+    public Purchase(Double totalAmount, TypePayment typePayment, LocalDateTime purchaseDate, String address, Integer zipCode) {
+        this.totalAmount = totalAmount;
+        this.typePayment = typePayment;
         this.purchaseDate = purchaseDate;
         this.address = address;
         this.zipCode = zipCode;
     }
+
 
     public void addPurchaseProduct(PurchaseProduct purchaseProduct) {
         purchaseProduct.setPurchase(this);

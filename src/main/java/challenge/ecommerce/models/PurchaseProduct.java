@@ -13,6 +13,8 @@ public class PurchaseProduct {
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
 
+    private Integer quantity;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="purchase_id")
     private Purchase purchase;
@@ -20,7 +22,7 @@ public class PurchaseProduct {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="product_id")
     private Product product;
-    private Integer quantity;
+
 
     public PurchaseProduct(){}
     public PurchaseProduct(Purchase purchase, Product product, Integer quantity){

@@ -3,7 +3,6 @@ package challenge.ecommerce.services.implement;
 import challenge.ecommerce.models.SecureToken;
 import challenge.ecommerce.repositories.SecureTokenRepository;
 import challenge.ecommerce.services.SecureTokenService;
-import lombok.Getter;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
