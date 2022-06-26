@@ -73,13 +73,11 @@ const app = Vue.createApp({
 
             productsFavStorage: [],
             productsFavId: [],
+            product: []
         }
     },
     created() {
-        axios.get(`/api/products`)
-        .then(data =>{
-            this.products = data
-        })
+        this.allProd()
 
         this.productsCartStorage = JSON.parse(localStorage.getItem("cart"))
         if (this.productsCartStorage) {
@@ -89,6 +87,14 @@ const app = Vue.createApp({
 
     },
     methods: {
+        allProd(){
+            axios.get(`/api/products`)
+            .then(data =>{
+                this.products = data
+            })
+        },
+
+
         addProductFav(product) {
             this.productsFavId = this.favStorage.map(product => product.id)
             if (!this.productsFavId.includes(product.id)) {
