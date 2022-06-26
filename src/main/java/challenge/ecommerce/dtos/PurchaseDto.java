@@ -6,6 +6,7 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 public class PurchaseDto {
@@ -26,6 +27,6 @@ public class PurchaseDto {
         this.purchaseDate = purchase.getPurchaseDate();
         this.address = purchase.getAddress();
         this.zipCode = purchase.getZipCode();
-        this.purchaseProductDtos = getPurchaseProductDtos();
+        this.purchaseProductDtos = purchase.getPurchaseProducts().stream().map(PurchaseProductDto::new).collect(Collectors.toList());
     }
 }
