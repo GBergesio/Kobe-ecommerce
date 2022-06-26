@@ -57,7 +57,8 @@ const app = Vue.createApp({
                     discount: 12500,
                     stock: 3,
                     category: "Personajes"
-                }
+                },
+                
             ],
 
             // LocalStorage Products
@@ -73,22 +74,28 @@ const app = Vue.createApp({
 
             productsFavStorage: [],
             productsFavId: [],
+            products: []
         }
     },
     created() {
-        axios.get(`/api/products`)
-        .then(data =>{
-            this.products = data
-        })
+        this.allProducts()
 
         this.productsCartStorage = JSON.parse(localStorage.getItem("cart"))
         if (this.productsCartStorage) {
             this.cartStorage = this.productsCartStorage
         }
-
+        
 
     },
     methods: {
+        allProducts(){
+            axios.get(`/api/products`)
+            .then(data => {
+                this.products = data.data
+
+                console.log(this.products);
+            })},
+
         addProductFav(product) {
             this.productsFavId = this.favStorage.map(product => product.id)
             if (!this.productsFavId.includes(product.id)) {
@@ -121,33 +128,33 @@ const app = Vue.createApp({
             this.cartStorage = [];
             localStorage.removeItem("cart");
         },
-        sumCart(productCart){
+        sumCart(productCart) {
             let localS = JSON.parse(localStorage.getItem("cart"))
             let localSCopy = [...localS]
             let localSFilterToModify = localS.filter(product => product.id == productCart.id)
 
-            if(productCart.quantity < productCart.stock){
+            if (productCart.quantity < productCart.stock) {
                 localSFilterToModify[0].quantity = ++productCart.quantity
             }
-            else{
+            else {
                 console.log("no se puede agregar mas");
-            }  
+            }
             let localScopyFiltered = localSCopy.filter(prod => prod.id != productCart.id)
             localScopyFiltered.push(localSFilterToModify[0])
             localStorage.clear()
             localStorage.setItem("cart", JSON.stringify(localScopyFiltered))
         },
-        minusCart(productCart){
+        minusCart(productCart) {
             let localS = JSON.parse(localStorage.getItem("cart"))
             let localSCopy = [...localS]
             let localSFilterToModify = localS.filter(product => product.id == productCart.id)
 
-            if(productCart.quantity > 1){
+            if (productCart.quantity > 1) {
                 localSFilterToModify[0].quantity = --productCart.quantity
             }
-            else{
+            else {
                 console.log("no se puede restar mas");
-            }  
+            }
             let localScopyFiltered = localSCopy.filter(prod => prod.id != productCart.id)
             localScopyFiltered.push(localSFilterToModify[0])
             localStorage.clear()

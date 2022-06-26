@@ -1,5 +1,5 @@
 package challenge.ecommerce.services;
-import challenge.ecommerce.services.dtos.ClientDTO;
+import challenge.ecommerce.dtos.ClientDTO;
 import challenge.ecommerce.models.Client;
 import org.springframework.security.core.Authentication;
 

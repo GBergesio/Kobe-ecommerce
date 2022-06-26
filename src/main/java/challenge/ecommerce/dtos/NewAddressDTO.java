@@ -1,4 +1,4 @@
-package challenge.ecommerce.services.dtos;
+package challenge.ecommerce.dtos;
 
 import lombok.Getter;
 

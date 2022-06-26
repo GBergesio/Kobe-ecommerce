@@ -1,6 +1,6 @@
 package challenge.ecommerce.controllers;
 
-import challenge.ecommerce.services.dtos.NewAddressDTO;
+import challenge.ecommerce.dtos.NewAddressDTO;
 import challenge.ecommerce.models.Address;
 import challenge.ecommerce.services.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;

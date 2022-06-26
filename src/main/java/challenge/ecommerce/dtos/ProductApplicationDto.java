@@ -1,4 +1,4 @@
-package challenge.ecommerce.services.dtos;
+package challenge.ecommerce.dtos;
 
 import challenge.ecommerce.enums.Category;
 import lombok.Data;

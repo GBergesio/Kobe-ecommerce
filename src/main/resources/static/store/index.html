@@ -558,7 +558,7 @@
                                     <div class="ht-product-inner">
                                         <div class="ht-product-image-wrap">
                                             <a href="product-details.html" class="ht-product-image"> <img
-                                                    :src='funko.img' alt="Universal Product Style">
+                                                    :src='funko.img' :alt="funko.name">
                                             </a>
                                             <div class="ht-product-action">
                                                 <ul>
@@ -849,8 +849,7 @@
                     <div class="arrivals-wrap scroll-zoom">
                         <div class="ht-products product-slider-active owl-carousel">
                             <!--Product Start-->
-                            <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom mb-30"
-                                v-for="funko in funkos">
+                            <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom mb-30" v-for="funko in funkos">
                                 <div class="ht-product-inner">
                                     <div class="ht-product-image-wrap">
                                         <a href="product-details.html" class="ht-product-image"> <img
@@ -865,12 +864,12 @@
                                                                 rápida</span></a>
                                                     </button>
                                                 </li>
-                                                <li><button @click="addProductFav(funko)"><a><i
+                                                <li><button @click="addProductFav()"><a><i
                                                                 class="sli sli-heart"></i><span
                                                                 class="ht-product-action-tooltip">Agregar a
                                                                 favoritos</span></a></button>
                                                 </li>
-                                                <li><button @click="addProductCart(funko)">
+                                                <li><button @click="addProductCart()">
                                                         <a><i class="sli sli-bag"></i><span
                                                                 class="ht-product-action-tooltip">Agregar al
                                                                 carrito</span></a>
