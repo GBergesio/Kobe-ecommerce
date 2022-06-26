@@ -11,6 +11,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
@@ -44,8 +48,8 @@ public class ProductController {
         return new ResponseEntity<>("Product added successfully", HttpStatus.CREATED);
     }
     @PatchMapping ("/products")
-    public ResponseEntity<?> delete(@RequestParam String id){
-
+    public ResponseEntity<?> delete(Authentication authentication, @RequestParam String id){
+        System.out.println(authentication.getAuthorities());
         if(id.isEmpty()){
             return new ResponseEntity<>("Missing data", HttpStatus.FORBIDDEN);
         }
@@ -60,22 +64,64 @@ public class ProductController {
     }
 
 
+    @Transactional
     @PatchMapping("/products/modify")
     public ResponseEntity<?> modify(
-            Authentication authentication,
+            @RequestParam String productId,
             @RequestParam(required = false) String price, @RequestParam(required = false) String img,
-            @RequestParam(required = false) String description, @RequestParam(required = false) String stock
+            @RequestParam(required = false) String description, @RequestParam(required = false) Short stock
             ){
+
+        if(productId.isEmpty()){
+            return new ResponseEntity<>("Missing produtId",HttpStatus.FORBIDDEN);
+        }
+
+        Product product = productService.getById(Long.valueOf(productId));
+        if(product == null){
+            return new ResponseEntity<>("product does not exist", HttpStatus.FORBIDDEN);
+        }
 
         if(price == null && img == null && description == null && stock == null){
             return new ResponseEntity<>("No property was supplied to change", HttpStatus.FORBIDDEN);
         }
 
-        if(price.isEmpty() || img.isEmpty() || description.isEmpty() || stock.isEmpty()){
-            return new ResponseEntity<>("No property was supplied to change", HttpStatus.FORBIDDEN);
+        if(price != null){
+            productService.updatePrice(product, Double.valueOf(price));
         }
 
+        if(img != null){
+            productService.updateImg(product, img);
+        }
+        if(description != null){
+            productService.updateDescription(product, description);
+        }
+        //manejo exepciones
+        if(stock != null){
+            if(stock > 0){
+                productService.updateStock(product, stock);
+            }
+        }
+
+        productService.save(product);
         return new ResponseEntity<>("Product upgraded successfully",HttpStatus.OK);
 
+    }
+    //recibe la palabra clave INCREASE, entonces aumenta el precio en ese porcentaje
+    //si recibe la palabra clave DECREASE, entonces disminuye el precio en base al porcentaje suministrado
+    @Transactional
+    @PatchMapping("/products/updatePrices")
+    public ResponseEntity<?> updateAll(@RequestParam Short percentage, @RequestParam String priceModifier){
+        if(percentage < 0 || percentage > 100){
+            return new ResponseEntity<>("The percentage must be between 0 and 100", HttpStatus.FORBIDDEN);
+        }
+        if(priceModifier.isEmpty()){
+            return new ResponseEntity<>("Missing price modiifier", HttpStatus.FORBIDDEN);
+        }
+        List<String> priceModifiers = Arrays.asList("INCREASE", "DECREASE");
+        if(!priceModifiers.contains(priceModifier)){
+            return new ResponseEntity<>("Price modifier invalid", HttpStatus.FORBIDDEN);
+        }
+        productService.updateAll(percentage, priceModifier);
+        return new ResponseEntity<>("The price of the products was updated successfully", HttpStatus.OK);
     }
 }

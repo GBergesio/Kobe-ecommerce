@@ -8,7 +8,6 @@ import challenge.ecommerce.core.exception.InvalidTokenException;
 import challenge.ecommerce.core.exception.UnkownIdentifierException;
 import challenge.ecommerce.data.user.ClientData;
 
-
 public interface ClientService {
 
     void register(final ClientData user) throws ClientAlreadyExistException;

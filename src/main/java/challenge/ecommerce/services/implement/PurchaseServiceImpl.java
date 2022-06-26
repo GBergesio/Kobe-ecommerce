@@ -52,8 +52,5 @@ public class PurchaseServiceImpl implements PurchaseService {
         purchaseRepository.save(purchase);
     }
 
-    @Override
-    public List<PurchaseDto> getCurrentClientPurchasesDto(Authentication authentication) {
-        return clientService.getCurrentClient(authentication).getPurchases().stream().map(PurchaseDto::new).collect(Collectors.toList());
-    }
+
 }
