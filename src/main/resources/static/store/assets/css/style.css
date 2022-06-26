@@ -6872,6 +6872,7 @@ textarea:focus {
 }
 
 .shop-top-bar .select-shoing-wrap .shop-select select {
+  color:var(--tulip-tree);
   font-size: 15px;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -7663,7 +7664,7 @@ textarea:focus {
 }
 
 .sidebar-widget .sidebar-widget-list ul li a span {
-  background-color: #eeeeee;
+  background-color: var(--torch-red);
   width: 25px;
   height: 25px;
   display: inline-block;
@@ -7678,7 +7679,7 @@ textarea:focus {
 
 .sidebar-widget .sidebar-widget-list ul li a:hover span {
   color: #fff;
-  background-color: #ff3535;
+  background-color: var(--electric-blue);
 }
 
 .sidebar-widget .sidebar-widget-archive ul li {
@@ -7704,7 +7705,7 @@ textarea:focus {
 
 .sidebar-widget .sidebar-widget-tag ul li a {
   display: inline-block;
-  background-color: #f6f6f6;
+  background-color: var(--torch-red);
   padding: 10px 17px 11px;
   line-height: 1;
 }
@@ -7716,7 +7717,7 @@ textarea:focus {
 }
 
 .sidebar-widget .sidebar-widget-tag ul li a:hover {
-  background-color: #ff3535;
+  background-color: var(--electric-blue);
   color: #fff;
 }
 
@@ -8672,7 +8673,7 @@ h3.cart-page-title {
 .cart-shiping-update-wrapper .cart-shiping-update>a,
 .cart-shiping-update-wrapper .cart-clear>button,
 .cart-shiping-update-wrapper .cart-clear>a {
-  background-color: #f2f2f2;
+  background-color: var(--torch-red);
   display: inline-block;
   font-size: 13px;
   font-weight: 600;
@@ -8704,7 +8705,7 @@ h3.cart-page-title {
 .cart-shiping-update-wrapper .cart-shiping-update>a:hover,
 .cart-shiping-update-wrapper .cart-clear>button:hover,
 .cart-shiping-update-wrapper .cart-clear>a:hover {
-  background-color: #ff3535;
+  background-color: var(--electric-blue);
   color: #fff;
 }
 
@@ -8849,7 +8850,7 @@ h3.cart-page-title {
 
 .cart-tax .tax-wrapper .tax-select-wrapper button.cart-btn-2,
 .discount-code-wrapper .tax-wrapper .tax-select-wrapper button.cart-btn-2 {
-  background-color: #1f2226;
+  background-color: var(--torch-red);
   border: medium none;
   color: #fff;
   cursor: pointer;
@@ -8863,7 +8864,7 @@ h3.cart-page-title {
 
 .cart-tax .tax-wrapper .tax-select-wrapper button.cart-btn-2:hover,
 .discount-code-wrapper .tax-wrapper .tax-select-wrapper button.cart-btn-2:hover {
-  background-color: #ff3535;
+  background-color: var(--electric-blue);
 }
 
 .cart-tax .discount-code,
@@ -8887,7 +8888,7 @@ h3.cart-page-title {
 
 .cart-tax .discount-code form button.cart-btn-2,
 .discount-code-wrapper .discount-code form button.cart-btn-2 {
-  background-color: #1f2226;
+  background-color: var(--torch-red);
   border: medium none;
   color: #fff;
   cursor: pointer;
@@ -8901,7 +8902,7 @@ h3.cart-page-title {
 
 .cart-tax .discount-code form button.cart-btn-2:hover,
 .discount-code-wrapper .discount-code form button.cart-btn-2:hover {
-  background-color: #ff3535;
+  background-color: var(--electric-blue);
 }
 
 .grand-totall {
@@ -9021,7 +9022,7 @@ h3.cart-page-title {
 }
 
 .grand-totall a {
-  background-color: #1f2226;
+  background-color: var(--torch-red);
   color: #fff;
   display: block;
   font-size: 13px;
@@ -9033,7 +9034,7 @@ h3.cart-page-title {
 }
 
 .grand-totall a:hover {
-  background-color: #ff3535;
+  background-color: var(--electric-blue);
 }
 
 @media only screen and (max-width: 767px) {
@@ -10034,7 +10035,7 @@ h3.cart-page-title {
   background-color: transparent;
   text-align: center;
   color: #fff;
-  background-color: #1f2226;
+  background-color:  var(--torch-red);
   display: block;
   width: 100%;
   text-transform: uppercase;
@@ -10050,7 +10051,7 @@ h3.cart-page-title {
 }
 
 .contact-from button:hover {
-  background-color: #ff3535;
+  background-color: var(--electric-blue);
 }
 
 .contact-map #map {

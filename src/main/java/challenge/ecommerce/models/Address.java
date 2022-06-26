@@ -7,14 +7,14 @@ import javax.persistence.*;
 
 @Entity
 @Data
-public class Adresse {
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
 
-    private int zipCode, streetNumber;
+    private long zipCode, streetNumber;
 
     private String floorApartment, streetName, province, locality;
 
@@ -22,7 +22,8 @@ public class Adresse {
     @JoinColumn(name="client_id")
     private Client client;
 
-    public Adresse(int zipCode, int streetNumber, String floorApartment, String streetName, String province, String locality) {
+    public Address(){}
+    public Address(long zipCode, long streetNumber, String floorApartment, String streetName, String province, String locality) {
         this.zipCode = zipCode;
         this.streetNumber = streetNumber;
         this.floorApartment = floorApartment;
