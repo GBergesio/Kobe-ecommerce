@@ -1,6 +1,6 @@
 package challenge.ecommerce.services;
 
-import challenge.ecommerce.dtos.AddressDTO;
+import challenge.ecommerce.services.dtos.AddressDTO;
 import challenge.ecommerce.models.Address;
 
 import java.util.List;

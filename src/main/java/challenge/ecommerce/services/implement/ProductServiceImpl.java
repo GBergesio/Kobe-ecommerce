@@ -1,6 +1,6 @@
 package challenge.ecommerce.services.implement;
 
-import challenge.ecommerce.dtos.ProductApplicationDto;
+import challenge.ecommerce.services.dtos.ProductApplicationDto;
 import challenge.ecommerce.enums.Category;
 import challenge.ecommerce.models.Product;
 import challenge.ecommerce.repositories.ProductRepository;

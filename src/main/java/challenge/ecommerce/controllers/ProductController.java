@@ -1,7 +1,7 @@
 package challenge.ecommerce.controllers;
 
-import challenge.ecommerce.dtos.ProductApplicationDto;
-import challenge.ecommerce.dtos.ProductDto;
+import challenge.ecommerce.services.dtos.ProductApplicationDto;
+import challenge.ecommerce.services.dtos.ProductDto;
 import challenge.ecommerce.enums.Category;
 import challenge.ecommerce.models.Product;
 import challenge.ecommerce.services.ProductService;

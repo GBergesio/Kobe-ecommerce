@@ -1,5 +1,5 @@
 package challenge.ecommerce.services;
-import challenge.ecommerce.dtos.ClientDTO;
+import challenge.ecommerce.services.dtos.ClientDTO;
 import challenge.ecommerce.models.Client;
 import org.springframework.security.core.Authentication;
 
@@ -9,7 +9,6 @@ import challenge.ecommerce.core.exception.ClientAlreadyExistException;
 import challenge.ecommerce.core.exception.InvalidTokenException;
 import challenge.ecommerce.core.exception.UnkownIdentifierException;
 import challenge.ecommerce.data.user.ClientData;
-import challenge.ecommerce.models.Client;
 
 public interface ClientService {
 

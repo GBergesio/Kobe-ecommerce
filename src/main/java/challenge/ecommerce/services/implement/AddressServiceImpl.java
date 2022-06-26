@@ -1,6 +1,6 @@
 package challenge.ecommerce.services.implement;
 
-import challenge.ecommerce.dtos.AddressDTO;
+import challenge.ecommerce.services.dtos.AddressDTO;
 import challenge.ecommerce.models.Address;
 import challenge.ecommerce.repositories.AddressRepository;
 import challenge.ecommerce.services.AddressService;

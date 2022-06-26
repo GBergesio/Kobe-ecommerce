@@ -1,7 +1,7 @@
 package challenge.ecommerce.services.implement;
 
-import challenge.ecommerce.dtos.PurchaseApplicationDto;
-import challenge.ecommerce.dtos.PurchaseDto;
+import challenge.ecommerce.services.dtos.PurchaseApplicationDto;
+import challenge.ecommerce.services.dtos.PurchaseDto;
 import challenge.ecommerce.models.Client;
 import challenge.ecommerce.models.Product;
 import challenge.ecommerce.models.Purchase;

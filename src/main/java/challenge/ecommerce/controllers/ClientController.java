@@ -1,7 +1,7 @@
 package challenge.ecommerce.controllers;
 
-import challenge.ecommerce.dtos.ClientDTO;
-import challenge.ecommerce.dtos.RegisterDTO;
+import challenge.ecommerce.services.dtos.ClientDTO;
+import challenge.ecommerce.services.dtos.RegisterDTO;
 import challenge.ecommerce.enums.UserType;
 import challenge.ecommerce.models.Client;
 import challenge.ecommerce.services.ClientService;

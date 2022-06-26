@@ -1,11 +1,7 @@
-package challenge.ecommerce.dtos;
+package challenge.ecommerce.services.dtos;
 
-import challenge.ecommerce.models.Address;
 import challenge.ecommerce.models.Client;
-import challenge.ecommerce.models.Post;
-import challenge.ecommerce.models.Purchase;
 import lombok.Data;
-import lombok.Getter;
 
 import java.util.HashSet;
 import java.util.Set;
