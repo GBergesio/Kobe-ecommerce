@@ -47,9 +47,8 @@ public class ProductController {
         productService.create(productApplicationDto);
         return new ResponseEntity<>("Product added successfully", HttpStatus.CREATED);
     }
-    @PatchMapping ("/products")
-    public ResponseEntity<?> delete(Authentication authentication, @RequestParam String id){
-        System.out.println(authentication.getAuthorities());
+    @PatchMapping ("/products/delete")
+    public ResponseEntity<?> delete(@RequestParam String id){
         if(id.isEmpty()){
             return new ResponseEntity<>("Missing data", HttpStatus.FORBIDDEN);
         }
@@ -62,7 +61,6 @@ public class ProductController {
         productService.delete(product);
         return new ResponseEntity<>("product has been deleted successfully", HttpStatus.OK);
     }
-
 
     @Transactional
     @PatchMapping("/products/modify")
@@ -101,7 +99,6 @@ public class ProductController {
                 productService.updateStock(product, stock);
             }
         }
-
         productService.save(product);
         return new ResponseEntity<>("Product upgraded successfully",HttpStatus.OK);
 
@@ -115,7 +112,7 @@ public class ProductController {
             return new ResponseEntity<>("The percentage must be between 0 and 100", HttpStatus.FORBIDDEN);
         }
         if(priceModifier.isEmpty()){
-            return new ResponseEntity<>("Missing price modiifier", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Missing price modifier", HttpStatus.FORBIDDEN);
         }
         List<String> priceModifiers = Arrays.asList("INCREASE", "DECREASE");
         if(!priceModifiers.contains(priceModifier)){
