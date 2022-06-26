@@ -40,7 +40,6 @@ public class PurchaseServiceImpl implements PurchaseService {
             purchaseProductRepository.save(new PurchaseProduct(purchase, product, order.getValue()));
             product.setStock((short)(product.getStock() - order.getValue()));
             productService.save(product);
-//            purchase.addPurchaseProduct(purchaseProduct);
         }
 
         purchaseRepository.save(purchase);
@@ -53,8 +52,5 @@ public class PurchaseServiceImpl implements PurchaseService {
         purchaseRepository.save(purchase);
     }
 
-    @Override
-    public List<PurchaseDto> getCurrentClientPurchasesDto(Authentication authentication) {
-        return clientService.getCurrentClient(authentication).getPurchases().stream().map(PurchaseDto::new).collect(Collectors.toList());
-    }
+
 }

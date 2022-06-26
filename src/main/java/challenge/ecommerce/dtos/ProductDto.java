@@ -16,7 +16,6 @@ public class ProductDto {
     private String serie;
     private Category category;
     private String subcategory;
-    private boolean deleted;
 
     public ProductDto(){}
     public ProductDto(Product product) {
@@ -30,6 +29,5 @@ public class ProductDto {
         this.serie = product.getSerie();
         this.category = product.getCategory();
         this.subcategory = product.getSubcategory();
-        this.deleted = product.isDeleted();
     }
 }

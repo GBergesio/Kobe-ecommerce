@@ -97,4 +97,5 @@ public class ClientController {
         return(new ResponseEntity<>(new ClientDTO(clientService.getCurrentClient(authentication)),HttpStatus.ACCEPTED));
     }
 
+
 }

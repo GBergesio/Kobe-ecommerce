@@ -1,10 +1,12 @@
 package challenge.ecommerce.services.implement;
 
+
 import challenge.ecommerce.context.AccountVerificationEmailContext;
 import challenge.ecommerce.core.exception.ClientAlreadyExistException;
 import challenge.ecommerce.core.exception.InvalidTokenException;
 import challenge.ecommerce.core.exception.UnkownIdentifierException;
 import challenge.ecommerce.data.user.ClientData;
+import challenge.ecommerce.services.SecureTokenService;
 import challenge.ecommerce.dtos.ClientDTO;
 import challenge.ecommerce.models.Client;
 import challenge.ecommerce.models.SecureToken;
@@ -12,7 +14,6 @@ import challenge.ecommerce.repositories.ClientRepository;
 import challenge.ecommerce.repositories.SecureTokenRepository;
 import challenge.ecommerce.services.ClientService;
 import challenge.ecommerce.services.EmailService;
-import challenge.ecommerce.services.SecureTokenService;
 import org.apache.commons.lang3.BooleanUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,6 @@ import javax.mail.MessagingException;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
-
 
 @Service
 public class ClientServiceImpl implements ClientService {

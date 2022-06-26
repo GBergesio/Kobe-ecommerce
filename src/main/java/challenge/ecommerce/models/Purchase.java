@@ -34,7 +34,6 @@ public class Purchase {
     @OneToMany(mappedBy = "purchase", fetch = FetchType.EAGER)
     private Set<PurchaseProduct> purchaseProducts = new HashSet<>();
 
-
     public Purchase(){}
     public Purchase(Double totalAmount, TypePayment typePayment, LocalDateTime purchaseDate, String address, Integer zipCode) {
         this.totalAmount = totalAmount;
@@ -49,6 +48,4 @@ public class Purchase {
         purchaseProduct.setPurchase(this);
         purchaseProducts.add(purchaseProduct);
     }
-
-
 }
