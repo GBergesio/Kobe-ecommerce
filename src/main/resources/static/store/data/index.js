@@ -286,7 +286,7 @@ const app = Vue.createApp({
       //   "category": "ACTIONFIGURES",
       //   "subcategory": "Static Figures"
       // }],
-      provincias: ["Buenos Aires","Jujuy","Salta","Chaco","Formosa","San Luis","San Juan","Mendoza","Catamarca","Sant. del Estero","Tucuman","Santa Fe","Misiones","Corrientes","Cordoba","Neuquen","Rio Negro","Tierra del Fuego","Santa Cruz","La Rioja","Entre Rios","La Pampa","Chubut"],
+      provincias: ["Buenos Aires", "Jujuy", "Salta", "Chaco", "Formosa", "San Luis", "San Juan", "Mendoza", "Catamarca", "Sant. del Estero", "Tucuman", "Santa Fe", "Misiones", "Corrientes", "Cordoba", "Neuquen", "Rio Negro", "Tierra del Fuego", "Santa Cruz", "La Rioja", "Entre Rios", "La Pampa", "Chubut"],
 
       // LocalStorage Products
       cartStorage: [],
@@ -305,6 +305,9 @@ const app = Vue.createApp({
 
       productsBack: [],
       lowStock: [],
+      funkos: [],
+      mangas: [],
+      covers: [],
       productSelect: {},
       offMessage: ' 15% OFF'
 
@@ -316,10 +319,9 @@ const app = Vue.createApp({
         this.productsBack = data.data
 
         this.productsLowStock()
-
-        console.log("del back", this.productsBack);
-        console.log("del front",this.products);
-
+        this.funkoFilter()
+        this.coversFilter()
+        this.mangasFilter()
       })
 
 
@@ -328,48 +330,46 @@ const app = Vue.createApp({
       this.cartStorage = this.productsCartStorage
     }
   },
-  mounted(){
-        /*-------- product-slider-active ---------*/
-      //   $('.product-slider-active').owlCarousel({
-      //     loop: true,
-      //     nav: false,
-      //     autoplay: false,
-      //     autoplayTimeout: 5000,
-      //     animateOut: 'fadeOut',
-      //     animateIn: 'fadeIn',
-      //     item: 4,
-      //     margin: 30,
-      //     responsive: {
-      //         0: {
-      //             items: 1
-      //         },
-      //         576: {
-      //             items: 2
-      //         },
-      //         768: {
-      //             items: 2
-      //         },
-      //         992: {
-      //             items: 3
-      //         },
-      //         1200: {
-      //             items: 4
-      //         }
-      //     }
-      // })
+  mounted() {
   },
   methods: {
-    productForModal(product){
+    productForModal(product) {
       this.productSelect = product
       return this.productSelect.name
     },
-
     productsLowStock() {
       let prodLowStockVar = this.productsBack
       this.lowStock = []
       prodLowStockVar.forEach(product => {
         if (product.stock <= 5) {
           this.lowStock.push(product)
+        }
+      })
+    },
+    funkoFilter() {
+      let products = this.productsBack
+      this.funkos = []
+      products.forEach(product => {
+        if (product.subcategory === "Funko POP!") {
+          this.funkos.push(product)
+        }
+      })
+    },
+    coversFilter() {
+      let products = this.productsBack
+      this.covers = []
+      products.forEach(product => {
+        if (product.subcategory === "Funda celular") {
+          this.covers.push(product)
+        }
+      })
+    },
+    mangasFilter() {
+      let products = this.productsBack
+      this.mangas = []
+      products.forEach(product => {
+        if (product.subcategory === "Static Figures") {
+          this.mangas.push(product)
         }
       })
     },
