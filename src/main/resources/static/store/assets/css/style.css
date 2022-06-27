@@ -2275,21 +2275,6 @@ textarea:focus {
   background-color: var(--tulip-tree);
 }
 
-.cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-btn a:first-child {
-  background-color: var(--torch-red);
-  border: 1px solid var(--torch-red);
-}
-
-.cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-btn a:nth-child(2) {
-  background-color: var(--tulip-tree);
-  border: 1px solid var(--tulip-tree);
-}
-
-.cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-btn a:last-child {
-  background-color: #00ae3a;
-  border: 1px solid  #00ae3a;
-}
-
 @media only screen and (min-width: 1366px) and (max-width: 1600px) {
   .cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-btn a {
     padding: 12px 40px 13px;
@@ -2330,26 +2315,6 @@ textarea:focus {
   color: #ffffff;
   border: 1px solid var(--torch-red);
 }
-
-.cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-btn a:hover:first-child {
-  background-color: #fe0000;
-  color: #ffffff;
-  border: 1px solid #fe0000;
-}
-
-.cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-btn a:hover:nth-child(2) {
-  background-color: #e9b418;
-  color: #ffffff;
-  border: 1px solid #e9b418; 
-}
-
-.cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-btn a:hover:last-child {
-  background-color: #018e30;
-  color: #ffffff;
-  border: 1px solid #018e30; 
-}
-
-
 
 .cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-btn a:last-child {
   margin-bottom: 0;
@@ -2713,6 +2678,7 @@ textarea:focus {
 .mobile-off-canvas-active .header-mobile-aside-wrap .mobile-menu-wrap .mobile-navigation nav .mobile-menu li {
   display: block;
   position: relative;
+  color: black;
 }
 
 .mobile-off-canvas-active .header-mobile-aside-wrap .mobile-menu-wrap .mobile-navigation nav .mobile-menu li.menu-item-has-children .menu-expand {
@@ -2761,7 +2727,8 @@ textarea:focus {
   position: relative;
   display: inline-block;
   padding: 10px 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
+  color: black;
 }
 
 .mobile-off-canvas-active .header-mobile-aside-wrap .mobile-menu-wrap .mobile-navigation nav .mobile-menu li ul li a {
@@ -2807,7 +2774,8 @@ textarea:focus {
   font-size: 16px;
   display: block;
   letter-spacing: 0.2px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
+  color: black;
 }
 
 .mobile-off-canvas-active .header-mobile-aside-wrap .mobile-curr-lang-wrap .single-mobile-curr-lang a i {
@@ -2841,6 +2809,7 @@ textarea:focus {
   letter-spacing: 0.2px;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  color: black!important;
 }
 
 .mobile-off-canvas-active .header-mobile-aside-wrap .mobile-curr-lang-wrap .single-mobile-curr-lang .lang-curr-dropdown ul li a:hover {
@@ -5573,7 +5542,6 @@ textarea:focus {
   margin: 0 0 0px;
   line-height: 1;
   font-weight: 500;
-  color: var(--torch-red);
 }
 
 @media only screen and (max-width: 767px) {
@@ -5590,14 +5558,12 @@ textarea:focus {
   -ms-flex-align: center;
   align-items: center;
   margin: 15px 0 26px;
-
 }
 
 .product-details-content .product-details-price span {
   font-size: 24px;
-  color: black;
+  color: #ff3535;
   font-weight: 700;
-  font-family: "Poppins";
 }
 
 .product-details-content .product-details-price span.old {
@@ -5859,7 +5825,7 @@ textarea:focus {
 .product-details-content .pro-details-quality .cart-plus-minus input.cart-plus-minus-box {
   background: transparent none repeat scroll 0 0;
   border: medium none;
-  color: rgb(0, 0, 0);
+  color: white;
   float: left;
   font-size: 14px;
   height: 60px;
@@ -5952,7 +5918,6 @@ textarea:focus {
   font-size: 15px;
   margin-right: 5px;
   font-weight: 500;
-  color: #000!important;
 }
 
 .product-details-content .pro-details-meta ul li {
@@ -5962,7 +5927,6 @@ textarea:focus {
 
 .product-details-content .pro-details-meta ul li a {
   font-size: 14px;
-  color: var(--torch-red);
 }
 
 @media only screen and (max-width: 767px) {
@@ -5972,7 +5936,7 @@ textarea:focus {
 }
 
 .product-details-content .pro-details-meta ul li a:hover {
-  color: var(--tulip-tree);
+  color: #ff3535;
 }
 
 .product-details-content .pro-details-social {
@@ -6837,7 +6801,6 @@ textarea:focus {
   margin-right: 18px;
   text-transform: uppercase;
   position: relative;
-  color: var(--electric-blue);
 }
 
 .breadcrumb-content ul li::before {
@@ -8563,7 +8526,6 @@ h3.cart-page-title {
   text-transform: uppercase;
   vertical-align: middle;
   white-space: nowrap;
-  color: black;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -8586,19 +8548,14 @@ h3.cart-page-title {
   width: 150px;
 }
 
-.cart-table-content table tbody>tr td.product-thumbnail img{
-  width: 100px;
-  height: 100px;
-}
-
 .cart-table-content table tbody>tr td.product-name {
   width: 435px;
 }
 
 .cart-table-content table tbody>tr td.product-name a {
-  font-size: 18px;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
 }
 
 .cart-table-content table tbody>tr td.product-name a:hover {
@@ -8610,10 +8567,7 @@ h3.cart-page-title {
 }
 
 .cart-table-content table tbody>tr td.product-price-cart span {
-  color: white!important;
-  font-family: "Poppins";
-  font-weight: 600;
-  font-size: 18px;
+  color: #1f2226;
 }
 
 .cart-table-content table tbody>tr td.product-quantity {
@@ -8698,15 +8652,9 @@ h3.cart-page-title {
 }
 
 .cart-table-content table tbody>tr td {
+  font-size: 16px;
   padding: 30px 0;
   text-align: center;
-  color: white!important;
-  font-family: "Poppins";
-  font-weight: 600;
-  font-size: 18px;
-}
-.product-subtotal #subto{
-  color: #018e30!important;
 }
 
 .cart-shiping-update-wrapper {
@@ -8966,7 +8914,6 @@ h3.cart-page-title {
   border: 1px solid #ebebeb;
   border-radius: 5px;
   padding: 45px 30px 50px;
-
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -9019,9 +8966,8 @@ h3.cart-page-title {
 
 .grand-totall h5 span {
   float: right;
-  font-size: 22px;
-  font-weight: 700;
-  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .grand-totall .total-shipping {
@@ -9071,14 +9017,12 @@ h3.cart-page-title {
 .grand-totall h4.grand-totall-title {
   color: #ff3535;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   margin: 0 0 25px;
-
 }
 
 .grand-totall h4.grand-totall-title span {
   float: right;
-  font-family: "Poppins";
 }
 
 .grand-totall a {
