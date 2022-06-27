@@ -53,5 +53,10 @@ public class PurchaseServiceImpl implements PurchaseService {
         purchaseRepository.save(purchase);
     }
 
+    @Override
+    public List<Purchase> getAll() {
+        return purchaseRepository.findAll();
+    }
+
 
 }
