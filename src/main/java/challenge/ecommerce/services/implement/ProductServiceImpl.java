@@ -19,7 +19,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getAll() {
-        return productRepository.findAll().stream().filter(product -> !product.isDeleted()).collect(Collectors.toList());
+        return productRepository.findAll().stream()
+                .filter(product -> !product.isDeleted() && product.getStock() > 0)
+                .collect(Collectors.toList());
     }
 
     @Override

@@ -29,6 +29,7 @@ public class Product {
     private List<String> imgs = new ArrayList<>();
     private Short stock;
     private Double price;
+    private Double lowStockPrice;
     private Double discount;
     private String serie;
     private Category category;
@@ -44,6 +45,8 @@ public class Product {
         this.imgs = imgs;
         this.stock = stock;
         this.price = price;
+        this.lowStockPrice = price * 0.85;
+        //creo q el descuento ya no deberia ir
         this.discount = 0.85;
         this.serie = serie;
         this.category = category;
