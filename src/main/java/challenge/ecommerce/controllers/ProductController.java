@@ -8,11 +8,9 @@ import challenge.ecommerce.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,6 +23,19 @@ public class ProductController {
 
     @GetMapping ("/products")
     public ResponseEntity<?> getProducts() {
+
+        productService.getAll().forEach(product -> {
+            if(product.getStock() <= 5) {
+                product.setPrice(product.getPrice() * product.getDiscount());
+                product.setDiscount(1D);
+                productService.save(product);
+            }
+            if(product.getStock() > 5){
+                product.setDiscount(0.85D);
+                productService.save(product);
+            }
+        });
+
         return new ResponseEntity<>(productService.getAll().stream().filter(product1 -> product1.getStock() > 0).map(ProductDto::new).collect(Collectors.toList()),
                 HttpStatus.OK);
     }
