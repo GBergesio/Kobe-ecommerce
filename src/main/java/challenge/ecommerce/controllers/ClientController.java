@@ -293,9 +293,25 @@ public class ClientController {
         return new ResponseEntity<>("Data edited successfully!", HttpStatus.CREATED);
     }
 
+    @Transactional
+    @PatchMapping("/deleteClient")
+    ResponseEntity<Object> deleteClient(Authentication authentication, @RequestParam String password){
+
+        Client currentClient = clientService.getCurrentClient(authentication);
+
+        if(!passwordEncoder.matches(password, currentClient.getPassword())){
+            return new ResponseEntity<>("Please enter the right password", HttpStatus.FORBIDDEN);
+        }
+
+        currentClient.setActive(false);
+        clientService.saveClient(currentClient);
+
+        return new ResponseEntity<>("Client deleted successfully!", HttpStatus.CREATED);
+    }
+
 
 
 //hacer produtos BOOKSHOP
-//borrar cliente (cliente)
+//borrar direcciones
 
 }
