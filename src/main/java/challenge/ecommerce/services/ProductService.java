@@ -22,7 +22,7 @@ public interface ProductService {
 
     void updateDescription(Product product, String description);
 
-    void updateImgs(Product product, List<String> imgs);
+    void updateImgs(Product product, String img, String imgSec);
 
     void updateStock(Product product, Short stock);
 

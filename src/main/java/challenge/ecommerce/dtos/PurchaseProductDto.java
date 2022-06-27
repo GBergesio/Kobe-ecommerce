@@ -12,6 +12,6 @@ public class PurchaseProductDto {
     public PurchaseProductDto(PurchaseProduct purchaseProduct){
         this.productName = purchaseProduct.getProduct().getName();
         this.quantity = purchaseProduct.getQuantity();
-        this.image = purchaseProduct.getProduct().getImgs().stream().findFirst().orElse(null);
+        this.image = purchaseProduct.getProduct().getImg();
     }
 }

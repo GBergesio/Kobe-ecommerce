@@ -24,9 +24,8 @@ public class Product {
     private String name;
     private String description;
 
-    @ElementCollection
-    @Column(name="imgs")
-    private List<String> imgs = new ArrayList<>();
+    private String img;
+    private String imgSec;
     private Short stock;
     private Double price;
     private Double lowStockPrice;
@@ -38,11 +37,12 @@ public class Product {
 
     public Product(){}
 
-    public Product(String name, String description, List<String> imgs, Short stock, Double price, String serie,
+    public Product(String name, String description, String img, String imgSec, Short stock, Double price, String serie,
                    Category category, String subcategory) {
         this.name = name;
         this.description = description;
-        this.imgs = imgs;
+        this.img = img;
+        this.imgSec = imgSec;
         this.stock = stock;
         this.price = price;
         this.lowStockPrice = price * 0.85;
@@ -52,8 +52,5 @@ public class Product {
         this.category = category;
         this.subcategory = subcategory;
         this.deleted = false;
-    }
-    public void addImg(String imgUrl){
-        this.imgs.add(imgUrl);
     }
 }

@@ -12,7 +12,8 @@ public class ProductDto {
     private Long id;
     private String name;
     private String description;
-    private List<String> imgs = new ArrayList<>();
+    private String img;
+    private String imgSec;
     private Short stock;
     private Double price;
     private Double lowStockPrice;
@@ -26,7 +27,8 @@ public class ProductDto {
         this.id = product.getId();
         this.name = product.getName();
         this.description = product.getDescription();
-        this.imgs = product.getImgs();
+        this.img = product.getImg();
+        this.imgSec = product.getImgSec();
         this.stock = product.getStock();
         this.price = product.getPrice();
         this.lowStockPrice = product.getLowStockPrice();
