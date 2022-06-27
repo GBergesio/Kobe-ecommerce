@@ -19,7 +19,7 @@ public class ClientDTO {
     private String email;
     private  String password;
 
-    private long dni;
+    private Long dni;
 
     private Set<PurchaseDto> purchases = new HashSet<>();
 
@@ -34,6 +34,7 @@ public class ClientDTO {
         this.lastName = client.getLastName();
         this.email = client.getEmail();
         this.password = client.getPassword();
+        this.dni = client.getDni();
 //        this.active = client.isActive();
         this.purchases = client.getPurchases().stream().map(PurchaseDto::new).collect(Collectors.toSet());
         this.addresses = client.getAddresses().stream().map(AddressDTO::new).collect(Collectors.toSet());
