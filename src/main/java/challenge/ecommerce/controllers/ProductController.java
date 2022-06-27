@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
@@ -20,6 +21,7 @@ public class ProductController {
 
     @GetMapping ("/products")
     public ResponseEntity<?> getProducts() {
+
         return new ResponseEntity<>(productService.getAll().stream().filter(product1 -> product1.getStock() > 0).map(ProductDto::new).collect(Collectors.toList()),
                 HttpStatus.OK);
     }
