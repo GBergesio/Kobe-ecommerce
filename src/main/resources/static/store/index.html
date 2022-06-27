@@ -159,18 +159,6 @@
                                                                 v-show="productCart.quantity > 1">
                                                                 <span class="text-light">Remover</span>
                                                             </button>
-
-
-
-
-                                                            <!-- <button class="btn btn-primary w-25 h-25 disabled"
-                                                                v-show="productCart.quantity == productCart.stock">+</button>
-                                                            <button class="btn btn-success w-25 h-25"
-                                                                @click="sumCart(productCart)" v-show="productCart.quantity < productCart.stock">+</button>
-                                                            <button class="btn btn-danger w-25 h-25 disabled"
-                                                                v-show="productCart.quantity == 1">-</button>
-                                                            <button class="btn btn-danger w-25 h-25"
-                                                                @click="minusCart(productCart)" v-show="productCart.quantity > 1">-</button> -->
                                                         </div>
                                                     </div>
                                                 </li>
@@ -179,13 +167,11 @@
                                             <div class="shopping-cart-bottom">
                                                 <div class="shopping-cart-total">
                                                     <h4>Total : <span class="shop-total">${{sumPrice}}</span></h4>
-                                                    <button type="button" class="btn btn-danger"
-                                                        @click="emptyCart"><a>Vaciar carrito</a></button>
                                                 </div>
                                                 <div class="shopping-cart-btn btn-hover text-center">
-
-                                                    <a class="default-btn" href="checkout.html">checkout</a>
-                                                    <a class="default-btn" href="cart-page.html">view cart</a>
+                                                    <a class="default-btn2" @click="emptyCart">Vaciar Carrito</a>
+                                                    <a class="default-btn" href="cart-page.html">Ver Carrito</a>
+                                                    <a class="default-btn" href="checkout.html">Realizar Compra</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -262,7 +248,7 @@
                                         <button class="icon-cart-active">
                                             <span class="icon-cart">
                                                 <i class="sli sli-bag"></i>
-                                                <span class="count-style">02</span>
+                                                <span class="count-style">{{cartStorage.length}}</span>
                                             </span>
                                             <span class="cart-price">
                                                 ${{sumPrice}}
@@ -270,36 +256,52 @@
                                         </button>
                                         <div class="shopping-cart-content">
                                             <div class="shopping-cart-top">
-                                                <h4>Shoping Cart</h4>
+                                                <h4>Carrito de compra</h4>
                                                 <a class="cart-close" href="#"><i class="sli sli-close"></i></a>
                                             </div>
                                             <ul>
-                                                <li class="single-shopping-cart">
+                                                <li class="single-shopping-cart" v-for="productCart in cartStorage">
                                                     <div class="shopping-cart-img">
-                                                        <a href="#"><img alt="" src="assets/img/cart/cart-1.svg"></a>
+                                                        <img :alt='productCart.name' :src='productCart.img'>
+                                                        <div class="item-close">
+                                                            <button @click="deleteProductCart(productCart)"><a><i
+                                                                        class="sli sli-close"></i></a></button>
+                                                        </div>
                                                     </div>
                                                     <div class="shopping-cart-title">
-                                                        <h4><a href="#">Product Name </a></h4>
-                                                        <span>1 x 90.00</span>
-                                                    </div>
-                                                </li>
-                                                <li class="single-shopping-cart">
-                                                    <div class="shopping-cart-img">
-                                                        <a href="#"><img alt="" src="assets/img/cart/cart-2.svg"></a>
-                                                    </div>
-                                                    <div class="shopping-cart-title">
-                                                        <h4><a href="#">Product Name</a></h4>
-                                                        <span>1 x 90.00</span>
+                                                        <h4><a href="#">{{productCart.name}}</a></h4>
+                                                        <span>{{productCart.quantity}} x ${{productCart.price}}</span>
+                                                        <div class="row">
+                                                            <button class="cssbuttons-io-button-disabled mb-2"
+                                                                v-show="productCart.quantity == productCart.stock">
+                                                                <span class="text-light">Agregar</span>
+                                                            </button>
+                                                            <button class="cssbuttons-io-button mb-2"
+                                                                @click="sumCart(productCart)"
+                                                                v-show="productCart.quantity < productCart.stock">
+                                                                <span class="text-light">Agregar</span>
+                                                            </button>
+                                                            <button class="cssbuttons-io-buttonRemove-disabled"
+                                                                v-show="productCart.quantity == 1">
+                                                                <span class="text-light">Remover</span>
+                                                            </button>
+                                                            <button class="cssbuttons-io-buttonRemove"
+                                                                @click="minusCart(productCart)"
+                                                                v-show="productCart.quantity > 1">
+                                                                <span class="text-light">Remover</span>
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </li>
                                             </ul>
                                             <div class="shopping-cart-bottom">
                                                 <div class="shopping-cart-total">
-                                                    <h4>Total : <span class="shop-total">$260.00</span></h4>
+                                                    <h4>Total : <span class="shop-total">${{sumPrice}}</span></h4>
                                                 </div>
                                                 <div class="shopping-cart-btn btn-hover text-center">
-                                                    <a class="default-btn" href="checkout.html">checkout</a>
-                                                    <a class="default-btn" href="cart-page.html">view cart</a>
+                                                    <a class="default-btn2" @click="emptyCart">Vaciar Carrito</a>
+                                                    <a class="default-btn" href="cart-page.html">Ver Carrito</a>
+                                                    <a class="default-btn" href="checkout.html">Realizar Compra</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -554,27 +556,27 @@
 
                                 <!--Product Start Funkos-->
                                 <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom mb-30"
-                                    v-for="funko in productsBack">
+                                    v-for="product in productsBack">
                                     <div class="ht-product-inner">
                                         <div class="ht-product-image-wrap">
                                             <a href="product-details.html" class="ht-product-image"> <img
-                                                    :src='funko.img' :alt="funko.name">
+                                                    :src='product.img' :alt="product.name">
                                             </a>
                                             <div class="ht-product-action">
                                                 <ul>
-                                                    <li><a href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModal"><i
-                                                                class="sli sli-magnifier"></i><span
-                                                                class="ht-product-action-tooltip">Vista
-                                                                rápida</span></a>
+                                                    <li><button @click="productForModal(product)"><a
+                                                                data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                                                    class="sli sli-magnifier"></i><span
+                                                                    class="ht-product-action-tooltip">Vista
+                                                                    rápida</span></a></button>
                                                     </li>
-                                                    <li><button @click="addProductFav(funko)">
+                                                    <li><button @click="addProductFav(product)">
                                                             <a><i class="sli sli-heart"></i><span
                                                                     class="ht-product-action-tooltip">Agregar a
                                                                     favoritos</span></a>
                                                         </button>
                                                     </li>
-                                                    <li><button @click="addProductCart(funko)">
+                                                    <li><button @click="addProductCart(product)">
                                                             <a><i class="sli sli-bag"></i><span
                                                                     class="ht-product-action-tooltip">Agregar al
                                                                     carrito</span></a>
@@ -585,37 +587,24 @@
                                         </div>
                                         <div class="ht-product-content">
                                             <div class="ht-product-content-inner">
-                                                <div class="ht-product-categories"><a href="#">{{funko.category}}</a>
+                                                <div class="ht-product-categories"><a href="#">{{product.category}}</a>
                                                 </div>
                                                 <h4 class="ht-product-title"><a
-                                                        href="product-details.html">{{funko.name}}</a>
+                                                        href="product-details.html">{{product.name}}</a>
                                                 </h4>
                                                 <div class="ht-product-price">
-                                                    <div v-show="funko.stock <5">
-                                                        <span class="new">${{(funko.price / ((funko.discount / 100 ) + 1)).toFixed(0)}}</span>
-                                                        <span class="old">${{funko.price}}</span>
+                                                    <div v-show="product.stock <= 5">
+                                                        <span class="new">${{(product.price).toFixed(0)}}</span>
+                                                        <span class="old">${{(product.price * 1.15).toFixed(0)}}</span>
                                                     </div>
-                                                    <div v-show="funko.stock >5">
-                                                        <span class="new">${{funko.price}}</span>
+                                                    <div v-show="product.stock >5">
+                                                        <span class="new">${{product.price}}</span>
                                                     </div>
-                                                    
+
                                                 </div>
                                                 <div class="ht-product-ratting-wrap">
                                                     <span class="ht-product-ratting">
-                                                        <p class="text-light">Stock: {{funko.stock}}</p>
-                                                        <span class="ht-product-user-ratting" style="width: 100%;">
-                                                            <!-- <i class="sli sli-star"></i>
-                                                            <i class="sli sli-star"></i>
-                                                            <i class="sli sli-star"></i>
-                                                            <i class="sli sli-star"></i>
-                                                            <i class="sli sli-star"></i> -->
-                                                        </span>
-                                                        <!-- <i class="sli sli-star"></i>
-                                                        <i class="sli sli-star"></i>
-                                                        <i class="sli sli-star"></i>
-                                                        <i class="sli sli-star"></i>
-                                                        <i class="sli sli-star"></i> -->
-                                                    </span>
+                                                        <p class="text-light">Stock: {{product.stock}}</p>
                                                 </div>
                                             </div>
                                             <div class="ht-product-action">
@@ -844,7 +833,7 @@
             </div>
 
 
-            <div class="product-area pt-95 pb-70">
+            <!-- <div class="product-area pt-95 pb-70">
                 <div class="container">
                     <div class="section-title text-center pb-60">
                         <h2>Ofertas</h2>
@@ -854,7 +843,7 @@
                     </div>
                     <div class="arrivals-wrap scroll-zoom">
                         <div class="ht-products product-slider-active owl-carousel">
-                            <!--Product Start-->
+
                             <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom mb-30" v-for="funko in funkos">
                                 <div class="ht-product-inner">
                                     <div class="ht-product-image-wrap">
@@ -927,12 +916,470 @@
                                     </div>
                                 </div>
                             </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="product-area pb-150 mt-4">
+                <div class="container">
+                    <div class="section-title text-center pb-60">
+                        <h2>Ofertas </h2>
+                        <p> Productos con bajo stock poseen 15% de descuento</p>
+                    </div>
+                    <div class="arrivals-wrap item-wrapper">
+                        <div class="ht-products row">
+                            <!--Product Start-->
+                            <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom toggle-item-active col-lg-3 col-md-6 col-sm-6 col-12 mb-30"
+                                v-for="product in lowStock">
+                                <div class="ht-product-inner">
+                                    <div class="ht-product-image-wrap">
+                                        <a href="product-details.html" class="ht-product-image"> <img :src="product.img"
+                                                :alt="product.name"> </a>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><button @click="productForModal(product)"><a data-bs-toggle="modal"
+                                                            data-bs-target="#exampleModal"><i
+                                                                class="sli sli-magnifier"></i><span
+                                                                class="ht-product-action-tooltip">Vista
+                                                                rápida</span></a></button>
+                                                </li>
+                                                <li><button @click="addProductFav(product)">
+                                                        <a><i class="sli sli-heart"></i><span
+                                                                class="ht-product-action-tooltip">Agregar a
+                                                                favoritos</span></a>
+                                                    </button>
+                                                </li>
+                                                <li><button @click="addProductCart(product)">
+                                                        <a><i class="sli sli-bag"></i><span
+                                                                class="ht-product-action-tooltip">Agregar al
+                                                                carrito</span></a>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="ht-product-content">
+                                        <div class="ht-product-content-inner">
+                                            <div class="ht-product-categories"><a href="#">{{product.category}}</a>
+                                            </div>
+                                            <h4 class="ht-product-title"><a href="#">{{product.name}}</a></h4>
+                                            <div class="ht-product-price">
+                                                <span class="new">${{product.price}}</span>
+                                                <span class="old">$ PRECIO VIEJO</span>
+                                            </div>
+                                            <div class="ht-product-ratting-wrap">
+                                                <span class="ht-product-ratting">
+                                                    <p class="text-light">Stock: {{product.stock}}</p>
+
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><a href="#"><i class="sli sli-magnifier"></i><span
+                                                            class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span
+                                                            class="ht-product-action-tooltip">Add to Wishlist</span></a>
+                                                </li>
+                                                <li><a href="#"><i class="sli sli-refresh"></i><span
+                                                            class="ht-product-action-tooltip">Add to Compare</span></a>
+                                                </li>
+                                                <li><a href="#"><i class="sli sli-bag"></i><span
+                                                            class="ht-product-action-tooltip">Add to Cart</span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ht-product-countdown-wrap">
+                                            <div class="ht-product-countdown" data-countdown="2020/01/01"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <!--Product End-->
+                            <!--Product Start-->
+                            <!-- <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom toggle-item-active col-lg-3 col-md-6 col-sm-6 col-12 mb-30">
+                                <div class="ht-product-inner">
+                                    <div class="ht-product-image-wrap">
+                                        <a href="product-details.html" class="ht-product-image"> <img src="assets/img/product/product-13.svg" alt="Universal Product Style"> </a>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to Wishlist</span></a></li>
+                                                <li><a href="#"><i class="sli sli-refresh"></i><span class="ht-product-action-tooltip">Add to Compare</span></a></li>
+                                                <li><a href="#"><i class="sli sli-bag"></i><span class="ht-product-action-tooltip">Add to Cart</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="ht-product-content">
+                                        <div class="ht-product-content-inner">
+                                            <div class="ht-product-categories"><a href="#">Lamp </a></div>
+                                            <h4 class="ht-product-title"><a href="#">Demo Product Name</a></h4>
+                                            <div class="ht-product-price">
+                                                <span class="new">$50.00</span>
+                                                <span class="old">$80.00</span>
+                                            </div>
+                                            <div class="ht-product-ratting-wrap">
+                                                <span class="ht-product-ratting">
+                                                    <span class="ht-product-user-ratting" style="width: 90%;">
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                    </span>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><a href="#"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to Wishlist</span></a></li>
+                                                <li><a href="#"><i class="sli sli-refresh"></i><span class="ht-product-action-tooltip">Add to Compare</span></a></li>
+                                                <li><a href="#"><i class="sli sli-bag"></i><span class="ht-product-action-tooltip">Add to Cart</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="ht-product-countdown-wrap">
+                                            <div class="ht-product-countdown" data-countdown="2020/01/01"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!--Product End-->
+                            <!--Product Start-->
+                            <!-- <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom toggle-item-active col-lg-3 col-md-6 col-sm-6 col-12 mb-30">
+                                <div class="ht-product-inner">
+                                    <div class="ht-product-image-wrap">
+                                        <a href="product-details.html" class="ht-product-image"> <img src="assets/img/product/product-14.svg" alt="Universal Product Style"> </a>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to Wishlist</span></a></li>
+                                                <li><a href="#"><i class="sli sli-refresh"></i><span class="ht-product-action-tooltip">Add to Compare</span></a></li>
+                                                <li><a href="#"><i class="sli sli-bag"></i><span class="ht-product-action-tooltip">Add to Cart</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="ht-product-content">
+                                        <div class="ht-product-content-inner">
+                                            <div class="ht-product-categories"><a href="#">Chair</a></div>
+                                            <h4 class="ht-product-title"><a href="#">Demo Product Name</a></h4>
+                                            <div class="ht-product-price">
+                                                <span class="new">$30.00</span>
+                                            </div>
+                                            <div class="ht-product-ratting-wrap">
+                                                <span class="ht-product-ratting">
+                                                    <span class="ht-product-user-ratting" style="width: 100%;">
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                    </span>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><a href="#"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to Wishlist</span></a></li>
+                                                <li><a href="#"><i class="sli sli-refresh"></i><span class="ht-product-action-tooltip">Add to Compare</span></a></li>
+                                                <li><a href="#"><i class="sli sli-bag"></i><span class="ht-product-action-tooltip">Add to Cart</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="ht-product-countdown-wrap">
+                                            <div class="ht-product-countdown" data-countdown="2020/01/01"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!--Product End-->
+                            <!--Product Start-->
+                            <!-- <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom toggle-item-active col-lg-3 col-md-6 col-sm-6 col-12 mb-30">
+                                <div class="ht-product-inner">
+                                    <div class="ht-product-image-wrap">
+                                        <a href="product-details.html" class="ht-product-image"> <img src="assets/img/product/product-15.svg" alt="Universal Product Style"> </a>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to Wishlist</span></a></li>
+                                                <li><a href="#"><i class="sli sli-refresh"></i><span class="ht-product-action-tooltip">Add to Compare</span></a></li>
+                                                <li><a href="#"><i class="sli sli-bag"></i><span class="ht-product-action-tooltip">Add to Cart</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="ht-product-content">
+                                        <div class="ht-product-content-inner">
+                                            <div class="ht-product-categories"><a href="#">Chair</a></div>
+                                            <h4 class="ht-product-title"><a href="#">Demo Product Name</a></h4>
+                                            <div class="ht-product-price">
+                                                <span class="new">$60.00</span>
+                                                <span class="old">$90.00</span>
+                                            </div>
+                                            <div class="ht-product-ratting-wrap">
+                                                <span class="ht-product-ratting">
+                                                    <span class="ht-product-user-ratting" style="width: 100%;">
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                    </span>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><a href="#"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to Wishlist</span></a></li>
+                                                <li><a href="#"><i class="sli sli-refresh"></i><span class="ht-product-action-tooltip">Add to Compare</span></a></li>
+                                                <li><a href="#"><i class="sli sli-bag"></i><span class="ht-product-action-tooltip">Add to Cart</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="ht-product-countdown-wrap">
+                                            <div class="ht-product-countdown" data-countdown="2020/01/01"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!--Product End-->
+                            <!--Product Start-->
+                            <!-- <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom toggle-item-active col-lg-3 col-md-6 col-sm-6 col-12 mb-30">
+                                <div class="ht-product-inner">
+                                    <div class="ht-product-image-wrap">
+                                        <a href="product-details.html" class="ht-product-image"> <img src="assets/img/product/product-5.svg" alt="Universal Product Style"> </a>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to Wishlist</span></a></li>
+                                                <li><a href="#"><i class="sli sli-refresh"></i><span class="ht-product-action-tooltip">Add to Compare</span></a></li>
+                                                <li><a href="#"><i class="sli sli-bag"></i><span class="ht-product-action-tooltip">Add to Cart</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="ht-product-content">
+                                        <div class="ht-product-content-inner">
+                                            <div class="ht-product-categories"><a href="#">Clock</a></div>
+                                            <h4 class="ht-product-title"><a href="#">Demo Product Name</a></h4>
+                                            <div class="ht-product-price">
+                                                <span class="new">$60.00</span>
+                                            </div>
+                                            <div class="ht-product-ratting-wrap">
+                                                <span class="ht-product-ratting">
+                                                    <span class="ht-product-user-ratting" style="width: 100%;">
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                    </span>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><a href="#"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to Wishlist</span></a></li>
+                                                <li><a href="#"><i class="sli sli-refresh"></i><span class="ht-product-action-tooltip">Add to Compare</span></a></li>
+                                                <li><a href="#"><i class="sli sli-bag"></i><span class="ht-product-action-tooltip">Add to Cart</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="ht-product-countdown-wrap">
+                                            <div class="ht-product-countdown" data-countdown="2020/01/01"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!--Product End-->
+                            <!--Product Start-->
+                            <!-- <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom toggle-item-active col-lg-3 col-md-6 col-sm-6 col-12 mb-30">
+                                <div class="ht-product-inner">
+                                    <div class="ht-product-image-wrap">
+                                        <a href="product-details.html" class="ht-product-image"> <img src="assets/img/product/product-6.svg" alt="Universal Product Style"> </a>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to Wishlist</span></a></li>
+                                                <li><a href="#"><i class="sli sli-refresh"></i><span class="ht-product-action-tooltip">Add to Compare</span></a></li>
+                                                <li><a href="#"><i class="sli sli-bag"></i><span class="ht-product-action-tooltip">Add to Cart</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="ht-product-content">
+                                        <div class="ht-product-content-inner">
+                                            <div class="ht-product-categories"><a href="#">Lamp </a></div>
+                                            <h4 class="ht-product-title"><a href="#">Demo Product Name</a></h4>
+                                            <div class="ht-product-price">
+                                                <span class="new">$50.00</span>
+                                                <span class="old">$80.00</span>
+                                            </div>
+                                            <div class="ht-product-ratting-wrap">
+                                                <span class="ht-product-ratting">
+                                                    <span class="ht-product-user-ratting" style="width: 90%;">
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                    </span>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><a href="#"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to Wishlist</span></a></li>
+                                                <li><a href="#"><i class="sli sli-refresh"></i><span class="ht-product-action-tooltip">Add to Compare</span></a></li>
+                                                <li><a href="#"><i class="sli sli-bag"></i><span class="ht-product-action-tooltip">Add to Cart</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="ht-product-countdown-wrap">
+                                            <div class="ht-product-countdown" data-countdown="2020/01/01"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!--Product End-->
+                            <!--Product Start-->
+                            <!-- <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom toggle-item-active col-lg-3 col-md-6 col-sm-6 col-12 mb-30">
+                                <div class="ht-product-inner">
+                                    <div class="ht-product-image-wrap">
+                                        <a href="product-details.html" class="ht-product-image"> <img src="assets/img/product/product-7.svg" alt="Universal Product Style"> </a>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to Wishlist</span></a></li>
+                                                <li><a href="#"><i class="sli sli-refresh"></i><span class="ht-product-action-tooltip">Add to Compare</span></a></li>
+                                                <li><a href="#"><i class="sli sli-bag"></i><span class="ht-product-action-tooltip">Add to Cart</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="ht-product-content">
+                                        <div class="ht-product-content-inner">
+                                            <div class="ht-product-categories"><a href="#">Chair</a></div>
+                                            <h4 class="ht-product-title"><a href="#">Demo Product Name</a></h4>
+                                            <div class="ht-product-price">
+                                                <span class="new">$30.00</span>
+                                            </div>
+                                            <div class="ht-product-ratting-wrap">
+                                                <span class="ht-product-ratting">
+                                                    <span class="ht-product-user-ratting" style="width: 100%;">
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                    </span>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><a href="#"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to Wishlist</span></a></li>
+                                                <li><a href="#"><i class="sli sli-refresh"></i><span class="ht-product-action-tooltip">Add to Compare</span></a></li>
+                                                <li><a href="#"><i class="sli sli-bag"></i><span class="ht-product-action-tooltip">Add to Cart</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="ht-product-countdown-wrap">
+                                            <div class="ht-product-countdown" data-countdown="2020/01/01"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!--Product End-->
+                            <!--Product Start-->
+                            <!-- <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom toggle-item-active col-lg-3 col-md-6 col-sm-6 col-12 mb-30">
+                                <div class="ht-product-inner">
+                                    <div class="ht-product-image-wrap">
+                                        <a href="product-details.html" class="ht-product-image"> <img src="assets/img/product/product-8.svg" alt="Universal Product Style"> </a>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to Wishlist</span></a></li>
+                                                <li><a href="#"><i class="sli sli-refresh"></i><span class="ht-product-action-tooltip">Add to Compare</span></a></li>
+                                                <li><a href="#"><i class="sli sli-bag"></i><span class="ht-product-action-tooltip">Add to Cart</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="ht-product-content">
+                                        <div class="ht-product-content-inner">
+                                            <div class="ht-product-categories"><a href="#">Chair</a></div>
+                                            <h4 class="ht-product-title"><a href="#">Demo Product Name</a></h4>
+                                            <div class="ht-product-price">
+                                                <span class="new">$60.00</span>
+                                                <span class="old">$90.00</span>
+                                            </div>
+                                            <div class="ht-product-ratting-wrap">
+                                                <span class="ht-product-ratting">
+                                                    <span class="ht-product-user-ratting" style="width: 100%;">
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                        <i class="sli sli-star"></i>
+                                                    </span>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                <i class="sli sli-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="ht-product-action">
+                                            <ul>
+                                                <li><a href="#"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to Wishlist</span></a></li>
+                                                <li><a href="#"><i class="sli sli-refresh"></i><span class="ht-product-action-tooltip">Add to Compare</span></a></li>
+                                                <li><a href="#"><i class="sli sli-bag"></i><span class="ht-product-action-tooltip">Add to Cart</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="ht-product-countdown-wrap">
+                                            <div class="ht-product-countdown" data-countdown="2020/01/01"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!--Product End-->
+                        </div>
+                        <div class="show-more-btn text-center mt-10 toggle-btn">
+                            <a class="loadMore" href="#">View More Products</a>
                         </div>
                     </div>
                 </div>
             </div>
-
 
 
 
@@ -1112,7 +1559,7 @@
                                 <div class="col-md-5 col-sm-12 col-xs-12">
                                     <div class="tab-content quickview-big-img">
                                         <div id="pro-1" class="tab-pane fade show active">
-                                            <img src="assets/img/product/quickview-l1.svg" alt="">
+                                            <img :src="productSelect.img" :alt="productSelect.name">
                                         </div>
                                         <div id="pro-2" class="tab-pane fade">
                                             <img src="assets/img/product/quickview-l2.svg" alt="">
@@ -1129,7 +1576,7 @@
                                     <div class="quickview-wrap mt-15">
                                         <div class="quickview-slide-active owl-carousel nav nav-style-2" role="tablist">
                                             <a class="active" data-bs-toggle="tab" href="#pro-1"><img
-                                                    src="assets/img/product/quickview-s1.svg" alt=""></a>
+                                                    :src="productSelect.img" :alt="productSelect.name"></a>
                                             <a data-bs-toggle="tab" href="#pro-2"><img
                                                     src="assets/img/product/quickview-s2.svg" alt=""></a>
                                             <a data-bs-toggle="tab" href="#pro-3"><img
@@ -1141,84 +1588,44 @@
                                 </div>
                                 <div class="col-md-7 col-sm-12 col-xs-12">
                                     <div class="product-details-content quickview-content">
-                                        <h2>Products Name Here</h2>
+                                        <h2>{{productSelect.name}}</h2>
                                         <div class="product-details-price">
-                                            <span>$18.00 </span>
-                                            <span class="old">$20.00 </span>
+                                            <span>${{productSelect.price}} </span>
+                                            <span class="old">$ PRECIO VIEJO </span>
                                         </div>
                                         <div class="pro-details-rating-wrap">
-                                            <div class="pro-details-rating">
-                                                <i class="sli sli-star yellow"></i>
-                                                <i class="sli sli-star yellow"></i>
-                                                <i class="sli sli-star yellow"></i>
-                                                <i class="sli sli-star"></i>
-                                                <i class="sli sli-star"></i>
-                                            </div>
-                                            <span>3 Reviews</span>
+                                            <span v-show="productSelect.stock > 5">Stock: {{productSelect.stock}}</span>
+                                            <span class="text-danger" v-show="productSelect.stock <= 5">Últimas
+                                                {{productSelect.stock}} unidades!</span>
                                         </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisic elit eiusm tempor incidid ut
-                                            labore et dolore magna aliqua. Ut enim ad minim venialo quis nostrud
-                                            exercitation ullamco</p>
+                                        <p class="text-dark">{{productSelect.description}}</p>
                                         <div class="pro-details-list">
                                             <ul>
-                                                <li>- 0.5 mm Dail</li>
-                                                <li>- Inspired vector icons</li>
-                                                <li>- Very modern style </li>
+                                                <li>Envíos gratis en compras mayores a $20000!</li>
                                             </ul>
-                                        </div>
-                                        <div class="pro-details-size-color">
-                                            <div class="pro-details-color-wrap">
-                                                <span>Color</span>
-                                                <div class="pro-details-color-content">
-                                                    <ul>
-                                                        <li class="blue"></li>
-                                                        <li class="maroon active"></li>
-                                                        <li class="gray"></li>
-                                                        <li class="green"></li>
-                                                        <li class="yellow"></li>
-                                                        <li class="white"></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="pro-details-size">
-                                                <span>Size</span>
-                                                <div class="pro-details-size-content">
-                                                    <ul>
-                                                        <li><a href="#">s</a></li>
-                                                        <li><a href="#">m</a></li>
-                                                        <li><a href="#">l</a></li>
-                                                        <li><a href="#">xl</a></li>
-                                                        <li><a href="#">xxl</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="pro-details-quality">
                                             <div class="cart-plus-minus">
-                                                <input class="cart-plus-minus-box" type="text" name="qtybutton"
-                                                    value="2">
+                                                <input :id="productSelect.id" class="cart-plus-minus-box" type="number"
+                                                    name="qtybutton" value="1" min="1" :max="3">
                                             </div>
                                             <div class="pro-details-cart">
-                                                <a href="#">Add To Cart</a>
+                                                <a @click="addProductCartModal(productSelect)">Agregar al carrito</a>
                                             </div>
                                             <div class="pro-details-wishlist">
                                                 <a title="Add To Wishlist" href="#"><i class="sli sli-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="pro-details-meta">
-                                            <span>Categories :</span>
+                                            <span>Categorías :</span>
                                             <ul>
-                                                <li><a href="#">Minimal,</a></li>
-                                                <li><a href="#">Furniture,</a></li>
-                                                <li><a href="#">Fashion</a></li>
+                                                <li><a href="#">{{productSelect.category}}</a></li>
                                             </ul>
                                         </div>
                                         <div class="pro-details-meta">
-                                            <span>Tag :</span>
+                                            <span>Subcategorias:</span>
                                             <ul>
-                                                <li><a href="#">Fashion, </a></li>
-                                                <li><a href="#">Furniture,</a></li>
-                                                <li><a href="#">Electronic</a></li>
+                                                <li><a>{{productSelect.subcategory}}</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -1248,7 +1655,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <!-- Axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- VUE -->
     <script src="https://unpkg.com/vue@3"></script>
     <!-- Plugins JS -->
     <script src="assets/js/plugins.js"></script>
