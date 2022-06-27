@@ -32,7 +32,8 @@ public class PurchaseServiceImpl implements PurchaseService {
     private ClientService clientService;
     @Override
     public void create(Client client, PurchaseApplicationDto purchaseApplicationDto) {
-        Purchase purchase = purchaseRepository.save(new Purchase( purchaseApplicationDto.getTotalAmount(),purchaseApplicationDto.getTypePayment(),LocalDateTime.now(),
+        Purchase purchase = purchaseRepository.save(new Purchase( purchaseApplicationDto.getTotalAmount(),
+                purchaseApplicationDto.getTypePayment(),LocalDateTime.now(),
                 purchaseApplicationDto.getAddress(), Integer.valueOf(purchaseApplicationDto.getZipCode())));
 
         for (Map.Entry<Long, Integer> order : purchaseApplicationDto.getOrders().entrySet()) {
