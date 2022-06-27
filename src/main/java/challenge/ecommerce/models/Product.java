@@ -6,7 +6,9 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -21,7 +23,10 @@ public class Product {
 
     private String name;
     private String description;
-    private String img;
+
+    @ElementCollection
+    @Column(name="imgs")
+    private List<String> imgs = new ArrayList<>();
     private Short stock;
     private Double price;
     private Double discount;
@@ -32,10 +37,11 @@ public class Product {
 
     public Product(){}
 
-    public Product(String name, String description, String img, Short stock, Double price, String serie, Category category, String subcategory) {
+    public Product(String name, String description, List<String> imgs, Short stock, Double price, String serie,
+                   Category category, String subcategory) {
         this.name = name;
         this.description = description;
-        this.img = img;
+        this.imgs = imgs;
         this.stock = stock;
         this.price = price;
         this.discount = 0.85;
@@ -43,5 +49,8 @@ public class Product {
         this.category = category;
         this.subcategory = subcategory;
         this.deleted = false;
+    }
+    public void addImg(String imgUrl){
+        this.imgs.add(imgUrl);
     }
 }

@@ -77,7 +77,7 @@ public class ProductController {
     @PatchMapping("/products/modify")
     public ResponseEntity<?> modify(
             @RequestParam String productId,
-            @RequestParam(required = false) String price, @RequestParam(required = false) String img,
+            @RequestParam(required = false) String price, @RequestParam(required = false) List<String> imgs,
             @RequestParam(required = false) String description, @RequestParam(required = false) Short stock
             ){
 
@@ -90,7 +90,7 @@ public class ProductController {
             return new ResponseEntity<>("product does not exist", HttpStatus.FORBIDDEN);
         }
 
-        if(price == null && img == null && description == null && stock == null){
+        if(price == null && imgs == null && description == null && stock == null){
             return new ResponseEntity<>("No property was supplied to change", HttpStatus.FORBIDDEN);
         }
 
@@ -98,8 +98,8 @@ public class ProductController {
             productService.updatePrice(product, Double.valueOf(price));
         }
 
-        if(img != null){
-            productService.updateImg(product, img);
+        if(imgs != null && !imgs.isEmpty()){
+            productService.updateImgs(product, imgs);
         }
         if(description != null){
             productService.updateDescription(product, description);
