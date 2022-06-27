@@ -62,6 +62,7 @@ public class EcommerceApplication {
 			productRepository.save(product10);
 
 			//Static Figures
+
 			Product product11 = new Product("Marvel Series - Winter Soldier","Figura estatica de Winter Soldier de 20 cm de altura","https://i.ibb.co/hdx9bNN/entrega-011-P24032-9a-marvel-figurines-1647803149626.webp", (short) 7,6999.0,"Marvel", Category.ACTIONFIGURES, "Static Figures");
 			productRepository.save(product11);
 			Product product12 = new Product("Marvel Series - War Machine","Figura estatica de War Machine de 20 cm de altura","https://i.ibb.co/7nJjFk3/entrega-011-P24031-marvel-figurines-entrega31a-maquina-guerra-1647287255924.webp", (short) 11,6999.0,"Marvel", Category.ACTIONFIGURES, "Static Figures");
@@ -82,6 +83,51 @@ public class EcommerceApplication {
 			productRepository.save(product19);
 			Product product20 = new Product("Marvel Series - Vison","Figura estatica de Vision de 20 cm de altura","https://i.ibb.co/yQ6f1Cj/entrega-011-P24027-19a-marvel-figurines-1652632580845.webp", (short) 13,6999.0,"Marvel", Category.ACTIONFIGURES , "Static Figures");
 			productRepository.save(product20);
+
+			//cover
+			/*
+
+
+
+
+
+*/
+			Product product21 = new Product("Marvel Series - Iron Man","Funda edición Marvel para Iphone","https://ibb.co/KWsw6wY", (short) 1,6999.0,"Marvel", Category.COVERS , "Covers");
+			productRepository.save(product21);
+			Product product22 = new Product("Marvel Series - Spider-Man","Funda edición Marvel para Iphone","https://ibb.co/6bVSL5T", (short) 1,6999.0,"Marvel", Category.COVERS, "Static Figures");
+			productRepository.save(product22);
+			Product product23 = new Product("Marvel Series - Iron Man","Funda edición Marvel para Iphone","https://ibb.co/5MrQ9nk", (short) 1,6999.0,"Marvel",  Category.COVERS , "Fundas de Iphone Personalizados");
+			productRepository.save(product23);
+			Product product24 = new Product("Marvel Series - Avengers","Funda edición Marvel para Iphone","https://ibb.co/hHvyL7D", (short) 1,6999.0,"Marvel",  Category.COVERS,  "Fundas de Iphone Personalizados");
+			productRepository.save(product24);
+			Product product25 = new Product("Marvel Series - Dead Pool","Funda edición Marvel para Iphone","https://ibb.co/RBR3pwG", (short) 1,6999.0,"Marvel",  Category.COVERS,  "Fundas de Iphone Personalizados");
+			productRepository.save(product25);
+			Product product26 = new Product("Marvel Series - Capitan America","Funda edición Marvel para Iphone","https://ibb.co/0m1Vxqc", (short) 1,6999.0,"Marvel",  Category.COVERS , "Fundas de Iphone Personalizados");
+			productRepository.save(product26);
+			Product product27 = new Product("Marvel Series - Venom","Funda edición Marvel para Iphone","https://ibb.co/hyrqMrZ", (short) 1,6999.0,"Marvel",  Category.COVERS , "Fundas de Iphone Personalizados");
+			productRepository.save(product27);
+			Product product28 = new Product("Marvel Series - Thor","Funda edición Marvel para Iphone","https://ibb.co/g9MLTDL", (short) 1,6999.0,"Marvel",  Category.COVERS , "Fundas de Iphone Personalizados");
+			productRepository.save(product28);
+			Product product29 = new Product("Marvel Series - Marvel","Funda edición Marvel para Iphone","https://ibb.co/bXtx6Lm", (short) 1,6999.0,"Marvel",  Category.COVERS , "Fundas de Iphone Personalizados");
+			productRepository.save(product29);
+			Product product30 = new Product("Marvel Series - Hulk","Funda edición Marvel para Iphone","https://ibb.co/RTpN29C", (short) 1,6999.0,"Marvel",  Category.COVERS , "Fundas de Iphone Personalizados");
+			productRepository.save(product30);
+			Product product31 = new Product("Dragon Ball - Saiyan Blue ","Funda edición Marvel para Iphone","https://ibb.co/WDj8jRL", (short) 1,6999.0,"Marvel",  Category.COVERS , "Fundas de Iphone Personalizados");
+			productRepository.save(product31);
+			Product product32 = new Product("Dragon Ball - Goku","Funda edición Marvel para Iphone","https://ibb.co/qjhZ06D", (short) 1,6999.0,"Marvel",  Category.COVERS , "Fundas de Iphone Personalizados");
+			productRepository.save(product32);
+			Product product33 = new Product("Dragon Ball - Goku Saiyan","Funda edición Dragon Ball para Iphone","https://ibb.co/Jvsdf58", (short) 1,6999.0,"Marvel", Category.COVERS , "Fundas de Iphone Personalizados");
+			productRepository.save(product33);
+			Product product34 = new Product("Dragon Ball - Vegeta Blue","Funda edición Dragon Ball para Iphone","https://ibb.co/TBzxKyT", (short) 1,6999.0,"Marvel", Category.COVERS , "Fundas de Iphone Personalizados");
+			productRepository.save(product34);
+			Product product35 = new Product("Dragon Ball - Goku Chico","Funda edición Dragon Ball para Iphone","https://ibb.co/WnBKHyR", (short) 1,6999.0,"Marvel", Category.COVERS , "Fundas de Iphone Personalizados");
+			productRepository.save(product35);
+			Product product36 = new Product("Dragon Ball - Vison","Funda edición Dragon Ball para Iphone","https://i.ibb.co/yQ6f1Cj/entrega-011-P24027-19a-marvel-figurines-1652632580845.webp", (short) 13,6999.0,"Marvel", Category.ACTIONFIGURES , "Static Figures");
+			productRepository.save(product36);
+
+
+
+
 		};
 	}
 
