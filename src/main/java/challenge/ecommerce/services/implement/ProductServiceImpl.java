@@ -50,32 +50,40 @@ public class ProductServiceImpl implements ProductService {
         productRepository.save(product);
     }
 
-//    @Override
-//    public boolean existProperty(String propertyName) {
-//        String lowerCaseProperty = propertyName.toLowerCase();
-////        private Category category;
-//        boolean exist = false;
-//        switch (lowerCaseProperty){
-//            case "img":
-//                exist = true;
-//                break;
-//            case "description":
-//                exist = true;
-//                break;
-//            case "name":
-//                exist = true;
-//                break;
-//            case "tag":
-//                exist = true;
-//                break;
-//            case "price":
-//                exist = true;
-//                break;
-//            case "":
-//                exist = true;
-//                break;
-//
-//        }
-//        return false;
-//    }
+    @Override
+    public void updatePrice(Product product, Double price) {
+        product.setPrice(price);
+    }
+
+    @Override
+    public void updateDescription(Product product, String description) {
+        product.setDescription(description);
+    }
+
+    @Override
+    public void updateImg(Product product, String img) {
+        product.setImg(img);
+    }
+
+    @Override
+    public void updateStock(Product product, Short stock) {
+        product.setStock(stock);
+    }
+
+    @Override
+    public void updateAll(Short percentage, String modifier) {
+        if(modifier.equals("INCREASE")){
+            Float increasePercentage =  1 + (Float.valueOf(percentage)/100);
+            this.setPrices(increasePercentage);
+        }else{
+            Float increasePercentage =  1 - (Float.valueOf(percentage)/100);
+            this.setPrices(increasePercentage);
+        }
+    }
+    private void setPrices(Float modifier){
+        productRepository.findAll().forEach(product -> {
+            product.setPrice(product.getPrice() * modifier);
+            productRepository.save(product);
+        });
+    }
 }

@@ -12,7 +12,7 @@ public class ProductDto {
     private String img;
     private Short stock;
     private Double price;
-    private Byte discount;
+    private Double discount;
     private String serie;
     private Category category;
     private String subcategory;

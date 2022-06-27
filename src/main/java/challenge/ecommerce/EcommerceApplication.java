@@ -13,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.HashMap;
 import java.util.List;
 
 @SpringBootApplication
@@ -28,6 +29,7 @@ public class EcommerceApplication {
 	@Bean
 	public CommandLineRunner initData(ProductRepository productRepository, ClientRepository clientRepository) {
 		return (args) -> {
+
 			// Clients
 			Client admin = new Client("admin", "admin","admin@kobestore.com", passwordEncoder.encode("123"),UserType.ADMIN);
 			clientRepository.save(admin);
@@ -82,4 +84,5 @@ public class EcommerceApplication {
 			productRepository.save(product20);
 		};
 	}
+
 }

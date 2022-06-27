@@ -97,4 +97,11 @@ public class ClientController {
         return(new ResponseEntity<>(new ClientDTO(clientService.getCurrentClient(authentication)),HttpStatus.ACCEPTED));
     }
 
+//agregar datos (cliente)
+//editar datos (cliente)
+//hacer produtos BOOKSHOP
+//borrar cliente (cliente)
+//edit address (cliente)
+//editar precio segun stock (procuct)
+
 }
