@@ -1,5 +1,6 @@
 package challenge.ecommerce.services.implement;
 
+
 import challenge.ecommerce.context.AccountVerificationEmailContext;
 import challenge.ecommerce.core.exception.ClientAlreadyExistException;
 import challenge.ecommerce.core.exception.InvalidTokenException;
@@ -26,7 +27,6 @@ import javax.mail.MessagingException;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
-
 
 @Service
 public class ClientServiceImpl implements ClientService {

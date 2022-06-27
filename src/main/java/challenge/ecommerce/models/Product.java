@@ -30,9 +30,6 @@ public class Product {
     private String subcategory;
     private boolean deleted;
 
-//    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
-//    private Set<PurchaseProduct> purchaseProducts = new HashSet<>();
-
     public Product(){}
 
     public Product(String name, String description, String img, Short stock, Double price, String serie, Category category, String subcategory) {

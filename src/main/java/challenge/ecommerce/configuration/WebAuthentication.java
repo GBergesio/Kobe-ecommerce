@@ -23,11 +23,8 @@ public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
     @Override
 
     public void init(AuthenticationManagerBuilder auth) throws Exception {
-
         auth.userDetailsService(inputName -> {
-
             Client client = clientRepository.findByEmail(inputName);
-
             if (client != null) {
                 if (client.getEmail().contains("@kobestore.com") && client.getUserType() == UserType.ADMIN) {
                     return new User(client.getEmail(), client.getPassword(),

@@ -14,8 +14,6 @@ import java.util.Set;
 @Getter
 @Setter
 public class Client {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
@@ -45,6 +43,7 @@ public class Client {
     @OneToMany(mappedBy = "client", fetch=FetchType.EAGER)
     private Set<Address> addresses = new HashSet<>();
 
+
     @OneToMany(mappedBy = "user")
     private Set<SecureToken> tokens = new HashSet<>();
 
@@ -71,7 +70,4 @@ public class Client {
         purchase.setClient(this);
         purchases.add(purchase);
     }
-
-
-
 }

@@ -42,7 +42,6 @@ public class PurchaseController {
                 HttpStatus.OK);
     }
 
-
     @PostMapping("/purchases")
     @Transactional
     public ResponseEntity<?> create(Authentication authentication, @RequestBody PurchaseApplicationDto purchaseApplicationDto){
@@ -50,9 +49,11 @@ public class PurchaseController {
         if(purchaseApplicationDto.getOrders().size() == 0){
             return new ResponseEntity<>("Missing products data", HttpStatus.FORBIDDEN);
         }
+
         if(purchaseApplicationDto.getAddress().isEmpty() || purchaseApplicationDto.getZipCode().isEmpty()){
             return new ResponseEntity<>("Missing address data", HttpStatus.FORBIDDEN);
         }
+
         for (Map.Entry<Long, Integer> order : purchaseApplicationDto.getOrders().entrySet()) {
             Product product = productService.getById(order.getKey());
             if (product == null){
