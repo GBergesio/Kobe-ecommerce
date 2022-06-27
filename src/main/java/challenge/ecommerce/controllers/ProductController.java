@@ -99,9 +99,10 @@ public class ProductController {
             productService.updatePrice(product, Double.valueOf(price));
         }
 
-        if(imgs != null && !imgs.isEmpty()){
-            productService.updateImgs(product, imgs);
+        if(img != null && !img.isEmpty() && imgSec != null && !imgSec.isEmpty()){
+            productService.updateImgs(product, img, imgSec);
         }
+
         if(description != null){
             productService.updateDescription(product, description);
         }
