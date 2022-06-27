@@ -109,26 +109,62 @@ public class EcommerceApplication {
 			productRepository.save(product30);
 			Product product31 = new Product("Marvel Series - Spider Man","Funda edición Marvel para Iphone","https://i.ibb.co/6DCxppQ/a94459bedad7cb94e53cfe621ce23a5570d452f6-original.jpg","https://i.ibb.co/4YHG0Fd/avengers-endgame-iron-man-tony-stark-crop1619139044711-jpg-33663383.jpg", (short) 10,1999.0,"Marvel",  Category.COVERS , "Fundas de Iphone Personalizados");
 			productRepository.save(product31);
-			Product product32 = new Product("Dragon Ball - Gohan","Funda edición Dragon Ball para Iphone","https://i.ibb.co/5v8Fr9s/1aa21b82eef6422f6ffb2d817a81120e5272ae87-original.jpg","https://i.ibb.co/5GvLkjC/hasv-V6-Dq-400x400.jpg", (short) 1,6999.0,"Marvel",  Category.COVERS , "Fundas de Iphone Personalizados");
+			Product product32 = new Product("Dragon Ball - Gohan","Funda edición Dragon Ball para Iphone","https://i.ibb.co/5v8Fr9s/1aa21b82eef6422f6ffb2d817a81120e5272ae87-original.jpg","https://i.ibb.co/5GvLkjC/hasv-V6-Dq-400x400.jpg", (short) 1,6999.0,"DRBZ",  Category.COVERS , "Fundas de Iphone Personalizados");
 			productRepository.save(product32);
-			Product product33 = new Product("Dragon Ball - Goku Saiyan","Funda edición Dragon Ball para Iphone","https://i.ibb.co/F43n4VH/71fm-Yla-DCDL-AC-SX522.jpg","https://i.ibb.co/5WHpT18/296-2967569-volador-nubes-goku-goku-en-la-nube-voladora.jpg", (short) 18,1999.0,"Marvel", Category.COVERS , "Fundas de Iphone Personalizados");
+			Product product33 = new Product("Dragon Ball - Goku Saiyan","Funda edición Dragon Ball para Iphone","https://i.ibb.co/F43n4VH/71fm-Yla-DCDL-AC-SX522.jpg","https://i.ibb.co/5WHpT18/296-2967569-volador-nubes-goku-goku-en-la-nube-voladora.jpg", (short) 18,1999.0,"DRBZ", Category.COVERS , "Fundas de Iphone Personalizados");
 			productRepository.save(product33);
-			Product product34 = new Product("Dragon Ball - Vegeta Blue","Funda edición Dragon Ball para Iphone","https://i.ibb.co/9nQGnRv/998b237ad0cf74f30a2efa7228971084cd3c53b3-original.jpg","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg", (short) 16,1999.0,"Marvel", Category.COVERS , "Fundas de Iphone Personalizados");
+			Product product34 = new Product("Dragon Ball - Vegeta Blue","Funda edición Dragon Ball para Iphone","https://i.ibb.co/9nQGnRv/998b237ad0cf74f30a2efa7228971084cd3c53b3-original.jpg","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg", (short) 16,1999.0,"DRBZ", Category.COVERS , "Fundas de Iphone Personalizados");
 			productRepository.save(product34);
-			Product product35 = new Product("Dragon Ball - Goku ","Funda edición Dragon Ball para Iphone","https://i.ibb.co/bBYCvR0/1-2-300x300.png","https://i.ibb.co/PDWJm09/VNb-J8f-Gm-400x400.jpg ",(short) 14,1800.0,"Marvel", Category.COVERS , "Fundas de Iphone Personalizados");
+			Product product35 = new Product("Dragon Ball - Goku ","Funda edición Dragon Ball para Iphone","https://i.ibb.co/bBYCvR0/1-2-300x300.png","https://i.ibb.co/PDWJm09/VNb-J8f-Gm-400x400.jpg ",(short) 14,1800.0,"DRBZ", Category.COVERS , "Fundas de Iphone Personalizados");
 			productRepository.save(product35);
-			Product product36 = new Product("Dragon Ball - Vegetta","Funda edición Dragon Ball para Iphone","https://i.ibb.co/KNP26nc/51t-MRe67-DXL-AC-SS450.jpg","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg", (short) 13,1999.0,"Marvel", Category.COVERS , "Fundas de Iphone Personalizados");
+			Product product36 = new Product("Dragon Ball - Vegetta","Funda edición Dragon Ball para Iphone","https://i.ibb.co/KNP26nc/51t-MRe67-DXL-AC-SS450.jpg","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg", (short) 13,1999.0,"DRBZ", Category.COVERS , "Fundas de Iphone Personalizados");
 			productRepository.save(product36);
-			Product product37 = new Product("Dragon Ball - Vegetta","Funda edición Dragon Ball para Iphone","https://i.ibb.co/Pz7bHhK/fdad1bee2844cc1a0a0b5de095b26745.jpg","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",(short) 13,1999.0,"Marvel", Category.COVERS , "Fundas de Iphone Personalizados");
+			Product product37 = new Product("Dragon Ball - Vegetta","Funda edición Dragon Ball para Iphone","https://i.ibb.co/Pz7bHhK/fdad1bee2844cc1a0a0b5de095b26745.jpg","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",(short) 13,1999.0,"DRBZ", Category.COVERS , "Fundas de Iphone Personalizados");
 			productRepository.save(product37);
-			Product product38 = new Product("Dragon Ball - Gotens Trunks","Funda edición Dragon Ball para Iphone","https://i.ibb.co/TKJgP7C/images-q-tbn-ANd9-Gc-SLy6-Gl-QNzl-OBo-LW0sjw-Smk88-T2-A0-Yi-Kg-CZg5-MS3u-VUDcl-Nt-AHRSo-Ju-ZYw-Job-I.jpg","https://i.ibb.co/mBxLCVH/pp-504x498-pad-600x600-f8f8f8.jpg", (short) 13,1999.0,"Marvel", Category.COVERS , "Fundas de Iphone Personalizados");
+			Product product38 = new Product("Dragon Ball - Gotens Trunks","Funda edición Dragon Ball para Iphone","https://i.ibb.co/TKJgP7C/images-q-tbn-ANd9-Gc-SLy6-Gl-QNzl-OBo-LW0sjw-Smk88-T2-A0-Yi-Kg-CZg5-MS3u-VUDcl-Nt-AHRSo-Ju-ZYw-Job-I.jpg","https://i.ibb.co/mBxLCVH/pp-504x498-pad-600x600-f8f8f8.jpg", (short) 13,1999.0,"DRBZ", Category.COVERS , "Fundas de Iphone Personalizados");
 			productRepository.save(product38);
-			Product product39 = new Product("Dragon Ball - Vegetta","Funda edición Dragon Ball para Iphone","https://i.ibb.co/F62nP1S/icr-iphone-13-soft-back-a-x600-pad-600x600-f8f8f8.jpg","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,1999.0,"Marvel", Category.COVERS , "Fundas de Iphone Personalizados");
+			Product product39 = new Product("Dragon Ball - Vegetta","Funda edición Dragon Ball para Iphone","https://i.ibb.co/F62nP1S/icr-iphone-13-soft-back-a-x600-pad-600x600-f8f8f8.jpg","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,1999.0,"DRBZ", Category.COVERS , "Fundas de Iphone Personalizados");
 			productRepository.save(product39);
-			Product product40 = new Product("Dragon Ball - Vegetta","Funda edición Dragon Ball para Iphone","https://i.ibb.co/JzDxyKj/691dc9e9c3d632e829edb64b2cb1a97d7d4c83b3-original.jpg","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,1999.0,"Marvel", Category.COVERS , "Fundas de Iphone Personalizados");
+			Product product40 = new Product("Dragon Ball - Vegetta","Funda edición Dragon Ball para Iphone","https://i.ibb.co/JzDxyKj/691dc9e9c3d632e829edb64b2cb1a97d7d4c83b3-original.jpg","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,1999.0,"DRBZ", Category.COVERS , "Fundas de Iphone Personalizados");
 			productRepository.save(product40);
-			Product product41 = new Product("Dragon Ball - Saiyan Blue ","Funda edición Dragon Ball para Iphone","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,6999.0,"Marvel",  Category.COVERS , "Fundas de Iphone Personalizados");
+			Product product41 = new Product("Dragon Ball - Saiyan Blue ","Funda edición Dragon Ball para Iphone","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,1999.0,"Marvel",  Category.COVERS , "Fundas de Iphone Personalizados");
 			productRepository.save(product41);
+			Product product42 = new Product("Dragon Ball - Goku ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/9pNftpr/images-q-tbn-ANd9-Gc-TKVBRnlcosf-Mov-UBwo-Yg3of-QZDcar-C1-HLDKis-OGVp9w268-PRI9jyz-Rv-SVYKfl-Swalr-A.jpg","https://i.ibb.co/PDWJm09/VNb-J8f-Gm-400x400.jpg",  (short) 13,6999.0,"DRBZ",  Category.BAZAR , "Llavero para que personalices tu llaves");
+			productRepository.save(product42);
+			Product product43 = new Product("Dragon Ball - Z","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/MhCT2qK/images-q-tbn-ANd9-Gc-TYi-Z6-NNEJgdhu-Gnm0-R9-IMo-G-ehqv-P-Cmae-Lw-usqp-CAU.jpg","https://i.ibb.co/TgQHRdF/D-NQ-NP-2-X-628203-MLA45669767978-042021-F.webp",  (short) 13,999.0,"DRBZ",  Category.BAZAR , "Llavero para que personalices tu llaves");
+			productRepository.save(product43);
+			Product product44 = new Product("Dragon Ball - llavero ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/p2FZNb7/images-q-tbn-ANd9-Gc-Qiu-I2h332been-MF2-WAf-Uyw-DJ-8vt7-Sj-Wgy-Cw-usqp-CAU.jpg","https://i.ibb.co/5GvLkjC/hasv-V6-Dq-400x400.jpg",  (short) 13,999.0,"Marvel",  Category.BAZAR , "Llavero para que personalices tu llaves");
+			productRepository.save(product44);
+			Product product45 = new Product("Dragon Ball - llavero ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,999.0,"Marvel",  Category.BAZAR , "Llavero para que personalices tu llaves)";
+			productRepository.save(product45);
+			Product product46 = new Product("Dragon Ball - llavero ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,999.0,"Marvel",  Category.BAZAR , "Llavero para que personalices tu llaves");
+			productRepository.save(product46);
+			Product product47 = new Product("Dragon Ball - llavero ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,999.0,"Marvel",  Category.BAZAR , "Llavero para que personalices tu llaves");
+			productRepository.save(product47);
+			Product product48 = new Product("Dragon Ball - llavero ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,999.0,"Marvel",  Category.BAZAR , "Llavero para que personalices tu llaves");
+			productRepository.save(product48);
+			Product product49 = new Product("Dragon Ball - llavero ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,999.0,"Marvel",  Category.BAZAR , "Llavero para que personalices tu llaves");
+			productRepository.save(product49);
+			Product product50 = new Product("Dragon Ball - llavero","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,999.0,"Marvel",  Category.BAZAR , "Llavero para que personalices tu llavess");
+			productRepository.save(product50);
+			Product product51 = new Product("Dragon Ball - llavero ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,999.0,"Marvel",  Category.BAZAR , "Llavero para que personalices tu llaves");
+			productRepository.save(product51);
+			Product product52 = new Product("Dragon Ball - llavero ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,999.0,"Marvel",  Category.BAZAR , "Llavero para que personalices tu llaves");
+			productRepository.save(product52);
+			Product product53= new Product("Dragon Ball - llavero ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,999.0,"Marvel",  Category.BAZAR , "Llavero para que personalices tu llaves");
+			productRepository.save(product53);
+			Product product54 = new Product("Dragon Ball - llavero ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,999.0,"Marvel",  Category.BAZAR , "Llavero para que personalices tu llaves");
+			productRepository.save(product54);
+			Product product55 = new Product("Dragon Ball -llavero ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,999.0,"Marvel",  Category.BAZAR , "Llavero para que personalices tu llaves");
+			productRepository.save(product55);
+			Product product56 = new Product("Dragon Ball - llavero ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,999.0,"Marvel",  Category.BAZAR, "Llavero para que personalices tu llaves");
+			productRepository.save(product56);
+			Product product57 = new Product("Dragon Ball - Saiyan Blue ","Funda edición Dragon Ball para Iphone","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,6999.0,"Marvel",  Category.BAZAR , "Fundas de Iphone Personalizados");
+			productRepository.save(product57);
+
+
+
+
 
 
 
