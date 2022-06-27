@@ -111,7 +111,7 @@ public class ProductController {
             }
         }
         productService.save(product);
-        return new ResponseEntity<>("Product upgraded successfully",HttpStatus.OK);
+        return new ResponseEntity<>("Product updated successfully",HttpStatus.OK);
 
     }
     //recibe la palabra clave INCREASE, entonces aumenta el precio en ese porcentaje
