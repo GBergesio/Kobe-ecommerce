@@ -554,7 +554,7 @@
 
                                 <!--Product Start Funkos-->
                                 <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom mb-30"
-                                    v-for="funko in funkos">
+                                    v-for="funko in productsBack">
                                     <div class="ht-product-inner">
                                         <div class="ht-product-image-wrap">
                                             <a href="product-details.html" class="ht-product-image"> <img
@@ -591,8 +591,14 @@
                                                         href="product-details.html">{{funko.name}}</a>
                                                 </h4>
                                                 <div class="ht-product-price">
-                                                    <span class="new">${{funko.discount}}</span>
-                                                    <span class="old">${{funko.price}}</span>
+                                                    <div v-show="funko.stock <5">
+                                                        <span class="new">${{(funko.price / ((funko.discount / 100 ) + 1)).toFixed(0)}}</span>
+                                                        <span class="old">${{funko.price}}</span>
+                                                    </div>
+                                                    <div v-show="funko.stock >5">
+                                                        <span class="new">${{funko.price}}</span>
+                                                    </div>
+                                                    
                                                 </div>
                                                 <div class="ht-product-ratting-wrap">
                                                     <span class="ht-product-ratting">

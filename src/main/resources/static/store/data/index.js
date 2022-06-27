@@ -12,7 +12,8 @@ const app = Vue.createApp({
                     price: 15500,
                     discount: 12500,
                     stock: 4,
-                    category: "Personajes"
+                    category: "Personajes",
+                    tag: "pepe"
                 },
                 {
                     id: 2,
@@ -23,7 +24,8 @@ const app = Vue.createApp({
                     price: 12500,
                     discount: 9500,
                     stock: 2,
-                    category: "Personajes"
+                    category: "Personajes",
+                    tag: "pepe"
                 },
                 {
                     id: 3,
@@ -34,7 +36,8 @@ const app = Vue.createApp({
                     price: 7200,
                     discount: 5500,
                     stock: 5,
-                    category: "Personajes"
+                    category: "Personajes",
+                    tag: "pepe"
                 },
                 {
                     id: 4,
@@ -45,7 +48,8 @@ const app = Vue.createApp({
                     price: 12800,
                     discount: 10500,
                     stock: 14,
-                    category: "Personajes"
+                    category: "Personajes",
+                    tag: "pepe"
                 },
                 {
                     id: 5,
@@ -56,10 +60,232 @@ const app = Vue.createApp({
                     price: 14800,
                     discount: 12500,
                     stock: 3,
-                    category: "Personajes"
+                    category: "Personajes",
+                    tag: "pepe"
                 },
                 
             ],
+            products: [ {
+                "id" : 1,
+                "name" : "Funko POP! Goku Casual",
+                "description" : "Figura de Goku ssj en vinilo de 9 cm",
+                "img" : "https://i.ibb.co/1mKLVDX/funko-pop-goku-casual-dragon-ball-z.jpg",
+                "stock" : 15,
+                "price" : 2499.0,
+                "discount" : 15,
+                "serie" : "Dragon Ball Z",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Funko POP!"
+              }, {
+                "id" : 2,
+                "name" : "Funko POP! Gotenks Casual",
+                "description" : "Figura de Gotenks en vinilo de 9 cm",
+                "img" : "https://i.ibb.co/3htX09L/funko-pop-gotenks-dragon-ball.jpg",
+                "stock" : 31,
+                "price" : 2699.0,
+                "discount" : 15,
+                "serie" : "Dragon Ball Z",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Funko POP!"
+              }, {
+                "id" : 3,
+                "name" : "Funko POP! Future Trunks",
+                "description" : "Figura de Future Trunks en vinilo de 9 cm",
+                "img" : "https://i.ibb.co/TbZdL17/funko-pop-trunks-del-futuro-dragon-ball.jpg",
+                "stock" : 9,
+                "price" : 4499.0,
+                "discount" : 15,
+                "serie" : "Dragon Ball Z",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Funko POP!"
+              }, {
+                "id" : 4,
+                "name" : "Funko POP! Android 18",
+                "description" : "Figura de Android 18 en vinilo de 9 cm",
+                "img" : "https://i.ibb.co/2scTHyV/212286-800-auto.webp",
+                "stock" : 5,
+                "price" : 4999.0,
+                "discount" : 15,
+                "serie" : "Dragon Ball Z",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Funko POP!"
+              }, {
+                "id" : 5,
+                "name" : "Funko POP! Thanos Gold",
+                "description" : "Figura de Thanos Gold en vinilo de 9 cm",
+                "img" : "https://i.ibb.co/DWXjyNs/204545-800-auto.webp",
+                "stock" : 10,
+                "price" : 6999.0,
+                "discount" : 15,
+                "serie" : "Marvel",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Funko POP!"
+              }, {
+                "id" : 6,
+                "name" : "Funko POP! Thor",
+                "description" : "Figura de Thor en vinilo de 9 cm",
+                "img" : "https://i.ibb.co/ZX4Pppx/204651-800-auto.webp",
+                "stock" : 14,
+                "price" : 4999.0,
+                "discount" : 15,
+                "serie" : "Marvel",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Funko POP!"
+              }, {
+                "id" : 7,
+                "name" : "Funko POP! Cyclops",
+                "description" : "Figura de Cyclops en vinilo de 9 cm",
+                "img" : "https://i.ibb.co/6v7v9XX/205860-800-auto.webp",
+                "stock" : 13,
+                "price" : 3499.0,
+                "discount" : 15,
+                "serie" : "Marvel",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Funko POP!"
+              }, {
+                "id" : 8,
+                "name" : "Funko POP! Storm",
+                "description" : "Figura de Storm en vinilo de 8 cm",
+                "img" : "https://i.ibb.co/wS2SWtF/212264-800-auto.webp",
+                "stock" : 7,
+                "price" : 4999.0,
+                "discount" : 15,
+                "serie" : "Marvel",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Funko POP!"
+              }, {
+                "id" : 9,
+                "name" : "Funko POP! Kefla Ssj",
+                "description" : "Figura de Kefla Ssj en vinilo de 8 cm",
+                "img" : "https://i.ibb.co/xHb1zdx/205868-800-auto.webp",
+                "stock" : 14,
+                "price" : 4999.0,
+                "discount" : 15,
+                "serie" : "Dragon Ball Z",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Funko POP!"
+              }, {
+                "id" : 10,
+                "name" : "Funko POP! Thor Gold",
+                "description" : "Figura de Thor Gold en vinilo de 10 cm",
+                "img" : "https://i.ibb.co/2ZNLfWd/212275-800-auto.webp",
+                "stock" : 12,
+                "price" : 5999.0,
+                "discount" : 15,
+                "serie" : "Marvel",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Funko POP!"
+              }, {
+                "id" : 11,
+                "name" : "Marvel Series - Winter Soldier",
+                "description" : "Figura estatica de Winter Soldier de 20 cm de altura",
+                "img" : "https://i.ibb.co/hdx9bNN/entrega-011-P24032-9a-marvel-figurines-1647803149626.webp",
+                "stock" : 7,
+                "price" : 6999.0,
+                "discount" : 15,
+                "serie" : "Marvel",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Static Figures"
+              }, {
+                "id" : 12,
+                "name" : "Marvel Series - War Machine",
+                "description" : "Figura estatica de War Machine de 20 cm de altura",
+                "img" : "https://i.ibb.co/7nJjFk3/entrega-011-P24031-marvel-figurines-entrega31a-maquina-guerra-1647287255924.webp",
+                "stock" : 11,
+                "price" : 6999.0,
+                "discount" : 15,
+                "serie" : "Marvel",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Static Figures"
+              }, {
+                "id" : 13,
+                "name" : "Marvel Series - Iron Man",
+                "description" : "Figura estatica de Iron Man de 20 cm de altura",
+                "img" : "https://i.ibb.co/v4y4GyC/entrega-011-N19055-Marvel-Movie-Collection-entrega55-iron-man-a-1601847012273-cloned-at1635108877273.webp",
+                "stock" : 4,
+                "price" : 7999.0,
+                "discount" : 15,
+                "serie" : "Marvel",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Static Figures"
+              }, {
+                "id" : 14,
+                "name" : "Marvel Series - Ultron",
+                "description" : "Figura estatica de Ultron de 20 cm de altura",
+                "img" : "https://i.ibb.co/LzkQHF9/entrega-011-N19024-24a-marvel-figurines-1560511549346-cloned-at1636317846851.webp",
+                "stock" : 7,
+                "price" : 6999.0,
+                "discount" : 15,
+                "serie" : "Marvel",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Static Figures"
+              }, {
+                "id" : 15,
+                "name" : "Marvel Series - Captain America",
+                "description" : "Figura estatica de Captain America de 20 cm de altura",
+                "img" : "https://i.ibb.co/gd2X0bH/entrega-011-N19028-28a-marvel-figurines-1564738782765-cloned-at1637490474173.webp",
+                "stock" : 9,
+                "price" : 7999.0,
+                "discount" : 15,
+                "serie" : "Marvel",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Static Figures"
+              }, {
+                "id" : 16,
+                "name" : "Marvel Series - Thor",
+                "description" : "Figura estatica de Thor de 20 cm de altura",
+                "img" : "https://i.ibb.co/ZSg6BKp/entrega-011-P24022-Marvel-Movie-Collection-entrega56-thor-a-1638988647449.webp",
+                "stock" : 12,
+                "price" : 7999.0,
+                "discount" : 15,
+                "serie" : "Marvel",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Static Figures"
+              }, {
+                "id" : 17,
+                "name" : "Marvel Series - Hela",
+                "description" : "Figura estatica de Hela de 20 cm de altura",
+                "img" : "https://i.ibb.co/rHPMBNK/entrega-011-P24023-Marvel-Movie-Collection-entrega44-hela-a-1639982180388.webp",
+                "stock" : 17,
+                "price" : 5999.0,
+                "discount" : 15,
+                "serie" : "Marvel",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Static Figures"
+              }, {
+                "id" : 18,
+                "name" : "Marvel Series - Black Widow",
+                "description" : "Figura estatica de Black Widow de 20 cm de altura",
+                "img" : "https://i.ibb.co/rmVKbY7/entrega-011-P24024-viuda-negra-2-1642009101980.webp",
+                "stock" : 3,
+                "price" : 7999.0,
+                "discount" : 15,
+                "serie" : "Marvel",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Static Figures"
+              }, {
+                "id" : 19,
+                "name" : "Marvel Series - Black Panther",
+                "description" : "Figura estatica de Black Panther de 20 cm de altura",
+                "img" : "https://i.ibb.co/S076Dbp/entrega-011-P24028-Marvel-Movie-Collection-entrega51-erik-killmonger-a-1654370239943.webp",
+                "stock" : 8,
+                "price" : 6999.0,
+                "discount" : 15,
+                "serie" : "Marvel",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Static Figures"
+              }, {
+                "id" : 20,
+                "name" : "Marvel Series - Vison",
+                "description" : "Figura estatica de Vision de 20 cm de altura",
+                "img" : "https://i.ibb.co/yQ6f1Cj/entrega-011-P24027-19a-marvel-figurines-1652632580845.webp",
+                "stock" : 13,
+                "price" : 6999.0,
+                "discount" : 15,
+                "serie" : "Marvel",
+                "category" : "ACTIONFIGURES",
+                "subcategory" : "Static Figures"
+              } ],
 
             // LocalStorage Products
             cartStorage: [],
@@ -75,10 +301,20 @@ const app = Vue.createApp({
             productsFavStorage: [],
             productsFavId: [],
 
+            /////
+
+            productsBack: [],
+
+
         }
     },
     created() {
-        this.allProducts()
+            axios.get(`/api/products`)
+            .then(data =>{
+                this.productsBack = data.data
+                console.log(this.productsBack);
+            })
+
 
         this.productsCartStorage = JSON.parse(localStorage.getItem("cart"))
         if (this.productsCartStorage) {
@@ -87,12 +323,10 @@ const app = Vue.createApp({
 
     },
     methods: {
-        allProd(){
-            axios.get(`/api/products`)
-            .then(data =>{
-                this.products = data
-            })
+        price(product){
+            
         },
+
 
         addProductFav(product) {
             this.productsFavId = this.favStorage.map(product => product.id)
