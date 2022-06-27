@@ -24,6 +24,18 @@ public class ProductController {
     @GetMapping ("/products")
     public ResponseEntity<?> getProducts() {
 
+        productService.getAll().forEach(product -> {
+            if(product.getStock() <= 5) {
+                product.setPrice(product.getPrice() * product.getDiscount());
+                product.setDiscount(1D);
+                productService.save(product);
+            }
+            if(product.getStock() > 5){
+                product.setDiscount(0.85D);
+                productService.save(product);
+            }
+        });
+
         return new ResponseEntity<>(productService.getAll().stream().filter(product1 -> product1.getStock() > 0).map(ProductDto::new).collect(Collectors.toList()),
                 HttpStatus.OK);
     }
