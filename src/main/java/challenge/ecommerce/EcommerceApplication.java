@@ -136,13 +136,13 @@ public class EcommerceApplication {
 
 */
 			Product product21 = new Product("Marvel Series - Iron Man","Funda edición Marvel para Iphone",
-					Arrays.asList("https://ibb.co/KWsw6wY"), (short) 12,6999.0,"Marvel", Category.COVERS , "Covers");
+					Arrays.asList("https://i.ibb.co/98bxvVh/D-NQ-NP-601182-MLA49771863910-042022-O.webp", "https://i.ibb.co/XpTbj2S/e92dea3e95b35642f83bf615cbdb0242.jpg"), (short) 4,6999.0,"Marvel", Category.COVERS , "Covers");
 			productRepository.save(product21);
 			Product product22 = new Product("Marvel Series - Spider-Man","Funda edición Marvel para Iphone",
 					Arrays.asList("https://ibb.co/6bVSL5T"), (short) 20,6999.0,"Marvel", Category.COVERS, "Static Figures");
 			productRepository.save(product22);
 			Product product23 = new Product("Marvel Series - Iron Man","Funda edición Marvel para Iphone",
-					Arrays.asList("https://ibb.co/5MrQ9nk"), (short) 4,6999.0,"Marvel",  Category.COVERS , "Fundas de Iphone Personalizados");
+					Arrays.asList("https://ibb.co/5MrQ9nk"), (short) 3,6999.0,"Marvel",  Category.COVERS , "Fundas de Iphone Personalizados");
 			productRepository.save(product23);
 			Product product24 = new Product("Marvel Series - Avengers","Funda edición Marvel para Iphone",
 					Arrays.asList("https://ibb.co/hHvyL7D"), (short) 11,6999.0,"Marvel",  Category.COVERS,  "Fundas de Iphone Personalizados");
