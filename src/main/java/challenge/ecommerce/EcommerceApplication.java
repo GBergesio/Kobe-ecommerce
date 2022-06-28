@@ -167,6 +167,103 @@ public class EcommerceApplication {
 			productRepository.save(product40);
 			Product product41 = new Product("Dragon Ball - Saiyan Blue ","Funda edición Dragon Ball para Iphone","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,6999.0,"Marvel",  Category.COVERS , "Funda de celular");
 			productRepository.save(product41);
+
+			Product product101 = new Product("Mouse pad One Piece",
+					"Mouse pad rgb XL(80x40) de One Piece",
+					"",
+					"",
+					(short) 20,4500.0,"One Piece",
+					Category.ACCESSORIES , "Mouse Pad");
+			productRepository.save(product101);
+
+//			Alfombrilla de ratón con estampado 3D
+			Product product102 = new Product("Mouse pad Gotoubun no Hanayome",
+					"Mouse pad XL(80x40) de Gotoubun no Hanayome",
+					"",
+					"",
+					(short) 15,4200.0,"Gotoubun no Hanayome",
+					Category.ACCESSORIES , "Mouse Pad");
+			productRepository.save(product102);
+
+			Product product103 = new Product("Mouse pad Jujutsu Kaisen",
+					"Mouse pad XL(80x40) de Jujutsu Kaisen extra gruesa",
+					"",
+					"",
+					(short) 15,4200.0,"Jujutsu Kaisen",
+					Category.ACCESSORIES , "Mouse Pad");
+			productRepository.save(product103);
+
+			Product product104 = new Product("Mouse pad de Senku",
+					"Mouse pad (20x25) de Senku de Dr Stone",
+					"",
+					"",
+					(short) 15,2000.0,"Dr Stone",
+					Category.ACCESSORIES , "Mouse Pad");
+			productRepository.save(product104);
+
+			Product product105 = new Product("Mouse pad de Naruto",
+					"Mouse pad XL(80x40) de Naruto",
+					"",
+					"",
+					(short) 19,3800.0,"Naruto Shippuden",
+					Category.ACCESSORIES , "Mouse Pad");
+			productRepository.save(product105);
+
+			Product product106 = new Product("Mouse pad de Pikachu",
+					"Mouse pad XL(80x40) de Pikachu Pokemon",
+					"",
+					"",
+					(short) 19,3800.0,"Pokemon",
+					Category.ACCESSORIES , "Mouse Pad");
+			productRepository.save(product106);
+
+			Product product107 = new Product("Mouse pad de Natsu Fairy Tail",
+					"Mouse pad XL(80x40) de Natsu",
+					"",
+					"",
+					(short) 22,3900.0,"Fairy Tail",
+					Category.ACCESSORIES , "Mouse Pad");
+			productRepository.save(product107);
+
+			Product product108 = new Product("Mouse pad de Nami",
+					"Mouse pad (20x25) de Nami de One Piece",
+					"",
+					"",
+					(short) 12,2500.0,"One Piece",
+					Category.ACCESSORIES , "Mouse Pad");
+			productRepository.save(product108);
+
+			Product product109 = new Product("Mouse pad de Nanachi Made in abyss",
+					"Mouse pad (25x30) de Nanachi, anime made in abyss, antideslizante",
+					"",
+					"",
+					(short) 17,2300.0,"Made in Abyss",
+					Category.ACCESSORIES , "Mouse Pad");
+			productRepository.save(product109);
+
+			Product product110 = new Product("Mouse pad de Monogatarie series",
+					"Mouse pad (30x25) de Monogatarie series, antideslizante",
+					"",
+					"",
+					(short) 19,2250.0,"Monogatarie Series",
+					Category.ACCESSORIES , "Mouse Pad");
+			productRepository.save(product110);
+
+			Product product111 = new Product("Mouse pad de Raphtalia",
+					"Mouse pad (30x25) de Raphtali de Tate no yuusha",
+					"",
+					"",
+					(short) 22,2050.0,"Tate No Yuusha",
+					Category.ACCESSORIES , "Mouse Pad");
+			productRepository.save(product111);
+
+			Product product112 = new Product("Mouse pad de FLCL",
+					"Mouse pad (30x25) de Raphtali de Tate no yuusha",
+					"",
+					"",
+					(short) 30,2050.0,"Tate No Yuusha",
+					Category.ACCESSORIES , "Mouse Pad");
+			productRepository.save(product112);
 		};
 	}
 
