@@ -45,76 +45,49 @@
                         <div class="main-menu">
                             <nav>
                                 <ul>
-                                    <li class="angle-shape"><a href="index.html">Home </a>
-                                        <ul class="submenu">
-                                            <li><a href="index.html">Home version 1 </a></li>
-                                            <li><a href="index-2.html">Home version 2 </a></li>
-                                            <li><a href="index-3.html">Home version 3 </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="angle-shape"><a href="shop.html"> Shop <span>new</span> </a>
+                                    <li class=""><a href="index.html">Home</a></li>
+                                    <li class="angle-shape"><a href="#"> Categorías <span>new</span>
+                                        </a>
                                         <ul class="mega-menu">
-                                            <li><a class="menu-title" href="#">Shop Layout</a>
+                                            <li>
+                                                <a class="menu-title"
+                                                    v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
                                                 <ul>
-                                                    <li><a href="shop.html">standard style</a></li>
-                                                    <li><a href="shop-grid-2-column.html">grid 2 column</a></li>
-                                                    <li><a href="shop-grid-4-column.html">grid 4 column</a></li>
-                                                    <li><a href="shop-grid-fullwide.html">grid full wide</a></li>
-                                                    <li><a href="shop-right-sidebar.html">grid right sidebar </a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones Completas</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a class="menu-title" href="#">Shop Layout</a>
+                                            <li><a class="menu-title" v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras coleccionables</a>
                                                 <ul>
-                                                    <li><a href="shop-list-style1.html">list style 1</a></li>
-                                                    <li><a href="shop-list-style2.html">list style 2</a></li>
-                                                    <li><a href="shop-list-style3.html">list style 3</a></li>
-                                                    <li><a href="shop-list-fullwide.html">list full wide</a></li>
-                                                    <li><a href="shop-list-sidebar.html">list with sidebar </a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a class="menu-title" href="#">Product Details</a>
+                                            <li><a class="menu-title" v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y juegos</a>
                                                 <ul>
-                                                    <li><a href="product-details.html">tab style 1</a></li>
-                                                    <li><a href="product-details-tab-2.html">tab style 2</a></li>
-                                                    <li><a href="product-details-tab-3.html">tab style 3</a></li>
-                                                    <li><a href="product-details-gallery.html">gallery style  </a></li>
-                                                    <li><a href="product-details-gallery-right.html">gallery right</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de
+                                                            mesa</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de
+                                                            video</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a class="menu-title" href="#">Product Details</a>
+                                            <li><a class="menu-title" v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
                                                 <ul>
-                                                    <li><a href="product-details-sticky.html">sticky style</a></li>
-                                                    <li><a href="product-details-sticky-right.html">sticky right</a></li>
-                                                    <li><a href="product-details-slider-box.html">slider style</a></li>
-                                                    <li><a href="product-details-affiliate.html">Affiliate style</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas Iphone</a>
+                                                    </li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a>
+                                                    </li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse Pad</a>
+                                                    </li>
                                                 </ul>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="shop.html">Accessories <span>hot</span> </a></li>
-                                    <li><a href="contact-us.html"> Contact </a></li>
-                                    <li class="angle-shape"><a href="#">Pages </a>
-                                        <ul class="submenu">
-                                            <li><a href="about-us.html">about us </a></li>
-                                            <li><a href="cart-page.html">cart page </a></li>
-                                            <li><a href="checkout.html">checkout </a></li>
-                                            <li><a href="compare-page.html">compare </a></li>
-                                            <li><a href="wishlist.html">wishlist </a></li>
-                                            <li><a href="my-account.html">my account </a></li>
-                                            <li><a href="contact-us.html">contact us </a></li>
-                                            <li><a href="login-register.html">login/register </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="angle-shape"><a href="blog.html"> Blog </a>
-                                        <ul class="submenu">
-                                            <li><a href="blog.html">standard style </a></li>
-                                            <li><a href="blog-2-col.html">blog 2 column </a></li>
-                                            <li><a href="blog-3-col.html">blog 3 column </a></li>
-                                            <li><a href="blog-right-sidebar.html">blog right sidebar </a></li>
-                                            <li><a href="blog-details.html">blog details </a></li>
-                                            <li><a href="blog-details-right-sidebar.html">blog details right sidebar </a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="contact-us.html"> Contacto </a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -314,67 +287,51 @@
                     <nav>
                         <ul class="mobile-menu">
                             <li class="menu-item-has-children"><a href="index.html">Home</a>
-                                <ul class="dropdown">
-                                    <li><a href="index.html">Home version 1 </a></li>
-                                    <li><a href="index-2.html">Home version 2 </a></li>
-                                    <li><a href="index-3.html">Home version 3 </a></li>
-                                </ul>
                             </li>
-                            <li class="menu-item-has-children "><a href="shop.html">shop</a>
+                            <li class="menu-item-has-children "><a href="shop.html">Categorias</a>
                                 <ul class="dropdown">
-                                    <li class="menu-item-has-children"><a href="#">Shop Layout</a>
+                                    <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
                                         <ul class="dropdown">
-                                            <li><a href="shop.html">standard style</a></li>
-                                            <li><a href="shop-grid-2-column.html">grid 2 column</a></li>
-                                            <li><a href="shop-grid-4-column.html">grid 4 column</a></li>
-                                            <li><a href="shop-grid-fullwide.html">grid full wide</a></li>
-                                            <li><a href="shop-right-sidebar.html">grid right sidebar </a></li>
-                                            <li><a href="shop-list-style1.html">list style 1</a></li>
-                                            <li><a href="shop-list-style2.html">list style 2</a></li>
-                                            <li><a href="shop-list-style3.html">list style 3</a></li>
-                                            <li><a href="shop-list-fullwide.html">list full wide</a></li>
-                                            <li><a href="shop-list-sidebar.html">list with sidebar </a></li>
+                                            <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
+                                            <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a></li>
+                                            <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
+                                            <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones Completas</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item-has-children"><a href="#">products details</a>
+                                    <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras coleccionables</a>
                                         <ul class="dropdown">
-                                            <li><a href="product-details.html">tab style 1</a></li>
-                                            <li><a href="product-details-tab-2.html">tab style 2</a></li>
-                                            <li><a href="product-details-tab-3.html">tab style 3</a></li>
-                                            <li><a href="product-details-gallery.html">gallery style  </a></li>
-                                            <li><a href="product-details-gallery-right.html">gallery right</a></li>
-                                            <li><a href="product-details-sticky.html">sticky style</a></li>
-                                            <li><a href="product-details-sticky-right.html">sticky right</a></li>
-                                            <li><a href="product-details-slider-box.html">slider style</a></li>
-                                            <li><a href="product-details-affiliate.html">Affiliate style</a></li>
+                                            <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops!</a></li>
+                                            <li><a v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a></li>
+                                            <li><a v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y Juegos</a>
+                                        <ul class="dropdown">
+                                            <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
+                                            <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de mesa</a></li>
+                                            <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de video</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
+                                        <ul class="dropdown">
+                                            <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas Iphone</a></li>
+                                            <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a></li>
+                                            <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="shop.html">Accessories </a></li>
-                            <li class="menu-item-has-children"><a href="#">pages</a>
+                            <li class="menu-item-has-children"><a href="#">Páginas</a>
                                 <ul class="dropdown">
-                                    <li><a href="about-us.html">about us </a></li>
-                                    <li><a href="cart-page.html">cart page </a></li>
-                                    <li><a href="checkout.html">checkout </a></li>
-                                    <li><a href="compare-page.html">compare </a></li>
-                                    <li><a href="wishlist.html">wishlist </a></li>
-                                    <li><a href="my-account.html">my account </a></li>
-                                    <li><a href="contact-us.html">contact us </a></li>
-                                    <li><a href="login-register.html">login/register </a></li>
+                                    <li><a href="about-us.html">Sobre nosotros</a></li>
+                                    <li><a href="cart-page.html">Carrito</a></li>
+                                    <li><a href="checkout.html">Checkout </a></li>
+                                    <li><a href="my-account.html">Mi cuenta</a></li>
+                                    <li><a href="contact-us.html">Contáctenos</a></li>
+                                    <li><a href="login-register.html">login/registro</a></li>
                                 </ul>
                             </li>
-                            <li class="menu-item-has-children "><a href="blog.html">Blog</a>
-                                <ul class="dropdown">
-                                    <li><a href="blog.html">standard style </a></li>
-                                    <li><a href="blog-2-col.html">blog 2 column </a></li>
-                                    <li><a href="blog-3-col.html">blog 3 column </a></li>
-                                    <li><a href="blog-right-sidebar.html">blog right sidebar </a></li>
-                                    <li><a href="blog-details.html">blog details </a></li>
-                                    <li><a href="blog-details-right-sidebar.html">blog details right sidebar </a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact-us.html">Contact us</a></li>
+                            <li><a href="contact-us.html">Contáctenos</a></li>
                         </ul>
                     </nav>
                     <!-- mobile menu navigation end -->

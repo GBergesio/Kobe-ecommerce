@@ -2678,6 +2678,7 @@ textarea:focus {
 .mobile-off-canvas-active .header-mobile-aside-wrap .mobile-menu-wrap .mobile-navigation nav .mobile-menu li {
   display: block;
   position: relative;
+  color: black;
 }
 
 .mobile-off-canvas-active .header-mobile-aside-wrap .mobile-menu-wrap .mobile-navigation nav .mobile-menu li.menu-item-has-children .menu-expand {
@@ -2726,7 +2727,8 @@ textarea:focus {
   position: relative;
   display: inline-block;
   padding: 10px 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
+  color: black;
 }
 
 .mobile-off-canvas-active .header-mobile-aside-wrap .mobile-menu-wrap .mobile-navigation nav .mobile-menu li ul li a {
@@ -2772,7 +2774,8 @@ textarea:focus {
   font-size: 16px;
   display: block;
   letter-spacing: 0.2px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
+  color: black;
 }
 
 .mobile-off-canvas-active .header-mobile-aside-wrap .mobile-curr-lang-wrap .single-mobile-curr-lang a i {
@@ -2806,6 +2809,7 @@ textarea:focus {
   letter-spacing: 0.2px;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  color: black!important;
 }
 
 .mobile-off-canvas-active .header-mobile-aside-wrap .mobile-curr-lang-wrap .single-mobile-curr-lang .lang-curr-dropdown ul li a:hover {
@@ -5538,6 +5542,7 @@ textarea:focus {
   margin: 0 0 0px;
   line-height: 1;
   font-weight: 500;
+  color: black;
 }
 
 @media only screen and (max-width: 767px) {
@@ -5558,8 +5563,9 @@ textarea:focus {
 
 .product-details-content .product-details-price span {
   font-size: 24px;
-  color: #ff3535;
+  color: black;
   font-weight: 700;
+  font-family: "Poppins";
 }
 
 .product-details-content .product-details-price span.old {
@@ -5821,7 +5827,7 @@ textarea:focus {
 .product-details-content .pro-details-quality .cart-plus-minus input.cart-plus-minus-box {
   background: transparent none repeat scroll 0 0;
   border: medium none;
-  color: white;
+  color: black;
   float: left;
   font-size: 14px;
   height: 60px;
@@ -5914,6 +5920,7 @@ textarea:focus {
   font-size: 15px;
   margin-right: 5px;
   font-weight: 500;
+  color: black;
 }
 
 .product-details-content .pro-details-meta ul li {
@@ -5923,6 +5930,7 @@ textarea:focus {
 
 .product-details-content .pro-details-meta ul li a {
   font-size: 14px;
+  color: var(--tulip-tree);
 }
 
 @media only screen and (max-width: 767px) {
@@ -6797,6 +6805,7 @@ textarea:focus {
   margin-right: 18px;
   text-transform: uppercase;
   position: relative;
+  color: var(--electric-blue)
 }
 
 .breadcrumb-content ul li::before {
@@ -6810,6 +6819,7 @@ textarea:focus {
   z-index: 99;
   -webkit-transform: rotate(115deg);
   transform: rotate(115deg);
+
 }
 
 .breadcrumb-content ul li:last-child::before {
@@ -9044,14 +9054,15 @@ h3.cart-page-title {
 }
 
 /*-------- 17. Login register style ---------*/
-.login-register-wrapper .login-register-tab-list {
+
+
+.login-register-wrapper .login-register-tab-list{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-bottom: 40px;
 }
 
 .login-register-wrapper .login-register-tab-list a {
