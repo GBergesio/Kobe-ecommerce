@@ -77,8 +77,9 @@ public class ProductController {
     @PatchMapping("/products/modify")
     public ResponseEntity<?> modify(
             @RequestParam String productId,
-            @RequestParam(required = false) String price, @RequestParam(required = false) List<String> imgs,
-            @RequestParam(required = false) String description, @RequestParam(required = false) Short stock
+            @RequestParam(required = false) String price, @RequestParam(required = false) String img,
+            @RequestParam(required = false) String imgSec, @RequestParam(required = false) String description,
+            @RequestParam(required = false) Short stock
             ){
 
         if(productId.isEmpty()){
@@ -90,7 +91,7 @@ public class ProductController {
             return new ResponseEntity<>("product does not exist", HttpStatus.FORBIDDEN);
         }
 
-        if(price == null && imgs == null && description == null && stock == null){
+        if(price == null && img == null && imgSec == null && description == null && stock == null){
             return new ResponseEntity<>("No property was supplied to change", HttpStatus.FORBIDDEN);
         }
 
@@ -98,9 +99,10 @@ public class ProductController {
             productService.updatePrice(product, Double.valueOf(price));
         }
 
-        if(imgs != null && !imgs.isEmpty()){
-            productService.updateImgs(product, imgs);
+        if(img != null && !img.isEmpty() && imgSec != null && !imgSec.isEmpty()){
+            productService.updateImgs(product, img, imgSec);
         }
+
         if(description != null){
             productService.updateDescription(product, description);
         }
@@ -111,7 +113,7 @@ public class ProductController {
             }
         }
         productService.save(product);
-        return new ResponseEntity<>("Product upgraded successfully",HttpStatus.OK);
+        return new ResponseEntity<>("Product updated successfully",HttpStatus.OK);
 
     }
     //recibe la palabra clave INCREASE, entonces aumenta el precio en ese porcentaje

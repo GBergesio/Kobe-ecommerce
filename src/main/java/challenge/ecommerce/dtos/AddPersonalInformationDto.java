@@ -1,16 +1,18 @@
 package challenge.ecommerce.dtos;
 
 import challenge.ecommerce.models.Address;
-import lombok.Data;
+import lombok.Getter;
 
-@Data
-public class AddressDTO {
+@Getter
+public class AddPersonalInformationDto {
 
     private long id;
 
-    private Long zipCode;
+    private long zipCode;
 
-    private Long streetNumber;
+    private long streetNumber;
+
+    private long dni;
 
     private String floorApartment;
 
@@ -20,14 +22,15 @@ public class AddressDTO {
 
     private String locality;
 
-    public AddressDTO(){}
-    public AddressDTO(Address address) {
-        this.id = address.getId();
+    public AddPersonalInformationDto(){}
+
+    public AddPersonalInformationDto(Address address) {
         this.zipCode = address.getZipCode();
         this.streetNumber = address.getStreetNumber();
         this.floorApartment = address.getFloorApartment();
         this.streetName = address.getStreetName();
         this.province = address.getProvince();
         this.locality = address.getLocality();
+        this.dni = dni;
     }
 }
