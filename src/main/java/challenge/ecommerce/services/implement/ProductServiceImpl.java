@@ -64,11 +64,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void updateImgs(Product product, String img, String imgSec) {
+    public void updateImg(Product product, String img) {
         product.setImg(img);
-        product.setImgSec(imgSec);
     }
-
+    @Override
+    public void updateImgSec(Product product, String imgSec) {
+        product.setImg(imgSec);
+    }
     @Override
     public void updateStock(Product product, Short stock) {
         product.setStock(stock);

@@ -64,7 +64,7 @@ public class ProductController {
     @PatchMapping("/products/modify")
     public ResponseEntity<?> modify(
             @RequestParam String productId,
-            @RequestParam(required = false) String price, @RequestParam(required = false) String img,
+            @RequestParam(required = false) Double price, @RequestParam(required = false) String img,
             @RequestParam(required = false) String imgSec, @RequestParam(required = false) String description,
             @RequestParam(required = false) Short stock
             ){
@@ -83,21 +83,35 @@ public class ProductController {
         }
 
         if(price != null){
-            productService.updatePrice(product, Double.valueOf(price));
+            if(price < 0){
+                return new ResponseEntity<>("price can not be negative", HttpStatus.FORBIDDEN);
+            }
+            productService.updatePrice(product, price);
         }
 
-        if(img != null && !img.isEmpty() && imgSec != null && !imgSec.isEmpty()){
-            productService.updateImgs(product, img, imgSec);
+        if(img != null && !img.isEmpty()){
+            if(img.contains(" ")){
+                return new ResponseEntity<>("url format invalid, url can not have white spaces", HttpStatus.FORBIDDEN);
+            }
+            productService.updateImg(product, img);
         }
 
-        if(description != null){
+        if(imgSec != null && !imgSec.isEmpty()){
+            if(imgSec.contains(" ")){
+                return new ResponseEntity<>("url format invalid, url can not have white spaces", HttpStatus.FORBIDDEN);
+            }
+            productService.updateImgSec(product, imgSec);
+        }
+
+        if(description != null && !description.isEmpty()){
             productService.updateDescription(product, description);
         }
-        //manejo exepciones
+
         if(stock != null){
-            if(stock > 0){
-                productService.updateStock(product, stock);
+            if(stock < 0){
+                return new ResponseEntity<>("stock can not be negative", HttpStatus.FORBIDDEN);
             }
+            productService.updateStock(product, stock);
         }
         productService.save(product);
         return new ResponseEntity<>("Product updated successfully",HttpStatus.OK);
