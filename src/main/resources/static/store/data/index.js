@@ -1,3 +1,6 @@
+// const urlParams = new URLSearchParams(window.location.search);
+// const category = urlParams.get('category')
+
 const app = Vue.createApp({
   data() {
     return {
@@ -304,6 +307,7 @@ const app = Vue.createApp({
       /////
 
       productsBack: [],
+      dataPro: [],
       lowStock: [],
       funkos: [],
       mangas: [],
@@ -322,7 +326,9 @@ const app = Vue.createApp({
         this.funkoFilter()
         this.coversFilter()
         this.mangasFilter()
+        
       })
+
 
 
     this.productsCartStorage = JSON.parse(localStorage.getItem("cart"))
@@ -333,6 +339,8 @@ const app = Vue.createApp({
   mounted() {
   },
   methods: {
+
+
     productForModal(product) {
       this.productSelect = product
       return this.productSelect.name
@@ -359,7 +367,7 @@ const app = Vue.createApp({
       let products = this.productsBack
       this.covers = []
       products.forEach(product => {
-        if (product.subcategory === "Funda celular") {
+        if (product.subcategory === "Funda de celular") {
           this.covers.push(product)
         }
       })
@@ -373,7 +381,6 @@ const app = Vue.createApp({
         }
       })
     },
-
     addProductFav(product) {
       this.productsFavId = this.favStorage.map(product => product.id)
       if (!this.productsFavId.includes(product.id)) {
@@ -448,11 +455,7 @@ const app = Vue.createApp({
       localStorage.clear()
       localStorage.setItem("cart", JSON.stringify(localScopyFiltered))
       console.log(localSFilterToModify);
-    }
-
-
-
-
+    },
   },
   computed: {
     sumPrice() {
@@ -464,3 +467,5 @@ const app = Vue.createApp({
     },
   },
 }).mount('#app')
+
+
