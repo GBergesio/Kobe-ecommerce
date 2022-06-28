@@ -168,20 +168,20 @@ public class EcommerceApplication {
 			Product product41 = new Product("Dragon Ball - Saiyan Blue ","Funda edición Dragon Ball para Iphone","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,6999.0,"Marvel",  Category.COVERS , "Funda de celular");
 			productRepository.save(product41);
 
-			Product product101 = new Product("Mouse pad One Piece",
-					"Mouse pad rgb XL(80x40) de One Piece",
+			//Mouse pads
+			Product product101 = new Product("Mouse pad Charlotte Katakuri",
+					"Mouse pad (25x30) de Charlotte Katakuri del anime One Piece, de poliester",
 					"",
 					"",
-					(short) 20,4500.0,"One Piece",
+					(short) 20,2200.0,"One Piece",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product101);
 
-//			Alfombrilla de ratón con estampado 3D
 			Product product102 = new Product("Mouse pad Gotoubun no Hanayome",
 					"Mouse pad XL(80x40) de Gotoubun no Hanayome",
 					"",
 					"",
-					(short) 15,4200.0,"Gotoubun no Hanayome",
+					(short) 15,4200.0,"Gotoubun No Hanayome",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product102);
 
@@ -250,7 +250,7 @@ public class EcommerceApplication {
 			productRepository.save(product110);
 
 			Product product111 = new Product("Mouse pad de Raphtalia",
-					"Mouse pad (30x25) de Raphtali de Tate no yuusha",
+					"Mouse pad (30x25) de Raphtalia del anime Tate no yuusha",
 					"",
 					"",
 					(short) 22,2050.0,"Tate No Yuusha",
@@ -258,12 +258,108 @@ public class EcommerceApplication {
 			productRepository.save(product111);
 
 			Product product112 = new Product("Mouse pad de FLCL",
-					"Mouse pad (30x25) de Raphtali de Tate no yuusha",
+					"Mouse pad (30x25) de FLCL antideslizante de goma",
 					"",
 					"",
-					(short) 30,2050.0,"Tate No Yuusha",
+					(short) 12,2050.0,"FLCL",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product112);
+
+			Product product113 = new Product("Mouse pad de Koro sensei",
+					"Mouse pad (30x25) de Koro sensei del anime Assassination Classroom, antideslizante de goma",
+					"",
+					"",
+					(short) 16,2250.0,"Assassination Classroom",
+					Category.ACCESSORIES , "Mouse Pad");
+			productRepository.save(product113);
+
+			Product product114 = new Product("Mouse pad de Koe no Katachi",
+					"Mouse pad (30x25) del anime Koe no Katachi, de tela de poliester",
+					"",
+					"",
+					(short) 19,2300.0,"Koe No Katachi",
+					Category.ACCESSORIES , "Mouse Pad");
+			productRepository.save(product114);
+
+			Product product115 = new Product("Mouse pad de Okumura",
+					"Mouse pad (30x25) de Okumura del anime Ao no Exorcist, de tela de poliester",
+					"",
+					"",
+					(short) 12,2200.0,"Ao No Exorcist",
+					Category.ACCESSORIES , "Mouse Pad");
+			productRepository.save(product115);
+
+			Product product116 = new Product("Uno",
+					"Juego de cartas almacenado en una lata, apto para mayores de 7 años",
+					"",
+					"",
+					(short) 12,2200.0,"varios",
+					Category.BAZARANDTOYSHOP, "Board Games");
+			productRepository.save(product116);
+
+			Product product117 = new Product("Catan",
+					"Juego de estrategia de hasta 4 jugadores, apto para mayores de 7 años",
+					"",
+					"",
+					(short) 10,5000.0,"varios",
+					Category.BAZARANDTOYSHOP , "Board Games");
+			productRepository.save(product117);
+
+			Product product118 = new Product("Attack on titan: the last stand",
+					"Juego de mesa ambientado en el mundo de Shingeki no Kyojin, hasta 6 jugadores",
+					"",
+					"",
+					(short) 12,5400.0,"Shingeki no Kyojin",
+					Category.BAZARANDTOYSHOP , "Board Games");
+			productRepository.save(product118);
+
+			Product product119 = new Product("Attack on titan: the last stand",
+					"Juego de cartas de hasbro en los que se pueden tocar temas sensibles, apto para mayores de 16 años",
+					"",
+					"",
+					(short) 12,5400.0,"varios",
+					Category.BAZARANDTOYSHOP , "Board Games");
+			productRepository.save(product119);
+
+			Product product120 = new Product("El embustero",
+					"Juego de cartas de asociacion de palabras,faroles y sospechas, apto para mayores de 12 años",
+					"",
+					"",
+					(short) 12,2800.0,"varios",
+					Category.BAZARANDTOYSHOP , "Board Games");
+			productRepository.save(product120);
+
+			Product product121 = new Product("Virus",
+					"Juego de cartas en el que gana el primero en armar un cuerpo sano, apto para todo publico",
+					"",
+					"",
+					(short) 14,2600.0,"varios",
+					Category.BAZARANDTOYSHOP , "Board Games");
+			productRepository.save(product121);
+
+			Product product122 = new Product("Tribu de sinverguenzas",
+					"Juego de mesa para echarse unas risas, muy gamberro que empieza donde termina la vergüenza",
+					"",
+					"",
+					(short) 11,2800.0,"varios",
+					Category.BAZARANDTOYSHOP , "Board Games");
+			productRepository.save(product122);
+
+			Product product123 = new Product("Fantasma blitz",
+					"Juego de reflejo, el mas rapido en llevarse la pieza gana un punto, aptop para mayores de 14",
+					"",
+					"",
+					(short) 14,3200.0,"varios",
+					Category.BAZARANDTOYSHOP , "Board Games");
+			productRepository.save(product123);
+
+			Product product124 = new Product("Polilla tranmposa",
+					"Juego de cartas donde el objetivo es hacer trampa para quedarte sin cartas",
+					"",
+					"",
+					(short) 14,3000.0,"varios",
+					Category.BAZARANDTOYSHOP , "Board Games");
+			productRepository.save(product124);
 		};
 	}
 
