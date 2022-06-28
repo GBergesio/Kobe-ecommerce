@@ -471,30 +471,31 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="product-details-content ml-30">
-                        <h2>Products Name Here</h2>
-                        <div class="product-details-price">
-                            <span>$18.00 </span>
-                            <span class="old">$20.00 </span>
+                        <h2 class="text-light">Products Name Here</h2>
+                        <div class="product-details-price" v-show="productSelect.stock <=5">
+                            <span class="new text-light">$productSelect.lowStockPrice</span>
+                            <span class="old text-danger">$productSelect.price</span>
+                            <span class="text-success">offMessage</span>
+                        </div>
+
+                        <div class="product-details-price" v-show="productSelect.stock > 5">
+                            <span class="new">$productSelect.price</span>
                         </div>
                         <div class="pro-details-rating-wrap">
-                            <div class="pro-details-rating">
-                                <i class="sli sli-star yellow"></i>
-                                <i class="sli sli-star yellow"></i>
-                                <i class="sli sli-star yellow"></i>
-                                <i class="sli sli-star yellow"></i>
-                                <i class="sli sli-star yellow"></i>
-                            </div>
-                            <span><a href="#">3 Reviews</a></span>
+                            <span v-show="productSelect.stock > 5">Stock: productSelect.stock</span>
+                            <span class="text-danger"
+                                v-show="productSelect.stock <= 5 && productSelect.stock >= 2">Últimas
+                                productSelect.stock unidades!</span>
+                            <span class="text-danger" v-show="productSelect.stock == 1">Última
+                                unidad!!!</span> 
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisic elit eiusm tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim venialo quis nostrud exercitation ullamco</p>
+                        <p>product.description</p>
                         <div class="pro-details-list">
                             <ul>
-                                <li>- 0.5 mm Dail</li>
-                                <li>- Inspired vector icons</li>
-                                <li>- Very modern style  </li>
+                                <li>Envíos gratis en compras mayores a $20000!</li>
                             </ul>
                         </div>
-                        <div class="pro-details-size-color">
+                        <!-- <div class="pro-details-size-color">
                             <div class="pro-details-color-wrap">
                                 <span>Color</span>
                                 <div class="pro-details-color-content">
@@ -511,7 +512,6 @@
                                 <span>Talla</span>
                                 <div class="pro-details-size-content">
                                     <ul>
-                                        <!--v if si el producto es por tamaño y vfor a tallas disponible -->
                                         <li><a href="#">s</a></li>
                                         <li><a href="#">m</a></li>
                                         <li><a href="#">l</a></li>
@@ -520,10 +520,10 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="pro-details-quality">
                             <div class="cart-plus-minus">
-                                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
+                                <input class="cart-plus-minus-box text-light" type="text" name="qtybutton" value="2">
                             </div>
                             <div class="pro-details-cart btn-hover">
                                 <a href="#">Añadir al carrito</a>
@@ -531,26 +531,18 @@
                             <div class="pro-details-wishlist">
                                 <a title="Add To Wishlist" href="#"><i class="sli sli-heart"></i></a>
                             </div>
-                            <div class="pro-details-compare">
-                                <a title="Add To Compare" href="#"><i class="sli sli-refresh"></i></a>
-                            </div>
                         </div>
                         <div class="pro-details-meta">
-                            <span>Categorías :</span>
+                            <span class="text-light">Categorías :</span>
                             <ul>
-                                <!-- v for de las categorias-->
-                                <li><a href="#">Minimal,</a></li>
-                                <li><a href="#">Furniture,</a></li>
-                                <li><a href="#">Fashion</a></li>
+                                <li><a href="#">product.category</a></li>
+
                             </ul>
                         </div>
                         <div class="pro-details-meta">
-                                <!-- v for de las etiquetas -->
-                            <span>Tag :</span>
+                            <span class="text-light">Subcategorias :</span>
                             <ul>
-                                <li><a href="#">Fashion, </a></li>
-                                <li><a href="#">Furniture,</a></li>
-                                <li><a href="#">Electronic</a></li>
+                                <li><a href="#">product.subcategory</a></li>
                             </ul>
                         </div>
                     </div>
