@@ -71,14 +71,13 @@ public class ClientServiceImpl implements ClientService {
     public boolean createClient(RegistrationRequest request) {
 
         Client client = new Client(request.getName(), request.getLastName(), request.getEmail(), passwordEncoder.encode(request.getPassword()));
-
         clientRepository.save(client);
 
         String token = UUID.randomUUID().toString();
         ConfirmationToken confirmationToken = new ConfirmationToken(token, LocalDateTime.now(), LocalDateTime.now().plusMinutes(15), client);
         confirmationTokenImpl.saveConfirmationToken(confirmationToken);
 
-        String link = "https://localhost:8080/api/clients/confirm?token=" + token;
+        String link = "http://localhost:8080/api/clients/confirm?token=" + token;
         String email = emailServiceImpl.createEmail(request.getName(),request.getLastName(), link);
         emailServiceImpl.send(request.getEmail(), email);
 
@@ -95,6 +94,7 @@ public class ClientServiceImpl implements ClientService {
         ConfirmationToken confirmationToken = confirmationTokenImpl.getConfirmationToken(token).orElse(null);
         if (confirmationToken == null) return "token not found";
         if (confirmationToken.getConfirmedAt() != null) return "email already confirmed";
+
         LocalDateTime expiredAt = confirmationToken.getExpiresAt();
         if (expiredAt.isBefore(LocalDateTime.now())) return "token expired";
 
@@ -102,5 +102,4 @@ public class ClientServiceImpl implements ClientService {
         enableClient(confirmationToken.getClient().getEmail());
         return "confirmed";
     }
-
 }

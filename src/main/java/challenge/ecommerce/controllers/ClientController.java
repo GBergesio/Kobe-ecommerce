@@ -13,6 +13,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -44,7 +46,7 @@ public class ClientController {
     }
 
     @Transactional
-    @PostMapping("/clientRegister")
+    @PostMapping("/clients")
     public ResponseEntity<Object> register(@RequestBody RegisterDTO registerDTO){
 
         Pattern patPassword = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,}$");
@@ -112,6 +114,19 @@ public class ClientController {
     @GetMapping("/clients/current")
     public ResponseEntity<?> getCurrentClient(Authentication authentication){
         return(new ResponseEntity<>(clientService.getCurrentClient(authentication),HttpStatus.ACCEPTED));
+    }
+
+    @GetMapping("/clients/confirm")
+    public ResponseEntity<Object> confirmEmail(@RequestParam("token") String token, HttpServletResponse resp) throws IOException {
+        String response = clientServiceImpl.confirmClientEmail(token);
+
+        if (response.equalsIgnoreCase("confirmed")) {
+            resp.setStatus(200);
+            resp.sendRedirect("/store/index.html");
+            return new ResponseEntity<>(response,HttpStatus.ACCEPTED);
+        }
+
+        return new ResponseEntity<>(response, HttpStatus.FORBIDDEN);
     }
 
 }
