@@ -1,8 +1,11 @@
 package challenge.ecommerce.controllers;
 
 import challenge.ecommerce.dtos.RegisterDTO;
+import challenge.ecommerce.email.EmailValidator;
 import challenge.ecommerce.models.Client;
+import challenge.ecommerce.models.RegistrationRequest;
 import challenge.ecommerce.services.ClientService;
+import challenge.ecommerce.services.implement.ClientServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +23,14 @@ public class ClientController {
 
     @Autowired
     ClientService clientService;
+
+    @Autowired
+    ClientServiceImpl clientServiceImpl;
+
+    private RegistrationRequest registrationRequest = new RegistrationRequest();
+
+    @Autowired
+    private EmailValidator emailValidator;
 
     @GetMapping("/clients")
     ResponseEntity<?> getClients(){
@@ -84,8 +95,17 @@ public class ClientController {
             return new ResponseEntity<>("Email is already in use", HttpStatus.FORBIDDEN);
         }
 
-        Client client = new Client(registerDTO.getFirstName(), registerDTO.getLastName(), registerDTO.getEmail(), registerDTO.getPassword());
-        clientService.saveClient(client);
+        //Client client = new Client(registerDTO.getFirstName(), registerDTO.getLastName(), registerDTO.getEmail(), registerDTO.getPassword(), false);
+        //clientService.saveClient(client);
+
+        registrationRequest.setName(registerDTO.getFirstName());
+        registrationRequest.setLastName(registerDTO.getLastName());
+        registrationRequest.setEmail(registerDTO.getEmail());
+        registrationRequest.setPassword(registerDTO.getPassword());
+
+        if(clientServiceImpl.createClient(registrationRequest)){
+            return new ResponseEntity<>("Client register, review the email", HttpStatus.ACCEPTED);
+        }
 
         return new ResponseEntity<>("Registered successfully, please activate your email to use your account", HttpStatus.CREATED);
     }

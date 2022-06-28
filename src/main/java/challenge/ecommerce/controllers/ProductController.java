@@ -5,6 +5,7 @@ import challenge.ecommerce.dtos.ProductDto;
 import challenge.ecommerce.enums.Category;
 import challenge.ecommerce.models.Product;
 import challenge.ecommerce.services.ProductService;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,11 @@ public class ProductController {
         return new ResponseEntity<>(productService.getAll().stream().filter(product1 -> product1.getStock() > 0).map(ProductDto::new).collect(Collectors.toList()),
                 HttpStatus.OK);
     }
+
+    @GetMapping("/products/{id}")
+    public Product getProductDTO(@PathVariable Long id) {
+      return productService.getById(id);
+    };
 
     @GetMapping("/products/category")
     public ResponseEntity<?> getByCategory(@RequestParam Category category){
