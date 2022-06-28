@@ -27,6 +27,12 @@ public class ProductController {
                 HttpStatus.OK);
     }
 
+    @GetMapping("/products/{id}")
+    public Product getProductDTO(@PathVariable Long id) {
+        return productService.getById(id);
+    };
+
+
     @GetMapping("/products/category")
     public ResponseEntity<?> getByCategory(@RequestParam Category category){
         return new ResponseEntity<>(productService.getByCategory(category).stream().map(ProductDto::new).collect(Collectors.toList()),

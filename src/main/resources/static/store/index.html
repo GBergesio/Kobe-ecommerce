@@ -49,40 +49,42 @@
                                     <nav>
                                         <ul>
                                             <li class=""><a href="index.html">Home</a></li>
-                                            <li class="angle-shape"><a href="shop.html"> Categorías <span>new</span>
+                                            <li class="angle-shape"><a href="#"> Categorías <span>new</span>
                                                 </a>
                                                 <ul class="mega-menu">
-                                                    <li><a class="menu-title" href="#">Libreria</a>
+                                                    <li>
+                                                        <a class="menu-title"
+                                                            v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
                                                         <ul>
-                                                            <li><a href="shop.html">Mangas</a></li>
-                                                            <li><a href="shop.html">Magazines</a></li>
-                                                            <li><a href="shop.html">Comics</a></li>
-                                                            <li><a href="shop.html">Colecciones Completas</a></li>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a></li>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones Completas</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a class="menu-title" href="#">Figuras coleccionables</a>
+                                                    <li><a class="menu-title" v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras coleccionables</a>
                                                         <ul>
-                                                            <li><a href="shop-list-style1.html">Funko Pops</a></li>
-                                                            <li><a href="shop-list-style2.html">Articulados</a></li>
-                                                            <li><a href="shop-list-style3.html">Estáticos</a></li>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops</a></li>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a></li>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a class="menu-title" href="#">Bazar y juegos</a>
+                                                    <li><a class="menu-title" v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y juegos</a>
                                                         <ul>
-                                                            <li><a href="product-details.html">Tazas</a></li>
-                                                            <li><a href="product-details-gallery.html">Juegos de
+                                                            <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de
                                                                     mesa</a></li>
-                                                            <li><a href="product-details-gallery.html">Juegos de
+                                                            <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de
                                                                     video</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a class="menu-title" href="#">Accesorios</a>
+                                                    <li><a class="menu-title" v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
                                                         <ul>
-                                                            <li><a href="product-details-sticky.html">Fundas Iphone</a>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas Iphone</a>
                                                             </li>
-                                                            <li><a href="product-details-sticky-right.html">Llaveros</a>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a>
                                                             </li>
-                                                            <li><a href="product-details-slider-box.html">Mouse Pad</a>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse Pad</a>
                                                             </li>
                                                         </ul>
                                                     </li>
@@ -158,6 +160,24 @@
                                                     <a class="default-btn" href="checkout.html">Realizar Compra</a>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-wrap">
+                                        <button class="setting-active">
+                                            <i class="sli sli-settings"></i>
+                                        </button>
+                                        <div class="setting-content">
+                                            <ul>
+                                                <li>
+                                                    <h4>Cuenta</h4>
+                                                    <ul>
+                                                        <li><a href="login-register.html">Crear Cuenta</a></li>
+                                                        <li><a href="my-account.html">Mi cuenta</a></li>
+                                                        <li><a href="login-register.html">Login</a></li>
+                                                        <li><a @click="logOut">Logout</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -284,33 +304,33 @@
                                     </li>
                                     <li class="menu-item-has-children "><a href="shop.html">Categorias</a>
                                         <ul class="dropdown">
-                                            <li class="menu-item-has-children"><a href="#">Librería</a>
+                                            <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="shop.html">Mangas</a></li>
-                                                    <li><a href="shop-grid-2-column.html">Magazines</a></li>
-                                                    <li><a href="shop-grid-4-column.html">Comics</a></li>
-                                                    <li><a href="shop-grid-fullwide.html">Colecciones Completas</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones Completas</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Shop Layout</a>
+                                            <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras coleccionables</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="shop.html">Funko Pops!</a></li>
-                                                    <li><a href="shop-grid-2-column.html">Articulados</a></li>
-                                                    <li><a href="shop-grid-4-column.html">Estáticos</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops!</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Bazar y Juegos</a>
+                                            <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y Juegos</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="shop.html">Tazas</a></li>
-                                                    <li><a href="shop-grid-2-column.html">Juegos de mesa</a></li>
-                                                    <li><a href="shop-grid-4-column.html">Juegos de video</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de mesa</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de video</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Accesorios</a>
+                                            <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="shop.html">Fundas Iphone</a></li>
-                                                    <li><a href="shop-grid-2-column.html">Llaveros</a></li>
-                                                    <li><a href="shop-grid-2-column.html">Mouse pad</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas Iphone</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -463,8 +483,8 @@
                                     v-for="funko in funkos">
                                     <div class="ht-product-inner">
                                         <div class="ht-product-image-wrap">
-                                            <a href="product-details.html" class="ht-product-image"> <img :src=''
-                                                    :alt="funko.name">
+                                            <a :href="'product-details.html?id=' + funko.id" class="ht-product-image">
+                                                <img :src='funko.img' :alt="funko.name">
                                             </a>
                                             <div class="ht-product-action">
                                                 <ul>
@@ -494,11 +514,11 @@
                                                 <div class="ht-product-categories"><a href="#">{{funko.category}}</a>
                                                 </div>
                                                 <h4 class="ht-product-title"><a
-                                                        href="product-details.html">{{funko.name}}</a>
+                                                        :href="'product-details.html?id=' + funko.id">{{funko.name}}</a>
                                                 </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="funko.stock <= 5">
-                                                        <span class="new">${{funko.lowStockPrice}}</span>
+                                                        <span class="new">${{(funko.lowStockPrice).toFixed(2)}}</span>
                                                         <span class="old">${{funko.price}}</span>
                                                     </div>
                                                     <div v-show="funko.stock > 5">
@@ -540,11 +560,11 @@
                             <div class="ht-products product-slider-active owl-carousel">
                                 <!--Product Start Fundas-->
                                 <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom mb-30"
-                                    v-for="funda in productsBack">
+                                    v-for="funda in covers">
                                     <div class="ht-product-inner">
                                         <div class="ht-product-image-wrap">
-                                            <a href="product-details.html" class="ht-product-image"> <img :src=""
-                                                    :alt="funda.name">
+                                            <a :href="'product-details.html?id=' + funda.id" class="ht-product-image">
+                                                <img :src="funda.img" :alt="funda.name">
                                             </a>
                                             <div class="ht-product-action">
                                                 <ul>
@@ -574,11 +594,11 @@
                                                 <div class="ht-product-categories"><a href="#">{{funda.category}}</a>
                                                 </div>
                                                 <h4 class="ht-product-title"><a
-                                                        href="product-details.html">{{funda.name}}</a>
+                                                        :href="'product-details.html?id=' + funda.id">{{funda.name}}</a>
                                                 </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="funda.stock <= 5">
-                                                        <span class="new">${{funda.lowStockPrice}}</span>
+                                                        <span class="new">${{(funda.lowStockPrice).toFixed(2)}}</span>
                                                         <span class="old">${{funda.price}}</span>
                                                     </div>
                                                     <div v-show="funda.stock > 5">
@@ -624,8 +644,8 @@
                                     v-for="manga in mangas">
                                     <div class="ht-product-inner">
                                         <div class="ht-product-image-wrap">
-                                            <a href="product-details.html" class="ht-product-image"> <img
-                                                    :src="manga.img" :alt="manga.name">
+                                            <a :href="'product-details.html?id=' + manga.id" class="ht-product-image">
+                                                <img :src="manga.img" :alt="manga.name">
                                             </a>
                                             <div class="ht-product-action">
                                                 <ul>
@@ -654,7 +674,9 @@
                                             <div class="ht-product-content-inner">
                                                 <div class="ht-product-categories"><a href="#">{{manga.category}}</a>
                                                 </div>
-                                                <h4 class="ht-product-title"><a href="#">{{manga.name}}</a></h4>
+                                                <h4 class="ht-product-title"><a
+                                                        :href="'product-details.html?id=' + manga.id">{{manga.name}}</a>
+                                                </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="manga.stock <= 5">
                                                         <span class="new">${{manga.lowStockPrice}}</span>
@@ -778,7 +800,7 @@
                                             </div>
                                             <h4 class="ht-product-title"><a href="#">{{product.name}}</a></h4>
                                             <div class="ht-product-price" v-show="product.stock <=5">
-                                                <span class="new">${{product.lowStockPrice}}</span>
+                                                <span class="new">${{(product.lowStockPrice).toFixed(2)}}</span>
                                                 <span class="old">${{product.price}}</span>
                                             </div>
                                             <div class="ht-product-price" v-show="product.stock > 5">
@@ -787,7 +809,6 @@
                                             <div class="ht-product-ratting-wrap">
                                                 <span class="ht-product-ratting">
                                                     <p class="text-light">Stock: {{product.stock}}</p>
-
                                                 </span>
                                             </div>
                                         </div>
@@ -972,17 +993,18 @@
                                         <div :id="pro-1" class="tab-pane fade show active">
                                             <img :src="productSelect.img" :alt="productSelect.name">
                                         </div>
-                                        <div id="pro-2" class="tab-pane fade">
-                                            <img :src="productSelect.imgSec" alt="">
+                                        <div id="pro-2" class="tab-pane fade" v-show="productSelect.imgSec != ''">
+                                            <img :src="productSelect.imgSec" :alt="productSelect.name">
                                         </div>
                                     </div>
                                     <!-- Thumbnail Large Image End -->
                                     <!-- Thumbnail Image End -->
                                     <div class="quickview-wrap mt-15">
                                         <div class="quickview-slide-active owl-carousel nav nav-style-2" role="tablist">
-                                            <a class="active" data-bs-toggle="tab" href="pro-2"><img
+                                            <a class="active" data-bs-toggle="tab" href="#pro-1"><img
                                                     :src="productSelect.img" :alt="productSelect.name"></a>
-                                            <a data-bs-toggle="tab" href="#pro-2"><img :src="productSelect.imgSec"
+                                            <a data-bs-toggle="tab" href="#pro-2"
+                                                v-show="productSelect.imgSec != ''"><img :src="productSelect.imgSec"
                                                     :alt="productSelect.name"></a>
                                         </div>
                                     </div>
@@ -1002,8 +1024,11 @@
 
                                         <div class="pro-details-rating-wrap">
                                             <span v-show="productSelect.stock > 5">Stock: {{productSelect.stock}}</span>
-                                            <span class="text-danger" v-show="productSelect.stock <= 5">Últimas
+                                            <span class="text-danger"
+                                                v-show="productSelect.stock <= 5 && productSelect.stock >= 2">Últimas
                                                 {{productSelect.stock}} unidades!</span>
+                                            <span class="text-danger" v-show="productSelect.stock == 1">Última
+                                                unidad!!!</span>
                                         </div>
                                         <p class="text-dark">{{productSelect.description}}</p>
                                         <div class="pro-details-list">
@@ -1057,8 +1082,6 @@
     <!-- Popper JS -->
     <script src="assets/js/popper.min.js"></script>
     <!-- Bootstrap JS -->
-    <!-- <script src="assets/js/bootstrap.min.js"></script> -->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
@@ -1068,7 +1091,6 @@
     <script src="https://unpkg.com/vue@3"></script>
     <!-- Plugins JS -->
     <script src="assets/js/plugins.js"></script>
-
     <!-- Index JS VUE -->
     <script src="./data/index.js"></script>
     <!-- Main JS JQUERY-->
