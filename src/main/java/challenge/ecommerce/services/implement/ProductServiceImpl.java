@@ -26,7 +26,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getByCategory(Category category) {
-        return productRepository.findByCategory(category).stream().filter(product -> !product.isDeleted()).collect(Collectors.toList());
+        return productRepository.findByCategory(category).stream().filter(product -> !product.isDeleted() && product.getStock() > 0)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -38,7 +39,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product getById(Long id) {
-        return productRepository.findById(id).orElse(null);
+        Product product = productRepository.findById(id).orElse(null);
+        if(product != null){
+            return product.isDeleted() == false ? product : null;
+        }
+        return null;
     }
 
     @Override
@@ -63,11 +68,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void updateImgs(Product product, String img, String imgSec) {
+    public void updateImg(Product product, String img) {
         product.setImg(img);
-        product.setImgSec(imgSec);
     }
-
+    @Override
+    public void updateImgSec(Product product, String imgSec) {
+        product.setImg(imgSec);
+    }
     @Override
     public void updateStock(Product product, Short stock) {
         product.setStock(stock);
@@ -83,6 +90,13 @@ public class ProductServiceImpl implements ProductService {
             this.setPrices(increasePercentage);
         }
     }
+
+    @Override
+    public List<Product> getBySubCategory(String subcategory) {
+        return productRepository.findBySubcategory(subcategory).stream()
+                .filter(product -> !product.isDeleted() && product.getStock() > 0).collect(Collectors.toList());
+    }
+
     private void setPrices(Float modifier){
         productRepository.findAll().forEach(product -> {
             product.setPrice(product.getPrice() * modifier);
