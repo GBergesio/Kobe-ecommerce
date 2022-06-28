@@ -21,9 +21,12 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.authorizeRequests()
+
                 .antMatchers("/web/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/products", "/api/products/category","/api/products/subcategory").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/clientRegister").permitAll()
+                .antMatchers("/web/**",  "/h2-console/**", "/api/clients/confirm").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/products", "/api/products/category").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/clients").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/purchases").hasAuthority("CLIENT")
                 .antMatchers(HttpMethod.GET,  "/api/clients/current").hasAnyAuthority("CLIENT","ADMIN")
                 .antMatchers(HttpMethod.PATCH, "/api/products/delete", "/api/products/modify", "/api/products/updatePrices").hasAuthority("ADMIN")
@@ -31,6 +34,8 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/api/clients/{id}").hasAuthority("ADMIN")
                 .antMatchers(HttpMethod.GET, "/api/clients", "/api/purchases","/api/addresses").hasAuthority("ADMIN")
                 .antMatchers("/admin/**", "/h2-console/**", "/rest/**").hasAuthority("ADMIN")
+                .antMatchers("/admin/**", "/rest/**").hasAuthority("ADMIN")
+
         ;
 
         http.formLogin()

@@ -42,6 +42,9 @@ public class PurchaseController {
     @Transactional
     public ResponseEntity<?> create(Authentication authentication, @RequestBody PurchaseApplicationDto purchaseApplicationDto){
         Client client = clientService.findByEmail(authentication.getName());
+        if(!client.isActive()){
+            return new ResponseEntity<>("Primero debes activar tu cuenta para realizar compras, revisa tu email", HttpStatus.FORBIDDEN);
+        }
         if(purchaseApplicationDto.getOrders().size() == 0){
             return new ResponseEntity<>("Missing products data", HttpStatus.FORBIDDEN);
         }
