@@ -9104,14 +9104,15 @@ h3.cart-page-title {
 }
 
 /*-------- 17. Login register style ---------*/
-.login-register-wrapper .login-register-tab-list {
+
+
+.login-register-wrapper .login-register-tab-list{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-bottom: 40px;
 }
 
 .login-register-wrapper .login-register-tab-list a {
