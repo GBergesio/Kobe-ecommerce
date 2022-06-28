@@ -3,14 +3,15 @@ const app = Vue.createApp({
     data() {
         return {
             message: 'Hello Vue!',
-            product: {}
+            product: {},
+            offMessage: ' 15% OFF'
         }
     },
     created() {
         const urlParams = new URLSearchParams(window.location.search);
-        const product = urlParams.get('product')
+        const id = urlParams.get('id')
 
-        axios.get(`/api/products/category?category=` + product)
+        axios.get(`/api/products/` + id)
             .then(productP => {
                 this.product = productP.data
                 console.log(this.product);
@@ -24,3 +25,11 @@ const app = Vue.createApp({
     },
 }).mount('#app')
 
+// axios.get(`http://localhost:8080/api/clients/current/accounts/`+ id)
+// .then(dataAcc => {
+//     this.dataAccount = dataAcc.data
+//     this.accNumber = this.dataAccount.number
+//     this.dataBalance = this.dataAccount.balance
+//     this.transactions = this.dataAccount.transactionDTO
+//     this.sortTransactions()
+// })

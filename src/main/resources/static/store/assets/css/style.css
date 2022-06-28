@@ -6805,6 +6805,7 @@ textarea:focus {
   margin-right: 18px;
   text-transform: uppercase;
   position: relative;
+  color: var(--electric-blue)
 }
 
 .breadcrumb-content ul li::before {
@@ -6818,6 +6819,7 @@ textarea:focus {
   z-index: 99;
   -webkit-transform: rotate(115deg);
   transform: rotate(115deg);
+
 }
 
 .breadcrumb-content ul li:last-child::before {

@@ -53,12 +53,10 @@
                                                 </a>
                                                 <ul class="mega-menu">
                                                     <li>
-                                                        <!-- <a class="menu-title" v-bind:href="'shop.html?category=' + 'ACTIONFIGURES'" @click="urlPrueba()">Librería</a> -->
                                                         <a class="menu-title"
                                                             v-bind:href="'shop.html?category=COVERS'">Librería</a>
                                                         <ul>
-                                                            <!-- v-bind:href="'account.html?id=' + cuenta.id" -->
-                                                            <li><a href="shop.html">Mangas</a></li>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
                                                             <li><a href="shop.html">Magazines</a></li>
                                                             <li><a href="shop.html">Comics</a></li>
                                                             <li><a href="shop.html">Colecciones Completas</a></li>
@@ -485,8 +483,8 @@
                                     v-for="funko in funkos">
                                     <div class="ht-product-inner">
                                         <div class="ht-product-image-wrap">
-                                            <a href="product-details.html" class="ht-product-image"> <img
-                                                    :src='funko.img' :alt="funko.name">
+                                            <a :href="'product-details.html?id=' + funko.id" class="ht-product-image">
+                                                <img :src='funko.img' :alt="funko.name">
                                             </a>
                                             <div class="ht-product-action">
                                                 <ul>
@@ -516,7 +514,7 @@
                                                 <div class="ht-product-categories"><a href="#">{{funko.category}}</a>
                                                 </div>
                                                 <h4 class="ht-product-title"><a
-                                                        href="product-details.html">{{funko.name}}</a>
+                                                        :href="'product-details.html?id=' + funko.id">{{funko.name}}</a>
                                                 </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="funko.stock <= 5">
@@ -565,8 +563,8 @@
                                     v-for="funda in covers">
                                     <div class="ht-product-inner">
                                         <div class="ht-product-image-wrap">
-                                            <a href="product-details.html" class="ht-product-image"> <img
-                                                    :src="funda.img" :alt="funda.name">
+                                            <a :href="'product-details.html?id=' + funda.id" class="ht-product-image">
+                                                <img :src="funda.img" :alt="funda.name">
                                             </a>
                                             <div class="ht-product-action">
                                                 <ul>
@@ -596,7 +594,7 @@
                                                 <div class="ht-product-categories"><a href="#">{{funda.category}}</a>
                                                 </div>
                                                 <h4 class="ht-product-title"><a
-                                                        href="product-details.html">{{funda.name}}</a>
+                                                        :href="'product-details.html?id=' + funda.id">{{funda.name}}</a>
                                                 </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="funda.stock <= 5">
@@ -646,8 +644,8 @@
                                     v-for="manga in mangas">
                                     <div class="ht-product-inner">
                                         <div class="ht-product-image-wrap">
-                                            <a href="product-details.html" class="ht-product-image"> <img
-                                                    :src="manga.img" :alt="manga.name">
+                                            <a :href="'product-details.html?id=' + manga.id" class="ht-product-image">
+                                                <img :src="manga.img" :alt="manga.name">
                                             </a>
                                             <div class="ht-product-action">
                                                 <ul>
@@ -676,7 +674,9 @@
                                             <div class="ht-product-content-inner">
                                                 <div class="ht-product-categories"><a href="#">{{manga.category}}</a>
                                                 </div>
-                                                <h4 class="ht-product-title"><a href="#">{{manga.name}}</a></h4>
+                                                <h4 class="ht-product-title"><a
+                                                        :href="'product-details.html?id=' + manga.id">{{manga.name}}</a>
+                                                </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="manga.stock <= 5">
                                                         <span class="new">${{manga.lowStockPrice}}</span>
@@ -1082,8 +1082,6 @@
     <!-- Popper JS -->
     <script src="assets/js/popper.min.js"></script>
     <!-- Bootstrap JS -->
-    <!-- <script src="assets/js/bootstrap.min.js"></script> -->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
@@ -1093,11 +1091,8 @@
     <script src="https://unpkg.com/vue@3"></script>
     <!-- Plugins JS -->
     <script src="assets/js/plugins.js"></script>
-
     <!-- Index JS VUE -->
     <script src="./data/index.js"></script>
-    <!-- Index JS VUE -->
-    <!-- <script src="./data/categories.js"></script> -->
     <!-- Main JS JQUERY-->
     <script src="assets/js/main.js"></script>
 </body>

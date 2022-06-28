@@ -328,12 +328,7 @@ const app = Vue.createApp({
         this.mangasFilter()
         
       })
-      // this.urlPrueba()
 
-      // axios.get(`/api/products/category?category=` + category)
-      //           .then(dataAcc => {
-      //               this.dataPro = dataAcc.data
-      //           })
 
 
     this.productsCartStorage = JSON.parse(localStorage.getItem("cart"))
@@ -344,16 +339,7 @@ const app = Vue.createApp({
   mounted() {
   },
   methods: {
-    // urlPrueba() {
-    //   const urlParams = new URLSearchParams(window.location.search);
-    //   const category = urlParams.get('category')
 
-    //   axios.get(`/api/products/category?category=` + category)
-    //     .then(dataURL => {
-    //       this.dataPro = dataURL.data
-    //       console.log(this.dataPro);
-    //     })
-    // },
 
     productForModal(product) {
       this.productSelect = product
@@ -470,31 +456,6 @@ const app = Vue.createApp({
       localStorage.setItem("cart", JSON.stringify(localScopyFiltered))
       console.log(localSFilterToModify);
     },
-    // urlDinamico(categoria){
-    //   const urlParams = new URLSearchParams(window.location.search);
-    //   const categoria = urlParams.get('category')
-    //   axios.get(`/api/products/category?category=` + categoria)
-    //   .then(data=>{
-    //     this.dataURL = data.data
-    //     console.log(this.dataURL);
-    //   })
-    // }
-
-    // urlDinamico2(category) {
-
-
-
-    //   axios.get(`/api/products/category?category=` + category)
-    //     .then(data => {
-    //       this.dataURL = data.data
-    //       console.log(this.dataURL);
-    //     })
-
-
-    // },
-
-
-    // http://localhost:8080/api/products/category?category=COVERS
   },
   computed: {
     sumPrice() {
@@ -508,11 +469,3 @@ const app = Vue.createApp({
 }).mount('#app')
 
 
-// axios.get(`http://localhost:8080/api/clients/current/accounts/`+ id)
-// .then(dataAcc => {
-//     this.dataAccount = dataAcc.data
-//     this.accNumber = this.dataAccount.number
-//     this.dataBalance = this.dataAccount.balance
-//     this.transactions = this.dataAccount.transactionDTO
-//     this.sortTransactions()
-// })
