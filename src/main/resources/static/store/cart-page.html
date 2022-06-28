@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Parlo - eCommerce Bootstrap 4 Template</title>
+    <title>Kōbe - Anime Shop </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="app">
         <header class="header-area sticky-bar">
             <div class="main-header-wrap">
                 <div class="container">
@@ -437,7 +437,7 @@
                         <li>
                             <a href="index.html" class="parrafoModel">Home</a>
                         </li>
-                        <li class="active">Cart page </li>
+                        <li class="active">Tu carrito de Compra</li>
                     </ul>
                 </div>
             </div>
@@ -461,20 +461,20 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr v-for="productCart in cartStorage">
                                             <td class="product-thumbnail">
-                                                <a href="#"><img src="assets/img/cart/cart-3.svg" alt=""></a>
+                                                <img :src="productCart.img" :alt="productCart.name">
                                             </td>
-                                            <td class="product-name"><a href="#">{{nombre de ptoducto}}</a></td>
+                                            <td class="product-name"><a>{{productCart.name}}</a></td>
                                             <td class="product-price-cart"><span
-                                                    class="amount text-light">{{precio}}</span></td>
+                                                    class="amount text-light">${{productCart.price}}</span></td>
                                             <td class="product-quantity">
                                                 <div class="cart-plus-minus">
                                                     <input class="cart-plus-minus-box text-light" type="text"
-                                                        name="qtybutton" value="2">
+                                                        name="qtybutton" value="1" :id="productSelect.id">
                                                 </div>
                                             </td>
-                                            <td class="product-subtotal">{{sumado la cantidad x precio}}</td>
+                                            <td class="product-subtotal"><span id="subto">${{productCart.quantity * productCart.price}}</span></td>
                                             <td class="product-remove">
                                                 <a href="#"><i class="sli sli-pencil"></i></a>
                                                 <a href="#"><i class="sli sli-close"></i></a>
@@ -514,29 +514,8 @@
                                                     * Provincia
                                                 </label>
                                                 <select class="email s-email s-wid">
-                                                    <option>Buenos Aires</option>
-                                                    <option>Jujuy</option>
-                                                    <option>Salta</option>
-                                                    <option>Chaco</option>
-                                                    <option>Formosa</option>
-                                                    <option>San Luis</option>
-                                                    <option>San Juan</option>
-                                                    <option>Mendoza</option>
-                                                    <option>Catamarca</option>
-                                                    <option>Sant. del Estero</option>
-                                                    <option>Tucuman</option>
-                                                    <option>Santa Fe</option>
-                                                    <option>Misiones</option>
-                                                    <option>Corrientes</option>
-                                                    <option>Cordoba</option>
-                                                    <option>Neuquen</option>
-                                                    <option>Rio Negro</option>
-                                                    <option>Tierra del Fuego</option>
-                                                    <option>Santa Cruz</option>
-                                                    <option>La Rioja</option>
-                                                    <option>Entre Rios</option>
-                                                    <option>La Pampa</option>
-                                                    <option>Chubut</option>
+                                                    <option v-for="provincia in provincias" value="provincia">
+                                                        {{provincia}}</option>
                                                 </select>
                                             </div>
                                             <div class="tax-select">
@@ -570,16 +549,16 @@
                                     <div class="title-wrap">
                                         <h4 class="cart-bottom-title section-bg-gary-cart">Total del carrito</h4>
                                     </div>
-                                    <h5 class="text-dark ">Total products <span>$260.00</span></h5>
+                                    <h5 class="text-dark">Total productos <span>${{sumPrice}}</span></h5>
                                     <div class="total-shipping">
-                                        <h5>Total shipping</h5>
+                                        <h5>Total envío</h5>
                                         <ul>
                                             <li><input type="checkbox"> Standard <span>$20.00</span></li>
                                             <li><input type="checkbox"> Express <span>$30.00</span></li>
                                         </ul>
                                     </div>
-                                    <h4 class="grand-totall-title text-dark ">Grand Total <span>$260.00</span></h4>
-                                    <a href="#">Proceed to Checkout</a>
+                                    <h4 class="grand-totall-title text-dark ">Total general<span>${{sumPrice}}</span></h4>
+                                    <a href="#">Realizar Compra</a>
                                 </div>
                             </div>
                         </div>
@@ -646,10 +625,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- VUE -->
+    <script src="https://unpkg.com/vue@3"></script>
     <!-- Plugins JS -->
     <script src="assets/js/plugins.js"></script>
     <!-- Ajax Mail -->
     <script src="assets/js/ajax-mail.js"></script>
+    <!-- Index JS VUE -->
+    <script src="./data/index.js"></script>
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 

@@ -2678,6 +2678,7 @@ textarea:focus {
 .mobile-off-canvas-active .header-mobile-aside-wrap .mobile-menu-wrap .mobile-navigation nav .mobile-menu li {
   display: block;
   position: relative;
+  color: black;
 }
 
 .mobile-off-canvas-active .header-mobile-aside-wrap .mobile-menu-wrap .mobile-navigation nav .mobile-menu li.menu-item-has-children .menu-expand {
@@ -2726,7 +2727,8 @@ textarea:focus {
   position: relative;
   display: inline-block;
   padding: 10px 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
+  color: black;
 }
 
 .mobile-off-canvas-active .header-mobile-aside-wrap .mobile-menu-wrap .mobile-navigation nav .mobile-menu li ul li a {
@@ -2772,7 +2774,8 @@ textarea:focus {
   font-size: 16px;
   display: block;
   letter-spacing: 0.2px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
+  color: black;
 }
 
 .mobile-off-canvas-active .header-mobile-aside-wrap .mobile-curr-lang-wrap .single-mobile-curr-lang a i {
@@ -2806,6 +2809,7 @@ textarea:focus {
   letter-spacing: 0.2px;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  color: black!important;
 }
 
 .mobile-off-canvas-active .header-mobile-aside-wrap .mobile-curr-lang-wrap .single-mobile-curr-lang .lang-curr-dropdown ul li a:hover {

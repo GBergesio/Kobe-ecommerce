@@ -125,7 +125,6 @@ public class EcommerceApplication {
 			productRepository.save(product20);
 
 			//cover
-
 			Product product21 = new Product("Marvel Series - Iron Man","Funda edición Marvel para Iphone","https://i.ibb.co/X37WPqw/71d-BJa-Hi-X3-S-AC-SS450.jpg","https://i.ibb.co/4YHG0Fd/avengers-endgame-iron-man-tony-stark-crop1619139044711-jpg-33663383.jpg", (short) 15,1999.0,"Marvel", Category.COVERS , "Covers");
 			productRepository.save(product21);
 			Product product22 = new Product("Marvel Series - Iron Man","Funda edición Marvel para Iphone","https://i.ibb.co/603h0hL/0525968ee93a59b56b41517b7ceddedcf9c3cbb5-original.jpg","https://i.ibb.co/4YHG0Fd/avengers-endgame-iron-man-tony-stark-crop1619139044711-jpg-33663383.jpg", (short)15, 1999.0,"Marvel", Category.COVERS, "Static Figures");
