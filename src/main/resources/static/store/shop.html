@@ -12,7 +12,7 @@
     
     <!-- CSS
 	============================================ -->
-   
+    <link rel="stylesheet" href="./assets/css/_slider.css">
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -28,7 +28,7 @@
 </head>
 
 <body>
-<div class="wrapper">
+<div class="wrapper" id="shop">
     <header class="header-area sticky-bar">
         <div class="main-header-wrap">
             <div class="container">
@@ -441,11 +441,11 @@
                     <div class="shop-top-bar">
                         <div class="select-shoing-wrap">
                             <div class="shop-select">
-                                <select>
+                                <select v-model="shopSelect" v-on:change="sort()">
                                     <option class="parrafoAmarillo" value="">Ordenar por novedad</option>
-                                    <option value="">A to Z</option>
-                                    <option value=""> Z to A</option>
-                                    <option value="">In stock</option>
+                                    <option value="AZ">A to Z</option>
+                                    <option value="ZA"> Z to A</option>
+                                    <option value="STOCK">In stock</option>
                                 </select>
                             </div>
                             <p>Mostrando 1-12 de 20 resultados</p>
@@ -463,12 +463,12 @@
                         <div class="tab-content jump">
                             <div id="shop-1" class="tab-pane active">
                                 <div class="row ht-products">
-                                    <div class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+                                    <div class="col-xl-4 col-md-6 col-lg-6 col-sm-6" v-for="product in products">
                                         <!--Product Start-->
                                         <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom mb-30">
                                             <div class="ht-product-inner">
                                                 <div class="ht-product-image-wrap">
-                                                    <a href="product-details.html" class="ht-product-image"> <img src="assets/img/product/product-1.svg" alt="Universal Product Style"> </a>
+                                                    <a href="product-details.html" class="ht-product-image"> <img :src="product.img" :alt="product.name"> </a>
                                                     <div class="ht-product-action">
                                                         <ul>
                                                             <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Vista rapida</span></a></li>
@@ -480,10 +480,10 @@
                                                 <div class="ht-product-content">
                                                     <div class="ht-product-content-inner">
                                                         <div class="ht-product-categories"><a href="#">Chair</a></div>
-                                                        <h4 class="ht-product-title"><a href="product-details.html">Demo Product Name</a></h4>
+                                                        <h4 class="ht-product-title"><a href="product-details.html">{{product.name}}</a></h4>
                                                         <div class="ht-product-price">
-                                                            <span class="new">$60.00</span>
-                                                            <span class="old">$80.00</span>
+                                                            <span class="new">${{product.price}}</span>
+                                                            <span class="old">${{(product.price * 1.15).toFixed(0)}}</span>
                                                         </div>
                                                         <div class="ht-product-ratting-wrap">
                                                             <span class="ht-product-ratting">
@@ -522,12 +522,12 @@
                                 </div>
                             </div>
                             <div id="shop-2" class="tab-pane">
-                                <div class="shop-list-wrap shop-list-mrg2 shop-list-mrg-none mb-30">
-                                    <div class="row">
+                                <div class="shop-list-wrap shop-list-mrg2 shop-list-mrg-none mb-30" v-for="product in products">
+                                    <div class="row" >
                                         <div class="col-lg-4 col-md-4">
                                             <div class="product-list-img">
                                                 <a href="product-details.html">
-                                                    <img src="assets/img/product/product-list-1.svg" alt="Universal Product Style">
+                                                    <img :src="product.img" :alt="product.name">
                                                 </a>
                                                 <div class="product-quickview">
                                                     <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="sli sli-magnifier-add"></i></a>
@@ -536,14 +536,14 @@
                                         </div>
                                         <div class="col-lg-8 col-md-8 align-self-center">
                                             <div class="shop-list-content">
-                                                <h3><a href="product-details.html">Demo Product Name</a></h3>
-                                                <p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard The standard chunk.</p>
+                                                <h3><a href="product-details.html">{{product.name}}</a></h3>
+                                                <p>{{product.description}}</p>
                                                 <span>Chair</span>
                                                 <div class="shop-list-price-action-wrap">
                                                     <div class="shop-list-price-ratting">
                                                         <div class="ht-product-list-price">
-                                                            <span class="new">$40.00</span>
-                                                            <span class="old">$70.00</span>
+                                                            <span class="new">${{product.price}}</span>
+                                                            <span class="old">${{(product.price * 1.15).toFixed(0)}}</span>
                                                         </div>
                                                         <div class="ht-product-list-ratting">
                                                             <i class="sli sli-star"></i>
@@ -894,7 +894,12 @@
 <script src="assets/js/ajax-mail.js"></script>
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
-
+<!-- Axios -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!-- VUE -->
+<script src="https://unpkg.com/vue@3"></script>
+<!-- Index JS VUE -->
+<script src="./assets/js/shop.js"></script>
 </body>
 
 </html>
