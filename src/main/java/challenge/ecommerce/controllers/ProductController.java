@@ -135,4 +135,12 @@ public class ProductController {
         productService.updateAll(percentage, priceModifier);
         return new ResponseEntity<>("The price of the products was updated successfully", HttpStatus.OK);
     }
+    @GetMapping("/products/subcategory")
+    public ResponseEntity<?> getBySubCategory(@RequestParam String subcategory){
+        if(subcategory.isEmpty()){
+            return new ResponseEntity<>("Missing subcategory", HttpStatus.FORBIDDEN);
+        }
+        return new ResponseEntity<>(productService.getBySubCategory(subcategory).stream().map(ProductDto::new)
+                .collect(Collectors.toList()), HttpStatus.OK);
+    }
 }

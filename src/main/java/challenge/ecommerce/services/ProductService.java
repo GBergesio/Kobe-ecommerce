@@ -28,4 +28,6 @@ public interface ProductService {
     void updateStock(Product product, Short stock);
 
     void updateAll(Short percentage, String modifier);
+
+    List<Product> getBySubCategory(String subcategory);
 }

@@ -86,6 +86,13 @@ public class ProductServiceImpl implements ProductService {
             this.setPrices(increasePercentage);
         }
     }
+
+    @Override
+    public List<Product> getBySubCategory(String subcategory) {
+        return productRepository.findBySubcategory(subcategory).stream()
+                .filter(product -> !product.isDeleted() && product.getStock() > 0).collect(Collectors.toList());
+    }
+
     private void setPrices(Float modifier){
         productRepository.findAll().forEach(product -> {
             product.setPrice(product.getPrice() * modifier);
