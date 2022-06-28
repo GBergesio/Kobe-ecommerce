@@ -32,7 +32,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void create(ProductApplicationDto productApplicationDto) {
         productRepository.save(new Product(productApplicationDto.getName(), productApplicationDto.getDescription(),
-                productApplicationDto.getImgs(), productApplicationDto.getStock(), productApplicationDto.getPrice(),
+                productApplicationDto.getImg(), productApplicationDto.getImgSec(), productApplicationDto.getStock(), productApplicationDto.getPrice(),
                 productApplicationDto.getSerie(), productApplicationDto.getCategory(), productApplicationDto.getSubcategory()));
     }
 
@@ -63,8 +63,9 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void updateImgs(Product product, List<String> imgs) {
-        imgs.forEach(img -> product.addImg(img));
+    public void updateImgs(Product product, String img, String imgSec) {
+        product.setImg(img);
+        product.setImgSec(imgSec);
     }
 
     @Override

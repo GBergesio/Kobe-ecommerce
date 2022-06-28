@@ -8,5 +8,7 @@ import java.util.List;
 public interface AddressService {
     List<AddressDTO> getAddresses();
 
+    Address findById(long id);
+
     Address saveAddress(Address address);
 }

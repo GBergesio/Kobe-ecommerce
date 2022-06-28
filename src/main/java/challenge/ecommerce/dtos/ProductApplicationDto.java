@@ -10,7 +10,8 @@ import java.util.List;
 public class ProductApplicationDto {
     private String name;
     private String description;
-    private List<String> imgs = new ArrayList<>();
+    private String img;
+    private String imgSec;
     private Short stock;
     private Double price;
     private String serie;
@@ -18,11 +19,12 @@ public class ProductApplicationDto {
     private String subcategory;
 
     public ProductApplicationDto(){}
-    public ProductApplicationDto(String name, String description, ArrayList<String> imgs, Short stock, Double price,
+    public ProductApplicationDto(String name, String description, String img, String imgSec, Short stock, Double price,
                                  String serie, Category category, String subcategory){
         this.name = name;
         this.description = description;
-        this.imgs = imgs;
+        this.img = img;
+        this.imgSec = imgSec;
         this.stock = stock;
         this.price = price;
         this.serie = serie;
@@ -31,7 +33,7 @@ public class ProductApplicationDto {
     }
 
     public boolean isSomePropertyNull(){
-        return this.imgs == null || this.description == null || this.name == null || this.subcategory == null
+        return this.img == null || this.imgSec == null || this.description == null || this.name == null || this.subcategory == null
                 || this.price == null || this.stock == null || this.category == null || this.serie == null;
     }
 }
