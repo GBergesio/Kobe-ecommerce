@@ -27,7 +27,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Modernizer JS -->
     <script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
-
+    <!-- Swal.fire-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -129,7 +130,8 @@
                                                         <span>{{productCart.quantity}} x ${{productCart.price}}</span>
                                                         <div class="row">
                                                             <button class="cssbuttons-io-button-disabled mb-2"
-                                                                v-show="productCart.quantity == productCart.stock">
+                                                                v-show="productCart.quantity == productCart.stock"
+                                                                @click="sumCart(productCart)">
                                                                 <span class="text-light">Agregar</span>
                                                             </button>
                                                             <button class="cssbuttons-io-button mb-2"
