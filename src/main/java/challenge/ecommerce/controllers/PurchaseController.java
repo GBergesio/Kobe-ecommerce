@@ -29,16 +29,12 @@ public class PurchaseController {
     private ProductService productService;
 
     @Autowired
-    private PurchaseProductRepository purchaseProductRepository;
-    @Autowired
-    private PurchaseRepository purchaseRepository;
-    @Autowired
     private ClientService clientService;
 
     //borrar
     @GetMapping("/purchases")
     public ResponseEntity<?> getAll(){
-        return new ResponseEntity<>(purchaseRepository.findAll().stream().map(PurchaseDto::new).collect(Collectors.toList()),
+        return new ResponseEntity<>(purchaseService.getAll().stream().map(PurchaseDto::new).collect(Collectors.toList()),
                 HttpStatus.OK);
     }
 

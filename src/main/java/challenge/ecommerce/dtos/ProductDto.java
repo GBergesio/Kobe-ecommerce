@@ -4,14 +4,19 @@ import challenge.ecommerce.enums.Category;
 import challenge.ecommerce.models.Product;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 public class ProductDto {
     private Long id;
     private String name;
     private String description;
     private String img;
+    private String imgSec;
     private Short stock;
     private Double price;
+    private Double lowStockPrice;
     private Double discount;
     private String serie;
     private Category category;
@@ -23,8 +28,10 @@ public class ProductDto {
         this.name = product.getName();
         this.description = product.getDescription();
         this.img = product.getImg();
+        this.imgSec = product.getImgSec();
         this.stock = product.getStock();
         this.price = product.getPrice();
+        this.lowStockPrice = product.getLowStockPrice();
         this.discount = product.getDiscount();
         this.serie = product.getSerie();
         this.category = product.getCategory();

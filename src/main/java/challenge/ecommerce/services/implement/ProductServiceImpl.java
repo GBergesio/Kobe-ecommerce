@@ -19,7 +19,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getAll() {
-        return productRepository.findAll().stream().filter(product -> !product.isDeleted()).collect(Collectors.toList());
+        return productRepository.findAll().stream()
+                .filter(product -> !product.isDeleted() && product.getStock() > 0)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -29,9 +31,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void create(ProductApplicationDto productApplicationDto) {
-        productRepository.save(new Product(productApplicationDto.getImg(), productApplicationDto.getDescription(),
-                productApplicationDto.getName(), productApplicationDto.getStock(), productApplicationDto.getPrice(),
-                productApplicationDto.getSubcategory(), Category.valueOf(productApplicationDto.getCategory()), productApplicationDto.getSerie()));
+        productRepository.save(new Product(productApplicationDto.getName(), productApplicationDto.getDescription(),
+                productApplicationDto.getImg(), productApplicationDto.getImgSec(), productApplicationDto.getStock(), productApplicationDto.getPrice(),
+                productApplicationDto.getSerie(), productApplicationDto.getCategory(), productApplicationDto.getSubcategory()));
     }
 
     @Override
@@ -61,8 +63,9 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void updateImg(Product product, String img) {
+    public void updateImgs(Product product, String img, String imgSec) {
         product.setImg(img);
+        product.setImgSec(imgSec);
     }
 
     @Override
