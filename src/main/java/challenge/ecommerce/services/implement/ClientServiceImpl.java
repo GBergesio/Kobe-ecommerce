@@ -1,8 +1,8 @@
 package challenge.ecommerce.services.implement;
 
-
 import challenge.ecommerce.dtos.ClientDTO;
 import challenge.ecommerce.email.EmailServiceImpl;
+import challenge.ecommerce.enums.UserType;
 import challenge.ecommerce.models.Client;
 import challenge.ecommerce.models.ConfirmationToken;
 import challenge.ecommerce.models.RegistrationRequest;
@@ -18,7 +18,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
-
 
 @Service
 public class ClientServiceImpl implements ClientService {
@@ -67,10 +66,11 @@ public class ClientServiceImpl implements ClientService {
         return passwordEncoder.encode(password);
     }
 
+
     @Override
     public boolean createClient(RegistrationRequest request) {
 
-        Client client = new Client(request.getName(), request.getLastName(), request.getEmail(), passwordEncoder.encode(request.getPassword()));
+        Client client = new Client(request.getName(), request.getLastName(), request.getEmail(), passwordEncoder.encode(request.getPassword()), UserType.CLIENT);
         clientRepository.save(client);
 
         String token = UUID.randomUUID().toString();

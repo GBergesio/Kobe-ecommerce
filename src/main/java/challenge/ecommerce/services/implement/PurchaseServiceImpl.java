@@ -16,7 +16,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -33,16 +32,15 @@ public class PurchaseServiceImpl implements PurchaseService {
     private ClientService clientService;
     @Override
     public void create(Client client, PurchaseApplicationDto purchaseApplicationDto) {
-        Purchase purchase = purchaseRepository.save(new Purchase(LocalDateTime.now(),
+        Purchase purchase = purchaseRepository.save(new Purchase( purchaseApplicationDto.getTotalAmount(),
+                purchaseApplicationDto.getTypePayment(),LocalDateTime.now(),
                 purchaseApplicationDto.getAddress(), Integer.valueOf(purchaseApplicationDto.getZipCode())));
 
         for (Map.Entry<Long, Integer> order : purchaseApplicationDto.getOrders().entrySet()) {
             Product product = productService.getById(order.getKey());
-            PurchaseProduct purchaseProduct = purchaseProductRepository.save(new PurchaseProduct(purchase,
-                    product, order.getValue()));
-            product.setStock(product.getStock() - order.getValue());
+            purchaseProductRepository.save(new PurchaseProduct(purchase, product, order.getValue()));
+            product.setStock((short)(product.getStock() - order.getValue()));
             productService.save(product);
-            purchase.addPurchaseProduct(purchaseProduct);
         }
 
         purchaseRepository.save(purchase);
@@ -56,7 +54,9 @@ public class PurchaseServiceImpl implements PurchaseService {
     }
 
     @Override
-    public List<PurchaseDto> getCurrentClientPurchasesDto(Authentication authentication) {
-        return clientService.getCurrentClient(authentication).getPurchases().stream().map(PurchaseDto::new).collect(Collectors.toList());
+    public List<Purchase> getAll() {
+        return purchaseRepository.findAll();
     }
+
+
 }

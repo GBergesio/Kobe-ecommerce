@@ -6,7 +6,9 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -19,30 +21,36 @@ public class Product {
     @GenericGenerator(name = "native", strategy = "native")
     private Long id;
 
-    private String img;
-    private String description;
     private String name;
-    private String tag;
-    private double price;
-    private long stock;
+    private String description;
+
+    private String img;
+    private String imgSec;
+    private Short stock;
+    private Double price;
+    private Double lowStockPrice;
+    private Double discount;
+    private String serie;
     private Category category;
-    private Integer discount;
+    private String subcategory;
     private boolean deleted;
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
-    private Set<PurchaseProduct> purchaseProducts = new HashSet<>();
-
     public Product(){}
-    public Product(String img, String description, String name, double price, long stock, Category category, String tag) {
-        this.img = img;
-        this.description = description;
+
+    public Product(String name, String description, String img, String imgSec, Short stock, Double price, String serie,
+                   Category category, String subcategory) {
         this.name = name;
-        this.price = price;
+        this.description = description;
+        this.img = img;
+        this.imgSec = imgSec;
         this.stock = stock;
+        this.price = price;
+        this.lowStockPrice = price * 0.85;
+        //creo q el descuento ya no deberia ir
+        this.discount = 0.85;
+        this.serie = serie;
         this.category = category;
-        this.tag = tag;
-        this.discount = 0;
+        this.subcategory = subcategory;
         this.deleted = false;
     }
-
 }

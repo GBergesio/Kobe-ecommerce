@@ -20,24 +20,31 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getAll() {
-        return productRepository.findAll().stream().filter(product -> !product.isDeleted()).collect(Collectors.toList());
+        return productRepository.findAll().stream()
+                .filter(product -> !product.isDeleted() && product.getStock() > 0)
+                .collect(Collectors.toList());
     }
 
     @Override
     public List<Product> getByCategory(Category category) {
-        return productRepository.findByCategory(category).stream().filter(product -> !product.isDeleted()).collect(Collectors.toList());
+        return productRepository.findByCategory(category).stream().filter(product -> !product.isDeleted() && product.getStock() > 0)
+                .collect(Collectors.toList());
     }
 
     @Override
     public void create(ProductApplicationDto productApplicationDto) {
-        productRepository.save(new Product(productApplicationDto.getImg(), productApplicationDto.getDescription(),
-                productApplicationDto.getName(), productApplicationDto.getPrice(), productApplicationDto.getStock(),
-                Category.valueOf(productApplicationDto.getCategory()), productApplicationDto.getTag()));
+        productRepository.save(new Product(productApplicationDto.getName(), productApplicationDto.getDescription(),
+                productApplicationDto.getImg(), productApplicationDto.getImgSec(), productApplicationDto.getStock(), productApplicationDto.getPrice(),
+                productApplicationDto.getSerie(), productApplicationDto.getCategory(), productApplicationDto.getSubcategory()));
     }
 
     @Override
     public Product getById(Long id) {
-        return productRepository.findById(id).orElse(null);
+        Product product = productRepository.findById(id).orElse(null);
+        if(product != null){
+            return product.isDeleted() == false ? product : null;
+        }
+        return null;
     }
 
 
@@ -53,32 +60,50 @@ public class ProductServiceImpl implements ProductService {
         productRepository.save(product);
     }
 
-//    @Override
-//    public boolean existProperty(String propertyName) {
-//        String lowerCaseProperty = propertyName.toLowerCase();
-////        private Category category;
-//        boolean exist = false;
-//        switch (lowerCaseProperty){
-//            case "img":
-//                exist = true;
-//                break;
-//            case "description":
-//                exist = true;
-//                break;
-//            case "name":
-//                exist = true;
-//                break;
-//            case "tag":
-//                exist = true;
-//                break;
-//            case "price":
-//                exist = true;
-//                break;
-//            case "":
-//                exist = true;
-//                break;
-//
-//        }
-//        return false;
-//    }
+    @Override
+    public void updatePrice(Product product, Double price) {
+        product.setPrice(price);
+    }
+
+    @Override
+    public void updateDescription(Product product, String description) {
+        product.setDescription(description);
+    }
+
+    @Override
+    public void updateImg(Product product, String img) {
+        product.setImg(img);
+    }
+    @Override
+    public void updateImgSec(Product product, String imgSec) {
+        product.setImg(imgSec);
+    }
+    @Override
+    public void updateStock(Product product, Short stock) {
+        product.setStock(stock);
+    }
+
+    @Override
+    public void updateAll(Short percentage, String modifier) {
+        if(modifier.equals("INCREASE")){
+            Float increasePercentage =  1 + (Float.valueOf(percentage)/100);
+            this.setPrices(increasePercentage);
+        }else{
+            Float increasePercentage =  1 - (Float.valueOf(percentage)/100);
+            this.setPrices(increasePercentage);
+        }
+    }
+
+    @Override
+    public List<Product> getBySubCategory(String subcategory) {
+        return productRepository.findBySubcategory(subcategory).stream()
+                .filter(product -> !product.isDeleted() && product.getStock() > 0).collect(Collectors.toList());
+    }
+
+    private void setPrices(Float modifier){
+        productRepository.findAll().forEach(product -> {
+            product.setPrice(product.getPrice() * modifier);
+            productRepository.save(product);
+        });
+    }
 }

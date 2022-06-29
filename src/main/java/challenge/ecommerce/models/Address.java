@@ -22,6 +22,7 @@ public class Address {
     @JoinColumn(name="client_id")
     private Client client;
 
+    public Address(){}
     public Address(long zipCode, long streetNumber, String floorApartment, String streetName, String province, String locality) {
         this.zipCode = zipCode;
         this.streetNumber = streetNumber;

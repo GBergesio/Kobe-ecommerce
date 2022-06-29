@@ -146,63 +146,67 @@
 
 
     /*-------- product-slider-active ---------*/
-    $('.product-slider-active').owlCarousel({
-        loop: true,
-        nav: false,
-        autoplay: false,
-        autoplayTimeout: 5000,
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
-        item: 4,
-        margin: 30,
-        responsive: {
-            0: {
-                items: 1
-            },
-            576: {
-                items: 2
-            },
-            768: {
-                items: 2
-            },
-            992: {
-                items: 3
-            },
-            1200: {
-                items: 4
+    setTimeout(()=>{
+        $('.product-slider-active').owlCarousel({
+            loop: true,
+            nav: false,
+            autoplay: false,
+            autoplayTimeout: 5000,
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn',
+            item: 4,
+            margin: 30,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                576: {
+                    items: 2
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                }
             }
-        }
-    })
+        })
+        $('.product-slider-active-2').owlCarousel({
+            loop: true,
+            nav: false,
+            autoplay: false,
+            autoplayTimeout: 5000,
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn',
+            item: 3,
+            margin: 30,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                576: {
+                    items: 2
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                },
+                1200: {
+                    items: 3
+                }
+            }
+        })
+    },500)
+    
     
     
     /*------ product-slider-active 2 -------*/
-    $('.product-slider-active-2').owlCarousel({
-        loop: true,
-        nav: false,
-        autoplay: false,
-        autoplayTimeout: 5000,
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
-        item: 3,
-        margin: 30,
-        responsive: {
-            0: {
-                items: 1
-            },
-            576: {
-                items: 2
-            },
-            768: {
-                items: 2
-            },
-            992: {
-                items: 3
-            },
-            1200: {
-                items: 3
-            }
-        }
-    })
+    
     
     /*====== Search active ======*/
     function sidebarSearch() {
@@ -370,7 +374,8 @@
             }
         });
     }
-    itemToggler();
+    setTimeout(()=>{
+        itemToggler()},500)
     
     /*-----------------------------------
         Scroll zoom

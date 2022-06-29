@@ -19,5 +19,16 @@ public interface ProductService {
 
     void save(Product product);
 
-//    boolean existProperty(String propertyName);
+    void updatePrice(Product product, Double price);
+
+    void updateDescription(Product product, String description);
+
+    void updateImg(Product product, String img);
+    void updateImgSec(Product product, String imgSec);
+
+    void updateStock(Product product, Short stock);
+
+    void updateAll(Short percentage, String modifier);
+
+    List<Product> getBySubCategory(String subcategory);
 }
