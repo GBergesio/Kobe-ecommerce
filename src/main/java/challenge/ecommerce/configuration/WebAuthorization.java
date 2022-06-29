@@ -22,7 +22,7 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
 
-                .antMatchers("/web/**").permitAll()
+                .antMatchers("/web/**","/admin/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/products", "/api/products/category","/api/products/subcategory").permitAll()
                 .antMatchers("/web/**",  "/h2-console/**", "/api/clients/confirm").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/products", "/api/products/category").permitAll()
@@ -33,9 +33,8 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/api/products").hasAuthority("ADMIN")
                 .antMatchers(HttpMethod.GET, "/api/clients/{id}").hasAuthority("ADMIN")
                 .antMatchers(HttpMethod.GET, "/api/clients", "/api/purchases","/api/addresses").hasAuthority("ADMIN")
-                .antMatchers("/admin/**", "/h2-console/**", "/rest/**").hasAuthority("ADMIN")
-                .antMatchers("/admin/**", "/rest/**").hasAuthority("ADMIN")
-
+                .antMatchers( "/h2-console/**", "/rest/**").hasAuthority("ADMIN")
+                .antMatchers( "/rest/**").hasAuthority("ADMIN")
         ;
 
         http.formLogin()
