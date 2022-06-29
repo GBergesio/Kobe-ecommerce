@@ -329,8 +329,6 @@ const app = Vue.createApp({
         
       })
 
-
-
     this.productsCartStorage = JSON.parse(localStorage.getItem("cart"))
     if (this.productsCartStorage) {
       this.cartStorage = this.productsCartStorage
@@ -339,8 +337,6 @@ const app = Vue.createApp({
   mounted() {
   },
   methods: {
-
-
     productForModal(product) {
       this.productSelect = product
       return this.productSelect.name
@@ -367,7 +363,7 @@ const app = Vue.createApp({
       let products = this.productsBack
       this.covers = []
       products.forEach(product => {
-        if (product.subcategory === "Funda de celular") {
+        if (product.subcategory === "Iphone Cases") {
           this.covers.push(product)
         }
       })
@@ -416,6 +412,31 @@ const app = Vue.createApp({
         this.cartStorage.push(product)
         localStorage.setItem("cart", JSON.stringify(this.cartStorage))
       }
+<<<<<<< HEAD
+=======
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          width:'30%',
+         padding:'1rem',
+         background:'#ECC038',
+         backdrop:false,
+          title: 'Guardado',
+          showConfirmButton: false,
+          toast:true,
+          timer: 1500,
+          timerProgressBar:true,
+      })
+      .catch(function (error) {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Stock no disponible',
+          showConfirmButton: false,
+          timer: 1500
+      })
+      })
+>>>>>>> main
     },
     addProductCartModal(product) {
       let input = document.getElementById(`${product.id}`)
