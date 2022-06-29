@@ -423,7 +423,7 @@
                                 </div>
                                 <div class="different-address open-toggle mt-30">
                                     <div class="row">
-                                        <form @submit.prevent="showAlertTransfer">
+                                        <form @submit.prevent="showAlertAddress">
                                             <div class="col-lg-12">
                                                 <div class="billing-info mb-20">
                                                     <div class="tax-select">
@@ -474,7 +474,7 @@
                                 <div class="additional-info-wrap">
                                     <label class="text-light">Notas de pedido</label>
                                     <textarea placeholder="Notes about your order, e.g. special notes for delivery. "
-                                        name="message"></textarea>
+                                        name="message" v-model="description"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -518,28 +518,6 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="pay-top sin-payment">
-                                            <input id="payment-method-2" class="input-radio" type="radio" value="cheque"
-                                                name="payment_method">
-                                            <label for="payment-method-2">Pagos con cheques</label>
-                                            <div class="payment-box payment_method_bacs">
-                                                <p>Realice su pago directamente en nuestra cuenta bancaria. Por favor,
-                                                    utilice su ID de pedido como referencia de pago. Su pedido no se
-                                                    enviará hasta que los fondos se hayan liquidado en nuestra cuenta.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="pay-top sin-payment">
-                                            <input id="payment-method-3" class="input-radio" type="radio" value="cheque"
-                                                name="payment_method">
-                                            <label for="payment-method-3">Pago en efectivo</label>
-                                            <div class="payment-box payment_method_bacs">
-                                                <p>Realice su pago directamente en nuestra cuenta bancaria. Por favor,
-                                                    utilice su ID de pedido como referencia de pago. Su pedido no se
-                                                    enviará hasta que los fondos se hayan liquidado en nuestra cuenta.
-                                                </p>
-                                            </div>
-                                        </div>
                                         <div class="pay-top sin-payment sin-payment-3">
                                             <input id="payment-method-4" class="input-radio" type="radio" value="cheque"
                                                 name="payment_method">
@@ -556,7 +534,7 @@
                                     </div>
                                 </div>
                                 <div class="Place-order mt-40">
-                                    <a href="#">Hacer un pedido</a>
+                                    <button @click="downloadFile">Hacer un pedido</button>
                                 </div>
                             </div>
                         </div>
@@ -630,6 +608,8 @@
         crossorigin="anonymous"></script>
     <!-- Axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- PDF -->
+    <script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
     <!-- VUE -->
     <script src="https://unpkg.com/vue@3"></script>
     <!-- Sweet Alert -->

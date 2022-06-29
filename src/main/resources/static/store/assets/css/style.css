@@ -10817,7 +10817,7 @@ h3.cart-page-title {
   margin-top: 18px;
 }
 
-.your-order-area .Place-order a {
+.your-order-area .Place-order button {
   background-color: var(--torch-red);
   font-size: 12px;
   display: block;
@@ -10832,7 +10832,7 @@ h3.cart-page-title {
   text-align: center;
 }
 
-.your-order-area .Place-order a:hover {
+.your-order-area .Place-order button:hover {
   background-color: var(--electric-blue);
 }
 

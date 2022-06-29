@@ -28,6 +28,7 @@ const app = Vue.createApp({
       lastName: "",
       emailRegister: "",
       passwordRegister: "",
+      description: "",
 
       ////
       productsBack: [],
@@ -47,6 +48,7 @@ const app = Vue.createApp({
       contactNumber: "",
       contactEmail: "",
 
+
       //// newAddresse
       newZipCode: [],
       newStreetName: [],
@@ -61,18 +63,18 @@ const app = Vue.createApp({
       .then(data => {
         this.addresses = data.data.addresses
       }),
-    axios.get(`/api/products`)
-      .then(data => {
-        this.productsBack = data.data
+      axios.get(`/api/products`)
+        .then(data => {
+          this.productsBack = data.data
 
-        this.productsLowStock()
-        this.funkoFilter()
-        this.coversFilter()
-        this.mangasFilter()
+          this.productsLowStock()
+          this.funkoFilter()
+          this.coversFilter()
+          this.mangasFilter()
 
-      }),
+        }),
 
-    this.productsCartStorage = JSON.parse(localStorage.getItem("cart"))
+      this.productsCartStorage = JSON.parse(localStorage.getItem("cart"))
     if (this.productsCartStorage) {
       this.cartStorage = this.productsCartStorage
     }
@@ -129,24 +131,24 @@ const app = Vue.createApp({
       }
       Swal.fire({
         position: 'top-end',
-          icon: 'success',
-          width:'30%',
-         padding:'1rem',
-         background:'#ECC038',
-         backdrop:false,
-          title: 'Agregado',
-          showConfirmButton: false,
-          toast:true,
-          timer: 1500,
-          timerProgressBar:true,
-    })
+        icon: 'success',
+        width: '30%',
+        padding: '1rem',
+        background: '#ECC038',
+        backdrop: false,
+        title: 'Agregado',
+        showConfirmButton: false,
+        toast: true,
+        timer: 1500,
+        timerProgressBar: true,
+      })
     },
     deleteProductFav(product) {
       this.productsFavId = this.productsFavStorage
       if (!this.productsFavId.includes(product.id)) {
         this.favStorage.pop(product)
         localStorage.setItem("fav", JSON.stringify(this.favStorage))
-      } 
+      }
     },
     addProductCart(product) {
       this.productsCartId = this.cartStorage.map(product => product.id)
@@ -155,28 +157,28 @@ const app = Vue.createApp({
         this.cartStorage.push(product)
         localStorage.setItem("cart", JSON.stringify(this.cartStorage))
       }
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          width:'30%',
-         padding:'1rem',
-         background:'#ECC038',
-         backdrop:false,
-          title: 'Guardado',
-          showConfirmButton: false,
-          toast:true,
-          timer: 1500,
-          timerProgressBar:true,
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        width: '30%',
+        padding: '1rem',
+        background: '#ECC038',
+        backdrop: false,
+        title: 'Guardado',
+        showConfirmButton: false,
+        toast: true,
+        timer: 1500,
+        timerProgressBar: true,
       })
-      .catch(function (error) {
-        Swal.fire({
-          position: 'top-end',
-          icon: 'error',
-          title: 'Stock no disponible',
-          showConfirmButton: false,
-          timer: 1500
-      })
-      })
+        .catch(function (error) {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: 'Stock no disponible',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        })
     },
     addProductCartModal(product) {
       let input = document.getElementById(`${product.id}`)
@@ -205,14 +207,14 @@ const app = Vue.createApp({
       if (productCart.stock > productCart.quantity) {
         localSFilterToModify[0].quantity = ++productCart.quantity
       }
-      else {   
+      else {
         Swal.fire({
           position: 'top-end',
           icon: 'error',
           title: 'Stock no disponible',
           showConfirmButton: false,
           timer: 1500
-      })
+        })
       }
       let localScopyFiltered = localSCopy.filter(prod => prod.id != productCart.id)
       localScopyFiltered.push(localSFilterToModify[0])
@@ -269,40 +271,34 @@ const app = Vue.createApp({
       }
 
     },
-    showAlertTransfer() {
+    showAlertAddress() {
       Swal.fire({
-          title: 'Quieres agregar la dirección?',
-          showDenyButton: true,
-          confirmButtonText: 'Guardar',
-          denyButtonText: `Cancelar`,
+        title: 'Quieres agregar la dirección?',
+        showDenyButton: true,
+        confirmButtonText: 'Guardar',
+        denyButtonText: `Cancelar`,
       }).then((result) => {
-        console.log(this.newZipCode);
-        console.log(this.newStreetNumber);
-        console.log(this.newFloorApartment);
-        console.log(this.newStreetName);
-        console.log(this.newProvince);
-        console.log(this.newLocality);
-          if (result.isConfirmed) {
+        if (result.isConfirmed) {
           axios.post('/api/newAddress', `{
             "zipCode": ${this.newZipCode},
             "streetNumber": ${this.newStreetNumber},
             "floorApartment": "${this.newFloorApartment}",
             "streetName": "${this.newStreetName}",
             "province": "${this.newProvince}",
-            "locality": "${this.newLocality}"}`, { headers: { "Content-Type": "application/json" } })  
-              .then(()=>
-                  Swal.fire('Dirección agregada!', '', 'success')).then(() => window.location.reload())
-                  
-              .catch(error => {
-                  Swal.fire({
-                      icon: 'error',
-                      title: error.response.data,
-                      timer: 2000,
-                      })
-                  })
-          }
+            "locality": "${this.newLocality}"}`, { headers: { "Content-Type": "application/json" } })
+            .then(() =>
+              Swal.fire('Dirección agregada!', '', 'success')).then(() => window.location.reload())
+
+            .catch(error => {
+              Swal.fire({
+                icon: 'error',
+                title: error.response.data,
+                timer: 2000,
+              })
+            })
+        }
       })
-  },
+    },
     login() {
       axios.post('/api/login', `email=${this.email}&password=${this.password}`, { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
         .catch(error => console.log(error))
@@ -319,6 +315,108 @@ const app = Vue.createApp({
           axios.post('/api/login', `email=${this.emailRegister}&password=${this.passwordRegister}`, { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
         )
         .catch(error => console.log(error))
+    },
+    downloadFile() {
+      var props = {
+        outputType: "save",
+        returnJsPDFDocObject: true,
+        fileName: "Factura Kobe 2022",
+        orientationLandscape: false,
+        compress: true,
+        logo: {
+          src: "https://i.imgur.com/nk6nhDrh.jpg",
+          width: 105.33, //aspect ratio = width/height
+          height: 30.66,
+          margin: {
+            top: -4, //negative or positive num, from the current position
+            left: -2 //negative or positive num, from the current position
+          }
+        },
+        business: {
+          name: "0003 -",
+          address: "",
+          phone: "Payment Date: 01/01/2021 18:12",
+          email: "Invoice Date: 02/02/2021 10:17",
+          email_1: "Responsable inscripto Cuit: 30-20219031-6",
+          website: "INICIO ACT.: 01/06/2009 ING. BRUTOS: 28003732",
+        },
+        contact: {
+          label: "Factura para:",
+          name: this.contactName,
+          lastName: this.contactLastName,
+          address: `hoal`,
+          phone: this.contactNumber,
+          email: this.contactEmail,
+        },
+        invoice: {
+          label: "IVA: ",
+          num: "Consumidor final",
+          invDate: "kobeestore05@gmail.com",
+          invGenDate: "www.kobe.com",
+          headerBorder: true,
+          tableBodyBorder: true,
+          header: [
+            {
+              title: "#",
+              style: {
+                width: 10
+              }
+            },
+            {
+              title: "Nombre",
+              style: {
+                width: 30
+              }
+            },
+            {
+              title: "Descripción",
+              style: {
+                width: 80
+              }
+            },
+            { title: "Serie" },
+            { title: "Precio" },
+            { title: "Cantidad" },
+            { title: "Total" }
+          ],
+          table: Array.from(Array(this.cartStorage.length), (item, index) => ([
+            index + 1,
+            this.cartStorage[index].name,
+            this.cartStorage[index].description,
+            this.cartStorage[index].serie,
+            ("$" + this.cartStorage[index].price),
+            this.cartStorage[index].quantity,
+            ("$" + (this.cartStorage[index].quantity * this.cartStorage[index].price))
+          ])),
+          additionalRows: [{
+            col1: 'Total:',
+            col2: this.cartStorage[0].name,
+            col3: 'ALL',
+            style: {
+              fontSize: 14 //optional, default 12
+            }
+          },
+          {
+            col1: 'SubTotal:',
+            col2: this.cartStorage[0].name,
+            col3: 'ALL',
+            style: {
+              fontSize: 10 //optional, default 12
+            }
+          }],
+          invDescLabel: "Observaciones",
+          invDesc: this.description,
+        },
+        footer: {
+          text: "The invoice is created on a computer and is valid without the signature and stamp.",
+        },
+        pageEnable: true,
+        pageLabel: "Page ",
+      };
+
+
+      var pdfObject = jsPDFInvoiceTemplate.default(props);
+
     },
   },
   computed: {
