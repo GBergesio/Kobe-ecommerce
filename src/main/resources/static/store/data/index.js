@@ -179,6 +179,30 @@ const app = Vue.createApp({
             timer: 1500
           })
         })
+
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          width:'30%',
+         padding:'1rem',
+         background:'#ECC038',
+         backdrop:false,
+          title: 'Guardado',
+          showConfirmButton: false,
+          toast:true,
+          timer: 1500,
+          timerProgressBar:true,
+      })
+      .catch(function (error) {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Stock no disponible',
+          showConfirmButton: false,
+          timer: 1500
+      })
+      })
+
     },
     addProductCartModal(product) {
       let input = document.getElementById(`${product.id}`)
@@ -418,6 +442,7 @@ const app = Vue.createApp({
       var pdfObject = jsPDFInvoiceTemplate.default(props);
 
     },
+
   },
   computed: {
     sumPriceShipping() {
@@ -437,6 +462,6 @@ const app = Vue.createApp({
       return this.subtotalCart
     },
   },
-}).mount('#app')
+}}).mount('#app')
 
 
