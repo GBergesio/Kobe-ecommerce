@@ -286,136 +286,136 @@ public class EcommerceApplication {
 			//Mouse pads
 			Product product101 = new Product("Mouse pad Charlotte Katakuri",
 					"Mouse pad (25x30) de Charlotte Katakuri del anime One Piece, de poliester",
-					"",
-					"",
+					"https://i.ibb.co/4SyCrrh/1-img.jpg",
+					"https://i.ibb.co/YLZq5fM/1-imgSec.jpg",
 					(short) 20,2200.0,"One Piece",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product101);
 
 			Product product102 = new Product("Mouse pad Gotoubun no Hanayome",
 					"Mouse pad XL(80x40) de Gotoubun no Hanayome",
-					"",
-					"",
+					"https://i.ibb.co/5KWnWQZ/2-img.jpg",
+					"https://i.ibb.co/PmGHGct/2-imgSec.jpg",
 					(short) 15,4200.0,"Gotoubun No Hanayome",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product102);
 
 			Product product103 = new Product("Mouse pad Jujutsu Kaisen",
 					"Mouse pad XL(80x40) de Jujutsu Kaisen extra gruesa",
-					"",
-					"",
+					"https://i.ibb.co/qxDy1zX/3-img.jpg",
+					"https://i.ibb.co/c1F8xXx/3-imgSec.jpg",
 					(short) 15,4200.0,"Jujutsu Kaisen",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product103);
 
 			Product product104 = new Product("Mouse pad de Senku",
 					"Mouse pad (20x25) de Senku de Dr Stone",
-					"",
-					"",
+					"https://i.ibb.co/X25ypWf/4-img.jpg",
+					"https://i.ibb.co/xXZ1XK0/4-imgSec.jpg",
 					(short) 15,2000.0,"Dr Stone",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product104);
 
 			Product product105 = new Product("Mouse pad de Naruto",
 					"Mouse pad XL(80x40) de Naruto",
-					"",
-					"",
+					"https://i.ibb.co/hY4Kgn1/5-img.jpg",
+					"https://i.ibb.co/g38YFj2/5-imgSec.jpg",
 					(short) 19,3800.0,"Naruto Shippuden",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product105);
 
 			Product product106 = new Product("Mouse pad de Pikachu",
 					"Mouse pad XL(80x40) de Pikachu Pokemon",
-					"",
-					"",
+					"https://i.ibb.co/9sxN0By/6-img.jpg",
+					"https://i.ibb.co/BnGRmvD/6-s.jpg",
 					(short) 19,3800.0,"Pokemon",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product106);
 
 			Product product107 = new Product("Mouse pad de Natsu Fairy Tail",
 					"Mouse pad XL(80x40) de Natsu",
-					"",
-					"",
+					"https://i.ibb.co/9Vcqvb0/7.jpg",
+					"https://i.ibb.co/5M1rdQY/7s.jpg",
 					(short) 22,3900.0,"Fairy Tail",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product107);
 
 			Product product108 = new Product("Mouse pad de Nami",
 					"Mouse pad (20x25) de Nami de One Piece",
-					"",
-					"",
+					"https://i.ibb.co/Vgph6xt/8.jpg",
+					"https://i.ibb.co/TtWxXDM/8s.jpg",
 					(short) 12,2500.0,"One Piece",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product108);
 
 			Product product109 = new Product("Mouse pad de Nanachi Made in abyss",
 					"Mouse pad (25x30) de Nanachi, anime made in abyss, antideslizante",
-					"",
-					"",
+					"https://i.ibb.co/w62YXhL/9.jpg",
+					"https://i.ibb.co/7p03Qq8/9s.jpg",
 					(short) 17,2300.0,"Made in Abyss",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product109);
 
 			Product product110 = new Product("Mouse pad de Monogatarie series",
 					"Mouse pad (30x25) de Monogatarie series, antideslizante",
-					"",
-					"",
+					"https://i.ibb.co/xS0qLzP/10.jpg",
+					"https://i.ibb.co/8mX2kJZ/10s.jpg",
 					(short) 19,2250.0,"Monogatarie Series",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product110);
 
 			Product product111 = new Product("Mouse pad de Raphtalia",
 					"Mouse pad (30x25) de Raphtalia del anime Tate no yuusha",
-					"",
-					"",
+					"https://i.ibb.co/kh51ndz/11.jpg",
+					"https://i.ibb.co/GRFkbMB/11s.jpg",
 					(short) 22,2050.0,"Tate No Yuusha",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product111);
 
 			Product product112 = new Product("Mouse pad de FLCL",
 					"Mouse pad (30x25) de FLCL antideslizante de goma",
-					"",
-					"",
+					"https://i.ibb.co/F8vNtN6/12.jpg",
+					"https://i.ibb.co/HxJDH2R/12s.jpg",
 					(short) 12,2050.0,"FLCL",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product112);
 
 			Product product113 = new Product("Mouse pad de Koro sensei",
 					"Mouse pad (30x25) de Koro sensei del anime Assassination Classroom, antideslizante de goma",
-					"",
-					"",
+					"https://i.ibb.co/2MkV1Mr/13.jpg",
+					"https://i.ibb.co/RpHRYGK/13s.jpg",
 					(short) 16,2250.0,"Assassination Classroom",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product113);
 
 			Product product114 = new Product("Mouse pad de Koe no Katachi",
 					"Mouse pad (30x25) del anime Koe no Katachi, de tela de poliester",
-					"",
-					"",
+					"https://i.ibb.co/SnZjCxd/14.jpg",
+					"https://i.ibb.co/yq8q8B2/14s.jpg",
 					(short) 19,2300.0,"Koe No Katachi",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product114);
 
 			Product product115 = new Product("Mouse pad de Okumura",
 					"Mouse pad (30x25) de Okumura del anime Ao no Exorcist, de tela de poliester",
-					"",
-					"",
+					"https://i.ibb.co/r59bp98/15.jpg",
+					"https://i.ibb.co/PwnZ83T/15s.jpg",
 					(short) 12,2200.0,"Ao No Exorcist",
 					Category.ACCESSORIES , "Mouse Pad");
 			productRepository.save(product115);
 
 			Product product116 = new Product("Uno",
 					"Juego de cartas almacenado en una lata, apto para mayores de 7 años",
-					"",
-					"",
+					"https://i.ibb.co/n0fzsJK/16.jpg",
+					"https://i.ibb.co/cF0w1nn/16s.jpg",
 					(short) 12,2200.0,"varios",
 					Category.BAZARANDTOYSHOP, "Board Games");
 			productRepository.save(product116);
 
 			Product product117 = new Product("Catan",
 					"Juego de estrategia de hasta 4 jugadores, apto para mayores de 7 años",
-					"",
-					"",
+					"https://i.ibb.co/tsxYk8F/17.jpg",
+					"https://i.ibb.co/7z94yhC/17s.jpg",
 					(short) 10,5000.0,"varios",
 					Category.BAZARANDTOYSHOP , "Board Games");
 			productRepository.save(product117);
@@ -430,48 +430,48 @@ public class EcommerceApplication {
 
 			Product product119 = new Product("Attack on titan: the last stand",
 					"Juego de cartas de hasbro en los que se pueden tocar temas sensibles, apto para mayores de 16 años",
-					"",
-					"",
+					"https://i.ibb.co/LnFtPvb/18.jpg",
+					"https://i.ibb.co/thqtVbr/18s.jpg",
 					(short) 12,5400.0,"varios",
 					Category.BAZARANDTOYSHOP , "Board Games");
 			productRepository.save(product119);
 
 			Product product120 = new Product("El embustero",
 					"Juego de cartas de asociacion de palabras,faroles y sospechas, apto para mayores de 12 años",
-					"",
-					"",
+					"https://i.ibb.co/vwV1wYd/20.jpg",
+					"https://i.ibb.co/w4Tt6Vz/20s.jpg",
 					(short) 12,2800.0,"varios",
 					Category.BAZARANDTOYSHOP , "Board Games");
 			productRepository.save(product120);
 
 			Product product121 = new Product("Virus",
 					"Juego de cartas en el que gana el primero en armar un cuerpo sano, apto para todo publico",
-					"",
-					"",
+					"https://i.ibb.co/m0s420x/21.jpg",
+					"https://i.ibb.co/zX3YBBL/21s.jpg",
 					(short) 14,2600.0,"varios",
 					Category.BAZARANDTOYSHOP , "Board Games");
 			productRepository.save(product121);
 
 			Product product122 = new Product("Tribu de sinverguenzas",
 					"Juego de mesa para echarse unas risas, muy gamberro que empieza donde termina la vergüenza",
-					"",
-					"",
+					"https://i.ibb.co/d4pxTBz/22.jpg",
+					"https://i.ibb.co/nQLJ3Wp/22s.jpg",
 					(short) 11,2800.0,"varios",
 					Category.BAZARANDTOYSHOP , "Board Games");
 			productRepository.save(product122);
 
 			Product product123 = new Product("Fantasma blitz",
 					"Juego de reflejo, el mas rapido en llevarse la pieza gana un punto, aptop para mayores de 14",
-					"",
-					"",
+					"https://i.ibb.co/k51NPWf/23.jpg",
+					"https://i.ibb.co/vshwR8g/23s.jpg",
 					(short) 14,3200.0,"varios",
 					Category.BAZARANDTOYSHOP , "Board Games");
 			productRepository.save(product123);
 
 			Product product124 = new Product("Polilla tranmposa",
 					"Juego de cartas donde el objetivo es hacer trampa para quedarte sin cartas",
-					"",
-					"",
+					"https://i.ibb.co/FJRg3rc/24.jpg",
+					"https://i.ibb.co/N2WsLcy/24s.jpg",
 					(short) 14,3000.0,"varios",
 					Category.BAZARANDTOYSHOP , "Board Games");
 			productRepository.save(product124);
