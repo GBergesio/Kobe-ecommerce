@@ -2,6 +2,13 @@ const app = Vue.createApp({
     data() {
         return {
             message: 'Hello Vue!',
+            dataPro:[],
+            filter:"Default",
+            minPrice:"",
+            maxPrice:"",
+            productosFiltro1:[],
+            productosFiltro2:[],
+            productosShop:[],
 
         }
     },
@@ -15,7 +22,8 @@ const app = Vue.createApp({
             axios.get(`/api/products/category?category=` + category)
                 .then(dataAcc => {
                     this.dataPro = dataAcc.data
-                    console.log(this.dataPro);
+                    this.productosFiltro1 = this.dataPro
+                    console.log(this.productosFiltro1);
                 })
         }
 
@@ -23,20 +31,50 @@ const app = Vue.createApp({
             axios.get(`/api/products/subcategory?subcategory=` + subcategory)
                 .then(dataAcc => {
                     this.dataPro = dataAcc.data
-                    console.log(this.dataPro);
+                    this.productosFiltro1 = this.dataPro
+                    console.log(this.productosFiltro1);
                 })
         }
-
+        
 
 
 
 
     },
     methods: {
+        
 
     },
     computed: {
-
+        filtroProductos(){
+            if(this.filter == "Default"){
+                this.productosFiltro1 = this.dataPro
+                console.log(this.productosFiltro1);
+            }else if(this.filter == "ZA"){
+                this.productosFiltro1 = this.dataPro.sort((a,b) => { if (a.name < b.name) { return 1 } else if (a.name > b.name) { return -1 } })
+                console.log(this.productosFiltro1);
+            }else if(this.filter == "AZ"){
+                this.productosFiltro1 = this.dataPro.sort((a,b) => { if (a.name > b.name) { return 1 } else if (a.name < b.name) { return -1 } })
+                console.log(this.productosFiltro1);
+            }else if(this.filter == "SMa"){
+                this.productosFiltro1 = this.dataPro.sort((a,b) => b.stock - a.stock)
+                console.log(this.productosFiltro1);
+            }else if(this.filter == "SMe"){
+                this.productosFiltro1 = this.dataPro.sort((a,b) => a.stock - b.stock)
+                console.log(this.productosFiltro1);
+            }
+            
+        },
+        filtroPrecio(array){
+            if(this.minPrice != "")
+            {
+            this.productosFiltro2 = array.filter(product => product.price >= this.minPrice)
+            }
+            if(this.maxPrice != "")
+            {
+            this.productosFiltro2 = array.filter(product => product.price <= this.maxPrice)
+            }
+        }
     },
 }).mount('#app')
 

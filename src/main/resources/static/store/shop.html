@@ -571,19 +571,26 @@
                                     <ul>
                                         <li>
                                             <div class="sidebar-widget-list-left">
-                                                <input type="checkbox"> <a href="#">Hot Sale <span>4</span> </a>
+                                                <input type="radio" name="filtro" v-model="filter" value="AZ"> <label>A - Z</label>
                                                 <span class="checkmark"></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="sidebar-widget-list-left">
-                                                <input type="checkbox" value=""> <a href="#">Nuevo <span>5</span></a>
+                                                <input type="radio" name="filtro" v-model="filter" value="ZA"><label>Z - A</label>
                                                 <span class="checkmark"></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="sidebar-widget-list-left">
-                                                <input type="checkbox" value=""> <a href="#">En Stock <span>6</span>
+                                                <input type="radio" name="filtro" v-model="filter" value="SMa"><label>Mayor Stock</label>
+                                                </a>
+                                                <span class="checkmark"></span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="sidebar-widget-list-left">
+                                                <input type="radio" name="filtro" v-model="filter" value="SMe"><label>Menor Stock</label>
                                                 </a>
                                                 <span class="checkmark"></span>
                                             </div>
@@ -594,14 +601,13 @@
                             <div class="sidebar-widget mt-45">
                                 <h4 class="pro-sidebar-title">Filtrar por precio</h4>
                                     <div class="price-filter mt-10">
-                                        <div class="price-slider-amount">
-                                            <input type="text" id="amount" name="price" class="text-light"
-                                                placeholder="Add Your Price"/>
-                                        </div>
-                                        <div id="slider-range"></div>
+                                        <label class="d-flex"><p class="me-1">Desde:</p><input type="number" style="width: 75px; height: 20px;" v-model="minPrice"></label>
+                                    </div>
+                                    <div class="price-filter">
+                                        <label class="d-flex"><p class="me-2">Hasta:</p><input type="number" style="width: 75px; height: 20px;" v-model="maxPrice"></label>
                                     </div>
                             </div>
-                            <div class="sidebar-widget mt-50">
+                            <!-- <div class="sidebar-widget mt-50">
                                 <h4 class="pro-sidebar-title">Color </h4>
                                 <div class="sidebar-widget-list mt-20">
                                     <ul>
@@ -631,8 +637,8 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
-                            <div class="sidebar-widget mt-40">
+                            </div> -->
+                            <!-- <div class="sidebar-widget mt-40">
                                 <h4 class="pro-sidebar-title">Talla </h4>
                                 <div class="sidebar-widget-list mt-20">
                                     <ul>
@@ -662,8 +668,8 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
-                            <div class="sidebar-widget mt-50">
+                            </div> -->
+                            <!-- <div class="sidebar-widget mt-50">
                                 <h4 class="pro-sidebar-title">Tag </h4>
                                 <div class="sidebar-widget-tag mt-25">
                                     <ul>
@@ -674,7 +680,7 @@
                                         <li><a href="#">Fashion</a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -852,7 +858,9 @@
             </div>
         </div>
         <!-- Modal end -->
+        {{filtroProductos}}
     </div>
+
 
 
 

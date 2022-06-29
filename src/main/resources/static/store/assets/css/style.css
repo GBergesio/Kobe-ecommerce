@@ -7678,26 +7678,14 @@ textarea:focus {
   transform: rotate(45deg);
 }
 
-.sidebar-widget .sidebar-widget-list ul li a {
+.sidebar-widget .sidebar-widget-list ul li label {
   margin-left: 30px;
   display: block;
+  color: #fff;
 }
 
-.sidebar-widget .sidebar-widget-list ul li a span {
-  background-color: var(--torch-red);
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  text-align: center;
-  line-height: 25px;
-  border-radius: 50px;
-  float: right;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  font-size: 13px;
-}
 
-.sidebar-widget .sidebar-widget-list ul li a:hover span {
+.sidebar-widget .sidebar-widget-list ul li label:hover span {
   color: #fff;
   background-color: var(--electric-blue);
 }
