@@ -412,8 +412,7 @@ const app = Vue.createApp({
         this.cartStorage.push(product)
         localStorage.setItem("cart", JSON.stringify(this.cartStorage))
       }
-<<<<<<< HEAD
-=======
+
         Swal.fire({
           position: 'top-end',
           icon: 'success',
@@ -436,7 +435,7 @@ const app = Vue.createApp({
           timer: 1500
       })
       })
->>>>>>> main
+
     },
     addProductCartModal(product) {
       let input = document.getElementById(`${product.id}`)
