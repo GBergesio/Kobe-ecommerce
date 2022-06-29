@@ -119,12 +119,10 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
 body::-webkit-scrollbar-thumb {
-  /* background-color: #d13330; */
   background-color: var(--torch-red);
   -webkit-box-shadow: rgba(244, 244, 244, 0.12) 0 3px 13px 1px;
 }

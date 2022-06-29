@@ -416,30 +416,6 @@ const app = Vue.createApp({
         this.cartStorage.push(product)
         localStorage.setItem("cart", JSON.stringify(this.cartStorage))
       }
-      
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          width:'30%',
-         padding:'1rem',
-         background:'#ECC038',
-         backdrop:false,
-          title: 'Guardado',
-          showConfirmButton: false,
-          toast:true,
-          timer: 1500,
-          timerProgressBar:true,
-      }).catch(function (error) {
-        Swal.fire({
-          position: 'top-end',
-          icon: 'error',
-          title: 'Stock no disponible',
-          showConfirmButton: false,
-          timer: 1500
-      })
-          
-      })
-      
     },
     addProductCartModal(product) {
       let input = document.getElementById(`${product.id}`)
@@ -465,7 +441,7 @@ const app = Vue.createApp({
       let localSCopy = [...localS]
       let localSFilterToModify = localS.filter(product => product.id == productCart.id)
 
-      if (productCart.quantity < productCart.stock) {
+      if (productCart.stock > productCart.quantity) {
         localSFilterToModify[0].quantity = ++productCart.quantity
       }
       else {   
@@ -497,7 +473,7 @@ const app = Vue.createApp({
       localScopyFiltered.push(localSFilterToModify[0])
       localStorage.clear()
       localStorage.setItem("cart", JSON.stringify(localScopyFiltered))
-      console.log(localSFilterToModify);
+      // console.log(localSFilterToModify);
     },
   },
   computed: {
