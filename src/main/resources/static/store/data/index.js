@@ -367,7 +367,7 @@ const app = Vue.createApp({
       let products = this.productsBack
       this.covers = []
       products.forEach(product => {
-        if (product.subcategory === "Funda de celular") {
+        if (product.subcategory === "Iphone Cases") {
           this.covers.push(product)
         }
       })
