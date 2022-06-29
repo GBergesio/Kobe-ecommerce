@@ -403,6 +403,7 @@ const app = Vue.createApp({
         this.cartStorage.push(product)
         localStorage.setItem("cart", JSON.stringify(this.cartStorage))
       }
+
     },
     addProductCartModal(product) {
       let input = document.getElementById(`${product.id}`)
@@ -428,7 +429,7 @@ const app = Vue.createApp({
       let localSCopy = [...localS]
       let localSFilterToModify = localS.filter(product => product.id == productCart.id)
 
-      if (productCart.quantity < productCart.stock) {
+      if (productCart.stock > productCart.quantity) {
         localSFilterToModify[0].quantity = ++productCart.quantity
       }
       else {
@@ -454,7 +455,7 @@ const app = Vue.createApp({
       localScopyFiltered.push(localSFilterToModify[0])
       localStorage.clear()
       localStorage.setItem("cart", JSON.stringify(localScopyFiltered))
-      console.log(localSFilterToModify);
+      // console.log(localSFilterToModify);
     },
   },
   computed: {
