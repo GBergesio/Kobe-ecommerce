@@ -557,9 +557,10 @@
                             <div class="sidebar-widget">
                                 <h4 class="pro-sidebar-title">Buscar</h4>
                                 <div class="pro-sidebar-search mb-50 mt-25">
-                                    <form class="pro-sidebar-search-form" action="#">
-                                        <input type="text" placeholder="Search here...">
-                                        <button>
+                                    <form class="pro-sidebar-search-form" v-on:submit.prevent="findMatch">
+                                        <input type="text" placeholder="Search here..." v-model="searchWord">
+                                        {{searchWord}}
+                                        <button type="submit">
                                             <i class="sli sli-magnifier"></i>
                                         </button>
                                     </form>
