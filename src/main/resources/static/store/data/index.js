@@ -498,7 +498,7 @@ const app = Vue.createApp({
       localStorage.clear()
       localStorage.setItem("cart", JSON.stringify(localScopyFiltered))
       console.log(localSFilterToModify);
-    },
+    }
   },
   computed: {
     sumPrice() {
