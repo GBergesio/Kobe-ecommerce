@@ -20,10 +20,17 @@ const app = Vue.createApp({
     },
     methods: {
         login(){
-            axios.post('/api/login',`email=${this.email}&password=${this.password}`,{headers:{'content-type':'application/x-www-form-urlencoded'}})
+
+            let headers = {headers:
+                            {
+                                'content-type':'application/x-www-form-urlencoded'
+                            }
+                          };
+            let url = `email=${this.email}&password=${this.password}`;
+            axios.post('/api/login', url, headers)
             .then(response =>
                 setTimeout(function(){
-                window.location.href='./index.html'
+                window.location.href='./my-account.html'
             },1000))
             .catch(error=> console.log(error))
         },
@@ -34,22 +41,17 @@ const app = Vue.createApp({
                 email: this.emailRegister,
                 password:this.passwordRegister
             }
-            axios.post('/api/clientRegister',registerObject)
+            axios.post('/api/clients',registerObject)
             .then(response => 
                 axios.post('/api/login',`email=${this.emailRegister}&password=${this.passwordRegister}`,{headers:{'content-type':'application/x-www-form-urlencoded'}})
             )
             .then(response =>
-                setTimeout(function(){
-                window.location.href='./index.html'
-            },1000))
+                setTimeout(() => {
+                window.location.href='https://mail.google.com/'
+            },2000))
             .catch(error=> console.log(error))
-        },
-        logOut(){
-            axios.post('/api/logout')
-            .then(response => setTimeout(function(){
-                window.location.href='./index.html'
-            },1000))
-        },
+        }
+       
     },
     computed: {
 

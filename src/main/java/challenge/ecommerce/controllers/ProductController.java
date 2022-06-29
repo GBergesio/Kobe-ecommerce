@@ -144,9 +144,24 @@ public class ProductController {
     @GetMapping("/products/subcategory")
     public ResponseEntity<?> getBySubCategory(@RequestParam String subcategory){
         if(subcategory.isEmpty()){
-            return new ResponseEntity<>("Missing subcategory", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("No ingreso ninguna subcategoria", HttpStatus.FORBIDDEN);
+        }
+        if(!productService.existsBySubcategory(subcategory)){
+            return new ResponseEntity<>("No existe ningun producto de la subcategoria " + subcategory, HttpStatus.FORBIDDEN);
         }
         return new ResponseEntity<>(productService.getBySubCategory(subcategory).stream().map(ProductDto::new)
+                .collect(Collectors.toList()), HttpStatus.OK);
+    }
+
+    @GetMapping("/products/serie")
+    public ResponseEntity<?> getBySerie(@RequestParam String serie){
+        if(serie.isEmpty()){
+            return new ResponseEntity<>("No ingreso ninguna serie", HttpStatus.FORBIDDEN);
+        }
+        if(!productService.existsBySerie(serie)){
+            return new ResponseEntity<>("No existe ningun producto de la serie " + serie, HttpStatus.FORBIDDEN);
+        }
+        return new ResponseEntity<>(productService.getAllBySerie(serie).stream().map(ProductDto::new)
                 .collect(Collectors.toList()), HttpStatus.OK);
     }
 }
