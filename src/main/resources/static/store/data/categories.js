@@ -15,7 +15,6 @@ const app = Vue.createApp({
             axios.get(`/api/products/category?category=` + category)
                 .then(dataAcc => {
                     this.dataPro = dataAcc.data
-                    console.log(this.dataPro);
                 })
         }
 
@@ -23,7 +22,6 @@ const app = Vue.createApp({
             axios.get(`/api/products/subcategory?subcategory=` + subcategory)
                 .then(dataAcc => {
                     this.dataPro = dataAcc.data
-                    console.log(this.dataPro);
                 })
         }
 
