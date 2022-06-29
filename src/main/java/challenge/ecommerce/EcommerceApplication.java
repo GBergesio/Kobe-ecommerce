@@ -38,6 +38,10 @@ public class EcommerceApplication {
 			Client client = new Client("client", "client","client@mail", passwordEncoder.encode("123"),UserType.CLIENT);
 			clientRepository.save(client);
 
+			Client validatedClient = new Client("pedro", "validado","validado@mail", passwordEncoder.encode("123"),UserType.CLIENT);
+			validatedClient.setActive(true);
+			clientRepository.save(validatedClient);
+
 			//Products
 
 			//Funko POPS!
