@@ -5,6 +5,7 @@ import challenge.ecommerce.dtos.ProductDto;
 import challenge.ecommerce.enums.Category;
 import challenge.ecommerce.models.Product;
 import challenge.ecommerce.services.ProductService;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +32,6 @@ public class ProductController {
     public Product getProductDTO(@PathVariable Long id) {
         return productService.getById(id);
     };
-
 
     @GetMapping("/products/category")
     public ResponseEntity<?> getByCategory(@RequestParam Category category){
@@ -144,9 +144,24 @@ public class ProductController {
     @GetMapping("/products/subcategory")
     public ResponseEntity<?> getBySubCategory(@RequestParam String subcategory){
         if(subcategory.isEmpty()){
-            return new ResponseEntity<>("Missing subcategory", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("No ingreso ninguna subcategoria", HttpStatus.FORBIDDEN);
+        }
+        if(!productService.existsBySubcategory(subcategory)){
+            return new ResponseEntity<>("No existe ningun producto de la subcategoria " + subcategory, HttpStatus.FORBIDDEN);
         }
         return new ResponseEntity<>(productService.getBySubCategory(subcategory).stream().map(ProductDto::new)
+                .collect(Collectors.toList()), HttpStatus.OK);
+    }
+
+    @GetMapping("/products/serie")
+    public ResponseEntity<?> getBySerie(@RequestParam String serie){
+        if(serie.isEmpty()){
+            return new ResponseEntity<>("No ingreso ninguna serie", HttpStatus.FORBIDDEN);
+        }
+        if(!productService.existsBySerie(serie)){
+            return new ResponseEntity<>("No existe ningun producto de la serie " + serie, HttpStatus.FORBIDDEN);
+        }
+        return new ResponseEntity<>(productService.getAllBySerie(serie).stream().map(ProductDto::new)
                 .collect(Collectors.toList()), HttpStatus.OK);
     }
 }

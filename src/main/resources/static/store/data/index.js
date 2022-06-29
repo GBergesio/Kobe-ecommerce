@@ -72,7 +72,6 @@ const app = Vue.createApp({
 
       }),
 
-
     this.productsCartStorage = JSON.parse(localStorage.getItem("cart"))
     if (this.productsCartStorage) {
       this.cartStorage = this.productsCartStorage
@@ -107,7 +106,7 @@ const app = Vue.createApp({
       let products = this.productsBack
       this.covers = []
       products.forEach(product => {
-        if (product.subcategory === "Funda de celular") {
+        if (product.subcategory === "Iphone Cases") {
           this.covers.push(product)
         }
       })
@@ -128,13 +127,26 @@ const app = Vue.createApp({
         this.favStorage.push(product)
         localStorage.setItem("fav", JSON.stringify(this.favStorage))
       }
+      Swal.fire({
+        position: 'top-end',
+          icon: 'success',
+          width:'30%',
+         padding:'1rem',
+         background:'#ECC038',
+         backdrop:false,
+          title: 'Agregado',
+          showConfirmButton: false,
+          toast:true,
+          timer: 1500,
+          timerProgressBar:true,
+    })
     },
     deleteProductFav(product) {
       this.productsFavId = this.productsFavStorage
       if (!this.productsFavId.includes(product.id)) {
         this.favStorage.pop(product)
         localStorage.setItem("fav", JSON.stringify(this.favStorage))
-      }
+      } 
     },
     addProductCart(product) {
       this.productsCartId = this.cartStorage.map(product => product.id)
@@ -143,6 +155,28 @@ const app = Vue.createApp({
         this.cartStorage.push(product)
         localStorage.setItem("cart", JSON.stringify(this.cartStorage))
       }
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          width:'30%',
+         padding:'1rem',
+         background:'#ECC038',
+         backdrop:false,
+          title: 'Guardado',
+          showConfirmButton: false,
+          toast:true,
+          timer: 1500,
+          timerProgressBar:true,
+      })
+      .catch(function (error) {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Stock no disponible',
+          showConfirmButton: false,
+          timer: 1500
+      })
+      })
     },
     addProductCartModal(product) {
       let input = document.getElementById(`${product.id}`)
@@ -168,11 +202,17 @@ const app = Vue.createApp({
       let localSCopy = [...localS]
       let localSFilterToModify = localS.filter(product => product.id == productCart.id)
 
-      if (productCart.quantity < productCart.stock) {
+      if (productCart.stock > productCart.quantity) {
         localSFilterToModify[0].quantity = ++productCart.quantity
       }
-      else {
-        console.log("no se puede agregar mas");
+      else {   
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Stock no disponible',
+          showConfirmButton: false,
+          timer: 1500
+      })
       }
       let localScopyFiltered = localSCopy.filter(prod => prod.id != productCart.id)
       localScopyFiltered.push(localSFilterToModify[0])
@@ -194,7 +234,7 @@ const app = Vue.createApp({
       localScopyFiltered.push(localSFilterToModify[0])
       localStorage.clear()
       localStorage.setItem("cart", JSON.stringify(localScopyFiltered))
-      console.log(localSFilterToModify);
+      // console.log(localSFilterToModify);
     },
     editQuantity(productCart) {
       let input = document.getElementById(`${productCart.id}`);

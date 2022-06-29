@@ -1,6 +1,7 @@
 package challenge.ecommerce.services.implement;
 
 import challenge.ecommerce.dtos.ProductApplicationDto;
+import challenge.ecommerce.dtos.ProductDto;
 import challenge.ecommerce.enums.Category;
 import challenge.ecommerce.models.Product;
 import challenge.ecommerce.repositories.ProductRepository;
@@ -45,7 +46,6 @@ public class ProductServiceImpl implements ProductService {
         }
         return null;
     }
-
     @Override
     public void delete(Product product) {
         product.setDeleted(true);
@@ -95,6 +95,21 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getBySubCategory(String subcategory) {
         return productRepository.findBySubcategory(subcategory).stream()
                 .filter(product -> !product.isDeleted() && product.getStock() > 0).collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean existsBySerie(String serie) {
+        return productRepository.existsBySerie(serie);
+    }
+
+    @Override
+    public List<Product> getAllBySerie(String serie) {
+        return productRepository.findBySerie(serie);
+    }
+
+    @Override
+    public boolean existsBySubcategory(String subcategory) {
+        return productRepository.existsBySubcategory(subcategory);
     }
 
     private void setPrices(Float modifier){
