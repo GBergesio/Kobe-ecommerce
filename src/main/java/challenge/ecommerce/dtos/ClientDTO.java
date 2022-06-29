@@ -12,7 +12,7 @@ public class ClientDTO {
 
     private long id;
 
-//    private boolean active;
+    private boolean active;
 
     private String name;
     private String lastName;
@@ -35,7 +35,7 @@ public class ClientDTO {
         this.email = client.getEmail();
         this.password = client.getPassword();
         this.dni = client.getDni();
-//        this.active = client.isActive();
+        this.active = client.isActive();
         this.purchases = client.getPurchases().stream().map(PurchaseDto::new).collect(Collectors.toSet());
         this.addresses = client.getAddresses().stream().map(AddressDTO::new).collect(Collectors.toSet());
 //        this.post = client.getPost();

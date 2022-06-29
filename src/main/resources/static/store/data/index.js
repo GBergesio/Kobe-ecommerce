@@ -388,13 +388,26 @@ const app = Vue.createApp({
         this.favStorage.push(product)
         localStorage.setItem("fav", JSON.stringify(this.favStorage))
       }
+      Swal.fire({
+        position: 'top-end',
+          icon: 'success',
+          width:'30%',
+         padding:'1rem',
+         background:'#ECC038',
+         backdrop:false,
+          title: 'Agregado',
+          showConfirmButton: false,
+          toast:true,
+          timer: 1500,
+          timerProgressBar:true,
+    })
     },
     deleteProductFav(product) {
       this.productsFavId = this.productsFavStorage
       if (!this.productsFavId.includes(product.id)) {
         this.favStorage.pop(product)
         localStorage.setItem("fav", JSON.stringify(this.favStorage))
-      }
+      } 
     },
     addProductCart(product) {
       this.productsCartId = this.cartStorage.map(product => product.id)
@@ -403,7 +416,28 @@ const app = Vue.createApp({
         this.cartStorage.push(product)
         localStorage.setItem("cart", JSON.stringify(this.cartStorage))
       }
-
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          width:'30%',
+         padding:'1rem',
+         background:'#ECC038',
+         backdrop:false,
+          title: 'Guardado',
+          showConfirmButton: false,
+          toast:true,
+          timer: 1500,
+          timerProgressBar:true,
+      })
+      .catch(function (error) {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Stock no disponible',
+          showConfirmButton: false,
+          timer: 1500
+      })
+      })
     },
     addProductCartModal(product) {
       let input = document.getElementById(`${product.id}`)
@@ -432,8 +466,14 @@ const app = Vue.createApp({
       if (productCart.stock > productCart.quantity) {
         localSFilterToModify[0].quantity = ++productCart.quantity
       }
-      else {
-        console.log("no se puede agregar mas");
+      else {   
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Stock no disponible',
+          showConfirmButton: false,
+          timer: 1500
+      })
       }
       let localScopyFiltered = localSCopy.filter(prod => prod.id != productCart.id)
       localScopyFiltered.push(localSFilterToModify[0])

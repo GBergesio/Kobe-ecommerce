@@ -7,7 +7,10 @@ import challenge.ecommerce.enums.UserType;
 import challenge.ecommerce.models.Address;
 import challenge.ecommerce.models.Client;
 import challenge.ecommerce.services.AddressService;
+import challenge.ecommerce.email.EmailValidator;
+import challenge.ecommerce.models.RegistrationRequest;
 import challenge.ecommerce.services.ClientService;
+import challenge.ecommerce.services.implement.ClientServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +19,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,6 +37,12 @@ public class ClientController {
 
     @Autowired
     PasswordEncoder passwordEncoder;
+
+    @Autowired
+    ClientServiceImpl clientServiceImpl;
+
+    private RegistrationRequest registrationRequest = new RegistrationRequest();
+
 
     @GetMapping("/clients")
     ResponseEntity<?> getClients(){
@@ -50,7 +61,7 @@ public class ClientController {
     }
 
     @Transactional
-    @PostMapping("/clientRegister")
+    @PostMapping("/clients")
     public ResponseEntity<Object> register(@RequestBody RegisterDTO registerDTO){
 
         Pattern patPassword = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,}$");
@@ -101,9 +112,14 @@ public class ClientController {
             return new ResponseEntity<>("Email is already in use", HttpStatus.FORBIDDEN);
         }
 
-        Client client = new Client(registerDTO.getFirstName(), registerDTO.getLastName(), registerDTO.getEmail(),
-                clientService.encodePassword(registerDTO.getPassword()), UserType.CLIENT);
-        clientService.saveClient(client);
+        registrationRequest.setName(registerDTO.getFirstName());
+        registrationRequest.setLastName(registerDTO.getLastName());
+        registrationRequest.setEmail(registerDTO.getEmail());
+        registrationRequest.setPassword(registerDTO.getPassword());
+
+        if(clientServiceImpl.createClient(registrationRequest)){
+            return new ResponseEntity<>("Client register, review the email", HttpStatus.ACCEPTED);
+        }
 
         return new ResponseEntity<>("Registered successfully, please activate your email to use your account", HttpStatus.CREATED);
     }
@@ -312,5 +328,17 @@ public class ClientController {
 
 //hacer produtos BOOKSHOP
 //borrar direcciones
+    @GetMapping("/clients/confirm")
+    public ResponseEntity<Object> confirmEmail(@RequestParam("token") String token, HttpServletResponse resp) throws IOException {
+        String response = clientServiceImpl.confirmClientEmail(token);
+
+        if (response.equalsIgnoreCase("confirmed")) {
+            resp.setStatus(200);
+            resp.sendRedirect("/store/index.html");
+            return new ResponseEntity<>(response,HttpStatus.ACCEPTED);
+        }
+
+        return new ResponseEntity<>(response, HttpStatus.FORBIDDEN);
+    }
 
 }
