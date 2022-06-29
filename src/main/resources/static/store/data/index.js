@@ -329,8 +329,6 @@ const app = Vue.createApp({
         
       })
 
-
-
     this.productsCartStorage = JSON.parse(localStorage.getItem("cart"))
     if (this.productsCartStorage) {
       this.cartStorage = this.productsCartStorage
@@ -339,8 +337,6 @@ const app = Vue.createApp({
   mounted() {
   },
   methods: {
-
-
     productForModal(product) {
       this.productSelect = product
       return this.productSelect.name
@@ -367,7 +363,7 @@ const app = Vue.createApp({
       let products = this.productsBack
       this.covers = []
       products.forEach(product => {
-        if (product.subcategory === "Funda de celular") {
+        if (product.subcategory === "Iphone Cases") {
           this.covers.push(product)
         }
       })

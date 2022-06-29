@@ -6886,7 +6886,9 @@ textarea:focus {
   -webkit-appearance: none;
   min-width: 150px;
   cursor: pointer;
-  background: rgba(0, 0, 0, 0) url("../../assets/img/icon-img/select.png") no-repeat scroll right 0px center;
+  background: rgba(255, 255, 255, 0.187) url("../img/icon-img/select.png") no-repeat scroll right 0px center;
+  border-radius: 15px;
+  padding: 5px;
   text-transform: capitalize;
 }
 
@@ -7047,7 +7049,8 @@ textarea:focus {
 }
 
 .shop-list-wrap .shop-list-content h3 a {
-  color: #444444;
+  color: var(--midnight-blue);
+  font-weight: 600;
 }
 
 .shop-list-wrap .shop-list-content h3 a:hover {
@@ -7087,16 +7090,18 @@ textarea:focus {
 }
 
 .shop-list-wrap .shop-list-content .ht-product-list-price span.new {
-  font-size: 20px;
+  font-size: 22px;
   margin-right: 8px;
-  color: #ff3535;
+  color: rgb(0, 0, 0);
+  font-family: "Poppins";
 }
 
 .shop-list-wrap .shop-list-content .ht-product-list-price span.old {
-  font-size: 13px;
+  font-size: 15px;
   text-decoration: line-through;
-  color: #4a4a4a;
-  font-weight: 400;
+  color: var(--torch-red);
+  font-weight: 500;
+  font-family: "Poppins";
 }
 
 .shop-list-wrap .shop-list-content .ht-product-list-ratting i {
@@ -7111,11 +7116,16 @@ textarea:focus {
 
 .shop-list-wrap .shop-list-content .ht-product-list-action a {
   font-size: 20px;
-  color: #000000;
-  border: 1px solid #000000;
+  color: white;
+  border: 1px solid var(--tulip-tree);;
+  background-color: var(--tulip-tree);
   display: inline-block;
   padding: 12px 19px 8px;
   margin-right: 8px;
+}
+
+.pListBG{
+  background-color: rgb(232, 232, 232);
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -7447,9 +7457,10 @@ textarea:focus {
 }
 
 .shop-list-wrap.shop-list-mrg3 .shop-list-content p {
-  color: #000;
+  color: black;
   line-height: 25px;
   margin: 0 0 19px;
+  font-weight: 500;
   font-family: "Roboto", sans-serif;
 }
 
@@ -7491,8 +7502,9 @@ textarea:focus {
 
 .shop-list-wrap.shop-list-mrg3 .shop-list-content .shop-list-title-price-wrap .shop-list-title-price>span {
   position: relative;
-  font-size: 16px;
-  color: #444444;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--tulip-tree);
   font-family: "Roboto", sans-serif;
   padding-left: 38px;
 }
