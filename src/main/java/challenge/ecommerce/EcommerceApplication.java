@@ -124,7 +124,7 @@ public class EcommerceApplication {
 					(short) 13,6999.0,"Marvel", Category.ACTIONFIGURES , "Static Figures");
 			productRepository.save(product20);
 
-			//cover
+			//ACCESORIES
 			Product product21 = new Product("Marvel Series - Iron Man","Funda edición Marvel para Iphone","https://i.ibb.co/X37WPqw/71d-BJa-Hi-X3-S-AC-SS450.jpg","https://i.ibb.co/4YHG0Fd/avengers-endgame-iron-man-tony-stark-crop1619139044711-jpg-33663383.jpg", (short) 15,1999.0,"Marvel", Category.ACCESSORIES , "Iphone Cases");
 			productRepository.save(product21);
 			Product product22 = new Product("Marvel Series - Iron Man","Funda edición Marvel para Iphone","https://i.ibb.co/603h0hL/0525968ee93a59b56b41517b7ceddedcf9c3cbb5-original.jpg","https://i.ibb.co/4YHG0Fd/avengers-endgame-iron-man-tony-stark-crop1619139044711-jpg-33663383.jpg", (short)15, 1999.0,"Marvel", Category.ACCESSORIES, "Iphone Cases");
@@ -143,14 +143,10 @@ public class EcommerceApplication {
 			productRepository.save(product28);
 			Product product29 = new Product("Marvel Series - Capitan America","Funda edición Marvel para Iphone","https://i.ibb.co/VwYbxrP/61j-Wcmmt-VAL-AC-SS450.jpg","https://i.ibb.co/CVDZJfv/YRDRN2-AWWNATVHH3-CPLXR4-FUPA.jpg", (short) 16,1999.0,"Marvel",  Category.ACCESSORIES , "Iphone Cases");
 			productRepository.save(product29);
-
-
 			Product product30 = new Product("Marvel Series - Spider Man","Funda edición Marvel para Iphone","https://i.ibb.co/xgtq4yf/71-Erkv-Rvhd-L-AC-SS450.jpg","https://i.ibb.co/4YHG0Fd/avengers-endgame-iron-man-tony-stark-crop1619139044711-jpg-33663383.jpg", (short) 10,1999.0,"Marvel",  Category.ACCESSORIES , "Iphone Cases");
-
 			productRepository.save(product30);
 			Product product31 = new Product("Marvel Series - Spider Man","Funda edición Marvel para Iphone","https://i.ibb.co/6DCxppQ/a94459bedad7cb94e53cfe621ce23a5570d452f6-original.jpg","https://i.ibb.co/4YHG0Fd/avengers-endgame-iron-man-tony-stark-crop1619139044711-jpg-33663383.jpg", (short) 10,1999.0,"Marvel",  Category.ACCESSORIES , "Iphone Cases");
 			productRepository.save(product31);
-
 			Product product32 = new Product("Dragon Ball - Gohan","Funda edición Dragon Ball para Iphone","https://i.ibb.co/5v8Fr9s/1aa21b82eef6422f6ffb2d817a81120e5272ae87-original.jpg","https://i.ibb.co/5GvLkjC/hasv-V6-Dq-400x400.jpg", (short) 1,2999.0,"Marvel",  Category.ACCESSORIES , "Iphone Cases");
 			productRepository.save(product32);
 			Product product33 = new Product("Dragon Ball - Goku Saiyan","Funda edición Dragon Ball para Iphone","https://i.ibb.co/F43n4VH/71fm-Yla-DCDL-AC-SX522.jpg","https://i.ibb.co/5WHpT18/296-2967569-volador-nubes-goku-goku-en-la-nube-voladora.jpg", (short) 18,1999.0,"Marvel", Category.ACCESSORIES , "Iphone Cases");
@@ -171,6 +167,8 @@ public class EcommerceApplication {
 			productRepository.save(product40);
 			Product product41 = new Product("Dragon Ball - Saiyan Blue ","Funda edición Dragon Ball para Iphone","https://i.ibb.co/k6jqYwS/9113292-0.png","https://i.ibb.co/b11L5yt/YVDKLIO6-LVBB5-BF2-CN5-DYPEYGA.jpg",  (short) 13,6999.0,"Marvel",  Category.ACCESSORIES , "Iphone Cases");
 			productRepository.save(product41);
+
+			//BAZAR AND TOY GAMES
 			Product product42 = new Product("Dragon Ball - Goku ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/9pNftpr/images-q-tbn-ANd9-Gc-TKVBRnlcosf-Mov-UBwo-Yg3of-QZDcar-C1-HLDKis-OGVp9w268-PRI9jyz-Rv-SVYKfl-Swalr-A.jpg","https://i.ibb.co/PDWJm09/VNb-J8f-Gm-400x400.jpg",  (short) 13,999.0,"DRBZ",  Category.BAZARANDTOYSHOP , "Keychains");
 			productRepository.save(product42);
 			Product product43 = new Product("Dragon Ball - Z","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/MhCT2qK/images-q-tbn-ANd9-Gc-TYi-Z6-NNEJgdhu-Gnm0-R9-IMo-G-ehqv-P-Cmae-Lw-usqp-CAU.jpg","https://i.ibb.co/TgQHRdF/D-NQ-NP-2-X-628203-MLA45669767978-042021-F.webp",  (short) 13,999.0,"DRBZ",  Category.BAZARANDTOYSHOP , "Keychains");
@@ -212,9 +210,9 @@ public class EcommerceApplication {
 			Product product61 = new Product("Marvel Series - Spider Man ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/5jg0Xfm/images-q-tbn-ANd9-Gc-Sm-Uu5iv0-25ith-Yl-T3t0tew-TQCNz-NMk-R-eeg-usqp-CAU.jpg","https://www.universalorlando.com/webdata/k2/es/us/files/Images/gds/ioa-amazing-adventures-of-spiderman-ride-animation-cf-b.jpg",  (short) 13,999.0,"Marvel",  Category.BAZARANDTOYSHOP , "Keychains");
 			productRepository.save(product61);
 			//mousePad
-			Product product62 = new Product("Marvel Series - Iron Man","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/r3btBQ1/a83e0e4cd56d87284872dcaa5e314b4b-product.jpg","https://i.ibb.co/4YHG0Fd/avengers-endgame-iron-man-tony-stark-crop1619139044711-jpg-33663383.jpg",  (short) 13,899.0,"Marvel",  Category.BAZARANDTOYSHOP , "Mouse Pad para tu mouse");
+			Product product62 = new Product("Marvel Series - Iron Man","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/r3btBQ1/a83e0e4cd56d87284872dcaa5e314b4b-product.jpg","https://i.ibb.co/4YHG0Fd/avengers-endgame-iron-man-tony-stark-crop1619139044711-jpg-33663383.jpg",  (short) 13,899.0,"Marvel",  Category.BAZARANDTOYSHOP , "Mouse Pad");
 			productRepository.save(product62);
-			Product product63 = new Product("Marvel Series - Iron Man ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/5F8gfRH/161014aa94ad48a6a19ebe34b11312ef-product.jpg","https://i.ibb.co/4YHG0Fd/avengers-endgame-iron-man-tony-stark-crop1619139044711-jpg-33663383.jpg",  (short) 13,899.0,"Marvel",  Category.BAZARANDTOYSHOP , "Mouse Pad para tu mouse");
+			Product product63 = new Product("Marvel Series - Iron Man ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/5F8gfRH/161014aa94ad48a6a19ebe34b11312ef-product.jpg","https://i.ibb.co/4YHG0Fd/avengers-endgame-iron-man-tony-stark-crop1619139044711-jpg-33663383.jpg",  (short) 13,899.0,"Marvel",  Category.BAZARANDTOYSHOP , "Mouse Pad");
 			productRepository.save(product63);
 			Product product64 = new Product("Marvel Series - Spider Man","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/zP8HH1W/6d7f5bd3366bf7eacd0ec8af392e9e79.jpg","https://www.universalorlando.com/webdata/k2/es/us/files/Images/gds/ioa-amazing-adventures-of-spiderman-ride-animation-cf-b.jpg",  (short) 13,899.0,"Marvel",  Category.BAZARANDTOYSHOP , "Mouse Pad");
 			productRepository.save(product64);
@@ -232,7 +230,6 @@ public class EcommerceApplication {
 			productRepository.save(product70);
 			Product product71= new Product("Marvel Series - Capitan America ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/s2tfJD1/bcb4372c933eeefbdfd3e34a75a8d432-character-art-mice.jpg","https://i.ibb.co/CVDZJfv/YRDRN2-AWWNATVHH3-CPLXR4-FUPA.jpg",  (short) 13,899.0,"Marvel",  Category.BAZARANDTOYSHOP , "Mouse Pad");
 			productRepository.save(product71);
-			//tazas
 			Product product72= new Product("Marvel Series - Capitan America ","todo decoraciones, ideal para regalo o decoracion de la casa","https://d3ugyf2ht6aenh.cloudfront.net/stores/171/765/products/20210714_2047441-c875e20b515d6bda1116263077431160-1024-1024.jpg","https://i.ibb.co/CVDZJfv/YRDRN2-AWWNATVHH3-CPLXR4-FUPA.jpg",  (short) 13,1200.0,"Marvel",  Category.BAZARANDTOYSHOP , "Mugs");
 			productRepository.save(product72);
 			Product product73= new Product("Marvel Series - Capitan America ","todo decoraciones, ideal para regalo o decoracion de la casa","https://d3ugyf2ht6aenh.cloudfront.net/stores/806/999/products/de2a00261-6f7bbf6be3a581735b16421735463422-640-0.jpg","https://i.ibb.co/CVDZJfv/YRDRN2-AWWNATVHH3-CPLXR4-FUPA.jpg",  (short) 13,1200.0,"Marvel",  Category.BAZARANDTOYSHOP , "Mugs");
@@ -245,7 +242,7 @@ public class EcommerceApplication {
 			productRepository.save(product76);
 			Product product77= new Product("Marvel Series - Iron Man","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/pwJrHzZ/de2a00221-a5634107295cc8c67816421734039333-640-0.jpg","https://i.ibb.co/4YHG0Fd/avengers-endgame-iron-man-tony-stark-crop1619139044711-jpg-33663383.jpg",  (short) 13,1200.0,"Marvel",  Category.BAZARANDTOYSHOP , "Mugs");
 			productRepository.save(product77);
-			Product product78= new Product("Marvel Series - Thor","todo decoraciones, ideal para regalo o decoracion de la casa","https://cf.shopee.com.ar/file/c8bb916b33341cdf1201dba9e65aa176_tn","https://i.ibb.co/TgQHRdF/D-NQ-NP-2-X-628203-MLA45669767978-042021-F.webp",  (short) 13,1200.0,"Marvel",  Category.BAZARANDTOYSHOP , "Tazas decoradas");
+			Product product78= new Product("Marvel Series - Thor","todo decoraciones, ideal para regalo o decoracion de la casa","https://cf.shopee.com.ar/file/c8bb916b33341cdf1201dba9e65aa176_tn","https://i.ibb.co/TgQHRdF/D-NQ-NP-2-X-628203-MLA45669767978-042021-F.webp",  (short) 13,1200.0,"Marvel",  Category.BAZARANDTOYSHOP , "Mugs");
 			productRepository.save(product78);
 			Product product79= new Product("Marvel Series - Thor","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/nPZ1y7L/Tazas-de-caf-de-Thor-de-Marvel-martillo-de-cer-mica-tazas-en-forma-de-hoja.jpg","https://i.ibb.co/TgQHRdF/D-NQ-NP-2-X-628203-MLA45669767978-042021-F.webp",  (short) 13,1200.0,"Marvel",  Category.BAZARANDTOYSHOP , "Mugs");
 			productRepository.save(product79);
@@ -273,7 +270,6 @@ public class EcommerceApplication {
 			productRepository.save(product90);
 			Product product91= new Product("Dragon Ball - Goku","todo decoraciones, ideal para regalo o decoracion de la casa","https://cdn.shopify.com/s/files/1/0399/1833/8203/products/taza-dragon-ball-super-goku-black-rose.jpg?v=1638009719","https://i.ibb.co/PDWJm09/VNb-J8f-Gm-400x400.jpg",  (short) 13,1200.0,"Dragon Ball Z",  Category.BAZARANDTOYSHOP , "Mugs");
 			productRepository.save(product91);
-
 			Product product92= new Product("Dragon Ball - DBZ","juegos de mesa, ideal para regalo o entretenimiento de la casa","https://i.ibb.co/SJ5W65T/images-q-tbn-ANd9-Gc-Qqk4-H0mdyd-FNy-UAT3-VBp-Kq-WYk-1t0-Bg-Nf-R3qzidjh-VEW-Ei1eg-LTOktc3-Dw-V4-WY6b.jpg","https://i.ibb.co/Ws38zRt/eleven-force-dragon-ball-z-monopoly-spanish.jpg",  (short) 13,5000.0,"Dragon Ball Z",  Category.BAZARANDTOYSHOP , "Board Games");
 			productRepository.save(product92);
 			Product product93= new Product("Dragon Ball - DBZ","juegos de mesa, ideal para regalo o entretenimiento de la casa","https://www.oxfordlibreria.com.ar/media/catalog/product/cache/5a38f6614905178fa07804facc7b33a0/2/5/2567603269015_20220325200034.jpg","https://image.api.playstation.com/vulcan/ap/rnd/202206/0609/do5IApyEkMcmw17gnaCSDH8g.png",  (short) 13,5000.0,"Dragon Ball Z",  Category.BAZARANDTOYSHOP , "Board Games");
