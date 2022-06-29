@@ -19,7 +19,6 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
         http.authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/api/products", "/api/products/category","/api/products/subcategory","/api/products/serie").permitAll()
                 .antMatchers("/web/**",  "/h2-console/**", "/api/clients/confirm").permitAll()
