@@ -462,6 +462,6 @@ const app = Vue.createApp({
       return this.subtotalCart
     },
   },
-}}).mount('#app')
+}).mount('#app')
 
 
