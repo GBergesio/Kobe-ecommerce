@@ -95,59 +95,7 @@
                             <div class="header-right-wrap pt-40">
                                 <div class="header-search">
                                     <a class="search-active" href="#"><i class="sli sli-magnifier"></i></a>
-                                </div>
-                                <div class="cart-wrap">
-                                    <button class="icon-cart-active">
-                                        <span class="icon-cart">
-                                            <i class="sli sli-bag"></i>
-                                            <span class="count-style">02</span>
-                                        </span>
-                                        <span class="cart-price">
-                                            $320.00
-                                        </span>
-                                    </button>
-                                    <div class="shopping-cart-content">
-                                        <div class="shopping-cart-top">
-                                            <h4>Shoping Cart</h4>
-                                            <a class="cart-close" href="#"><i class="sli sli-close"></i></a>
-                                        </div>
-                                        <ul>
-                                            <li class="single-shopping-cart">
-                                                <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-1.svg"></a>
-                                                    <div class="item-close">
-                                                        <a href="#"><i class="sli sli-close"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="#">Product Name </a></h4>
-                                                    <span>1 x 90.00</span>
-                                                </div>
-                                            </li>
-                                            <li class="single-shopping-cart">
-                                                <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-2.svg"></a>
-                                                    <div class="item-close">
-                                                        <a href="#"><i class="sli sli-close"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="#">Product Name</a></h4>
-                                                    <span>1 x 90.00</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="shopping-cart-bottom">
-                                            <div class="shopping-cart-total">
-                                                <h4>Total : <span class="shop-total">$260.00</span></h4>
-                                            </div>
-                                            <div class="shopping-cart-btn btn-hover text-center">
-                                                <a class="default-btn" href="checkout.html">checkout</a>
-                                                <a class="default-btn" href="cart-page.html">view cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                </div>                          
                                 <div class="setting-wrap">
                                     <button class="setting-active">
                                         <i class="sli sli-settings"></i>
@@ -215,52 +163,6 @@
                         </div>
                         <div class="col-6">
                             <div class="header-right-wrap">
-                                <div class="cart-wrap">
-                                    <button class="icon-cart-active">
-                                        <span class="icon-cart">
-                                            <i class="sli sli-bag"></i>
-                                            <span class="count-style">02</span>
-                                        </span>
-                                        <span class="cart-price">
-                                            $320.00
-                                        </span>
-                                    </button>
-                                    <div class="shopping-cart-content">
-                                        <div class="shopping-cart-top">
-                                            <h4>Shoping Cart</h4>
-                                            <a class="cart-close" href="#"><i class="sli sli-close"></i></a>
-                                        </div>
-                                        <ul>
-                                            <li class="single-shopping-cart">
-                                                <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-1.svg"></a>
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="#">Product Name </a></h4>
-                                                    <span>1 x 90.00</span>
-                                                </div>
-                                            </li>
-                                            <li class="single-shopping-cart">
-                                                <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-2.svg"></a>
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="#">Product Name</a></h4>
-                                                    <span>1 x 90.00</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="shopping-cart-bottom">
-                                            <div class="shopping-cart-total">
-                                                <h4>Total : <span class="shop-total">$260.00</span></h4>
-                                            </div>
-                                            <div class="shopping-cart-btn btn-hover text-center">
-                                                <a class="default-btn" href="checkout.html">checkout</a>
-                                                <a class="default-btn" href="cart-page.html">view cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="mobile-off-canvas">
                                     <a class="mobile-aside-button" href="#"><i class="sli sli-menu"></i></a>
                                 </div>
@@ -393,11 +295,12 @@
         </div>
         <div class="cart-main-area pt-95 pb-100">
             <div class="container">
-                <h3 class="cart-page-title">Los artículos de tu carrito</h3>
+                <h3 class="cart-page-title" v-show="cartStorage.length == 0">Tu Carrito no posee articulos</h3>
+                <h3 class="cart-page-title" v-show="cartStorage.length > 0">Los artículos de tu carrito</h3>
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                         <form action="#">
-                            <div class="table-content table-responsive cart-table-content">
+                            <div class="table-content table-responsive cart-table-content" v-show="cartStorage.length > 0">
                                 <table>
                                     <thead>
                                         <tr>
@@ -410,9 +313,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr v-for="productCart in cartStorage">
+                                        <tr v-for="productCart in cartStorage" class="">
                                             <td class="product-thumbnail">
-                                                <img :src="productCart.img" :alt="productCart.name">
+                                                <img :src="productCart.img" class="imgInCart" :alt="productCart.name">
                                             </td>
                                             <td class="product-name"><a>{{productCart.name}}</a></td>
                                             <td class="product-price-cart"><span
@@ -420,13 +323,14 @@
                                             <td class="product-quantity">
                                                 <div class="cart-plus-minus">
                                                     <input class="cart-plus-minus-box text-light" type="text"
-                                                        name="qtybutton" value="1" :id="productSelect.id">
+                                                        name="qtybutton" :value="productCart.quantity" :id="productCart.id">
+                                                    <p class="mt-1">Stock: {{productCart.stock}}</p>
                                                 </div>
                                             </td>
                                             <td class="product-subtotal"><span id="subto">${{productCart.quantity * productCart.price}}</span></td>
                                             <td class="product-remove">
-                                                <a href="#"><i class="sli sli-pencil"></i></a>
-                                                <a href="#"><i class="sli sli-close"></i></a>
+                                                <a href="./cart-page.html" @click="editQuantity(productCart)"><i class="sli sli-pencil"></i></a>
+                                                <a href="#" @click="deleteProductCart(productCart)"><i class="sli sli-close"></i></a>
                                             </td>
                                         </tr>
 
@@ -437,11 +341,11 @@
                                 <div class="col-lg-12">
                                     <div class="cart-shiping-update-wrapper">
                                         <div class="cart-shiping-update">
-                                            <a href="#">Continue Shopping</a>
+                                            <a href="./index.html">Continuar comprando</a>
                                         </div>
                                         <div class="cart-clear">
                                             <button>Update Shopping Cart</button>
-                                            <a href="#">Clear Shopping Cart</a>
+                                            <a href="./index.html" @click="emptyCart">Vaciar carrito y volver</a>
                                         </div>
                                     </div>
                                 </div>
@@ -451,19 +355,19 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="cart-tax">
                                     <div class="title-wrap">
-                                        <h4 class="cart-bottom-title section-bg-gray">Estimación de gastos de envío e
-                                            impuestos</h4>
+                                        <h4 class="cart-bottom-title section-bg-gray">Estimación de gastos de envío e impuestos</h4>
                                     </div>
                                     <div class="tax-wrapper">
                                         <p class="parrafoModel">Introduzca su destino para obtener una estimación de
-                                            envío.</p>
+                                            envío. Envios bonificados en compras mayores a $20000</p>
                                         <div class="tax-select-wrapper">
                                             <div class="tax-select">
                                                 <label>
                                                     * Provincia
                                                 </label>
-                                                <select class="email s-email s-wid">
-                                                    <option v-for="provincia in provincias" value="provincia">
+                                                <select class="email s-email s-wid" v-model="provinciaSeleccted">
+                                                    <option disabled checked selected>Selecciona tu provincia</option>
+                                                    <option v-for="provincia in provincias" :value="provincia">
                                                         {{provincia}}</option>
                                                 </select>
                                             </div>
@@ -472,10 +376,10 @@
                                                     * Cod. postal
                                                 </label>
                                                 <input type="text">
-                                            </div>
-                                            <button class="cart-btn-2" type="submit">Presupuesto</button>
-                                        </div>
 
+                                            </div>
+                                            <button class="cart-btn-2" type="submit" @click="shippingCost()">Presupuesto</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -498,16 +402,17 @@
                                     <div class="title-wrap">
                                         <h4 class="cart-bottom-title section-bg-gary-cart">Total del carrito</h4>
                                     </div>
-                                    <h5 class="text-dark">Total productos <span>${{sumPrice}}</span></h5>
-                                    <div class="total-shipping">
+                                    <h5 class="text-dark">Total productos <span>${{subtotalCart}}</span></h5>
+                                    <div class="total-shipping" v-show="subtotalCart < 20000">
                                         <h5>Total envío</h5>
-                                        <ul>
-                                            <li><input type="checkbox"> Standard <span>$20.00</span></li>
-                                            <li><input type="checkbox"> Express <span>$30.00</span></li>
-                                        </ul>
+                                        <p>${{shippingPrice}}</p>
                                     </div>
-                                    <h4 class="grand-totall-title text-dark ">Total general<span>${{sumPrice}}</span></h4>
-                                    <a href="#">Realizar Compra</a>
+                                    <div class="total-shipping" v-show="subtotalCart > 20000">
+                                        <h5>Total envío</h5>
+                                        <p>Tu envio esta bonificado por la compra mayor a $20000</p>
+                                    </div>
+                                    <h4 v-show="sumPrice" class="grand-totall-title text-dark ">Total general<span>${{sumPriceShipping}}</span></h4>
+                                    <a href="./checkout.html">Realizar Compra</a>
                                 </div>
                             </div>
                         </div>

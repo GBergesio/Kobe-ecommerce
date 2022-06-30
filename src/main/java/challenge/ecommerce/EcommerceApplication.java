@@ -12,6 +12,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -26,6 +28,16 @@ public class EcommerceApplication {
 		SpringApplication.run(EcommerceApplication.class, args);
 		System.out.println("Application started :)");
 	}
+
+//	@Bean
+//	public WebMvcConfigurer corsConfiguration() {
+//		return new WebMvcConfigurer() {
+//			@Override
+//			public void addCorsMappings(CorsRegistry registry) {
+//				registry.addMapping("/*").allowedOrigins("http://localhost:8080/", "http://127.0.0.1:5500/%22").allowedMethods("").allowedHeaders("*");
+//			}
+//		};
+//	}
 
 	@Bean
 	public CommandLineRunner initData(ProductRepository productRepository, ClientRepository clientRepository) {
@@ -475,6 +487,7 @@ public class EcommerceApplication {
 					(short) 14,3000.0,"varios",
 					Category.BAZARANDTOYSHOP , "Board Games");
 			productRepository.save(product124);
+
 
 			//tazas
 			Product product130 = new Product("Star wars - Stormtrooper",
@@ -1550,19 +1563,248 @@ public class EcommerceApplication {
 					(short) 14,2499.0,"Naruto",
 					Category.ACTIONFIGURES, "Static Figures!");
 			productRepository.save(product289);
-
-
-
-
-
-
-
-
-
-
-
-
-
+			//one piece
+			Product product290 = new Product("One Piece - Luffy",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/3CpVkjT/Figura-de-Luffy-de-Grandista-Monkey-D-27cm-juguete-de-Grandline-Anime-mu-ecos-coleccionables.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product290);
+			Product product291 = new Product("One Piece - Luffy",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/gdr7vn5/r-BVa-EVmy-R7-OAV2cb-AAHCz-IT-u-Tc518.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product291);
+			Product product292 = new Product("One Piece - Zoro",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/cYHtH4r/Anime-de-one-piece-Roronoa-Zoro-Articulaci-n-M-vil-figura-de-acci-n-juguetes-18.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product292);
+			Product product293 = new Product("One Piece - Zoro",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/vDT3f5r/afe2779f41edde6adbce22209caf0a836bd799f1-original.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product293);
+			Product product294 = new Product("One Piece - Franky",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/1RMLp4s/7182a83cdf9c689c6c3148ae19c1ed7a-product.jpg",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product294);
+			Product product295 = new Product("One Piece - Franky",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/Bfcc5Bg/r-BVa-EFm158-AAlv-NAAFFl-MBOq4c894.jpg",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product295);
+			Product product296 = new Product("One Piece - Sanji",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/Mp4DWdN/r-BVa-WF6-VWOy-AQVEi-AAMV3-DYr-Yx-Y957.jpg",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product296);
+			Product product297 = new Product("One Piece - Sanji",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/DgXqz1G/Hda33cc7daf97498da150e1dc31de27dbh.jpg",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product297);
+			Product product298 = new Product("One Piece - Sanji",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/74SbLHR/b17f0b96380d48a2070689b3f72d35681-3de7a557d1ceed645416071038196351-640-0.jpg",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product298);
+			Product product299 = new Product("One Piece - Sanji",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/bd0fqL7/images-q-tbn-ANd9-Gc-Q02-Ve-Vll-Jt-Q7-PHG1d-P2-Re-Mq95-Omz-Vj-XE8k-IA-usqp-CAU.jpg",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product299);
+			Product product300 = new Product("One Piece - Luffy",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/1T2rbc6/250147bd04d887fe6047c1ee0207e7fe.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product300);
+			Product product301 = new Product("One Piece - Luffy",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/TkG8JMq/Funko-POP-One-Piece-Luffy-in-Kimono-Metallic-Special-Edition-tienda-oficial-funko-funko-pop-original.webp",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product301);
+			Product product302 = new Product("One Piece - Franky",
+					"Figura de One Piece en vinilo de 9 cm",
+					"",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product302);
+			Product product303 = new Product("One Piece - Franky",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.pinimg.com/736x/65/19/49/65194986df9d2bafb1a6150dff0619d1.jpg",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product303);
+			Product product304 = new Product("One Piece - Zoro",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/yNjh7cv/x-fk54462.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product304);
+			Product product305 = new Product("One Piece - Zoro",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/q0vz9CF/D-NQ-NP-673564-MLM26765562381-022018-O.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product305);
+			//tazas
+			Product product306 = new Product("One Piece - Zoro",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/kXNY2sc/taza-mug-11oz-one-piece-zoro.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product306);
+			Product product307 = new Product("One Piece - Zoro",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/YQH7JLX/2113535-1.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product307);
+			Product product308 = new Product("One Piece - Luffy",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/QjFwhBg/taza-mug-11oz-one-piece-luffy.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product308);
+			Product product309 = new Product("One Piece - Luffy",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/S00fJqB/tazap66.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product309);
+			Product product310 = new Product("One Piece - Luffy",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/6wCKvt5/487545-1.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product310);
+			Product product311 = new Product("One Piece - Sanji",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/QnRx6xf/3076156-0.jpg",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product311);
+			Product product312 = new Product("One Piece - Sanji",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/FqwDpF4/mug-standard-x334-right-pad-600x600-f8f8f8.jpg",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product312);
+			Product product313 = new Product("One Piece - Franky",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/BBrByQ6/11960229-0.jpg",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product313);
+			Product product314 = new Product("One Piece - Franky",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/HzB4s2t/554-28-67-1614784083682-fusion-splendide-220.png",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product314);
+			//llavero
+			Product product315 = new Product("One Piece - Franky",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/NF1wvZr/images-q-tbn-ANd9-Gc-R6k9-Oswza6-Mo-KDx-UHDXJJtj-Bu0-Uc-Yu9-EC2e-Bp-DY99ra-VU9c4lt-Wn-Bkmi067s23-Uve.jpg",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product315);
+			Product product316 = new Product("One Piece - Franky",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/TBwC5t8/LLavero-de-dibujos-animados-de-One-Piece-Zoro-llavero-de-doble-cara-colgante-acr-lico-accesorios-jpg.jpg",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product316);
+			Product product317 = new Product("One Piece - Zoro",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/KxmvH72/Llavero-One-Piece-Zoro.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product317);
+			Product product318 = new Product("One Piece - Zoro",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/y0D9gQm/one-piece-keychain-pvc-zoro-sd-x4-1-1609246390.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product318);
+			Product product319 = new Product("One Piece - Luffy",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/NLQf32m/Akihabara-Colombia-Llavero-Luffy.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product319);
+			Product product320 = new Product("One Piece - Luffy",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/YRdDSxD/llavero-one-piece-sombrero-luffy-monkey-fotocaja-tienda-geek-cordoba-21-fb8b75353f4684e2531563293293.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product320);
+			Product product321 = new Product("One Piece - Sanji",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkogXA7UTgmG64Mk2ygoIAntoksdlYlQy2zA&usqp=CAU",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product321);
+			Product product322 = new Product("One Piece - Sanji",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/ZHDffZH/images-q-tbn-ANd9-Gc-Qkog-XA7-UTgm-G64-Mk2ygo-IAntoksdl-Yl-Qy2z-A-usqp-CAU.jpg",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product322);
+			//mouse pad
+			Product product323 = new Product("One Piece - Sanji",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mouse Pad");
+			productRepository.save(product323);
 
 
 		};

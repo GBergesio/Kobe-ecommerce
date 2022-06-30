@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Modernizer JS -->
     <script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
+    <!-- Swal.fire-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -179,10 +181,18 @@
                         <button class="search-close"><span class="sli sli-close"></span></button>
                     </div>
                     <div class="sidebar-search-input">
-                        <form>
+                        <!-- <form>
                             <div class="form-search">
                                 <input id="search" class="input-text" value="" placeholder="Search Now" type="search">
                                 <button>
+                                    <i class="sli sli-magnifier"></i>
+                                </button>
+                            </div>
+                        </form> -->
+                        <form v-on:submit.prevent="findMatch">
+                            <div class="form-search">
+                                <input id="search" class="input-text"  placeholder="Search Now" type="text" v-model="searchWord">
+                                <button type="submit">
                                     <i class="sli sli-magnifier"></i>
                                 </button>
                             </div>
@@ -407,15 +417,14 @@
                             <div class="tab-content jump">
                                 <div id="shop-1" class="tab-pane active">
                                     <div class="row ht-products">
-                                        <div class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+                                        <div class="col-xl-4 col-md-6 col-lg-6 col-sm-6 my-1" v-for="product in filteredProducts">
                                             <!--Product Start-->
-                                            <div
-                                                class="ht-product ht-product-action-on-hover ht-product-category-right-bottom mb-30">
-                                                <div class="ht-product-inner">
+                                            <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom">
+                                                <div class="ht-product-inner" style="height: 501.69px;" >
                                                     <div class="ht-product-image-wrap">
                                                         <a href="product-details.html" class="ht-product-image"> <img
-                                                                src="assets/img/product/product-1.svg"
-                                                                alt="Universal Product Style"> </a>
+                                                                :src="product.img"
+                                                                :alt="product.name"> </a>
                                                         <div class="ht-product-action">
                                                             <ul>
                                                                 <li><a href="#" data-bs-toggle="modal"
@@ -437,11 +446,14 @@
                                                             <div class="ht-product-categories"><a href="#">Chair</a>
                                                             </div>
                                                             <h4 class="ht-product-title"><a
-                                                                    href="product-details.html">Demo Product Name</a>
+                                                                    href="product-details.html">{{product.name}}</a>
                                                             </h4>
-                                                            <div class="ht-product-price">
-                                                                <span class="new">$60.00</span>
-                                                                <span class="old">$80.00</span>
+                                                            <div class="ht-product-price" v-if="product.stock <= 5">
+                                                                <span class="new">{{product.lowStockPrice.toFixed()}}</span>
+                                                                <span class="old">{{product.price.toFixed()}}</span>
+                                                            </div>
+                                                            <div class="ht-product-price" v-else>
+                                                                <span class="new">{{product.price.toFixed()}}</span>
                                                             </div>
                                                             <div class="ht-product-ratting-wrap">
                                                                 <span class="ht-product-ratting">
@@ -490,13 +502,13 @@
                                     </div>
                                 </div>
                                 <div id="shop-2" class="tab-pane">
-                                    <div class="shop-list-wrap shop-list-mrg2 shop-list-mrg-none mb-30">
+                                    <div class="shop-list-wrap shop-list-mrg2 shop-list-mrg-none mb-30" v-for="product in filteredProducts">
                                         <div class="row">
                                             <div class="col-lg-4 col-md-4">
                                                 <div class="product-list-img">
                                                     <a href="product-details.html">
-                                                        <img src="assets/img/product/product-list-1.svg"
-                                                            alt="Universal Product Style">
+                                                        <img :src="product.img"
+                                                            :alt="product.name">
                                                     </a>
                                                     <div class="product-quickview">
                                                         <a href="#" title="Quick View" data-bs-toggle="modal"
@@ -507,16 +519,21 @@
                                             </div>
                                             <div class="col-lg-8 col-md-8 align-self-center">
                                                 <div class="shop-list-content">
-                                                    <h3><a href="product-details.html">Demo Product Name</a></h3>
-                                                    <p>It has roots in a piece of classical Latin literature from 45 BC,
-                                                        making it over 2000 years old. Richard The standard chunk.</p>
+                                                    <h3><a href="product-details.html">{{product.name}}</a></h3>
+                                                    <p>{{product.description}}</p>
                                                     <span>Chair</span>
                                                     <div class="shop-list-price-action-wrap">
                                                         <div class="shop-list-price-ratting">
-                                                            <div class="ht-product-list-price">
-                                                                <span class="new">$40.00</span>
-                                                                <span class="old">$70.00</span>
+                          
+
+                                                            <div class="ht-product-list-price" v-if="product.stock <= 5">
+                                                                <span class="new">{{product.lowStockPrice.toFixed()}}</span>
+                                                                <span class="old">{{product.price.toFixed()}}</span>
                                                             </div>
+                                                            <div class="ht-product-list-price" v-else>
+                                                                <span class="new">{{product.price.toFixed()}}</span>
+                                                            </div>
+
                                                             <div class="ht-product-list-ratting">
                                                                 <i class="sli sli-star"></i>
                                                                 <i class="sli sli-star"></i>
@@ -559,7 +576,6 @@
                                 <div class="pro-sidebar-search mb-50 mt-25">
                                     <form class="pro-sidebar-search-form" v-on:submit.prevent="findMatch">
                                         <input type="text" placeholder="Search here..." v-model="searchWord">
-                                        {{searchWord}}
                                         <button type="submit">
                                             <i class="sli sli-magnifier"></i>
                                         </button>
@@ -567,42 +583,60 @@
                                 </div>
                             </div>
                             <div class="sidebar-widget">
-                                <h4 class="pro-sidebar-title">Filtrar por </h4>
+                                <h4 class="pro-sidebar-title">Ordenar </h4>
                                 <div class="sidebar-widget-list mt-30">
-                                    <ul>
-                                        <li>
-                                            <div class="sidebar-widget-list-left">
-                                                <input type="checkbox"> <a href="#">Hot Sale <span>4</span> </a>
-                                                <span class="checkmark"></span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="sidebar-widget-list-left">
-                                                <input type="checkbox" value=""> <a href="#">Nuevo <span>5</span></a>
-                                                <span class="checkmark"></span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="sidebar-widget-list-left">
-                                                <input type="checkbox" value=""> <a href="#">En Stock <span>6</span>
-                                                </a>
-                                                <span class="checkmark"></span>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <form v-on:change="sortBy">
+                                        <ul>
+                                            <li>
+                                                <div class="sidebar-widget-list-left">
+                                                    <input type="radio" v-model="sortType" value="AZ"> <label>A - Z</label>
+                                                    <span class="checkmark"></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="sidebar-widget-list-left">
+                                                    <input type="radio"  v-model="sortType" value="ZA"><label>Z - A</label>
+                                                    <span class="checkmark"></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="sidebar-widget-list-left">
+                                                    <input type="radio"  v-model="sortType" value="SMa"><label>Mayor Stock</label>
+                                                    </a>
+                                                    <span class="checkmark"></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="sidebar-widget-list-left">
+                                                    <input type="radio"  v-model="sortType" value="SMe"><label>Menor Stock</label>
+                                                    </a>
+                                                    <span class="checkmark"></span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </form>
                                 </div>
                             </div>
                             <div class="sidebar-widget mt-45">
                                 <h4 class="pro-sidebar-title">Filtrar por precio</h4>
+                                <form v-on:submit.prevent="filterProducts">
                                     <div class="price-filter mt-10">
-                                        <div class="price-slider-amount">
-                                            <input type="text" id="amount" name="price" class="text-light"
-                                                placeholder="Add Your Price"/>
-                                        </div>
-                                        <div id="slider-range"></div>
+                                        <label class="d-flex"><p class="me-1">Desde:</p><input type="number" style="width: 75px; height: 20px;" v-model="minPrice"></label>
                                     </div>
+    
+                                    <div class="price-filter">
+                                        <label class="d-flex"><p class="me-2">Hasta:</p><input type="number" style="width: 75px; height: 20px;" v-model="maxPrice"></label>
+                                    </div>
+
+                                    <div class="price-filter">
+                                        <button type="submit" class="text-dark">Filtrar</button>
+                                        
+                                    </div>
+                                    
+                                </form>
+
                             </div>
-                            <div class="sidebar-widget mt-50">
+                            <!-- <div class="sidebar-widget mt-50">
                                 <h4 class="pro-sidebar-title">Color </h4>
                                 <div class="sidebar-widget-list mt-20">
                                     <ul>
@@ -632,8 +666,8 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
-                            <div class="sidebar-widget mt-40">
+                            </div> -->
+                            <!-- <div class="sidebar-widget mt-40">
                                 <h4 class="pro-sidebar-title">Talla </h4>
                                 <div class="sidebar-widget-list mt-20">
                                     <ul>
@@ -663,8 +697,8 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
-                            <div class="sidebar-widget mt-50">
+                            </div> -->
+                            <!-- <div class="sidebar-widget mt-50">
                                 <h4 class="pro-sidebar-title">Tag </h4>
                                 <div class="sidebar-widget-tag mt-25">
                                     <ul>
@@ -675,7 +709,7 @@
                                         <li><a href="#">Fashion</a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -733,6 +767,7 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-5 col-sm-12 col-xs-12">
+                                
                                 <div class="tab-content quickview-big-img">
                                     <div id="pro-1" class="tab-pane fade show active">
                                         <img src="assets/img/product/quickview-l1.svg" alt="">
@@ -853,7 +888,9 @@
             </div>
         </div>
         <!-- Modal end -->
+
     </div>
+
 
 
 

@@ -3980,7 +3980,7 @@ textarea:focus {
  #batmanBtn span {
   position: absolute;
   width: 100%;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 100;
   left: 50%;
   top: 39%;
@@ -3992,7 +3992,7 @@ textarea:focus {
  }
  
  #batmanBtn:hover span {
-  color: white;
+  color: black;
  }
  
  #batmanBtn:before {
@@ -4000,7 +4000,7 @@ textarea:focus {
   position: absolute;
   width: 0;
   height: 100%;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -4118,6 +4118,11 @@ textarea:focus {
   position: absolute;
   left: 40px;
   top: 30px;
+}
+
+.single-banner .banner-content-2.banner-position-5 h3{
+  color: black;
+  font-weight: bold;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -7678,26 +7683,14 @@ textarea:focus {
   transform: rotate(45deg);
 }
 
-.sidebar-widget .sidebar-widget-list ul li a {
+.sidebar-widget .sidebar-widget-list ul li label {
   margin-left: 30px;
   display: block;
+  color: #fff;
 }
 
-.sidebar-widget .sidebar-widget-list ul li a span {
-  background-color: var(--torch-red);
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  text-align: center;
-  line-height: 25px;
-  border-radius: 50px;
-  float: right;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  font-size: 13px;
-}
 
-.sidebar-widget .sidebar-widget-list ul li a:hover span {
+.sidebar-widget .sidebar-widget-list ul li label:hover span {
   color: #fff;
   background-color: var(--electric-blue);
 }
@@ -8564,6 +8557,11 @@ h3.cart-page-title {
   width: 150px;
 }
 
+.imgInCart{
+  width: 15rem;
+  margin-left: 1rem;
+}
+
 .cart-table-content table tbody>tr td.product-name {
   width: 435px;
 }
@@ -8998,18 +8996,14 @@ h3.cart-page-title {
   margin: 0;
 }
 
-.grand-totall .total-shipping ul {
+.grand-totall .total-shipping p {
   padding: 19px 0 0 0px;
 }
 
-.grand-totall .total-shipping ul li {
+.grand-totall .total-shipping p {
   color: #242424;
   list-style: outside none none;
   margin: 0 0 6px;
-}
-
-.grand-totall .total-shipping ul li:last-child {
-  margin: 0 0 0px;
 }
 
 .grand-totall .total-shipping ul li input {
@@ -10266,6 +10260,18 @@ h3.cart-page-title {
   text-transform: uppercase;
 }
 
+.button-remember-wrap button {
+  border: 1px solid transparent;
+  background-color: var(--torch-red);
+  font-size: 13px;
+  padding: 10px 30px 9px;
+  display: inline-block;
+  float: left;
+  margin-right: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 .checkout-login-info form .button-remember-wrap button:hover {
   background-color: var(--electric-blue);
   color: #fff;
@@ -10374,6 +10380,49 @@ h3.cart-page-title {
   color: #ff3535;
 }
 
+.checkout-login-info2 form .button-remember-wrap {
+  display: block;
+  overflow: hidden;
+}
+
+.checkout-login-info2 form .button-remember-wrap button {
+  border: 1px solid transparent;
+  background-color: var(--torch-red);
+  font-size: 13px;
+  padding: 10px 30px 9px;
+  display: inline-block;
+  float: left;
+  margin-right: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.checkout-login-info2 form .button-remember-wrap button:hover {
+  background-color: var(--electric-blue);
+  color: #fff;
+  border: 1px solid var(--torch-blue);
+}
+
+.checkout-login-info2 form .button-remember-wrap .checkout-login-toggle-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 8px 0 0;
+}
+
+.checkout-login-info2 form .button-remember-wrap .checkout-login-toggle-btn input {
+  height: 15px;
+  margin: 0;
+  position: relative;
+  top: 5px;
+  width: 17px;
+}
+
+.checkout-login-info2 form .button-remember-wrap .checkout-login-toggle-btn label {
+  font-size: 14px;
+  margin: 0 0 0 5px;
+}
+
 .checkout-login-info3 {
   display: none;
   margin-top: 20px;
@@ -10463,7 +10512,7 @@ h3.cart-page-title {
   height: 50px;
   background-color: transparent;
   padding: 2px 20px;
-  color: #1f2226;
+  color: #ffffff;
   font-size: 13px;
 }
 
@@ -10761,7 +10810,7 @@ h3.cart-page-title {
   margin-top: 18px;
 }
 
-.your-order-area .Place-order a {
+.your-order-area .Place-order button {
   background-color: var(--torch-red);
   font-size: 12px;
   display: block;
@@ -10776,7 +10825,7 @@ h3.cart-page-title {
   text-align: center;
 }
 
-.your-order-area .Place-order a:hover {
+.your-order-area .Place-order button:hover {
   background-color: var(--electric-blue);
 }
 
