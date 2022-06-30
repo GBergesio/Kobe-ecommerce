@@ -387,7 +387,7 @@
                     <li>
                         <a href="index.html" class="parrafoModel">Home</a>
                     </li>
-                    <li class="active">contact us </li>
+                    <li class="active">Contáctenos </li>
                 </ul>
             </div>
         </div>
@@ -398,14 +398,14 @@
                 <div class="col-lg-5 col-md-6">
                     <div class="contact-info-area">
                         <h2 class="text-light">Póngase en contacto con nosotros</h2>
-                        <p class="text-light">Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elituis. </p>
+                        <p class="text-light">Dejanos tu consulta, te responderemos a la brevedad</p>
                         <div class="contact-info-wrap">
                             <div class="single-contact-info">
                                 <div class="contact-info-icon">
                                     <i class="sli sli-location-pin"></i>
                                 </div>
                                 <div class="contact-info-content">
-                                    <p class="text-light">La dirección va aquí, calle, cruce 123.</p>
+                                    <p class="text-light">Av. Rivadavia 5764 CABA - Buenos Aires, Argentina.</p>
                                 </div>
                             </div>
                             <div class="single-contact-info">
@@ -413,7 +413,7 @@
                                     <i class="sli sli-envelope"></i>
                                 </div>
                                 <div class="contact-info-content">
-                                    <p class="text-light"><a href="#" >info@example.com</a> / <a href="#">info@example.com</a></p>
+                                    <p class="text-light"><a href="mailto:kobeestore05@gmail.com">kobeestore05@gmail.com</a></p>
                                 </div>
                             </div>
                             <div class="single-contact-info">
@@ -421,7 +421,7 @@
                                     <i class="sli sli-screen-smartphone"></i>
                                 </div>
                                 <div class="contact-info-content ">
-                                    <p class="text-light">+1 35 776 859 000  /  +1 35 776 859 011</p>
+                                    <p class="text-light">011-46321219  /  Wpp: 011-57214231</p>
                                 </div>
                             </div>
                         </div>
@@ -430,11 +430,11 @@
                 <div class="col-lg-7 col-md-6">
                     <div class="contact-from contact-shadow">
                         <form id="contact-form" action="assets/mail.php" method="post">
-                            <input name="name" type="text" class="text-light" placeholder="Name">
+                            <input name="name" type="text" class="text-light" placeholder="Nombre">
                             <input name="email" type="email" class="text-light" placeholder="Email">
-                            <input name="subject" type="text" class="text-light" placeholder="Subject">
-                            <textarea name="message" class="text-light" placeholder="Your Message"></textarea>
-                            <button class="submit" type="submit">Send Message</button>
+                            <!-- <input name="subject" type="text" class="text-light" placeholder="Subject"> -->
+                            <textarea name="message" class="text-light" placeholder="Tu consulta"></textarea>
+                            <button class="submit" type="submit">Enviar mensaje</button>
                         </form>
                         <p class="form-messege"></p>
                     </div>
@@ -445,17 +445,15 @@
             </div>
         </div>
     </div>
-    <footer class="footer-area bg-paleturquoise">
+    <footer class="footer-area bg-midnight">
         <div class="container">
             <div class="footer-top text-center pt-45 pb-45">
                 <nav>
                     <ul>
-                        <li><a href="#">Home </a></li>
-                        <li><a href="#">Shop </a></li>
-                        <li><a href="#">Accessories  </a></li>
-                        <li><a href="#">Contact </a></li>
-                        <li><a href="#">About </a></li>
-                        <li><a href="#">Blog </a></li>
+                        <li><a href="index.html">Index </a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="contact-us.html">Contacto</a></li>
+                        <li><a href="about-us.html">Sobre nosotros</a></li>
                     </ul>
                 </nav>
             </div>
@@ -466,14 +464,12 @@
                     <div class="col-lg-4 col-md-5 col-12">
                         <div class="footer-social pb-20">
                             <a href="#">Facebok</a>
-                            <a href="#">Twitter</a>
-                            <a href="#">Linkedin</a>
                             <a href="#">Instagram</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-12">
                         <div class="copyright text-center pb-20">
-                            <p>Copyright © All Right Reserved</p>
+                            <p>Kōbe Store © 2022</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-3 col-12">
@@ -517,7 +513,7 @@
         var mapOptions = {
             zoom: 11,
             scrollwheel: false,
-            center: new google.maps.LatLng(40.709896, -73.995481),
+            center: new google.maps.LatLng(-34.623214,-58.4506366),
             styles: 
             [
                 {
@@ -627,7 +623,7 @@
         var mapElement = document.getElementById('map');
         var map = new google.maps.Map(mapElement, mapOptions);
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(40.709896, -73.995481),
+            position: new google.maps.LatLng(-34.623214,-58.4506366),
             map: map,
             icon: 'assets/img/icon-img/2.png',
             animation:google.maps.Animation.BOUNCE,
