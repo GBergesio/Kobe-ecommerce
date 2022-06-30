@@ -42,19 +42,30 @@ const app = Vue.createApp({
         //         })
         // }
 
-        let dataMap = new Map();
-        dataMap.set(1, 3)
-    
-        const article = { 
-            orders: dataMap.fromEntries,
-            address: "av siempre viva 123 5 A",
-            zipCode: "1010",
-            totalAmount: 5000,
-            typePayment: "DEBIT"
-        }
-        console.log(article)
+        
 
-        axios.post('/api/purchases', article,{headers:{'content-type':'application/json'}}).then(data => {
+        axios.post('/api/purchases', 
+        {
+            "orders": [
+                {
+                    productId: 1,
+                    quantity: 10
+                },
+                {
+                    productId: 2,
+                    quantity: 5
+                },
+                {
+                    productId: 1,
+                    quantity: 2
+                }
+            ],
+            "address": "compra desde js",
+            "zipCode": "1010",
+            "totalAmount": 5000,
+            "typePayment": "DEBIT"
+        }
+        ,{headers:{'content-type':'application/json'}}).then(data => {
             console.log(data['data']);
 })
     },
