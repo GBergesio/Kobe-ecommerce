@@ -32,7 +32,16 @@ const app = Vue.createApp({
                 setTimeout(function(){
                 window.location.href='./my-account.html'
             },1000))
-            .catch(error=> console.log(error))
+            .catch(error=>{
+                Swal.fire({
+                    icon: 'error',
+                    title: `${error.response.data}`,
+                    showCloseButton:true,
+                    timerProgressBar:true,
+                    showConfirmButton: false,
+                    timer: 3000
+                  })
+            })
         },
         register(){
             let registerObject = {
@@ -44,12 +53,17 @@ const app = Vue.createApp({
             axios.post('/api/clients',registerObject)
             .then(response => 
                 axios.post('/api/login',`email=${this.emailRegister}&password=${this.passwordRegister}`,{headers:{'content-type':'application/x-www-form-urlencoded'}})
-            )
-            .then(response =>
-                setTimeout(() => {
-                window.location.href='https://mail.google.com/'
-            },2000))
-            .catch(error=> console.log(error))
+            ).catch(error=>{
+          
+                Swal.fire({
+                    icon: 'error',
+                    title: `${error.response.data}`,
+                    showCloseButton:true,
+                    timerProgressBar:true,
+                    showConfirmButton: false,
+                    timer: 3000
+                  })
+            } )
         }
        
     },

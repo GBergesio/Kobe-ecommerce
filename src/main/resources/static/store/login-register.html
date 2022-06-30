@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Modernizer JS -->
     <script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
+    <!-- Swal.fire-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -54,35 +56,59 @@
                                                         <a class="menu-title"
                                                             v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
                                                         <ul>
-                                                            <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
-                                                            <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a></li>
-                                                            <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
-                                                            <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones Completas</a></li>
+                                                            <li><a
+                                                                    v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a>
+                                                            </li>
+                                                            <li><a
+                                                                    v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a>
+                                                            </li>
+                                                            <li><a
+                                                                    v-bind:href="'shop.html?subcategory=Comics'">Comics</a>
+                                                            </li>
+                                                            <li><a
+                                                                    v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones
+                                                                    Completas</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a class="menu-title" v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras coleccionables</a>
+                                                    <li><a class="menu-title"
+                                                            v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras
+                                                            coleccionables</a>
                                                         <ul>
-                                                            <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops</a></li>
-                                                            <li><a v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a></li>
-                                                            <li><a v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a></li>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko
+                                                                    Pops</a></li>
+                                                            <li><a
+                                                                    v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a>
+                                                            </li>
+                                                            <li><a
+                                                                    v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a>
+                                                            </li>
                                                         </ul>
                                                     </li>
-                                                    <li><a class="menu-title" v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y juegos</a>
+                                                    <li><a class="menu-title"
+                                                            v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y
+                                                            juegos</a>
                                                         <ul>
-                                                            <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
-                                                            <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de
+                                                            <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a>
+                                                            </li>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos
+                                                                    de
                                                                     mesa</a></li>
-                                                            <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de
+                                                            <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos
+                                                                    de
                                                                     video</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a class="menu-title" v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
+                                                    <li><a class="menu-title"
+                                                            v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
                                                         <ul>
-                                                            <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas Iphone</a>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas
+                                                                    Iphone</a>
                                                             </li>
-                                                            <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a>
+                                                            <li><a
+                                                                    v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a>
                                                             </li>
-                                                            <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse Pad</a>
+                                                            <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse
+                                                                    Pad</a>
                                                             </li>
                                                         </ul>
                                                     </li>
@@ -292,33 +318,51 @@
                                     </li>
                                     <li class="menu-item-has-children "><a href="shop.html">Categorias</a>
                                         <ul class="dropdown">
-                                            <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
+                                            <li class="menu-item-has-children"><a
+                                                    v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
                                                 <ul class="dropdown">
                                                     <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a>
+                                                    </li>
                                                     <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones Completas</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones
+                                                            Completas</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras coleccionables</a>
+                                            <li class="menu-item-has-children"><a
+                                                    v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras
+                                                    coleccionables</a>
                                                 <ul class="dropdown">
-                                                    <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops!</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko
+                                                            Pops!</a></li>
+                                                    <li><a
+                                                            v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a>
+                                                    </li>
+                                                    <li><a
+                                                            v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a>
+                                                    </li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y Juegos</a>
+                                            <li class="menu-item-has-children"><a
+                                                    v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y
+                                                    Juegos</a>
                                                 <ul class="dropdown">
                                                     <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de mesa</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de video</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de
+                                                            mesa</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de
+                                                            video</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
+                                            <li class="menu-item-has-children"><a
+                                                    v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
                                                 <ul class="dropdown">
-                                                    <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas Iphone</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas
+                                                            Iphone</a></li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a>
+                                                    </li>
+                                                    <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a>
+                                                    </li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -432,13 +476,17 @@
                                         <div class="login-form-container">
                                             <div class="login-register-form">
                                                 <form action="#" method="post" @submit.prevent="register()">
-                                                    <input type="text" name="first-name" class="text-light"
-                                                    placeholder="First Name" v-model="firstName">
-                                                    <input type="text" name="last-name" class="text-light"
+                                                    nombre
+                                                    <input type="text" name="first-name" class="text-light "
+                                                        placeholder="First Name" v-model="firstName">
+                                                    Apellido
+                                                    <input type="text" name="last-name" class="text-light "
                                                         placeholder="Last Name" v-model="lastName">
-                                                        <input name="user-email" placeholder="Email" class="text-light"
+                                                    Email
+                                                    <input name="user-email" placeholder="Email" class="text-light "
                                                         type="email" v-model="emailRegister">
-                                                    <input type="password" name="user-password" class="text-light"
+                                                    Contraseña (Mayuscula, 8 carct., signo especial"@,!,$..")
+                                                    <input type="password" name="user-password" class="text-light "
                                                         placeholder="Password" v-model="passwordRegister">
                                                     <div class="button-box">
                                                         <button type="submit">Register</button>

@@ -6578,6 +6578,8 @@ textarea:focus {
   width: auto;
 }
 
+
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .footer-bottom .payment-mathod a img {
     width: 100%;
