@@ -9,6 +9,8 @@ const app = Vue.createApp({
             productosFiltro1:[],
             productosFiltro2:[],
             productosShop:[],
+            searchWord: "",
+            productsFilteredBySearch: []
 
         }
     },
@@ -44,7 +46,28 @@ const app = Vue.createApp({
     methods: {
         
 
+        //filtro por palabra
+        async findMatch(){
+            if(this.searchWord != ""){
+                await this.getFilteredProducts()
+                console.log(this.productsFilteredBySearch)
+            }
+        },
+        filterByWordSearch(products){
+            return products.filter(product => product.name.toLowerCase().includes((this.searchWord).toLowerCase()) || product.description.toLowerCase().includes((this.searchWord).toLowerCase()))
+        },
+        async getFilteredProducts(){
+            try {
+              const {data} = await axios.get("/api/products")
+              this.productsFilteredBySearch = this.filterByWordSearch(data)
+
+            } catch (error) {
+              console.log(error.response.data)
+            } 
+        },
+        //
     },
+    
     computed: {
         filtroProductos(){
             if(this.filter == "Default"){
