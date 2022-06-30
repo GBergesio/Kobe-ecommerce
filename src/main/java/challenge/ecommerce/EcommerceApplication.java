@@ -488,6 +488,1325 @@ public class EcommerceApplication {
 					Category.BAZARANDTOYSHOP , "Board Games");
 			productRepository.save(product124);
 
+
+			//tazas
+			Product product130 = new Product("Star wars - Stormtrooper",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/xStHXJp/304d3ca35b1cdc8b038c3337e8a9bf32-800x1-a31baac780ed8c0b6215948413189623-640-0.jpg",
+					"https://i.ibb.co/SncD9DB/transparent.png",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product130);
+			Product product131 = new Product("Star wars - Stormtrooper",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/KxDw2KV/images-q-tbn-ANd9-Gc-Szglyw-XKhnb-LMGp-I0or-M-rp-Iuwm9-Wxi-TAZg-usqp-CAU.jpg",
+					"https://i.ibb.co/SncD9DB/transparent.png",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product131);
+			Product product132 = new Product("Star wars - Darth Vader",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/3zkcSW6/01-Taza-Darth-Vader-Star-Wars.jpg",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product132);
+			Product product133 = new Product("Star wars - Darth Vader",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/b2CYPGJ/images-q-tbn-ANd9-Gc-SIMYw1-E86wn-Le-GYDH-dk-Bg-Hk9-Tz0e-Dwq6c6-Q-usqp-CAU.jpg",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product133);
+			Product product134 = new Product("Star wars - Yoda",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/T2P5twY/Baby-Yoda-Cafe.jpg",
+					"https://i.ibb.co/kS1hKtc/image.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product134);
+			Product product135 = new Product("Star wars - Yoda",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/Fq8ZJgZ/20210629-1820511-d8510a090127864f7516250032187395-480-0.jpg",
+					"https://i.ibb.co/kS1hKtc/image.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product135);
+			Product product136 = new Product("Star wars - chewbacca",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/S0jtWsX/s-l300.jpg",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product136);
+			Product product137 = new Product("Star wars - chewbacca",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/9bXgX3Q/taza-chewbacca-star-wars-upset-a-wookiee.jpg",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product137);
+			Product product138 = new Product("Star wars - Darth Vader",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/Q9GgNfW/taza-darth-vader-star-wars-strong.jpg",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product138);
+			Product product139 = new Product("Star wars - Darth Vader",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/KwV0pv3/taza-darth-vader-star-wars-latte-550-ml-dark-side.jpg",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product139);
+			Product product140 = new Product("Star wars - Darth Vader",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/MS9pvzN/s-l500.png",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product140);
+			Product product141 = new Product("Star wars - Darth Vader",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/WscPktC/81t0h-Lr7kd-L-AC-SS450.jpg",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product141);
+			Product product142 = new Product("Star wars - Yoda",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/Yh2XjzJ/gsc-112868903-438853-1-wid-800-hei-800-qlt-70.jpg",
+					"https://i.ibb.co/kS1hKtc/image.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product142);
+			Product product143 = new Product("Star wars - Yoda",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/pLY4NDK/D-NQ-NP-751308-MLA46910485595-072021-O.jpg",
+					"https://i.ibb.co/kS1hKtc/image.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product143);
+			Product product144 = new Product("Star wars - Yoda",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/wWPSpJW/the-child-this-is-my-good-side-mouse-pad-rbb9d888018894497a1d0ffe5b916bc6b-0898s-8byvr-704.webp",
+					"https://i.ibb.co/kS1hKtc/image.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product144);
+			Product product145 = new Product("Star wars - Yoda",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/jfhZ2jW/images-q-tbn-ANd9-Gc-RIEHYN-vs9u-TFRq-2kaof-R8j6-Mvp-Cr3-4kaw-usqp-CAU.jpg",
+					"https://i.ibb.co/kS1hKtc/image.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product145);
+			Product product146 = new Product("Star wars - Stormtrooper",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/y58L1DW/713-U06ls-O8-L-AC-SY450.jpg",
+					"https://i.ibb.co/SncD9DB/transparent.png",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product146);
+			Product product147 = new Product("Star wars - Stormtrooper",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/KzS6zLs/D-NQ-NP-821656-MLA46133200757-052021-O.jpg",
+					"https://i.ibb.co/SncD9DB/transparent.png",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product147);
+			Product product148 = new Product("Star wars - chewbacca",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/Q69GjQL/chewbacca-mouse-pad.jpg",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product148);
+			Product product149 = new Product("Star wars - chewbacca",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/3pr632t/chewbacca-cartoon-doodle-mouse-pad-rfe8ebcebeae241fda2cba6daf1375913-0898s-8byvr-704.webp",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 14,1500.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product149);
+			Product product150 = new Product("Star wars - chewbacca",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/870MW9T/funko-pop-llavero-star-wars-chewbacca.jpg",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 14,999.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product150);
+			Product product151 = new Product("Star wars - chewbacca",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/SVCz1Np/images-q-tbn-ANd9-Gc-RR3k-ZGe-F56-EOwm-Aco7s0-Prajo-PTzfble41e-Q-usqp-CAU.jpg",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 14,999.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product151);
+			Product product152 = new Product("Star wars - chewbacca",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/gMVYygg/images-q-tbn-ANd9-Gc-QWkki4-T3xrpt-Ktmxyavk24-Na8n-9-k-J-Ebw-usqp-CAU.jpg",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 14,999.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product152);
+			Product product153 = new Product("Star wars - chewbacca",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/t2qdtyC/images-q-tbn-ANd9-Gc-Sc57-ZJ7v9y-Vi6v-HPn-Wv-Xcdmy-Rp-Q0-sx-Wx-JQFSX-a-Tv7w68cy2i-BF-Yx-TB71-Qi-ZXpz.jpg",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 14,999.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product153);
+			Product product154 = new Product("Star wars - Stormtrooper",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/KwFRsrH/images-q-tbn-ANd9-Gc-R7-Nis-BToo-Ysm-Ee-T2psf-ZPHq-Xalv-Yx9-Nylfjg-usqp-CAU.jpg",
+					"https://i.ibb.co/SncD9DB/transparent.png",
+					(short) 14,999.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product154);
+			Product product155 = new Product("Star wars - Stormtrooper",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/PW4SwPd/llavero-casco-stormtrooper-star-wars.jpg",
+					"https://i.ibb.co/SncD9DB/transparent.png",
+					(short) 14,999.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product155);
+			Product product156 = new Product("Star wars - Darth Vader",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/wwv9JfV/D-NQ-NP-814561-CBT44432679681-122020-O-removebg-preview.png",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 14,999.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product156);
+			Product product157 = new Product("Star wars - Darth Vader",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/RHKzjdg/n-57ab7bd2-e9a4-11ec-bb22-0a77ebf6f2f9.jpg",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 14,999.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product157);
+			Product product158= new Product("Star wars - Yoda",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/bXX586M/H2da2fb00921c46bf8b42924f1b697103u.jpg",
+					"https://i.ibb.co/kS1hKtc/image.jpg",
+					(short) 14,999.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product158);
+			Product product159 = new Product("Star wars - Yoda",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/Ns8zW2x/d219e3d1-9d35-4e84-8abe-88ea98388222-21-278ff1c148b6fce2a316128074025350-1024-1024.jpg",
+					"https://i.ibb.co/kS1hKtc/image.jpg",
+					(short) 14,999.0," Star Wars",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product159);
+			//fundas
+			Product product160 = new Product("Star wars - Yoda",
+					"Funda edición Star Wars para Iphone",
+					"https://i.ibb.co/YXpc6nw/fundababyyoda-2000x.jpg",
+					"https://i.ibb.co/kS1hKtc/image.jpg",
+					(short) 14,1999.0," Star Wars",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product160);
+			Product product161 = new Product("Star wars - Yoda",
+					"Funda edición Star Wars para Iphone",
+					"https://i.ibb.co/DRqDKj1/s-l300.jpg",
+					"https://i.ibb.co/kS1hKtc/image.jpg",
+					(short) 14,1999.0," Star Wars",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product161);
+			Product product162 = new Product("Star wars - Darth Vader",
+					"Funda edición Star Wars para Iphone",
+					"https://i.ibb.co/gSKN9sD/H31e43374ffdb41a28727e42ce47bb71ee-jpg.webp",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 14,1999.0," Star Wars",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product162);
+			Product product163 = new Product("Star wars - chewbacca",
+					"Funda edición Star Wars para Iphone",
+					"https://i.ibb.co/0h1cmnk/icr-iphone-13-soft-back-a-x600-pad-600x600-f8f8f8.jpg",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 14,1999.0," Star Wars",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product163);
+			Product product164 = new Product("Star wars - chewbacca",
+					"Funda edición Star Wars para Iphone",
+					"https://i.ibb.co/RjYHspV/il-300x300-3750713221-tov7.jpg",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 14,1999.0," Star Wars",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product164);
+			Product product165 = new Product("Star wars - Stormtrooper",
+					"Funda edición Star Wars para Iphone",
+					"https://i.ibb.co/7vg7qj4/images-q-tbn-ANd9-Gc-Sw-Psip7-G0-QAO3-E1vq-DAms0hmag-N6-LFOOstsc3-Kqx-L9u-A7-Lh2-PEY27k-TCy-OWrrg4-Q.jpg",
+					"https://i.ibb.co/SncD9DB/transparent.png",
+					(short) 14,1999.0," Star Wars",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product165);
+			Product product166 = new Product("Star wars - Stormtrooper",
+					"Funda edición Star Wars para Iphone",
+					"https://i.ibb.co/5sKbHkS/images-q-tbn-ANd9-Gc-Tqn1zu-Ti-Fjv-WJar-QSJ4-IPRLVb-LXGWGADHTQ-usqp-CAU.jpg",
+					"https://i.ibb.co/SncD9DB/transparent.png",
+					(short) 14,1999.0," Star Wars",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product166);
+			Product product167= new Product("Star wars - Stormtrooper",
+					"Funda edición Star Wars para Iphone",
+					"https://i.ibb.co/QFxM0V2/1639727310275-680.png",
+					"https://i.ibb.co/SncD9DB/transparent.png",
+					(short) 14,1999.0," Star Wars",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product167);
+			Product product168 = new Product("Star wars - Stormtrooper",
+					"Funda edición Star Wars para Iphone",
+					"https://i.ibb.co/G3Jf7t1/81y33c-LDs-OL-AC-SX522.jpg",
+					"https://i.ibb.co/SncD9DB/transparent.png",
+					(short) 14,1999.0," Star Wars",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product168);
+			Product product169 = new Product("Star wars - Darth Vader",
+					"Funda edición Star Wars para Iphone",
+					"https://i.ibb.co/fqDD3YJ/ac-01547251-1.jpg",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 14,1999.0," Star Wars",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product169);
+			Product product170 = new Product("Star wars - Stormtrooper","Figura de  vinilo de 10 cm",
+					"https://i.ibb.co/sgYd34S/images-q-tbn-ANd9-Gc-Sr-Qs9iivq7-OCa-NZGg-1s-Lr-WI4-He-HYnpt-Tt-Hg-usqp-CAU.jpg",
+					"https://i.ibb.co/SncD9DB/transparent.png",
+					(short) 12,5999.0,"Star wars",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product170);
+			Product product171 = new Product("Star wars - Stormtrooper","Figura de  vinilo de 10 cm",
+					"https://i.ibb.co/8mKWxJb/D-NQ-NP-930956-MLA49007959088-022022-V.jpg",
+					"https://i.ibb.co/SncD9DB/transparent.png",
+					(short) 12,5999.0,"Star wars",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product171);
+			Product product172 = new Product("Star wars - chewbacca","Figura de vinilo de 10 cm",
+					"https://i.ibb.co/FWSpsvw/640-1654221214.png",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product172);
+			Product product173 = new Product("Star wars - chewbacca","Figura de vinilo de 10 cm",
+					"https://i.ibb.co/4TpGtPT/images-q-tbn-ANd9-Gc-Tz6-Ju0-IV0u-XMs-Ks1i3ns4b7-Ouvdh-Wf-EZGGa-Q-usqp-CAU.jpg",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product173);
+			Product product174 = new Product("Star wars - Yoda","Figura de vinilo de 10 cm",
+					"https://i.ibb.co/Y3XM6yH/e498b8c52ebfcb0f0d958babe153112b.jpg",
+					"https://i.ibb.co/kS1hKtc/image.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product174);
+			Product product175 = new Product("Star wars - Yoda","Figura de vinilo de 10 cm",
+					"https://http2.mlstatic.com/D_NQ_NP_832133-MLA44197089938_112020-O.webp",
+					"https://i.ibb.co/kS1hKtc/image.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product175);
+			Product product176 = new Product("Star wars - Darth Vader","Figura de vinilo de 10 cm",
+					"https://i.ibb.co/6wghsSb/funko-pop-star-wars-176-darth-vader-tie-fighter-40-aniversario-exclusive.jpg",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product176);
+			Product product177 = new Product("Star wars - Darth Vader","Figura de vinilo de 10 cm",
+					"https://i.ibb.co/fX8YpJ7/funko-pop-star-wars-176-darth-vader-tie-fighter-40-aniversario-exclusive.jpg",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product177);
+			Product product178 = new Product("Star wars - chewbacca","Figura de vinilo de 10 cm",
+					"https://i.ibb.co/KjtmGJr/funko-pop-star-wars-chewbacca-dorado-800x800.jpg",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product178);
+			Product product179 = new Product("Star wars - chewbacca","Figura de vinilo de 10 cm",
+					"https://i.ibb.co/M8RtwDZ/funko-pop-chebwacca-1951-b8f3484e5df1ee0f0d16347755338234-1024-1024.png",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product179);
+			Product product180 = new Product("Star wars - chewbacca","Figura de accion de 20 cm",
+					"https://i.ibb.co/DwRP3sR/images-q-tbn-ANd9-Gc-S-h-K9-BTAp-DETr-Tdp0-ALXV-Raheakk-LR9-V8g-usqp-CAU.jpg",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product180);
+			Product product181 = new Product("Star wars - chewbacca","Figura de accion de 20 cm",
+					"https://i.ibb.co/L9Xrwyc/b2bfe2a7-401e-4ad3-9a20-af4d55a0c244-CR0-0-2000-2000-PT0-SX300.jpg",
+					"https://i.ibb.co/RpqST8S/BPCT32-VD4-BA6-HF7-BK7-SGJ7-XVAA.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product181);
+			Product product182 = new Product("Star wars - Yoda","Figura de accion de 20 cm",
+					"https://www.hasbro.com/common/productimages/es_MX/AE1258C259564DD4B1BDAED55C39693A/af8d90f11e8e95aaa85f18cb025efb3e9a57abe0.jpg",
+					"https://i.ibb.co/kS1hKtc/image.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product182);
+			Product product183 = new Product("Star wars - Yoda","Figura de accion de 20 cm",
+					"https://www.hasbro.com/common/productimages/es_MX/AE1258C259564DD4B1BDAED55C39693A/af8d90f11e8e95aaa85f18cb025efb3e9a57abe0.jpg",
+					"https://i.ibb.co/kS1hKtc/image.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product183);
+			Product product184 = new Product("Static Figures Darth Vader","Figura de accion de 20 cm",
+					"https://http2.mlstatic.com/D_NQ_NP_787982-MLA31591942007_072019-O.webp",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product184);
+			Product product185 = new Product("Star wars - Darth Vader","Figura de accion de 20 cm",
+					"https://i.ibb.co/0BKJJJW/casco-dark-vader-star-wars-black-series-hasbro.jpg",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product185);
+			Product product186 = new Product("Star wars - Darth Vader","Figura de accion de 20 cm",
+					"https://i.ibb.co/tsTpLY4/D-NQ-NP-651076-MLA48623141451-122021-O.webp",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product186);
+			Product product187 = new Product("Star wars - Darth Vader","Figura de accion de 20 cm",
+					"https://i.ibb.co/0YVcd1G/D-NQ-NP-787982-MLA31591942007-072019-O.webp",
+					"https://www.hasbro.com/common/productimages/en_US/748B115080434F2D9D488427B3988BCE/9ac9e32e83f35b3e00dfaaa8c5a7055c8dfbe4d8.jpg",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product187);
+			Product product188= new Product("Star wars - Stormtrooper","Figura de accion de 20 cm",
+					"https://www.hasbro.com/common/productimages/es_MX/C41027FB5BC14EC1BF4DF4E9AE213682/780A2FE1348247E483BC2D2F7433E08C.jpg",
+					"https://i.ibb.co/SncD9DB/transparent.png",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product188);
+			Product product189= new Product("Star wars - Stormtrooper","Figura de accion de 20 cm",
+					"https://www.hasbro.com/common/productimages/es_MX/C41027FB5BC14EC1BF4DF4E9AE213682/780A2FE1348247E483BC2D2F7433E08C.jpg",
+					"https://i.ibb.co/SncD9DB/transparent.png",
+					(short) 12,5999.0," Star Wars",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product189);
+
+			//DC
+			Product product190= new Product("DC - Superman","Figura de accion de 20 cm",
+					"https://i.ibb.co/SNqFwK3/images-q-tbn-ANd9-Gc-T02-UNMIg-QVVMJsha3-Rpjtx-NUkunj-Aurnfjeb-Y5p-Af-V0-DPp-TOFKre-M95-B0-T3-E9-Yp3.jpg",
+					"https://i.ibb.co/gDv2dnL/7b8e9768fb5f20c2e8c498786ce6579c.jpg",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product190);
+			Product product191= new Product("DC -  Superman","Figura de accion de 20 cm",
+					"https://i.ibb.co/kgz4k3f/images-q-tbn-ANd9-Gc-SCP-k3v-PMVINENBE8gwrxtm-Nf7-A82-SPSTV2-N6-GTm-TPWQ8b-A3-K1a4-PEb-LIbv-R-gt-Pl.jpg",
+					"https://i.ibb.co/gDv2dnL/7b8e9768fb5f20c2e8c498786ce6579c.jpg",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product191);
+			Product product192= new Product("Static Figures Batman","Figura de accion de 20 cm",
+					"https://i.ibb.co/q5Npkvt/6a82d090977b4c9243270fe531b34d4b-large.jpg",
+					"https://i.ibb.co/tDvMVNd/ecbf66484f8439fd7021f3ef224a50a8.jpg",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product192);
+			Product product193= new Product("DC - Batman","Figura de accion de 20 cm",
+					"https://i.ibb.co/VB7HvWn/887961662832.jpg",
+					"https://i.ibb.co/tDvMVNd/ecbf66484f8439fd7021f3ef224a50a8.jpg",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product193);
+			Product product194= new Product("DC - Batman","Figura de accion de 20 cm",
+					"https://i.ibb.co/xF8MTRf/batman-y-joker-estatua-30-cm-the-dark-knight-returns-batman-hunt-the-dark-knight-artfx.jpg",
+					"https://i.ibb.co/tDvMVNd/ecbf66484f8439fd7021f3ef224a50a8.jpg",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product194);
+			Product product195= new Product("DC -  Batman","Figura de accion de 20 cm",
+					"https://i.ibb.co/QDLfBZY/Busto-DC-Direct-Heroes-of-the-Universe-Busto-de-Batman-20cm.jpg",
+					"https://i.ibb.co/tDvMVNd/ecbf66484f8439fd7021f3ef224a50a8.jpg",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product195);
+			Product product196= new Product("DC - Batman ","Figura de accion de 20 cm",
+					"https://i.ibb.co/Vw8Bx61/fa7946e10da9a74360b62eb93aba424b.jpg",
+					"https://i.ibb.co/ZcnWF8r/m-5ca15984d1aa25934bbbc582.jpg",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product196);
+			Product product197= new Product("DC - Batman ","Figura de accion de 20 cm",
+					"https://i.ibb.co/HTR7Chq/estatua-diorama-joker-dc-comics-23cm-800x800.jpg",
+					"https://i.ibb.co/ZcnWF8r/m-5ca15984d1aa25934bbbc582.jpg",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product197);
+			Product product198= new Product("DC - Flash ","Figura de accion de 20 cm",
+					"https://i.ibb.co/Y3MVv3N/Bandai-figuras-de-acci-n-de-DC-Comics-para-ni-os-y-ni-as-juguetes-originales-jpg-Q90-jpg.webp",
+					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product198);
+			Product product199= new Product("DC - Flash ","Figura de accion de 20 cm",
+					"https://i.ibb.co/zf4HxKZ/Figura-de-acci-n-de-16cm-modelo-coleccionable-de-PVC-Juguetes-jpg-Q90-jpg.webp",
+					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Static Figures");
+			productRepository.save(product199);
+			Product product200 = new Product("DC - Superman","Figura de accion de 20 cm",
+					"https://i.ibb.co/dcQFSCH/funko-pop-superman-402-palacio-imperial-dc-comics.jpg",
+					"https://i.ibb.co/gDv2dnL/7b8e9768fb5f20c2e8c498786ce6579c.jpg",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product200);
+			Product product201 = new Product("DC - Superman","Figura de accion de 20 cm",
+					"https://i.ibb.co/KFSB3vY/funko-pop-dc-holiday-superman-with-sweater.jpg",
+					"https://i.ibb.co/gDv2dnL/7b8e9768fb5f20c2e8c498786ce6579c.jpg",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product201);
+			Product product202 = new Product("DC - Superman","Figura de accion de 20 cm",
+					"https://i.ibb.co/Z1KmZcG/images-q-tbn-ANd9-Gc-Su5ugp70xo-4-UZRtgpue-OD7cdcb-AK11-E9x67ft0n-Oh-Lk-Ugx-zfj-JPRd-S-k8vb-MVg-Vs-X.jpg",
+					"https://i.ibb.co/gDv2dnL/7b8e9768fb5f20c2e8c498786ce6579c.jpg",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product202);
+			Product product203 = new Product("DC - Batman","Figura de accion de 20 cm",
+					"https://i.ibb.co/5sqpTS4/images-q-tbn-ANd9-Gc-Rh96-GQ8h-Tp-CK1-f7b-OEy-EFT3uza925-ed-Fdw-usqp-CAU.jpg",
+					"https://i.ibb.co/ZcnWF8r/m-5ca15984d1aa25934bbbc582.jpg",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product203);
+			Product product204 = new Product("DC - Batman","Figura de accion de 20 cm",
+					"https://i.ibb.co/bznDPwC/images-q-tbn-ANd9-Gc-Ql-Zf-A-Qo-AJG-mq-Aj-Sw-UU-746n-Lv7a-La-K6i8g-usqp-CAU.jpg",
+					"https://i.ibb.co/ZcnWF8r/m-5ca15984d1aa25934bbbc582.jpg",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product204);
+			Product product205 = new Product("DC - Flash","Figura de accion de 20 cm",
+					"https://i.ibb.co/ChBRb5w/flash-caja.jpg",
+					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product205);
+			Product product206 = new Product("DC - Flash","Figura de accion de 20 cm",
+					"https://i.ibb.co/wL7XFCj/pop-flash-713.jpg",
+					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product206);
+			Product product207 = new Product("DC - Linterna Verde","Figura de accion de 20 cm",
+					"https://i.ibb.co/k53fFfb/funko-pop-dc-imperial-linterna-verde-52431.jpg",
+					"https://i.ibb.co/MpGmrF7/logo-3216326-1280.png",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product207);
+			Product product208 = new Product("DC - Linterna Verde","Figura de accion de 20 cm",
+					"https://i.ibb.co/nc66TZ6/s-l400.jpg",
+					"https://i.ibb.co/MpGmrF7/logo-3216326-1280.png",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product208);
+			Product product209 = new Product("DC - Superman","Figura de accion de 20 cm",
+					"https://i.ibb.co/Yhtgd5w/Funko-Pop-Superman-25cm-Exclusivo-CHASE-159.jpg",
+					"https://i.ibb.co/gDv2dnL/7b8e9768fb5f20c2e8c498786ce6579c.jpg",
+					(short) 12,5999.0,"DC",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product209);
+			//tazas
+			Product product210 = new Product("DC - Superman","todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/XptR0Rj/images-q-tbn-ANd9-Gc-SRUXRAo-Hm2-OPWs-EI21xp-Vq-Bjr-WFsk-M4-XT0jw-usqp-CAU.jpg",
+					"https://i.ibb.co/gDv2dnL/7b8e9768fb5f20c2e8c498786ce6579c.jpg",
+					(short) 12,1000.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product210);
+			Product product211 = new Product("DC - Superman","todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/h7PMWF3/D-NQ-NP-846302-MLA49552329375-042022-W.jpg",
+					"https://i.ibb.co/gDv2dnL/7b8e9768fb5f20c2e8c498786ce6579c.jpg",
+					(short) 12,1000.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product211);
+			Product product212 = new Product("DC - Batman","todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/ngDD3cG/20210506-1655051-5499e90104b841cdd516209210270569-1024-1024.jpg",
+					"https://i.ibb.co/ZcnWF8r/m-5ca15984d1aa25934bbbc582.jpg",
+					(short) 12,1000.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product212);
+			Product product213 = new Product("DC - Batman","todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/cQqy2Rn/photoroom-20210415-1419351-316bea790284b8885b16185108264707-640-0.jpg",
+					"https://i.ibb.co/ZcnWF8r/m-5ca15984d1aa25934bbbc582.jpg",
+					(short) 12,1000.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product213);
+			Product product214 = new Product("DC - Linterna Verde","todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/6Bt3ZbX/images-q-tbn-ANd9-Gc-QUk-Thw50y4m-SXn9iu9tpv-Hh-M7-Gr-T69y-KU9-KA-usqp-CAU.jpg",
+					"https://i.ibb.co/MpGmrF7/logo-3216326-1280.png",
+					(short) 12,1000.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product214);
+			Product product215 = new Product("DC - Linterna Verde","todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/3sf1x4H/D-NQ-NP-735368-MLA43109705467-082020-O.webp",
+					"https://i.ibb.co/MpGmrF7/logo-3216326-1280.png",
+					(short) 12,1000.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product215);
+			Product product216 = new Product("DC - Flash","todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/kyn9qgX/12714154-1.jpg",
+					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
+					(short) 12,1000.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product216);
+			Product product217 = new Product("DC - Flash","todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/kyn9qgX/12714154-1.jpg",
+					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
+					(short) 12,1000.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product217);
+			Product product218 = new Product("DC - Flash","todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/PWsCtrF/5f90aa57ab4d01-78616986.jpg",
+					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
+					(short) 12,1000.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product218);
+			Product product219 = new Product("DC - Flash","todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/TK1yqcD/61-Np-I1-INwr-L-AC-SX679.jpg",
+					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
+					(short) 12,1000.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product219);
+			//Mouse Pad
+			Product product220 = new Product("DC - Flash","Mouse pad (30x25) de Monogatarie series, antideslizante",
+					"https://i.ibb.co/r65z4zT/51h-Nc6-RCdt-L-AC-SS450.jpg",
+					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
+					(short) 12,800.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mouse Pad");
+			productRepository.save(product220);
+			Product product221 = new Product("DC - Flash","Mouse pad (30x25) de Monogatarie series, antideslizante",
+					"https://i.ibb.co/hsHSJzL/the-flash-lightning-bolt-mouse-pad-r5fbc50bdfa43417b9702533ddeaa4d13-x74vi-8byvr-704.webp",
+					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
+					(short) 12,800.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mouse Pad");
+			productRepository.save(product221);
+			Product product222 = new Product("DC - Superman","Mouse pad (30x25) de Monogatarie series, antideslizante",
+					"https://i.linio.com/p/005ae37726cf11e962fe8ca11215e34a-product.jpg",
+					"https://i.ibb.co/gDv2dnL/7b8e9768fb5f20c2e8c498786ce6579c.jpg",
+					(short) 12,800.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mouse Pad");
+			productRepository.save(product222);
+			Product product223 = new Product("DC - Superman","Mouse pad (30x25) de Monogatarie series, antideslizante",
+					"https://i.ibb.co/ZmKNYYv/005ae37726cf11e962fe8ca11215e34a-product.jpg",
+					"https://i.ibb.co/gDv2dnL/7b8e9768fb5f20c2e8c498786ce6579c.jpg",
+					(short) 12,800.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mouse Pad");
+			productRepository.save(product223);
+			Product product224 = new Product("DC - Linterna Verde","Mouse pad (30x25) de Monogatarie series, antideslizante",
+					"https://i.ibb.co/gjhg26S/d0f0a5b1c6ca6f046e2cec39eab27dfc-product.jpg",
+					"https://i.ibb.co/MpGmrF7/logo-3216326-1280.png",
+					(short) 12,800.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mouse Pad");
+			productRepository.save(product224);
+			Product product225 = new Product("DC - Linterna Verde","Mouse pad (30x25) de Monogatarie series, antideslizante",
+					"https://i.ibb.co/sg5zXfp/2086806e4b39aea5c7cf982834740549-product.jpg",
+					"https://i.ibb.co/MpGmrF7/logo-3216326-1280.png",
+					(short) 12,800.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mouse Pad");
+			productRepository.save(product225);
+			Product product226 = new Product("DC - Batman","Mouse pad (30x25) de Monogatarie series, antideslizante",
+					"https://i.ibb.co/JCk3hYL/s-l500.jpg",
+					"https://i.ibb.co/ZcnWF8r/m-5ca15984d1aa25934bbbc582.jpg",
+					(short) 12,800.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mouse Pad");
+			productRepository.save(product226);
+			Product product227 = new Product("DC - Batman","Mouse pad (30x25) de Monogatarie series, antideslizante",
+					"https://i.ibb.co/CVWKwHQ/s-l500.jpg",
+					"https://i.ibb.co/ZcnWF8r/m-5ca15984d1aa25934bbbc582.jpg",
+					(short) 12,800.0,"DC",
+					Category.BAZARANDTOYSHOP, "Mouse Pad");
+			productRepository.save(product227);
+			Product product228 = new Product("DC - Batman",
+					"Funda edición DC para Iphone",
+					"https://i.ibb.co/8gpgW8x/R-just-funda-de-protecci-n-estilo-Batman-para-Iphone-12-Pro-carcasa-h-brida-de-jpg-Q90-jpg.webp",
+					"https://i.ibb.co/ZcnWF8r/m-5ca15984d1aa25934bbbc582.jpg",
+					(short) 14,1999.0,"DC",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product228);
+			Product product229 = new Product("DC - Batman",
+					"Funda edición DC para Iphone",
+					"https://i.ibb.co/ZSyMMqz/funda-para-iphone-12-mini-oficial-de-dc-comics-batman-logo-transparente-dc-comics.jpg",
+					"https://i.ibb.co/ZcnWF8r/m-5ca15984d1aa25934bbbc582.jpg",
+					(short) 14,1999.0,"DC",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product229);
+			Product product230 = new Product("DC - Superman",
+					"Funda edición DC para Iphone",
+					"https://i.ibb.co/NSksd0Z/images-q-tbn-ANd9-Gc-QPmd-B3-ZQb6-Vm-Dpdt-JFy9tr-Alyaund6v-XZRzg-usqp-CAU.jpg",
+					"https://i.ibb.co/gDv2dnL/7b8e9768fb5f20c2e8c498786ce6579c.jpg",
+					(short) 14,1999.0,"DC",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product230);
+			Product product231 = new Product("DC - Superman",
+					"Funda edición DC para Iphone",
+					"https://i.ibb.co/wLwmx8G/8a89d23698c201d96e44e3001f767b01745b892b-original.jpg",
+					"https://i.ibb.co/gDv2dnL/7b8e9768fb5f20c2e8c498786ce6579c.jpg",
+					(short) 14,1999.0,"DC",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product231);
+			Product product232 = new Product("DC - Linterna Verde",
+					"Funda edición DC para Iphone",
+					"https://i.ibb.co/Y0rXZVL/images-q-tbn-ANd9-Gc-Tq-VGtw8kv89-Gtqzs-F-USWs-MSXkugt-KNv-BDg-usqp-CAU.jpg",
+					"https://i.ibb.co/MpGmrF7/logo-3216326-1280.png",
+					(short) 14,1999.0,"DC",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product232);
+			Product product233 = new Product("DC - Linterna Verde",
+					"Funda edición DC para Iphone",
+					"https://i.ibb.co/CP8VDGY/icr-iphone-13-soft-back-a-x600-pad-600x600-f8f8f8.jpg",
+					"https://i.ibb.co/MpGmrF7/logo-3216326-1280.png",
+					(short) 14,1999.0,"DC",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product233);
+			Product product234 = new Product("DC - Flash",
+					"Funda edición DC para Iphone",
+					"https://i.ibb.co/VVGTcxc/icr-iphone-13-soft-back-a-x1000-pad-1000x1000-f8f8f8-u2.jpg",
+					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
+					(short) 14,1999.0,"DC",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product234);
+			Product product235 = new Product("DC - Flash",
+					"Funda edición DC para Iphone",
+					"https://i.ibb.co/cYhBN32/icr-iphone-13-soft-back-a-x600-pad-600x600-f8f8f8-u3.jpg",
+					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
+					(short) 14,1999.0,"DC",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product235);
+			//llavero
+			Product product236 = new Product("DC - Flash",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/QFpn9kN/a71c3052f398aa74ad88837efcfdf945.jpg",
+					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
+					(short) 14,999.0,"DC",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product236);
+			Product product237 = new Product("DC - Flash",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/MR4yx3K/funko-pop-llavero-dc-flash1-af4c810119c9ec9df416333955026069-1024-1024.jpg",
+					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
+					(short) 14,999.0,"DC",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product237);
+			Product product238 = new Product("DC - Batman",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/9vq84TQ/b86f575177fb9787347a79a4917e2aa25e1664edae5aa9208dc25057c4c8242a52979.jpg",
+					"https://i.ibb.co/ZcnWF8r/m-5ca15984d1aa25934bbbc582.jpg",
+					(short) 14,999.0,"DC",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product238);
+			Product product239 = new Product("DC - Batman",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/56ct9Yn/batman.jpg",
+					"https://i.ibb.co/ZcnWF8r/m-5ca15984d1aa25934bbbc582.jpg",
+					(short) 14,999.0,"DC",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product239);
+			Product product240 = new Product("DC - Superman",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwgfMuI95ulgzzdSKDKX-kgo6sIZGcKTDpmg&usqp=CAU",
+					"https://i.ibb.co/gDv2dnL/7b8e9768fb5f20c2e8c498786ce6579c.jpg",
+					(short) 14,999.0,"DC",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product240);
+			Product product241 = new Product("DC - Superman",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/hyLMZ41/51-Dxpz-BBn-FL-AC-SS450.jpg",
+					"https://i.ibb.co/gDv2dnL/7b8e9768fb5f20c2e8c498786ce6579c.jpg",
+					(short) 14,999.0,"DC",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product241);
+			Product product242 = new Product("DC - Linterna Verde",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoTm0N96OGLoJgJqs1Ep8iy1Zfli9IFNW9PQ&usqp=CAU",
+					"https://i.ibb.co/MpGmrF7/logo-3216326-1280.png",
+					(short) 14,999.0,"DC",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product242);
+			Product product243 = new Product("DC - Linterna Verde",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/vD2nPtz/images-q-tbn-ANd9-Gc-So-Tm0-N96-OGLo-Jg-Jqs1-Ep8iy1-Zfli9-IFNW9-PQ-usqp-CAU.jpg",
+					"https://i.ibb.co/MpGmrF7/logo-3216326-1280.png",
+					(short) 14,999.0,"DC",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product243);
+			//naruto
+			Product product244 = new Product("Naruto - Naruto",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/Prwrdsz/images-q-tbn-ANd9-Gc-Sw-Bxe-R7k-Awf-Ngpzd-Vj-Reh6-S8l-QBloizgb6-Kzu-Xg-ybt-Ou8b2-Vnf-Xu6j-HGUDO8-Yi9.jpg",
+					"https://i.ibb.co/HptHGKC/brand.gif",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product244);
+			Product product245 = new Product("Naruto - Naruto",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/v1D4s8B/llavero-naruto.jpg",
+					"https://i.ibb.co/HptHGKC/brand.gif",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product245);
+			Product product246 = new Product("Naruto - Sasuke",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/fqK9SQJ/D-NQ-NP-610822-MLA47396114323-092021-O.jpg",
+					"https://i.ibb.co/1f7gZZb/ed9f508adbfaee0548133a878a273b5b.jpg",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product246);
+			Product product247 = new Product("Naruto - Sasuke",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/jZ1GMJp/fd4e6aef07c59d3c0abc1f052409af426346cd1935287e3508130c77b34ff7b353097.jpg",
+					"https://i.ibb.co/1f7gZZb/ed9f508adbfaee0548133a878a273b5b.jpg",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product247);
+			Product product248 = new Product("Naruto - Sakura",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/1KxRBN7/81-EQNoi-IUw-L-AC-UL1500.jpg",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwthPInAlKku-c-309rEyCZ7vudXXrUbuwJlFrWDCXLKIwW6B0zBhJqRbbOEuHf1m9mIc&usqp=CAU",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product248);
+			Product product249 = new Product("Naruto - Sakura",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/b6rCyMQ/D-NQ-NP-712618-CBT49331582720-032022-V.jpg",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwthPInAlKku-c-309rEyCZ7vudXXrUbuwJlFrWDCXLKIwW6B0zBhJqRbbOEuHf1m9mIc&usqp=CAU",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product249);
+			Product product250 = new Product("Naruto - Kakashi",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/xjZzdSm/images-q-tbn-ANd9-Gc-Qt-Img-ORGd1zb9ypa3z-SZLLq-Dukm94pjh-ID9-A-usqp-CAU.jpg",
+					"https://i.ibb.co/NFLGrM9/transparent.png",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product250);
+			Product product251 = new Product("Naruto - Kakashi",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/PgRHxd7/49220e774b7775501ce60c52082e040a.jpg",
+					"https://i.ibb.co/NFLGrM9/transparent.png",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Keychains");
+			productRepository.save(product251);
+			//tazas
+			Product product252 = new Product("Naruto - Kakashi",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/THCkJmM/615-NYw35-CBL-AC-SX466.jpg",
+					"https://i.ibb.co/NFLGrM9/transparent.png",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product252);
+			Product product253 = new Product("Naruto - Kakashi",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/6v7qSj0/Tazas-de-caf-de-Anime-Naruto-tazas-de-t-de-Sasuke-Kakashi-Itachi-creativas-cambio-de.jpg",
+					"https://i.ibb.co/NFLGrM9/transparent.png",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product253);
+			Product product254 = new Product("Naruto - Naruto",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/JsqsS6Q/6.png",
+					"https://i.ibb.co/HptHGKC/brand.gif",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product254);
+			Product product255 = new Product("Naruto - Naruto",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/gdM54P1/TAZA-CARA-NARUTO-300x300.png",
+					"https://i.ibb.co/HptHGKC/brand.gif",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product255);
+			Product product256 = new Product("Naruto - Sakura",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/wMThvDH/D-NQ-NP-674270-MLM48457508504-122021-W.jpg",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwthPInAlKku-c-309rEyCZ7vudXXrUbuwJlFrWDCXLKIwW6B0zBhJqRbbOEuHf1m9mIc&usqp=CAU",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product256);
+			Product product257 = new Product("Naruto - Sakura",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/MNbxtwJ/sakura-mockup-1616747507.jpg",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwthPInAlKku-c-309rEyCZ7vudXXrUbuwJlFrWDCXLKIwW6B0zBhJqRbbOEuHf1m9mIc&usqp=CAU",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product257);
+			Product product258 = new Product("Naruto - Sasuke",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/YcF86bC/12714204-1-wid-1500-hei-1500-qlt-70.jpg",
+					"https://i.ibb.co/1f7gZZb/ed9f508adbfaee0548133a878a273b5b.jpg",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product258);
+			Product product259 = new Product("Naruto - Sasuke",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/sHqpKst/692-28-121-1614787347913-260-Naruto-sasuke-portable-680.png",
+					"https://i.ibb.co/1f7gZZb/ed9f508adbfaee0548133a878a273b5b.jpg",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Mugs");
+			productRepository.save(product259);
+			//mouse pad
+			Product product260 = new Product("Naruto - Sasuke",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/k8j5y6t/Alfombrilla-de-rat-n-de-Anime-Uchiha-Sasuke-RGB-accesorios-para-juegos-con-retroiluminaci-n-Luz-jpg.webp",
+					"https://i.ibb.co/1f7gZZb/ed9f508adbfaee0548133a878a273b5b.jpg",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product260);
+			Product product261 = new Product("Naruto - Sasuke",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/2FZN7GG/D-NQ-NP-826765-MLA47251322252-082021-V.jpg",
+					"https://i.ibb.co/1f7gZZb/ed9f508adbfaee0548133a878a273b5b.jpg",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product261);
+			Product product262 = new Product("Naruto - Naruto",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/XbXgZcj/1250a1-f21e7071df76e4da2515997830227161-1024-1024.jpg",
+					"https://i.ibb.co/HptHGKC/brand.gif",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product262);
+			Product product263 = new Product("Naruto - Naruto",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/qCTn41L/D-NQ-NP-970879-MLA48612764605-122021-V.jpg",
+					"https://i.ibb.co/HptHGKC/brand.gif",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product263);
+			Product product264 = new Product("Naruto - Sakura",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/Bq4J5PH/4b42bc624b6b1d61c4451be32d5446d9.jpg",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwthPInAlKku-c-309rEyCZ7vudXXrUbuwJlFrWDCXLKIwW6B0zBhJqRbbOEuHf1m9mIc&usqp=CAU",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product264);
+			Product product265 = new Product("Naruto - Sakura",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/QbSGKzT/image-a-HR0c-HM6-Ly9pb-WFn-ZXMtbm-Euc3-Ns-LWlt-YWdlcy1hb-WF6b24u-Y29t-L2lt-YWdlcy9-JLzcx-NXp6-VWol-M.jpg",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwthPInAlKku-c-309rEyCZ7vudXXrUbuwJlFrWDCXLKIwW6B0zBhJqRbbOEuHf1m9mIc&usqp=CAU",
+					(short) 14,999.0,"Naruto",
+					Category.BAZARANDTOYSHOP , "Mouse Pad");
+			productRepository.save(product265);
+			//celular
+			Product product266 = new Product("Naruto - Sakura",
+					"Funda edición Naruto para Iphone",
+					"https://i.ibb.co/LvHJBVc/icr-iphone-13-soft-back-a-x600-pad-600x600-f8f8f8.jpg",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwthPInAlKku-c-309rEyCZ7vudXXrUbuwJlFrWDCXLKIwW6B0zBhJqRbbOEuHf1m9mIc&usqp=CAU",
+					(short) 14,999.0,"Naruto",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product266);
+			Product product267 = new Product("Naruto - Sakura",
+					"Funda edición Naruto para Iphone",
+					"https://i.ibb.co/1Q7jqmj/funda-naruto-sakura-1200x1200.jpg",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwthPInAlKku-c-309rEyCZ7vudXXrUbuwJlFrWDCXLKIwW6B0zBhJqRbbOEuHf1m9mIc&usqp=CAU",
+					(short) 14,999.0,"Naruto",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product267);
+			Product product268 = new Product("Naruto - Naruto",
+					"Funda edición Naruto para Iphone",
+					"https://i.ibb.co/2M60Gjf/images-q-tbn-ANd9-Gc-RXI-a-RYRSb-YXWEv-Reobb-NWDxc-Lt-KLKy-Q7-Q27-T0m-Knyg-YD0l-A0-AQr-Bq-ILrl2-FNPs.png",
+					"https://i.ibb.co/HptHGKC/brand.gif",
+					(short) 14,999.0,"Naruto",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product268);
+			Product product269 = new Product("Naruto - Naruto",
+					"Funda edición Naruto para Iphone",
+					"https://i.ibb.co/j6bjp0Q/25911278-0.png",
+					"https://i.ibb.co/HptHGKC/brand.gif",
+					(short) 14,999.0,"Naruto",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product269);
+				Product product270 = new Product("Naruto - Sasuke",
+					"Funda edición Naruto para Iphone",
+					"https://i.ibb.co/4Sv7Wmx/1639726062879-680.png",
+					"https://i.ibb.co/1f7gZZb/ed9f508adbfaee0548133a878a273b5b.jpg",
+					(short) 14,999.0,"Naruto",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product270);
+			Product product271 = new Product("Naruto - Sasuke",
+					"Funda edición Naruto para Iphone",
+					"https://i.ibb.co/zfHNBTK/funda-naruto-sasuke-1200x1200.jpg",
+					"https://i.ibb.co/1f7gZZb/ed9f508adbfaee0548133a878a273b5b.jpg",
+					(short) 14,999.0,"Naruto",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product271);
+			Product product272 = new Product("Naruto - Kakashi",
+					"Funda edición Naruto para Iphone",
+					"https://i.ibb.co/1QYn9xQ/H8399c37eb99d4c41b2979c1fb514c43et.jpg",
+					"https://i.ibb.co/NFLGrM9/transparent.png",
+					(short) 14,999.0,"Naruto",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product272);
+			Product product273 = new Product("Naruto - Kakashi",
+					"Funda edición Naruto para Iphone",
+					"https://i.ibb.co/b7vT103/funda-naruto-kakashi-1200x1200.jpg",
+					"https://i.ibb.co/NFLGrM9/transparent.png",
+					(short) 14,999.0,"Naruto",
+					Category.ACCESSORIES , "Iphone Cases");
+			productRepository.save(product273);
+			//juguetes
+			Product product274 = new Product("Naruto - Kakashi",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://i.ibb.co/59cnRz8/Kakashi-182-09403-1642458939.jpg",
+					"https://i.ibb.co/NFLGrM9/transparent.png",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product274);
+			Product product275 = new Product("Naruto - Kakashi",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://i.ibb.co/qNkJMNT/Kakashi-anbu.jpg",
+					"https://i.ibb.co/NFLGrM9/transparent.png",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product275);
+			Product product276 = new Product("Naruto - Naruto",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://i.ibb.co/yQS0q4p/1c4bdbed69dcad5358505f881425288206823ef6dc2046b02797f0b4e17f4c4713243.jpg",
+					"https://i.ibb.co/HptHGKC/brand.gif",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product276);
+			Product product277 = new Product("Naruto - Naruto",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://i.ibb.co/XYt1C36/e49baad47a523293d8d9febeee724fea.jpg",
+					"https://i.ibb.co/HptHGKC/brand.gif",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product277);
+			Product product278 = new Product("Naruto - Sasuke",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://i.ibb.co/p1GfNRz/D-NQ-NP-648656-MLA44363110706-122020-O.jpg",
+					"https://i.ibb.co/1f7gZZb/ed9f508adbfaee0548133a878a273b5b.jpg",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product278);
+			Product product279 = new Product("Naruto - Sasuke",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://i.ibb.co/mJd25Jd/naruto-sasuke-cursed-mark-funko-pop-455.jpg",
+					"https://i.ibb.co/1f7gZZb/ed9f508adbfaee0548133a878a273b5b.jpg",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product279);
+			Product product280 = new Product("Naruto - Sakura",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://i.ibb.co/Mgn1TSh/funko-pop-sakura-1200x1200.png",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwthPInAlKku-c-309rEyCZ7vudXXrUbuwJlFrWDCXLKIwW6B0zBhJqRbbOEuHf1m9mIc&usqp=CAU",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product280);
+			Product product281 = new Product("Naruto - Sakura",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://i.ibb.co/QCD4Tp0/product-image-1938767690-2000x.jpg",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwthPInAlKku-c-309rEyCZ7vudXXrUbuwJlFrWDCXLKIwW6B0zBhJqRbbOEuHf1m9mIc&usqp=CAU",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product281);
+			Product product282 = new Product("Naruto - Sakura",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://cf.shopee.com.br/file/d1e2324ef49b2d38e083335538bf7dd8",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwthPInAlKku-c-309rEyCZ7vudXXrUbuwJlFrWDCXLKIwW6B0zBhJqRbbOEuHf1m9mIc&usqp=CAU",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product282);
+			Product product283 = new Product("Naruto - Sakura",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://i.ibb.co/yyf1gTK/d1e2324ef49b2d38e083335538bf7dd8.jpg",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwthPInAlKku-c-309rEyCZ7vudXXrUbuwJlFrWDCXLKIwW6B0zBhJqRbbOEuHf1m9mIc&usqp=CAU",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product283);
+			Product product284 = new Product("Naruto - Sasuke",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://i.ibb.co/2d9dFyS/3ed93885eac5a86db239956c7d7676a5.jpg",
+					"https://i.ibb.co/1f7gZZb/ed9f508adbfaee0548133a878a273b5b.jpg",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product284);
+			Product product285 = new Product("Naruto - Sasuke",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://i.ibb.co/QJwRJbF/Naruto-Sasuke-uchiha-figuras-21-cm-Jap-n-anime-megahouse-GEM-PVC-Shippuden-pel-cula-figuras.jpg",
+					"https://i.ibb.co/1f7gZZb/ed9f508adbfaee0548133a878a273b5b.jpg",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product285);
+			Product product286 = new Product("Naruto - Naruto",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://i.ibb.co/Pm93rxL/8286131-1-wid-800-hei-800-qlt-70.jpg",
+					"https://i.ibb.co/HptHGKC/brand.gif",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product286);
+			Product product287 = new Product("Naruto - Naruto",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://i.ibb.co/2KZh0N9/Naruto-Gk-Cosplay-Anime-Action-Figure-Model-Toy.jpg",
+					"https://i.ibb.co/HptHGKC/brand.gif",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product287);
+			Product product288 = new Product("Naruto - Kakashi",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://i.ibb.co/HVQ0Lkv/5.jpg",
+					"https://i.ibb.co/NFLGrM9/transparent.png",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product288);
+			Product product289 = new Product("Naruto - Kakashi",
+					"Figura de Naruto en vinilo de 9 cm",
+					"https://i.ibb.co/Jv2rG9b/Figura-de-acci-n-de-Naruto-Kakashi-Hatake-17-cm-PVC-Anime-Chidori-modelo-kits-de-jpg-Q90-jpg.webp",
+					"https://i.ibb.co/NFLGrM9/transparent.png",
+					(short) 14,2499.0,"Naruto",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product289);
+			//one piece
+			Product product290 = new Product("One Piece - Luffy",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/3CpVkjT/Figura-de-Luffy-de-Grandista-Monkey-D-27cm-juguete-de-Grandline-Anime-mu-ecos-coleccionables.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product290);
+			Product product291 = new Product("One Piece - Luffy",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/gdr7vn5/r-BVa-EVmy-R7-OAV2cb-AAHCz-IT-u-Tc518.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product291);
+			Product product292 = new Product("One Piece - Zoro",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/cYHtH4r/Anime-de-one-piece-Roronoa-Zoro-Articulaci-n-M-vil-figura-de-acci-n-juguetes-18.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product292);
+			Product product293 = new Product("One Piece - Zoro",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/vDT3f5r/afe2779f41edde6adbce22209caf0a836bd799f1-original.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product293);
+			Product product294 = new Product("One Piece - Franky",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/1RMLp4s/7182a83cdf9c689c6c3148ae19c1ed7a-product.jpg",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product294);
+			Product product295 = new Product("One Piece - Franky",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/Bfcc5Bg/r-BVa-EFm158-AAlv-NAAFFl-MBOq4c894.jpg",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product295);
+			Product product296 = new Product("One Piece - Sanji",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/Mp4DWdN/r-BVa-WF6-VWOy-AQVEi-AAMV3-DYr-Yx-Y957.jpg",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product296);
+			Product product297 = new Product("One Piece - Sanji",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/DgXqz1G/Hda33cc7daf97498da150e1dc31de27dbh.jpg",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Static Figures!");
+			productRepository.save(product297);
+			Product product298 = new Product("One Piece - Sanji",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/74SbLHR/b17f0b96380d48a2070689b3f72d35681-3de7a557d1ceed645416071038196351-640-0.jpg",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product298);
+			Product product299 = new Product("One Piece - Sanji",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/bd0fqL7/images-q-tbn-ANd9-Gc-Q02-Ve-Vll-Jt-Q7-PHG1d-P2-Re-Mq95-Omz-Vj-XE8k-IA-usqp-CAU.jpg",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product299);
+			Product product300 = new Product("One Piece - Luffy",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/1T2rbc6/250147bd04d887fe6047c1ee0207e7fe.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product300);
+			Product product301 = new Product("One Piece - Luffy",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/TkG8JMq/Funko-POP-One-Piece-Luffy-in-Kimono-Metallic-Special-Edition-tienda-oficial-funko-funko-pop-original.webp",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product301);
+			Product product302 = new Product("One Piece - Franky",
+					"Figura de One Piece en vinilo de 9 cm",
+					"",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product302);
+			Product product303 = new Product("One Piece - Franky",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.pinimg.com/736x/65/19/49/65194986df9d2bafb1a6150dff0619d1.jpg",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product303);
+			Product product304 = new Product("One Piece - Zoro",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/yNjh7cv/x-fk54462.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product304);
+			Product product305 = new Product("One Piece - Zoro",
+					"Figura de One Piece en vinilo de 9 cm",
+					"https://i.ibb.co/q0vz9CF/D-NQ-NP-673564-MLM26765562381-022018-O.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,2499.0,"One Piece",
+					Category.ACTIONFIGURES, "Funko POP!");
+			productRepository.save(product305);
+			//tazas
+			Product product306 = new Product("One Piece - Zoro",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/kXNY2sc/taza-mug-11oz-one-piece-zoro.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product306);
+			Product product307 = new Product("One Piece - Zoro",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/YQH7JLX/2113535-1.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product307);
+			Product product308 = new Product("One Piece - Luffy",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/QjFwhBg/taza-mug-11oz-one-piece-luffy.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product308);
+			Product product309 = new Product("One Piece - Luffy",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/S00fJqB/tazap66.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product309);
+			Product product310 = new Product("One Piece - Luffy",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/6wCKvt5/487545-1.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product310);
+			Product product311 = new Product("One Piece - Sanji",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/QnRx6xf/3076156-0.jpg",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product311);
+			Product product312 = new Product("One Piece - Sanji",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/FqwDpF4/mug-standard-x334-right-pad-600x600-f8f8f8.jpg",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product312);
+			Product product313 = new Product("One Piece - Franky",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/BBrByQ6/11960229-0.jpg",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product313);
+			Product product314 = new Product("One Piece - Franky",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/HzB4s2t/554-28-67-1614784083682-fusion-splendide-220.png",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,1200.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mugs");
+			productRepository.save(product314);
+			//llavero
+			Product product315 = new Product("One Piece - Franky",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/NF1wvZr/images-q-tbn-ANd9-Gc-R6k9-Oswza6-Mo-KDx-UHDXJJtj-Bu0-Uc-Yu9-EC2e-Bp-DY99ra-VU9c4lt-Wn-Bkmi067s23-Uve.jpg",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product315);
+			Product product316 = new Product("One Piece - Franky",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/TBwC5t8/LLavero-de-dibujos-animados-de-One-Piece-Zoro-llavero-de-doble-cara-colgante-acr-lico-accesorios-jpg.jpg",
+					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product316);
+			Product product317 = new Product("One Piece - Zoro",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/KxmvH72/Llavero-One-Piece-Zoro.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product317);
+			Product product318 = new Product("One Piece - Zoro",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/y0D9gQm/one-piece-keychain-pvc-zoro-sd-x4-1-1609246390.jpg",
+					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product318);
+			Product product319 = new Product("One Piece - Luffy",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/NLQf32m/Akihabara-Colombia-Llavero-Luffy.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product319);
+			Product product320 = new Product("One Piece - Luffy",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/YRdDSxD/llavero-one-piece-sombrero-luffy-monkey-fotocaja-tienda-geek-cordoba-21-fb8b75353f4684e2531563293293.jpg",
+					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product320);
+			Product product321 = new Product("One Piece - Sanji",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkogXA7UTgmG64Mk2ygoIAntoksdlYlQy2zA&usqp=CAU",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product321);
+			Product product322 = new Product("One Piece - Sanji",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://i.ibb.co/ZHDffZH/images-q-tbn-ANd9-Gc-Qkog-XA7-UTgm-G64-Mk2ygo-IAntoksdl-Yl-Qy2z-A-usqp-CAU.jpg",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Keychains");
+			productRepository.save(product322);
+			//mouse pad
+			Product product323 = new Product("One Piece - Sanji",
+					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"",
+					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
+					(short) 14,999.0,"One Piece",
+					Category.BAZARANDTOYSHOP, "Mouse Pad");
+			productRepository.save(product323);
+
+
 		};
 	}
 
