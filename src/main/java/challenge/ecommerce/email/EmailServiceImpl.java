@@ -44,7 +44,7 @@ public class EmailServiceImpl implements EmailService{
         lastName = lastName.substring(0, 1).toUpperCase().concat(lastName.substring(1));
 
         return "Hello " + name+" " + lastName+"," +" \n" +
-                "Please Verify Your Account with this link" +"<a href=\"" + link + "\">Activate Now</a> </p></blockquote>\n This link will expire in 15 minutes. <p>Sincerely,</p>\n <p>Kobee Store S.A</p>" +
+                "Please Verify Your Account with this link" +"<a href=\"" + link + "\">Activate Now</a> </p></blockquote>\n This link will expire in 15 minutes. <p>Sincerely,</p>\n <p>Kobe Store S.A</p>" +
                 "\n";
     }
 }

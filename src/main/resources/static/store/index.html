@@ -212,7 +212,7 @@
                             <button class="search-close"><span class="sli sli-close"></span></button>
                         </div>
                         <div class="sidebar-search-input">
-                            <form>
+                            <!-- <form>
                                 <div class="form-search">
                                     <input id="search" class="input-text" value="" placeholder="Buscar ahora"
                                         type="search">
@@ -220,7 +220,7 @@
                                         <i class="sli sli-magnifier"></i>
                                     </button>
                                 </div>
-                            </form>
+                            </form> -->
                         </div>
                     </div>
                 </div>
@@ -419,8 +419,7 @@
                                         <h1 class="animated">Bienvenido a <span>Kōbe</span></h1>
                                         <p class="animated">Tienda especializada en merchandising anime y ficción</p>
                                         <div class="slider-btn btn-hover">
-                                            <a class="animated">Ver productos!<i
-                                                    class="sli sli-basket-loaded"></i></a>
+                                            <a class="animated">Ver productos!<i class="sli sli-basket-loaded"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -442,8 +441,8 @@
                                             typesetting
                                             industry. It is a long established fact that a reader.</p>
                                         <div class="slider-btn btn-hover">
-                                            <a class="animated" v-bind:href="'shop.html?category=BOOKSHOP'">Comprar ahora<i
-                                                    class="sli sli-basket-loaded"></i></a>
+                                            <a class="animated" v-bind:href="'shop.html?category=BOOKSHOP'">Comprar
+                                                ahora<i class="sli sli-basket-loaded"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -464,7 +463,8 @@
                                         <p class="animated">Variedad en fundas para iPhone 11, 12 y 13</p>
                                         <p class="animated">15% de descuento en fundas seleccionadas</p>
                                         <div class="slider-btn btn-hover">
-                                            <a class="animated" v-bind:href="'shop.html?subcategory=Iphone Cases'">Comprar ahora<i
+                                            <a class="animated"
+                                                v-bind:href="'shop.html?subcategory=Iphone Cases'">Comprar ahora<i
                                                     class="sli sli-basket-loaded"></i></a>
                                         </div>
                                     </div>
@@ -480,41 +480,38 @@
                 </div>
             </div>
 
-
-
-
             <div class="banner-area pt-100 pb-65" id="goShop">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated" src="assets/img/banner/funko2.png"
-                                        alt=""></a>
+                                <a v-bind:href="'shop.html?category=ACTIONFIGURES'"><img class="animated" src="assets/img/banner/funko2.png"
+                                        alt="imgFunkosYfiguras"></a>
                                 <div class="banner-content banner-position-1">
                                     <h2 id="funkosyfiguras">Funkos <br>y figuras</h2>
                                     <h3>Disponibles individuales<br>y en colecciones</h3>
                                     <br>
-                                    <a href="product-details.html">Comprar ahora!</a>
+                                    <a v-bind:href="'shop.html?category=ACTIONFIGURES'">Comprar ahora!</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated"
+                                <a v-bind:href="'shop.html?subcategory=Mouse Pad'"><img class="animated"
                                         src="assets/img/banner/stickers2.png" alt=""></a>
                                 <div class="banner-content banner-position-2">
                                     <h3 id="h3Banner2">35% off Lunes y miércoles</h3>
                                     <h2>Stickers <br>y pegatinas</h2>
-                                    <a href="product-details.html" style="background-color: red;">Shop Now</a>
+                                    <a v-bind:href="'shop.html?subcategory=Mouse Pad'" style="background-color: red;">Ver productos</a>
                                 </div>
                             </div>
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated" src="assets/img/banner/mugs2.png"
+                                <a :href="'shop.html?category=BAZARANDTOYSHOP'"><img class="animated" src="assets/img/banner/mugs2.png"
                                         alt=""></a>
                                 <div class="banner-content banner-position-3">
                                     <h3>Artículos bazar</h3>
                                     <h2>Tazas, llaveros <br>y fundas</h2>
-                                    <a href="product-details.html">Shop Now</a>
+                                    <a :href="'shop.html?category=BAZARANDTOYSHOP'">Ver productos</a>
                                 </div>
                             </div>
                         </div>
@@ -576,14 +573,14 @@
                                         </div>
                                         <div class="ht-product-content">
                                             <div class="ht-product-content-inner">
-                                                <div class="ht-product-categories"><a href="#">{{funko.category}}</a>
+                                                <div class="ht-product-categories"><a :href="'shop.html?subcategory=' + funko.subcategory">{{funko.subcategory}}</a>
                                                 </div>
                                                 <h4 class="ht-product-title"><a
                                                         :href="'product-details.html?id=' + funko.id">{{funko.name}}</a>
                                                 </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="funko.stock <= 5">
-                                                        <span class="new">${{(funko.lowStockPrice).toFixed(2)}}</span>
+                                                        <span class="newLow2">${{(funko.lowStockPrice).toFixed(2)}}</span>
                                                         <span class="old">${{funko.price}}</span>
                                                     </div>
                                                     <div v-show="funko.stock > 5">
@@ -597,17 +594,23 @@
                                             </div>
                                             <div class="ht-product-action">
                                                 <ul>
-                                                    <li><a href="#"><i class="sli sli-magnifier"></i><span
-                                                                class="ht-product-action-tooltip">Vista
-                                                                rápida</span></a>
+                                                    <li><button @click="productForModal(funko)"><a
+                                                                data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                                                    class="sli sli-magnifier"></i><span
+                                                                    class="ht-product-action-tooltip">Vista
+                                                                    rápida</span></a></button>
                                                     </li>
-                                                    <li><a href="#"><i class="sli sli-heart"></i><span
-                                                                class="ht-product-action-tooltip">Agregar a
-                                                                favoritos</span></a>
+                                                    <li><button @click="addProductFav(funko)">
+                                                            <a><i class="sli sli-heart"></i><span
+                                                                    class="ht-product-action-tooltip">Agregar a
+                                                                    favoritos</span></a>
+                                                        </button>
                                                     </li>
-                                                    <li><a href="#"><i class="sli sli-bag"></i><span
-                                                                class="ht-product-action-tooltip">Agregar al
-                                                                carrito</span></a>
+                                                    <li><button @click="addProductCart(funko)">
+                                                            <a><i class="sli sli-bag"></i><span
+                                                                    class="ht-product-action-tooltip">Agregar al
+                                                                    carrito</span></a>
+                                                        </button>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -656,14 +659,14 @@
                                         </div>
                                         <div class="ht-product-content">
                                             <div class="ht-product-content-inner">
-                                                <div class="ht-product-categories"><a href="#">{{funda.category}}</a>
+                                                <div class="ht-product-categories"><a :href="'shop.html?subcategory=' + funda.subcategory">{{funda.subcategory}}</a>
                                                 </div>
                                                 <h4 class="ht-product-title"><a
                                                         :href="'product-details.html?id=' + funda.id">{{funda.name}}</a>
                                                 </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="funda.stock <= 5">
-                                                        <span class="new">${{(funda.lowStockPrice).toFixed(2)}}</span>
+                                                        <span class="newLow">${{(funda.lowStockPrice).toFixed(2)}}</span>
                                                         <span class="old">${{funda.price}}</span>
                                                     </div>
                                                     <div v-show="funda.stock > 5">
@@ -737,14 +740,14 @@
                                         </div>
                                         <div class="ht-product-content">
                                             <div class="ht-product-content-inner">
-                                                <div class="ht-product-categories"><a href="#">{{manga.category}}</a>
+                                                <div class="ht-product-categories"><a :href="'shop.html?subcategory=' + manga.subcategory">{{manga.subcategory}}</a>
                                                 </div>
                                                 <h4 class="ht-product-title"><a
                                                         :href="'product-details.html?id=' + manga.id">{{manga.name}}</a>
                                                 </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="manga.stock <= 5">
-                                                        <span class="new">${{manga.lowStockPrice}}</span>
+                                                        <span class="newLow">${{manga.lowStockPrice}}</span>
                                                         <span class="old">${{manga.price}}</span>
                                                     </div>
                                                     <div v-show="manga.stock > 5">
@@ -791,7 +794,6 @@
                 </div>
             </div>
 
-
             <div class="testimonial-area pt-80 pb-95 section-margin-1"
                 style="background-image: url(assets/img/bg/demonSlayer.png);">
                 <div class="container">
@@ -830,11 +832,11 @@
                     <div class="arrivals-wrap item-wrapper">
                         <div class="ht-products row">
                             <!--Product Start-->
-                            <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom toggle-item-active col-lg-3 col-md-6 col-sm-6 col-12"
-                                v-for="product in lowStock">
+                            <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom toggle-item-active col-lg-3 col-md-6 col-sm-6 col-12 mb-20"
+                                v-for="product in lowStock" div>
                                 <div class="ht-product-inner" style="height: 501.69px;">
                                     <div class="ht-product-image-wrap">
-                                        <a href="product-details.html" class="ht-product-image"><img :src="product.img"
+                                        <a :href="'product-details.html?id=' + product.id" class="ht-product-image"><img :src="product.img"
                                                 :alt="product.name"></a>
                                         <div class="ht-product-action">
                                             <ul>
@@ -861,11 +863,11 @@
                                     </div>
                                     <div class="ht-product-content">
                                         <div class="ht-product-content-inner">
-                                            <div class="ht-product-categories"><a href="#">{{product.category}}</a>
+                                            <div class="ht-product-categories"><a v-bind:href="'shop.html?subcategory=' + product.subcategory">{{product.subcategory}}</a>
                                             </div>
-                                            <h4 class="ht-product-title"><a href="#">{{product.name}}</a></h4>
+                                            <h4 class="ht-product-title"><a :href="'product-details.html?id=' + product.id">{{product.name}}</a></h4>
                                             <div class="ht-product-price" v-show="product.stock <=5">
-                                                <span class="new">${{(product.lowStockPrice).toFixed(2)}}</span>
+                                                <span class="newLow">${{(product.lowStockPrice).toFixed(2)}}</span>
                                                 <span class="old">${{product.price}}</span>
                                             </div>
                                             <div class="ht-product-price" v-show="product.stock > 5">
@@ -880,15 +882,12 @@
                                         <div class="ht-product-action">
                                             <ul>
                                                 <li><a href="#"><i class="sli sli-magnifier"></i><span
-                                                            class="ht-product-action-tooltip">Quick View</span></a></li>
+                                                            class="ht-product-action-tooltip">Vista rápida</span></a></li>
                                                 <li><a href="#"><i class="sli sli-heart"></i><span
-                                                            class="ht-product-action-tooltip">Add to Wishlist</span></a>
-                                                </li>
-                                                <li><a href="#"><i class="sli sli-refresh"></i><span
-                                                            class="ht-product-action-tooltip">Add to Compare</span></a>
+                                                            class="ht-product-action-tooltip">Agregar a favoritos</span></a>
                                                 </li>
                                                 <li><a href="#"><i class="sli sli-bag"></i><span
-                                                            class="ht-product-action-tooltip">Add to Cart</span></a>
+                                                            class="ht-product-action-tooltip">Agregar al carrito</span></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -899,21 +898,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="show-more-btn text-center mt-10 toggle-btn">
+                        <div class="show-more-btn text-center mt-40 toggle-btn">
                             <a class="loadMore" href="#">Mostrar mas productos</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-
-            <div class="banner-area pt-100 pb-65">
+            <div class="banner-area pt-50 pb-65">
                 <h2 class="text-center text-light pb-25">Productos por Licencia</h2>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4 col-md-4">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated"
+                                <a :href="'shop.html?serie=Star Wars'"><img class="animated"
                                         src="assets/img/banner/starwars.png" alt=""></a>
                                 <div class="banner-content-2 banner-position-5">
                                     <h3 class="text-light">STAR WARS</h3>
@@ -922,7 +920,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated"
+                                <a :href="'shop.html?serie=One Piece'"><img class="animated"
                                         src="assets/img/banner/onePiece.png" alt=""></a>
                                 <div class="banner-content-2 banner-position-5">
                                     <h3>ONE PIECE</h3>
@@ -931,7 +929,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated" src="assets/img/banner/naruto.png"
+                                <a :href="'shop.html?serie=Naruto'"><img class="animated" src="assets/img/banner/naruto.png"
                                         alt=""></a>
                                 <div class="banner-content-2 banner-position-5">
                                     <h3 class="text-light">NARUTO</h3>
@@ -940,24 +938,26 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated" src="assets/img/banner/marvel.png"
+                                <a :href="'shop.html?serie=Marvel'"><img class="animated" src="assets/img/banner/marvel.png"
                                         alt=""></a>
                                 <div class="banner-content banner-position-6">
                                     <h2>MARVEL</h2>
-                                    <a href="product-details.html">Ver productos</a>
+                                    <a :href="'shop.html?serie=Marvel'">Ver productos</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated"
+                                <a :href="'shop.html?serie=DCComics'"><img class="animated"
                                         src="assets/img/banner/dcComics.png" alt=""></a>
                                 <div class="banner-content banner-position-6">
                                     <h2>DC COMICS</h2>
-                                    <!-- <a href="product-details.html">Shop Now</a> -->
-                                    <button id="batmanBtn">
-                                        <span>Ver productos</span>
-                                    </button>
+                                    <!-- <a :href="'shop.html?serie=DCComics'">Ver productos</a> -->
+                                    <a :href="'shop.html?serie=DCComics'" class="batmanA">
+                                        <button id="batmanBtn">
+                                            <span>Ver productos</span>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -1014,7 +1014,6 @@
                                 <li><a href="shop.html">Shop</a></li>
                                 <li><a href="contact-us.html">Contacto</a></li>
                                 <li><a href="about-us.html">Sobre nosotros</a></li>
-                                <!-- <li><a href="blog.html">Blog </a></li> -->
                             </ul>
                         </nav>
                     </div>
@@ -1030,7 +1029,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="copyright text-center pb-20">
-                                    <p>Copyright © All Right Reserved</p>
+                                    <p>Kōbe Store © 2022</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-3 col-12">
@@ -1079,7 +1078,7 @@
                                         <h2>{{productSelect.name}}</h2>
                                         <div class="product-details-price" v-show="productSelect.stock <=5">
                                             <span class="new">${{productSelect.lowStockPrice}}</span>
-                                            <span class="old">${{productSelect.price}}</span>
+                                            <span class="oldModal">${{productSelect.price}}</span>
                                             <span class="text-success">{{offMessage}}</span>
                                         </div>
 
@@ -1104,7 +1103,7 @@
                                         <div class="pro-details-quality">
                                             <div class="cart-plus-minus">
                                                 <input :id="productSelect.id" class="cart-plus-minus-box" type="number"
-                                                    name="qtybutton" value="1" min="1" :max="3">
+                                                    name="qtybutton" value="1" min="1" max="productSelect.stock">
                                             </div>
                                             <div class="pro-details-cart">
                                                 <a @click="addProductCartModal(productSelect)">Agregar al carrito</a>
@@ -1116,13 +1115,13 @@
                                         <div class="pro-details-meta">
                                             <span>Categorías :</span>
                                             <ul>
-                                                <li><a href="#">{{productSelect.category}}</a></li>
+                                                <li><a :href="'shop.html?category=' + productSelect.category">{{productSelect.category}}</a></li>
                                             </ul>
                                         </div>
                                         <div class="pro-details-meta">
                                             <span>Subcategorias:</span>
                                             <ul>
-                                                <li><a>{{productSelect.subcategory}}</a></li>
+                                                <li><a :href="'shop.html?subcategory=' + productSelect.subcategory">{{productSelect.subcategory}}</a></li>
                                             </ul>
                                         </div>
                                     </div>

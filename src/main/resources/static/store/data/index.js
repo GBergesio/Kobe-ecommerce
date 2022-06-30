@@ -66,7 +66,6 @@ const app = Vue.createApp({
       axios.get(`/api/products`)
         .then(data => {
           this.productsBack = data.data
-
           this.productsLowStock()
           this.funkoFilter()
           this.coversFilter()
@@ -83,6 +82,12 @@ const app = Vue.createApp({
   mounted() {
   },
   methods: {
+    logOut() {
+      axios.post('/api/logout')
+        .then(response => setTimeout(() => {
+          window.location.href = './index.html'
+        }, 1000))
+    },
     productForModal(product) {
       this.productSelect = product
       return this.productSelect.name
@@ -181,29 +186,28 @@ const app = Vue.createApp({
           })
         })
 
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          width:'30%',
-         padding:'1rem',
-         background:'#ECC038',
-         backdrop:false,
-          title: 'Guardado',
-          showConfirmButton: false,
-          toast:true,
-          timer: 1500,
-          timerProgressBar:true,
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        width: '30%',
+        padding: '1rem',
+        background: '#ECC038',
+        backdrop: false,
+        title: 'Guardado',
+        showConfirmButton: false,
+        toast: true,
+        timer: 1500,
+        timerProgressBar: true,
       })
-      .catch(function (error) {
-        Swal.fire({
-          position: 'top-end',
-          icon: 'error',
-          title: 'Stock no disponible',
-          showConfirmButton: false,
-          timer: 1500
-      })
-      })
-
+        .catch(function (error) {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: 'Stock no disponible',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        })
     },
     addProductCartModal(product) {
       let input = document.getElementById(`${product.id}`)
@@ -254,7 +258,7 @@ const app = Vue.createApp({
       if (productCart.quantity > 1) {
         localSFilterToModify[0].quantity = --productCart.quantity
       }
- 
+
       let localScopyFiltered = localSCopy.filter(prod => prod.id != productCart.id)
       localScopyFiltered.push(localSFilterToModify[0])
       localStorage.clear()
@@ -439,10 +443,11 @@ const app = Vue.createApp({
 
     },
 
-    generateOrders(){
+
+    generateOrders() {
       let orders = []
-      if(this.cartStorage.length != 0){
-        this.cartStorage.forEach(product =>{
+      if (this.cartStorage.length != 0) {
+        this.cartStorage.forEach(product => {
           let order = {
             productId: product.id,
             quantity: product.quantity
@@ -453,47 +458,57 @@ const app = Vue.createApp({
       return orders
     },
 
-    createPurchase(){
-      axios.post('/api/purchases', 
+    createPurchase() {
+      axios.post('/api/purchases',
         {
-            "orders": this.generateOrders(),
-            "address": `${this.shippmentAddress.streetName} ${this.shippmentAddress.streetNumber},  ${this.shippmentAddress.locality}, ${this.shippmentAddress.province}`,
-            "zipCode": this.shippmentAddress.zipCode,
-            "totalAmount": this.sumPriceProd(),
-            "typePayment": "DEBIT"
+          "orders": this.generateOrders(),
+          "address": `${this.shippmentAddress.streetName} ${this.shippmentAddress.streetNumber},  ${this.shippmentAddress.locality}, ${this.shippmentAddress.province}`,
+          "zipCode": this.shippmentAddress.zipCode,
+          "totalAmount": this.sumPriceProd(),
+          "typePayment": "DEBIT"
         }
-        ,{headers:{'content-type':'application/json'}})
+        , { headers: { 'content-type': 'application/json' } })
     },
 
     cardTransactionCredit() {
       Swal.fire({
-          title: 'Quieres realizar la transacciÃ³n?',
-          showDenyButton: true,
-          showCancelButton: true,
-          confirmButtonText: 'Save',
-          denyButtonText: `Don't save`,
+        title: 'Quieres realizar la transaccion?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Save',
+        denyButtonText: `Don't save`,
       }).then((result) => {
-          if (result.isConfirmed) {
-              axios.post('https://homebankingapplication.herokuapp.com/api/cardTransaction', {
-                "cardType": "CREDIT",
-                "amount": this.sumPriceProd(),
-                "cardNumber": "1111-1111-1111-1111",
-                "cardHolder": "Melba Morel",
-                "cvv": "666",
-                "thruDate": "23/05/2022",
-                "description": "prueba description"},
-                {headers:{"Access-Control-Allow-Headers" : "Content-Type","Access-Control-Allow-Origin" : "*","Access-Control-Allow-Methods": "OPTIONS,POST,GET"}})
-              .then(()=>
+        if (result.isConfirmed) {
+          
+          axios.post('https://homebankingapplication.herokuapp.com/api/cardTransaction', {
+            "cardType": "CREDIT",
+            "amount": this.sumPriceProd(),
+            "cardNumber": "1111-1111-1111-1111",
+            "cardHolder": "Melba Morel",
+            "cvv": "666",
+            "thruDate": "23/05/2022",
+            "description": "prueba description"
+          },
+            { headers: { "Access-Control-Allow-Headers": "Content-Type", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "OPTIONS,POST,GET" } })
+            .then(() =>
               Swal.fire('Transferido!', '', 'success')).then(this.createPurchase()).then(this.downloadFile()).then(this.emptyCart())
-              .catch(error => {
-                  Swal.fire({
-                      icon: 'error',
-                      title: error.response.data,
-                      timer: 2000,
-                  })
+            .catch(error => {
+              Swal.fire({
+                icon: 'error',
+                title: error.response.data,
+                timer: 2000,
               })
-          }
+            })
+        }
       })
+    },
+    async isLogged(){
+      try{
+        const {data} = await axios.post(`/api/clients/current`)
+
+      }catch(error){
+        console.log(error)
+      }
     },
 
     sumPriceProd() {
@@ -502,6 +517,14 @@ const app = Vue.createApp({
         this.subtotalCart += (product.price * product.quantity)
       })
       return this.subtotalCart
+    },
+
+
+    logOut() {
+      axios.post('/api/logout')
+        .then(response => setTimeout(() => {
+          window.location.href = './index.html'
+        }, 1000))
     },
 
   },

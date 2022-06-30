@@ -1798,14 +1798,13 @@ public class EcommerceApplication {
 					Category.BAZARANDTOYSHOP, "Keychains");
 			productRepository.save(product322);
 			//mouse pad
-			Product product323 = new Product("One Piece - Sanji",
+			Product product323 = new Product("One Piece - Luffy",
 					"todo decoraciones, ideal para regalo o decoracion de la casa",
+					"https://http2.mlstatic.com/D_NQ_NP_820455-MLB42936764802_072020-O.jpg",
 					"",
-					"https://i.ibb.co/Ydq5VZJ/46d976910b261a600fa78ca382d193eee9de37cf-00.jpg",
 					(short) 14,999.0,"One Piece",
 					Category.BAZARANDTOYSHOP, "Mouse Pad");
 			productRepository.save(product323);
-
 
 		};
 	}
