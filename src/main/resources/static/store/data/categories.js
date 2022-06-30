@@ -10,7 +10,6 @@ const app = Vue.createApp({
             sortType:"",
             minPrice:"",
             maxPrice:"",
-
         }
     },
     created() {
