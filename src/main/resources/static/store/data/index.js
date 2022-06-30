@@ -79,8 +79,6 @@ const app = Vue.createApp({
       this.cartStorage = this.productsCartStorage
     }
 
-
-    console.log(this.addPurchase())
   },
   mounted() {
   },
@@ -256,14 +254,11 @@ const app = Vue.createApp({
       if (productCart.quantity > 1) {
         localSFilterToModify[0].quantity = --productCart.quantity
       }
-      else {
-        console.log("no se puede restar mas");
-      }
+ 
       let localScopyFiltered = localSCopy.filter(prod => prod.id != productCart.id)
       localScopyFiltered.push(localSFilterToModify[0])
       localStorage.clear()
       localStorage.setItem("cart", JSON.stringify(localScopyFiltered))
-      // console.log(localSFilterToModify);
     },
     editQuantity(productCart) {
       let input = document.getElementById(`${productCart.id}`);
@@ -275,8 +270,6 @@ const app = Vue.createApp({
       if (productCart.quantity != input.value && input.value <= productCart.stock) {
         localSFilterToModify[0].quantity = input.value
       }
-
-      console.log(productCart)
 
       let localScopyFiltered = localSCopy.filter(prod => prod.id != productCart.id)
       localScopyFiltered.push(localSFilterToModify[0])
@@ -446,7 +439,7 @@ const app = Vue.createApp({
 
     },
 
-    addPurchase(){
+    generateOrders(){
       let orders = []
       if(this.cartStorage.length != 0){
         this.cartStorage.forEach(product =>{
@@ -461,32 +454,37 @@ const app = Vue.createApp({
     },
 
     createPurchase(){
-      
       axios.post('/api/purchases', 
         {
-            "orders": this.addPurchase(),
-            "address": `${this.shippmentAddress.newStreetName} ${this.shippmentAddress.newStreetNumber},  ${this.shippmentAddress.locality}, ${this.shippmentAddress.province}`,
+            "orders": this.generateOrders(),
+            "address": `${this.shippmentAddress.streetName} ${this.shippmentAddress.streetNumber},  ${this.shippmentAddress.locality}, ${this.shippmentAddress.province}`,
             "zipCode": this.shippmentAddress.zipCode,
-            "totalAmount": 5000,
+            "totalAmount": this.sumPriceProd(),
             "typePayment": "DEBIT"
         }
-        ,{headers:{'content-type':'application/json'}}).then(data => {
-            console.log(data['data']);
-        })
+        ,{headers:{'content-type':'application/json'}})
     },
 
     cardTransactionCredit() {
       Swal.fire({
-          title: 'Do you want to do the transaction?',
+          title: 'Quieres realizar la transacciÃ³n?',
           showDenyButton: true,
           showCancelButton: true,
           confirmButtonText: 'Save',
           denyButtonText: `Don't save`,
       }).then((result) => {
           if (result.isConfirmed) {
-              axios.post('/api/cardTransaction', `{"cardType": "CREDIT","amount": ${this.amount},"cardNumber": "${this.cardNumber}","cardHolder": "${this.cardHolder}","cvv": "${this.cvv}","thruDate": "${this.thruDate}","description": "${this.description}","accountNumber": "${this.accountNumberFunds}"}`, { headers: { "Content-Type": "application/json" } })
+              axios.post('https://homebankingapplication.herokuapp.com/api/cardTransaction', {
+                "cardType": "CREDIT",
+                "amount": this.sumPriceProd(),
+                "cardNumber": "1111-1111-1111-1111",
+                "cardHolder": "Melba Morel",
+                "cvv": "666",
+                "thruDate": "23/05/2022",
+                "description": "prueba description"},
+                {headers:{"Access-Control-Allow-Headers" : "Content-Type","Access-Control-Allow-Origin" : "*","Access-Control-Allow-Methods": "OPTIONS,POST,GET"}})
               .then(()=>
-              Swal.fire('Transfered!', '', 'success').then(() => window.location.replace("/web/Cards.html")))
+              Swal.fire('Transferido!', '', 'success')).then(this.createPurchase()).then(this.downloadFile()).then(this.emptyCart())
               .catch(error => {
                   Swal.fire({
                       icon: 'error',
@@ -496,7 +494,15 @@ const app = Vue.createApp({
               })
           }
       })
-  },
+    },
+
+    sumPriceProd() {
+      this.subtotalCart = 0
+      this.cartStorage.forEach(product => {
+        this.subtotalCart += (product.price * product.quantity)
+      })
+      return this.subtotalCart
+    },
 
   },
   computed: {
@@ -506,7 +512,6 @@ const app = Vue.createApp({
       } else if (this.subtotalCart > 20000) {
         this.totalPurchase = this.subtotalCart
       }
-      console.log(this.totalPurchase)
       return this.totalPurchase
     },
     sumPrice() {
