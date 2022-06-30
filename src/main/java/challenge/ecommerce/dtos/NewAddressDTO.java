@@ -4,8 +4,16 @@ import lombok.Getter;
 
 @Getter
 public class NewAddressDTO {
-    private long zipCode, streetNumber;
-    private String floorApartment, streetName, province, locality;
+    private long zipCode;
+
+    private long streetNumber;
+    private String floorApartment;
+
+    private String streetName;
+
+    private String province;
+
+    private String locality;
 
     public NewAddressDTO(){}
     public NewAddressDTO(long zipCode, long streetNumber, String floorApartment, String streetName, String province, String locality) {

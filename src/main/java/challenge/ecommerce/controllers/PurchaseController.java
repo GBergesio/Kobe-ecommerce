@@ -1,5 +1,6 @@
 package challenge.ecommerce.controllers;
 
+import challenge.ecommerce.dtos.OrderDto;
 import challenge.ecommerce.dtos.PurchaseApplicationDto;
 import challenge.ecommerce.dtos.PurchaseDto;
 import challenge.ecommerce.models.Client;
@@ -16,6 +17,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -53,15 +55,36 @@ public class PurchaseController {
             return new ResponseEntity<>("Missing address data", HttpStatus.FORBIDDEN);
         }
 
-        for (Map.Entry<Long, Integer> order : purchaseApplicationDto.getOrders().entrySet()) {
-            Product product = productService.getById(order.getKey());
-            if (product == null){
-                return new ResponseEntity<>("One or many products do not exist", HttpStatus.FORBIDDEN);
+        List<OrderDto> productOrders = purchaseApplicationDto.getOrders();
+        if(productOrders.size() == 0){
+            return new ResponseEntity<>("No cargo ordenes de compra", HttpStatus.FORBIDDEN);
+        }
+        if(productOrders.stream().anyMatch(order -> order.getProductId() <= 0 ||
+                order.getQuantity() <= 0)){
+            return new ResponseEntity<>("Alguna de las ordenes de compra contienen un valor invalido", HttpStatus.FORBIDDEN);
+        }
+//        productOrders.forEach(orderDto -> {
+//            if(orderDto.getQuantity() <= 0 || orderDto.getProductId() <= 0){
+//                return new ResponseEntity<>("Uno o muchos de los productId o cantidad de productos son invalidos", HttpStatus.FORBIDDEN);
+//            }
+//            Product product = productService.getById(orderDto.getProductId());
+//            if(product == null || product.getStock() < orderDto.getQuantity()){
+//
+//            }
+//        });
+        boolean isThereAnyInvalid = productOrders.stream().anyMatch(order ->{
+            if(order.getQuantity() <= 0 || order.getProductId() <= 0){
+                return true;
             }
-            if(product.getStock() < order.getValue()){
-                return new ResponseEntity<>("The ordered quantity of one or several products exceeds the stock of the product",
-                        HttpStatus.FORBIDDEN);
+            Product product = productService.getById(order.getProductId());
+            if(product == null || product.getStock() < order.getQuantity()){
+                return true;
             }
+            return false;
+        });
+
+        if(isThereAnyInvalid){
+            return new ResponseEntity<>("Uno o varios de los productos o cantidades son invalidos", HttpStatus.FORBIDDEN);
         }
         purchaseService.create(client,purchaseApplicationDto);
         return new ResponseEntity<>("Purchase created successfully", HttpStatus.CREATED);
