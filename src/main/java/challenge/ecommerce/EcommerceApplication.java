@@ -12,6 +12,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -26,6 +28,16 @@ public class EcommerceApplication {
 		SpringApplication.run(EcommerceApplication.class, args);
 		System.out.println("Application started :)");
 	}
+
+//	@Bean
+//	public WebMvcConfigurer corsConfiguration() {
+//		return new WebMvcConfigurer() {
+//			@Override
+//			public void addCorsMappings(CorsRegistry registry) {
+//				registry.addMapping("/*").allowedOrigins("http://localhost:8080/", "http://127.0.0.1:5500/%22").allowedMethods("").allowedHeaders("*");
+//			}
+//		};
+//	}
 
 	@Bean
 	public CommandLineRunner initData(ProductRepository productRepository, ClientRepository clientRepository) {
@@ -475,6 +487,7 @@ public class EcommerceApplication {
 					(short) 14,3000.0,"varios",
 					Category.BAZARANDTOYSHOP , "Board Games");
 			productRepository.save(product124);
+
 		};
 	}
 

@@ -651,6 +651,11 @@
         $('.checkout-login-info').slideToggle(900);
     });
     
+     /*--- checkout toggle function ----*/
+     $('.checkout-click2').on('click', function(e) {
+        e.preventDefault();
+        $('.checkout-login-info2').slideToggle(900);
+    });
     
     /*--- checkout toggle function ----*/
     $('.checkout-click3').on('click', function(e) {
