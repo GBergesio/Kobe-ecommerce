@@ -2,10 +2,13 @@ package challenge.ecommerce.controllers;
 
 import challenge.ecommerce.dtos.NewAddressDTO;
 import challenge.ecommerce.models.Address;
+import challenge.ecommerce.models.Client;
 import challenge.ecommerce.services.AddressService;
+import challenge.ecommerce.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,28 +22,29 @@ public class AddressController {
     @Autowired
     AddressService addressService;
 
+    @Autowired
+    ClientService clientService;
+
     @GetMapping("/addresses")
     ResponseEntity<?> getAddresses(){
         return new ResponseEntity<>(addressService.getAddresses(), HttpStatus.OK);
     }
 
-    //falta autorizar
     @Transactional
     @PostMapping("/newAddress")
-    ResponseEntity<Object> newAddress(@RequestBody NewAddressDTO newAddressDTO){
+    ResponseEntity<Object> newAddress(@RequestBody NewAddressDTO newAddressDTO, Authentication authentication){
+
+        Client currentClient = clientService.getCurrentClient(authentication);
 
         Pattern patOnlyLetters = Pattern.compile("^[a-zA-Z\\s+]{1,}");
 
-        Pattern lettersAndNumbers = Pattern.compile("[\\da-zA-Z\\s+]{1,6}");
+        Pattern lettersAndNumbers = Pattern.compile("[\\da-zA-Z\\s+]{0,6}");
 
         Matcher FloorApartment = lettersAndNumbers.matcher(newAddressDTO.getFloorApartment());
         Matcher locality = patOnlyLetters.matcher(newAddressDTO.getLocality());
         Matcher streetName = patOnlyLetters.matcher(newAddressDTO.getStreetName());
         Matcher province = patOnlyLetters.matcher(newAddressDTO.getProvince());
 
-        if(newAddressDTO.getFloorApartment().isEmpty()){
-            return new ResponseEntity<>("Floor Apartment is empty", HttpStatus.FORBIDDEN);
-        }
 
         if(!FloorApartment.matches()){
             return new ResponseEntity<>("This ir not a valid floor apartment", HttpStatus.FORBIDDEN);
@@ -78,10 +82,11 @@ public class AddressController {
             return new ResponseEntity<>("Not a valid Zip number", HttpStatus.FORBIDDEN);
         }
 
-
-
         Address address = new Address(newAddressDTO.getZipCode(), newAddressDTO.getStreetNumber(), newAddressDTO.getFloorApartment(), newAddressDTO.getStreetName(), newAddressDTO.getProvince(), newAddressDTO.getLocality());
         addressService.saveAddress(address);
+
+        currentClient.addAddress(address);
+        clientService.saveClient(currentClient);
 
         return new ResponseEntity<>("Address added successfully", HttpStatus.CREATED);
 

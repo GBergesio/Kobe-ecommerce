@@ -10,5 +10,9 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByCategory(Category category);
     List<Product> findBySubcategory(String subcategory);
+    List<Product> findBySerie(String serie);
+
+    boolean existsBySubcategory(String subcategory);
+    boolean existsBySerie(String serie);
 
 }

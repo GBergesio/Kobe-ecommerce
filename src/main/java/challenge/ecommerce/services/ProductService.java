@@ -5,6 +5,7 @@ import challenge.ecommerce.dtos.ProductDto;
 import challenge.ecommerce.enums.Category;
 import challenge.ecommerce.models.Product;
 
+import java.util.Arrays;
 import java.util.List;
 
 public interface ProductService {
@@ -31,4 +32,10 @@ public interface ProductService {
     void updateAll(Short percentage, String modifier);
 
     List<Product> getBySubCategory(String subcategory);
+
+    boolean existsBySerie(String serie);
+
+    List<Product> getAllBySerie(String serie);
+
+    boolean existsBySubcategory(String subcategory);
 }

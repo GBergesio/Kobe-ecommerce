@@ -28,7 +28,7 @@
 </head>
 
 <body>
-<div class="wrapper">
+<div class="wrapper" id="app">
     <header class="header-area sticky-bar">
         <div class="main-header-wrap">
             <div class="container">
@@ -405,8 +405,8 @@
                                     <a href="#dashboad" class="active" data-bs-toggle="tab"><i class="fa fa-dashboard"></i>
                                         Panel de control</a>   
                                     <a href="#orders" data-bs-toggle="tab"><i class="fa fa-cart-arrow-down"></i> Mis compras</a>    
-                                    <a href="#payment-method" data-bs-toggle="tab"><i class="fa fa-credit-card"></i>Metodos de pagos</a>    
-                                    <a href="#address-edit" data-bs-toggle="tab"><i class="fa fa-map-marker"></i> Dirección</a>    
+                                    <a href="#address-edit" data-bs-toggle="tab"><i class="fa fa-map-marker"></i> Direcciones</a>    
+                                    <a href="#new-address" data-bs-toggle="tab"><i class="fa fa-credit-card"></i> Agregar nueva direccion</a>    
                                     <a href="#account-info" data-bs-toggle="tab"><i class="fa fa-user"></i> Detalles de cuentas</a>    
                                     <a href="login-register.html"><i class="fa fa-sign-out"></i> Salir</a>
                                 </div>
@@ -420,7 +420,7 @@
                                         <div class="myaccount-content">
                                             <h3>Panel de control</h3>    
                                             <div class="welcome">
-                                                <p>Hola, <strong>Alex Tuntuni</strong> (Si no es<strong>Tuntuni !</strong><a href="login-register.html" class="logout"> Cierre la sesión</a>)</p>
+                                                <p>Hola, <strong>{{client.name + " " + client.lastName}}</strong> (Si no es <strong>{{client.name}} !</strong><a @click="logOut" class="logout"> Cierre la sesión</a>)</p>
                                             </div>
     
                                             <p class="mb-0">Desde el panel de control de su cuenta, puede comprobar y ver fácilmente sus pedidos recientes, gestionar sus direcciones de envío y facturación y editar su contraseña y los datos de su cuenta.</p>
@@ -459,7 +459,7 @@
                                     <!-- Single Tab Content End -->    
                                        
                                     <!-- Single Tab Content Start -->
-                                    <div class="tab-pane fade" id="payment-method" role="tabpanel">
+                                    <div class="tab-pane fade" id="new-address" role="tabpanel">
                                         <div class="myaccount-content">
                                             <h3>Metodos de pagos</h3>
                                             <p class="saved-message parrafoModel">Todavía no puede guardar su método de pago.</p>
@@ -469,13 +469,14 @@
                                     <!-- Single Tab Content Start -->
                                     <div class="tab-pane fade" id="address-edit" role="tabpanel">
                                         <div class="myaccount-content">
-                                            <h3>Dirección de facturación</h3>    
-                                            <address>
+                                            <h3 class="w-100">Direcciones</h3> 
+                                            <div class="d-flex" > 
+                                            <address v-for="address in addresses" class="ms-1 me-1">
                                                 <p><strong>Alex Tuntuni</strong></p>
-                                                <p>1355 Market St, Suite 900 <br>
-                                                    San Francisco, CA 94103</p>
-                                                <p>Mobile: (123) 456-7890</p>
-                                            </address>    
+                                                <p>{{address.locality + ", " +address.province}}<br>
+                                                    {{address.locality + ", " +address.province}}</p>
+                                            </address> 
+                                        </div>    
                                             <a href="#" class="check-btn sqr-btn "><i class="fa fa-edit"></i> Edit Address</a>
                                         </div>
                                     </div>
@@ -607,12 +608,19 @@
 <!-- <script src="assets/js/bootstrap.min.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!-- VUE -->
+<script src="https://unpkg.com/vue@3"></script>
 <!-- Plugins JS -->
 <script src="assets/js/plugins.js"></script>
 <!-- Ajax Mail -->
 <script src="assets/js/ajax-mail.js"></script>
+<!-- MyAccounts JS -->
+<script src="./data/myAccount.js"></script>
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
+<!-- logout -->
+<script src="./data/logOut.js"></script>
 
 </body>
 
