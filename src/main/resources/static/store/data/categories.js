@@ -3,18 +3,13 @@ const app = Vue.createApp({
         return {
             message: 'Hello Vue!',
             searchWord: "",
+            searchMessage: "",
 
             products:[],
             filteredProducts: [],
             sortType:"",
             minPrice:"",
             maxPrice:"",
-            
-            // productosFiltro1:[],
-            // productosFiltro2:[],
-            // productosShop:[],
-
-            // filteredProducts: [],
 
         }
     },
@@ -24,48 +19,54 @@ const app = Vue.createApp({
         const subcategory = urlParams.get('subcategory')
         const busqueda = urlParams.get('busqueda')
 
-
-        if (category != null) {
-            axios.get(`/api/products/category?category=` + category)
-                .then(dataAcc => {
-                    this.products = dataAcc.data
-                    this.filteredProducts = dataAcc.data
-                    console.log(this.products)
-                })
-        }
-
-        if (subcategory != null) {
-            axios.get(`/api/products/subcategory?subcategory=` + subcategory)
-                .then(dataAcc => {
-                    this.products = dataAcc.data
-                    this.filteredProducts = dataAcc.data
-                    console.log(this.products)
-                })
-        }
-
-        if (category != null) {
-            axios.get(`/api/products/category?category=` + category)
-                .then(dataAcc => {
-                    this.dataPro = dataAcc.data
-                })
-        }
-
-        if (subcategory != null) {
-            axios.get(`/api/products/subcategory?subcategory=` + subcategory)
-                .then(dataAcc => {
-                    this.dataPro = dataAcc.data
-                })
-        }
-
+        this.dynamicLoadData(category, subcategory)
     },
     methods: {
-        
+        dynamicLoadData(category, subcategory){
+            if(category == null && subcategory == null){
+                this.loadProducts(null, null)
+            }
+            else if(category != null){
+                this.loadProducts("category", category)
+            }
+            else{
+                this.loadProducts("subcategory", subcategory)
+            }
+        },
+        async loadProducts(apiFilterName, apiFilterValue){
+            try {
+                let url = `/api/products`
+                if(apiFilterValue != null){
+                    url = `/api/products/${apiFilterName}?${apiFilterName}=${apiFilterValue}`
+                }
+                const {data} = await axios.get(url)
+                this.products = data
+                this.filteredProducts = data
+
+            } catch (error) {
+              console.log(error.response.data)
+            } 
+        },
 
         //filtro por palabra
         async findMatch(){
-            if(this.searchWord != ""){
+            if(this.searchWord != "" && this.searchWord.length > 3){
                 await this.getFilteredProducts()
-                console.log(this.productsFilteredBySearch)
+            }
+            else{
+                Swal.fire({
+                    position: 'top-start',
+                    icon: 'success',
+                    width: '30%',
+                    padding: '1rem',
+                    background: '#ECC038',
+                    backdrop: false,
+                    title: 'Debes ingresar mas de 4 letras',
+                    showConfirmButton: false,
+                    toast: true,
+                    timer: 2500,
+                    timerProgressBar: true,
+                  })
             }
         },
         filterByWordSearch(products){
@@ -126,32 +127,11 @@ const app = Vue.createApp({
                 }
             }
             console.log(this.products)
-            
         },
     },
 
     
     computed: {
-        // filtroProductos(){
-        //     if(this.filter == "Default"){
-        //         this.productosFiltro1 = this.products
-        //         console.log(this.productosFiltro1);
-        //     }else if(this.filter == "ZA"){
-        //         this.productosFiltro1 = this.products.sort((a,b) => { if (a.name < b.name) { return 1 } else if (a.name > b.name) { return -1 } })
-        //         console.log(this.productosFiltro1);
-        //     }else if(this.filter == "AZ"){
-        //         this.productosFiltro1 = this.dataPro.sort((a,b) => { if (a.name > b.name) { return 1 } else if (a.name < b.name) { return -1 } })
-        //         console.log(this.productosFiltro1);
-        //     }else if(this.filter == "SMa"){
-        //         this.productosFiltro1 = this.dataPro.sort((a,b) => b.stock - a.stock)
-        //         console.log(this.productosFiltro1);
-        //     }else if(this.filter == "SMe"){
-        //         this.productosFiltro1 = this.dataPro.sort((a,b) => a.stock - b.stock)
-        //         console.log(this.productosFiltro1);
-        //     }
-        //     this.filtroPrecio(this.)
-            
-        // },
     
     }
 }).mount('#app')
