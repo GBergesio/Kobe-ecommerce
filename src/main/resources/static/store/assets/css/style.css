@@ -3980,7 +3980,7 @@ textarea:focus {
  #batmanBtn span {
   position: absolute;
   width: 100%;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 100;
   left: 50%;
   top: 39%;
@@ -3992,7 +3992,7 @@ textarea:focus {
  }
  
  #batmanBtn:hover span {
-  color: white;
+  color: black;
  }
  
  #batmanBtn:before {
@@ -4000,7 +4000,7 @@ textarea:focus {
   position: absolute;
   width: 0;
   height: 100%;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -4118,6 +4118,11 @@ textarea:focus {
   position: absolute;
   left: 40px;
   top: 30px;
+}
+
+.single-banner .banner-content-2.banner-position-5 h3{
+  color: black;
+  font-weight: bold;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

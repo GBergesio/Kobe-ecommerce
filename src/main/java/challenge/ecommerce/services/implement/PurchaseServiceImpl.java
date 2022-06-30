@@ -38,7 +38,7 @@ public class PurchaseServiceImpl implements PurchaseService {
 
         purchaseApplicationDto.getOrders().forEach(order -> {
             Product product = productService.getById(order.getProductId());
-            purchaseProductRepository.save(new PurchaseProduct(purchase, product, order.getQuantity()));
+            purchaseProductRepository.save(new PurchaseProduct(purchase, product,(int) order.getQuantity()));
             product.setStock((short)(product.getStock() - order.getQuantity()));
             productService.save(product);
         });

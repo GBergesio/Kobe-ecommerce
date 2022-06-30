@@ -5,15 +5,15 @@ import lombok.Data;
 @Data
 public class OrderDto {
     private Long productId;
-    private Integer quantity;
+    private Short quantity;
 
     public OrderDto(){}
-    public OrderDto(Long productId, Integer quantity){
+    public OrderDto(Long productId, Short quantity){
         this.productId = productId;
         this.quantity = quantity;
     }
 
-    public boolean isSomePropertuNull() {
+    public boolean isSomePropertyNull() {
         return this.productId == null || this.quantity == null;
     }
 }

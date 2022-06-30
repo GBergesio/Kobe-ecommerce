@@ -19,55 +19,44 @@ const app = Vue.createApp({
         }
     },
     created() {
-        // const urlParams = new URLSearchParams(window.location.search);
-        // const category = urlParams.get('category')
-        // const subcategory = urlParams.get('subcategory')
-        // const busqueda = urlParams.get('busqueda')
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category')
+        const subcategory = urlParams.get('subcategory')
+        const busqueda = urlParams.get('busqueda')
 
-        // if (category != null) {
-        //     axios.get(`/api/products/category?category=` + category)
-        //         .then(dataAcc => {
-        //             this.products = dataAcc.data
-        //             this.filteredProducts = dataAcc.data
-        //             console.log(this.products)
-        //         })
-        // }
 
-        // if (subcategory != null) {
-        //     axios.get(`/api/products/subcategory?subcategory=` + subcategory)
-        //         .then(dataAcc => {
-        //             this.products = dataAcc.data
-        //             this.filteredProducts = dataAcc.data
-        //             console.log(this.products)
-        //         })
-        // }
-
-        
-
-        axios.post('/api/purchases', 
-        {
-            "orders": [
-                {
-                    productId: 1,
-                    quantity: 10
-                },
-                {
-                    productId: 2,
-                    quantity: 5
-                },
-                {
-                    productId: 1,
-                    quantity: 2
-                }
-            ],
-            "address": "compra desde js",
-            "zipCode": "1010",
-            "totalAmount": 5000,
-            "typePayment": "DEBIT"
+        if (category != null) {
+            axios.get(`/api/products/category?category=` + category)
+                .then(dataAcc => {
+                    this.products = dataAcc.data
+                    this.filteredProducts = dataAcc.data
+                    console.log(this.products)
+                })
         }
-        ,{headers:{'content-type':'application/json'}}).then(data => {
-            console.log(data['data']);
-})
+
+        if (subcategory != null) {
+            axios.get(`/api/products/subcategory?subcategory=` + subcategory)
+                .then(dataAcc => {
+                    this.products = dataAcc.data
+                    this.filteredProducts = dataAcc.data
+                    console.log(this.products)
+                })
+        }
+
+        if (category != null) {
+            axios.get(`/api/products/category?category=` + category)
+                .then(dataAcc => {
+                    this.dataPro = dataAcc.data
+                })
+        }
+
+        if (subcategory != null) {
+            axios.get(`/api/products/subcategory?subcategory=` + subcategory)
+                .then(dataAcc => {
+                    this.dataPro = dataAcc.data
+                })
+        }
+
     },
     methods: {
         
@@ -139,30 +128,6 @@ const app = Vue.createApp({
             console.log(this.products)
             
         },
-
-//pago prueba
-        // async purchase(){
-        //     try {
-                
-        //       await axios.post("/api/purchases"),
-        //       {
-        //         orders: {
-        //             1: 15,
-        //             2: 7,
-        //             3: 2
-        //         },
-        //         address: "av siempre viva 123 5 A",
-        //         zipCode: "1010",
-        //         totalAmount: 5000,
-        //         typePayment: "DEBIT"
-        //     },{headers:{'content-type':'application/json'}}
-
-        //     console.log("compra hecha")
-            
-        //     } catch (error) {
-        //       console.log(error.response.data)
-        //     } 
-        // },
     },
 
     

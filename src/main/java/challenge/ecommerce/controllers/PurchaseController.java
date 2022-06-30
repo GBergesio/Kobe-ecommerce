@@ -59,8 +59,32 @@ public class PurchaseController {
         if(productOrders.size() == 0){
             return new ResponseEntity<>("No cargo ordenes de compra", HttpStatus.FORBIDDEN);
         }
-        if(productOrders.stream().anyMatch(order -> order.getProductId() <= 0 || order.getQuantity() <= 0 || order.isSomePropertuNull())){
+        if(productOrders.stream().anyMatch(order -> order.getProductId() <= 0 ||
+                order.getQuantity() <= 0)){
             return new ResponseEntity<>("Alguna de las ordenes de compra contienen un valor invalido", HttpStatus.FORBIDDEN);
+        }
+//        productOrders.forEach(orderDto -> {
+//            if(orderDto.getQuantity() <= 0 || orderDto.getProductId() <= 0){
+//                return new ResponseEntity<>("Uno o muchos de los productId o cantidad de productos son invalidos", HttpStatus.FORBIDDEN);
+//            }
+//            Product product = productService.getById(orderDto.getProductId());
+//            if(product == null || product.getStock() < orderDto.getQuantity()){
+//
+//            }
+//        });
+        boolean isThereAnyInvalid = productOrders.stream().anyMatch(order ->{
+            if(order.getQuantity() <= 0 || order.getProductId() <= 0){
+                return true;
+            }
+            Product product = productService.getById(order.getProductId());
+            if(product == null || product.getStock() < order.getQuantity()){
+                return true;
+            }
+            return false;
+        });
+
+        if(isThereAnyInvalid){
+            return new ResponseEntity<>("Uno o varios de los productos o cantidades son invalidos", HttpStatus.FORBIDDEN);
         }
         purchaseService.create(client,purchaseApplicationDto);
         return new ResponseEntity<>("Purchase created successfully", HttpStatus.CREATED);
