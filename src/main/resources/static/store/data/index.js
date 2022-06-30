@@ -78,6 +78,9 @@ const app = Vue.createApp({
     if (this.productsCartStorage) {
       this.cartStorage = this.productsCartStorage
     }
+
+
+    console.log(this.addPurchase())
   },
   mounted() {
   },
@@ -442,6 +445,36 @@ const app = Vue.createApp({
       var pdfObject = jsPDFInvoiceTemplate.default(props);
 
     },
+
+    addPurchase(){
+      let orders = []
+      if(this.cartStorage.length != 0){
+        this.cartStorage.forEach(product =>{
+          let order = {
+            productId: product.id,
+            quantity: product.quantity
+          }
+          orders.push(order)
+        })
+      }
+      return orders
+    },
+
+    createPurchase(){
+      
+      axios.post('/api/purchases', 
+        {
+            "orders": this.addPurchase(),
+            "address": `${this.shippmentAddress.newStreetName} ${this.shippmentAddress.newStreetNumber},  ${this.shippmentAddress.locality}, ${this.shippmentAddress.province}`,
+            "zipCode": this.shippmentAddress.zipCode,
+            "totalAmount": 5000,
+            "typePayment": "DEBIT"
+        }
+        ,{headers:{'content-type':'application/json'}}).then(data => {
+            console.log(data['data']);
+        })
+    },
+
     cardTransactionCredit() {
       Swal.fire({
           title: 'Do you want to do the transaction?',
