@@ -442,6 +442,28 @@ const app = Vue.createApp({
       var pdfObject = jsPDFInvoiceTemplate.default(props);
 
     },
+    cardTransactionCredit() {
+      Swal.fire({
+          title: 'Do you want to do the transaction?',
+          showDenyButton: true,
+          showCancelButton: true,
+          confirmButtonText: 'Save',
+          denyButtonText: `Don't save`,
+      }).then((result) => {
+          if (result.isConfirmed) {
+              axios.post('/api/cardTransaction', `{"cardType": "CREDIT","amount": ${this.amount},"cardNumber": "${this.cardNumber}","cardHolder": "${this.cardHolder}","cvv": "${this.cvv}","thruDate": "${this.thruDate}","description": "${this.description}","accountNumber": "${this.accountNumberFunds}"}`, { headers: { "Content-Type": "application/json" } })
+              .then(()=>
+              Swal.fire('Transfered!', '', 'success').then(() => window.location.replace("/web/Cards.html")))
+              .catch(error => {
+                  Swal.fire({
+                      icon: 'error',
+                      title: error.response.data,
+                      timer: 2000,
+                  })
+              })
+          }
+      })
+  },
 
   },
   computed: {
@@ -463,5 +485,4 @@ const app = Vue.createApp({
     },
   },
 }).mount('#app')
-
 
