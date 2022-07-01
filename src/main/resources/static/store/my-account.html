@@ -9,13 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-    
+
     <!-- CSS
 	============================================ -->
-   
+
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Icon Font CSS -->
     <link rel="stylesheet" href="assets/css/icons.min.css">
@@ -25,568 +26,651 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Modernizer JS -->
     <script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
+        <!-- Swal.fire-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
-<div class="wrapper" id="app">
-    <header class="header-area sticky-bar">
-        <div class="main-header-wrap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-2 col-lg-2">
-                        <div class="logo pt-40">
-                            <a href="index.html">
-                                <img src="assets/img/logo/logo.png" alt="">
-                            </a>
+    <div class="wrapper" id="app">
+        <header class="header-area sticky-bar">
+            <div class="main-header-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo pt-40">
+                                <a href="index.html">
+                                    <img src="assets/img/logo/logo.png" alt="">
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-7 col-lg-7 ">
-                        <div class="main-menu">
-                            <nav>
-                                <ul>
-                                    <li class=""><a href="index.html">Home</a></li>
-                                    <li class="angle-shape"><a href="#"> Categorías <span>new</span>
-                                        </a>
-                                        <ul class="mega-menu">
+                        <div class="col-xl-7 col-lg-7 ">
+                            <div class="main-menu">
+                                <nav>
+                                    <ul>
+                                        <li class=""><a href="index.html">Home</a></li>
+                                        <li class="angle-shape"><a href="#"> Categorías <span>new</span>
+                                            </a>
+                                            <ul class="mega-menu">
+                                                <li>
+                                                    <a class="menu-title"
+                                                        v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
+                                                    <ul>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a>
+                                                        </li>
+                                                        <li><a
+                                                                v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a>
+                                                        </li>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a>
+                                                        </li>
+                                                        <li><a
+                                                                v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones
+                                                                Completas</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a class="menu-title"
+                                                        v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras
+                                                        coleccionables</a>
+                                                    <ul>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko
+                                                                Pops</a></li>
+                                                        <li><a
+                                                                v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a>
+                                                        </li>
+                                                        <li><a
+                                                                v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li><a class="menu-title"
+                                                        v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y
+                                                        juegos</a>
+                                                    <ul>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos
+                                                                de
+                                                                mesa</a></li>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos
+                                                                de
+                                                                video</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a class="menu-title"
+                                                        v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
+                                                    <ul>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas
+                                                                Iphone</a>
+                                                        </li>
+                                                        <li><a
+                                                                v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a>
+                                                        </li>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse
+                                                                Pad</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact-us.html"> Contacto </a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="header-right-wrap pt-40">
+                                <div class="header-search">
+                                    <a class="search-active" href="#"><i class="sli sli-magnifier"></i></a>
+                                </div>
+                                <div class="cart-wrap">
+                                    <button class="icon-cart-active">
+                                        <span class="icon-cart">
+                                            <i class="sli sli-bag"></i>
+                                            <span class="count-style">02</span>
+                                        </span>
+                                        <span class="cart-price">
+                                            $320.00
+                                        </span>
+                                    </button>
+                                    <div class="shopping-cart-content">
+                                        <div class="shopping-cart-top">
+                                            <h4>Shoping Cart</h4>
+                                            <a class="cart-close" href="#"><i class="sli sli-close"></i></a>
+                                        </div>
+                                        <ul>
+                                            <li class="single-shopping-cart">
+                                                <div class="shopping-cart-img">
+                                                    <a href="#"><img alt="" src="assets/img/cart/cart-1.svg"></a>
+                                                    <div class="item-close">
+                                                        <a href="#"><i class="sli sli-close"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="shopping-cart-title">
+                                                    <h4><a href="#">Product Name </a></h4>
+                                                    <span>1 x 90.00</span>
+                                                </div>
+                                            </li>
+                                            <li class="single-shopping-cart">
+                                                <div class="shopping-cart-img">
+                                                    <a href="#"><img alt="" src="assets/img/cart/cart-2.svg"></a>
+                                                    <div class="item-close">
+                                                        <a href="#"><i class="sli sli-close"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="shopping-cart-title">
+                                                    <h4><a href="#">Product Name</a></h4>
+                                                    <span>1 x 90.00</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="shopping-cart-bottom">
+                                            <div class="shopping-cart-total">
+                                                <h4>Total : <span class="shop-total">$260.00</span></h4>
+                                            </div>
+                                            <div class="shopping-cart-btn btn-hover text-center">
+                                                <a class="default-btn" href="checkout.html">checkout</a>
+                                                <a class="default-btn" href="cart-page.html">view cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="setting-wrap">
+                                    <button class="setting-active">
+                                        <i class="sli sli-settings"></i>
+                                    </button>
+                                    <div class="setting-content">
+                                        <ul>
                                             <li>
-                                                <a class="menu-title"
-                                                    v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
+                                                <h4>Currency</h4>
                                                 <ul>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones Completas</a></li>
+                                                    <li><a href="#">USD</a></li>
+                                                    <li><a href="#">Euro</a></li>
+                                                    <li><a href="#">Real</a></li>
+                                                    <li><a href="#">BDT</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a class="menu-title" v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras coleccionables</a>
+                                            <li>
+                                                <h4>Language</h4>
                                                 <ul>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a></li>
+                                                    <li><a href="#">English (US)</a></li>
+                                                    <li><a href="#">English (UK)</a></li>
+                                                    <li><a href="#">Spanish</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a class="menu-title" v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y juegos</a>
+                                            <li>
+                                                <h4>Account</h4>
                                                 <ul>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de
-                                                            mesa</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de
-                                                            video</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a class="menu-title" v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
-                                                <ul>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas Iphone</a>
-                                                    </li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a>
-                                                    </li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse Pad</a>
-                                                    </li>
+                                                    <li><a href="login-register.html">Login</a></li>
+                                                    <li><a href="login-register.html">Creat Account</a></li>
+                                                    <li><a href="my-account.html">My Account</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
-                                    </li>
-                                    <li><a href="contact-us.html"> Contacto </a></li>
-                                </ul>
-                            </nav>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3">
-                        <div class="header-right-wrap pt-40">
-                            <div class="header-search">
-                                <a class="search-active" href="#"><i class="sli sli-magnifier"></i></a>
-                            </div>
-                            <div class="cart-wrap">
-                                <button class="icon-cart-active">
-                                    <span class="icon-cart">
-                                        <i class="sli sli-bag"></i>
-                                        <span class="count-style">02</span>
-                                    </span>
-                                    <span class="cart-price">
-                                        $320.00
-                                    </span>
+                </div>
+                <!-- main-search start -->
+                <div class="main-search-active">
+                    <div class="sidebar-search-icon">
+                        <button class="search-close"><span class="sli sli-close"></span></button>
+                    </div>
+                    <div class="sidebar-search-input">
+                        <form>
+                            <div class="form-search">
+                                <input id="search" class="input-text" value="" placeholder="Search Now" type="search">
+                                <button>
+                                    <i class="sli sli-magnifier"></i>
                                 </button>
-                                <div class="shopping-cart-content">
-                                    <div class="shopping-cart-top">
-                                        <h4>Shoping Cart</h4>
-                                        <a class="cart-close" href="#"><i class="sli sli-close"></i></a>
-                                    </div>
-                                    <ul>
-                                        <li class="single-shopping-cart">
-                                            <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="assets/img/cart/cart-1.svg"></a>
-                                                <div class="item-close">
-                                                    <a href="#"><i class="sli sli-close"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="shopping-cart-title">
-                                                <h4><a href="#">Product Name </a></h4>
-                                                <span>1 x 90.00</span>
-                                            </div>
-                                        </li>
-                                        <li class="single-shopping-cart">
-                                            <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="assets/img/cart/cart-2.svg"></a>
-                                                <div class="item-close">
-                                                    <a href="#"><i class="sli sli-close"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="shopping-cart-title">
-                                                <h4><a href="#">Product Name</a></h4>
-                                                <span>1 x 90.00</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="shopping-cart-bottom">
-                                        <div class="shopping-cart-total">
-                                            <h4>Total : <span class="shop-total">$260.00</span></h4>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="header-small-mobile">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <div class="mobile-logo">
+                                <a href="index.html">
+                                    <img alt="" src="assets/img/logo/logo.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="header-right-wrap">
+                                <div class="cart-wrap">
+                                    <button class="icon-cart-active">
+                                        <span class="icon-cart">
+                                            <i class="sli sli-bag"></i>
+                                            <span class="count-style">02</span>
+                                        </span>
+                                        <span class="cart-price">
+                                            $320.00
+                                        </span>
+                                    </button>
+                                    <div class="shopping-cart-content">
+                                        <div class="shopping-cart-top">
+                                            <h4>Shoping Cart</h4>
+                                            <a class="cart-close" href="#"><i class="sli sli-close"></i></a>
                                         </div>
-                                        <div class="shopping-cart-btn btn-hover text-center">
-                                            <a class="default-btn" href="checkout.html">checkout</a>
-                                            <a class="default-btn" href="cart-page.html">view cart</a>
+                                        <ul>
+                                            <li class="single-shopping-cart">
+                                                <div class="shopping-cart-img">
+                                                    <a href="#"><img alt="" src="assets/img/cart/cart-1.svg"></a>
+                                                </div>
+                                                <div class="shopping-cart-title">
+                                                    <h4><a href="#">Product Name </a></h4>
+                                                    <span>1 x 90.00</span>
+                                                </div>
+                                            </li>
+                                            <li class="single-shopping-cart">
+                                                <div class="shopping-cart-img">
+                                                    <a href="#"><img alt="" src="assets/img/cart/cart-2.svg"></a>
+                                                </div>
+                                                <div class="shopping-cart-title">
+                                                    <h4><a href="#">Product Name</a></h4>
+                                                    <span>1 x 90.00</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="shopping-cart-bottom">
+                                            <div class="shopping-cart-total">
+                                                <h4>Total : <span class="shop-total">$260.00</span></h4>
+                                            </div>
+                                            <div class="shopping-cart-btn btn-hover text-center">
+                                                <a class="default-btn" href="checkout.html">checkout</a>
+                                                <a class="default-btn" href="cart-page.html">view cart</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="setting-wrap">
-                                <button class="setting-active">
-                                    <i class="sli sli-settings"></i>
-                                </button>
-                                <div class="setting-content">
-                                    <ul>
-                                        <li>
-                                            <h4>Currency</h4>
-                                            <ul>
-                                                <li><a href="#">USD</a></li>
-                                                <li><a href="#">Euro</a></li>
-                                                <li><a href="#">Real</a></li>
-                                                <li><a href="#">BDT</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <h4>Language</h4>
-                                            <ul>
-                                                <li><a href="#">English (US)</a></li>
-                                                <li><a href="#">English (UK)</a></li>
-                                                <li><a href="#">Spanish</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <h4>Account</h4>
-                                            <ul>
-                                                <li><a href="login-register.html">Login</a></li>
-                                                <li><a href="login-register.html">Creat Account</a></li>
-                                                <li><a href="my-account.html">My Account</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <div class="mobile-off-canvas">
+                                    <a class="mobile-aside-button" href="#"><i class="sli sli-menu"></i></a>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- main-search start -->
-            <div class="main-search-active">
-                <div class="sidebar-search-icon">
-                    <button class="search-close"><span class="sli sli-close"></span></button>
-                </div>
-                <div class="sidebar-search-input">
-                    <form>
-                        <div class="form-search">
-                            <input id="search" class="input-text" value="" placeholder="Search Now" type="search">
-                            <button>
-                                <i class="sli sli-magnifier"></i>
-                            </button>
-                        </div>
+        </header>
+        <div class="mobile-off-canvas-active">
+            <a class="mobile-aside-close"><i class="sli sli-close"></i></a>
+            <div class="header-mobile-aside-wrap">
+                <div class="mobile-search">
+                    <form class="search-form" action="#">
+                        <input type="text" placeholder="Search entire store…">
+                        <button class="button-search"><i class="sli sli-magnifier"></i></button>
                     </form>
                 </div>
-            </div>
-        </div>
-        <div class="header-small-mobile">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-6">
-                        <div class="mobile-logo">
-                            <a href="index.html">
-                                <img alt="" src="assets/img/logo/logo.png">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="header-right-wrap">
-                            <div class="cart-wrap">
-                                <button class="icon-cart-active">
-                                    <span class="icon-cart">
-                                        <i class="sli sli-bag"></i>
-                                        <span class="count-style">02</span>
-                                    </span>
-                                    <span class="cart-price">
-                                        $320.00
-                                    </span>
-                                </button>
-                                <div class="shopping-cart-content">
-                                    <div class="shopping-cart-top">
-                                        <h4>Shoping Cart</h4>
-                                        <a class="cart-close" href="#"><i class="sli sli-close"></i></a>
-                                    </div>
-                                    <ul>
-                                        <li class="single-shopping-cart">
-                                            <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="assets/img/cart/cart-1.svg"></a>
-                                            </div>
-                                            <div class="shopping-cart-title">
-                                                <h4><a href="#">Product Name </a></h4>
-                                                <span>1 x 90.00</span>
-                                            </div>
+                <div class="mobile-menu-wrap">
+                    <!-- mobile menu start -->
+                    <div class="mobile-navigation">
+                        <!-- mobile menu navigation start -->
+                        <nav>
+                            <ul class="mobile-menu">
+                                <li class="menu-item-has-children"><a href="index.html">Home</a>
+                                </li>
+                                <li class="menu-item-has-children "><a href="shop.html">Categorias</a>
+                                    <ul class="dropdown">
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
+                                            <ul class="dropdown">
+                                                <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a>
+                                                </li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones
+                                                        Completas</a></li>
+                                            </ul>
                                         </li>
-                                        <li class="single-shopping-cart">
-                                            <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="assets/img/cart/cart-2.svg"></a>
-                                            </div>
-                                            <div class="shopping-cart-title">
-                                                <h4><a href="#">Product Name</a></h4>
-                                                <span>1 x 90.00</span>
-                                            </div>
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras
+                                                coleccionables</a>
+                                            <ul class="dropdown">
+                                                <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops!</a>
+                                                </li>
+                                                <li><a
+                                                        v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a>
+                                                </li>
+                                                <li><a
+                                                        v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y Juegos</a>
+                                            <ul class="dropdown">
+                                                <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de
+                                                        mesa</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de
+                                                        video</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
+                                            <ul class="dropdown">
+                                                <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas
+                                                        Iphone</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a>
+                                                </li>
+                                            </ul>
                                         </li>
                                     </ul>
-                                    <div class="shopping-cart-bottom">
-                                        <div class="shopping-cart-total">
-                                            <h4>Total : <span class="shop-total">$260.00</span></h4>
-                                        </div>
-                                        <div class="shopping-cart-btn btn-hover text-center">
-                                            <a class="default-btn" href="checkout.html">checkout</a>
-                                            <a class="default-btn" href="cart-page.html">view cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mobile-off-canvas">
-                                <a class="mobile-aside-button" href="#"><i class="sli sli-menu"></i></a>
-                            </div>
+                                </li>
+                                <li class="menu-item-has-children"><a href="#">Páginas</a>
+                                    <ul class="dropdown">
+                                        <li><a href="about-us.html">Sobre nosotros</a></li>
+                                        <li><a href="cart-page.html">Carrito</a></li>
+                                        <li><a href="checkout.html">Checkout </a></li>
+                                        <li><a href="my-account.html">Mi cuenta</a></li>
+                                        <li><a href="contact-us.html">Contáctenos</a></li>
+                                        <li><a href="login-register.html">login/registro</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact-us.html">Contáctenos</a></li>
+                            </ul>
+                        </nav>
+                        <!-- mobile menu navigation end -->
+                    </div>
+                    <!-- mobile menu end -->
+                </div>
+                <div class="mobile-curr-lang-wrap">
+                    <div class="single-mobile-curr-lang">
+                        <a class="mobile-language-active" href="#">Language <i class="sli sli-arrow-down"></i></a>
+                        <div class="lang-curr-dropdown lang-dropdown-active">
+                            <ul>
+                                <li><a href="#">English (US)</a></li>
+                                <li><a href="#">English (UK)</a></li>
+                                <li><a href="#">Spanish</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="single-mobile-curr-lang">
+                        <a class="mobile-currency-active" href="#">Currency <i class="sli sli-arrow-down"></i></a>
+                        <div class="lang-curr-dropdown curr-dropdown-active">
+                            <ul>
+                                <li><a href="#">USD</a></li>
+                                <li><a href="#">EUR</a></li>
+                                <li><a href="#">Real</a></li>
+                                <li><a href="#">BDT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="single-mobile-curr-lang">
+                        <a class="mobile-account-active" href="#">My Account <i class="sli sli-arrow-down"></i></a>
+                        <div class="lang-curr-dropdown account-dropdown-active">
+                            <ul>
+                                <li><a href="login-register.html">Login</a></li>
+                                <li><a href="login-register.html">Creat Account</a></li>
+                                <li><a href="my-account.html">My Account</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+                <div class="mobile-social-wrap">
+                    <a class="facebook" href="#"><i class="sli sli-social-facebook"></i></a>
+                    <a class="twitter" href="#"><i class="sli sli-social-twitter"></i></a>
+                    <a class="pinterest" href="#"><i class="sli sli-social-pinterest"></i></a>
+                    <a class="instagram" href="#"><i class="sli sli-social-instagram"></i></a>
+                    <a class="google" href="#"><i class="sli sli-social-google"></i></a>
+                </div>
             </div>
         </div>
-    </header>
-    <div class="mobile-off-canvas-active">
-        <a class="mobile-aside-close"><i class="sli sli-close"></i></a>
-        <div class="header-mobile-aside-wrap">
-            <div class="mobile-search">
-                <form class="search-form" action="#">
-                    <input type="text" placeholder="Search entire store…">
-                    <button class="button-search"><i class="sli sli-magnifier"></i></button>
-                </form>
-            </div>
-            <div class="mobile-menu-wrap">
-                <!-- mobile menu start -->
-                <div class="mobile-navigation">
-                    <!-- mobile menu navigation start -->
-                    <nav>
-                        <ul class="mobile-menu">
-                            <li class="menu-item-has-children"><a href="index.html">Home</a>
-                            </li>
-                            <li class="menu-item-has-children "><a href="shop.html">Categorias</a>
-                                <ul class="dropdown">
-                                    <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
-                                        <ul class="dropdown">
-                                            <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones Completas</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras coleccionables</a>
-                                        <ul class="dropdown">
-                                            <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops!</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y Juegos</a>
-                                        <ul class="dropdown">
-                                            <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de mesa</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de video</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
-                                        <ul class="dropdown">
-                                            <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas Iphone</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="#">Páginas</a>
-                                <ul class="dropdown">
-                                    <li><a href="about-us.html">Sobre nosotros</a></li>
-                                    <li><a href="cart-page.html">Carrito</a></li>
-                                    <li><a href="checkout.html">Checkout </a></li>
-                                    <li><a href="my-account.html">Mi cuenta</a></li>
-                                    <li><a href="contact-us.html">Contáctenos</a></li>
-                                    <li><a href="login-register.html">login/registro</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact-us.html">Contáctenos</a></li>
-                        </ul>
-                    </nav>
-                    <!-- mobile menu navigation end -->
+        <div class="breadcrumb-area pt-35 pb-35 bg-gray">
+            <div class="container">
+                <div class="breadcrumb-content text-center">
+                    <ul>
+                        <li>
+                            <a href="index.html" class="parrafoModel">Home</a>
+                        </li>
+                        <li class="active">My account </li>
+                    </ul>
                 </div>
-                <!-- mobile menu end -->
-            </div>
-            <div class="mobile-curr-lang-wrap">
-                <div class="single-mobile-curr-lang">
-                    <a class="mobile-language-active" href="#">Language <i class="sli sli-arrow-down"></i></a>
-                    <div class="lang-curr-dropdown lang-dropdown-active">
-                        <ul>
-                            <li><a href="#">English (US)</a></li>
-                            <li><a href="#">English (UK)</a></li>
-                            <li><a href="#">Spanish</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="single-mobile-curr-lang">
-                    <a class="mobile-currency-active" href="#">Currency <i class="sli sli-arrow-down"></i></a>
-                    <div class="lang-curr-dropdown curr-dropdown-active">
-                        <ul>
-                            <li><a href="#">USD</a></li>
-                            <li><a href="#">EUR</a></li>
-                            <li><a href="#">Real</a></li>
-                            <li><a href="#">BDT</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="single-mobile-curr-lang">
-                    <a class="mobile-account-active" href="#">My Account <i class="sli sli-arrow-down"></i></a>
-                    <div class="lang-curr-dropdown account-dropdown-active">
-                        <ul>
-                            <li><a href="login-register.html">Login</a></li>
-                            <li><a href="login-register.html">Creat Account</a></li>
-                            <li><a href="my-account.html">My Account</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="mobile-social-wrap">
-                <a class="facebook" href="#"><i class="sli sli-social-facebook"></i></a>
-                <a class="twitter" href="#"><i class="sli sli-social-twitter"></i></a>
-                <a class="pinterest" href="#"><i class="sli sli-social-pinterest"></i></a>
-                <a class="instagram" href="#"><i class="sli sli-social-instagram"></i></a>
-                <a class="google" href="#"><i class="sli sli-social-google"></i></a>
             </div>
         </div>
-    </div>
-    <div class="breadcrumb-area pt-35 pb-35 bg-gray">
-        <div class="container">
-            <div class="breadcrumb-content text-center">
-                <ul>
-                    <li>
-                        <a href="index.html" class="parrafoModel">Home</a>
-                    </li>
-                    <li class="active">My account </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- my account wrapper start -->
-    <div class="my-account-wrapper pt-100 pb-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- My Account Page Start -->
-                    <div class="myaccount-page-wrapper">
-                        <!-- My Account Tab Menu Start -->
-                        <div class="row">
-                            <div class="col-lg-3 col-md-4">
-                                <div class="myaccount-tab-menu nav" role="tablist">
-                                    <a href="#dashboad" class="active" data-bs-toggle="tab"><i class="fa fa-dashboard"></i>
-                                        Panel de control</a>   
-                                    <a href="#orders" data-bs-toggle="tab"><i class="fa fa-cart-arrow-down"></i> Mis compras</a>    
-                                    <a href="#address-edit" data-bs-toggle="tab"><i class="fa fa-map-marker"></i> Direcciones</a>    
-                                    <a href="#new-address" data-bs-toggle="tab"><i class="fa fa-credit-card"></i> Agregar nueva direccion</a>    
-                                    <a href="#account-info" data-bs-toggle="tab"><i class="fa fa-user"></i> Detalles de cuentas</a>    
-                                    <a href="login-register.html"><i class="fa fa-sign-out"></i> Salir</a>
+        <!-- my account wrapper start -->
+        <div class="my-account-wrapper pt-100 pb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- My Account Page Start -->
+                        <div class="myaccount-page-wrapper">
+                            <!-- My Account Tab Menu Start -->
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4">
+                                    <div class="myaccount-tab-menu nav" role="tablist">
+                                        <a href="#dashboad" class="active" data-bs-toggle="tab"><i
+                                                class="fa fa-dashboard"></i>
+                                            Panel de control</a>
+                                        <a href="#orders" data-bs-toggle="tab"><i class="fa fa-cart-arrow-down"></i> Mis
+                                            compras</a>
+                                        <a href="#address-edit" data-bs-toggle="tab"><i class="fa fa-map-marker"></i>
+                                            Direcciones</a>
+                                        <a href="#new-address" data-bs-toggle="tab"><i class="fa fa-credit-card"></i>
+                                            Agregar nueva direccion</a>
+                                        <a href="#account-info" data-bs-toggle="tab"><i class="fa fa-user"></i> Editar datos
+                                            de la cuenta</a>
+                                        <a href="login-register.html"><i class="fa fa-sign-out"></i> Salir</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- My Account Tab Menu End -->    
-                            <!-- My Account Tab Content Start -->
-                            <div class="col-lg-9 col-md-8">
-                                <div class="tab-content" id="myaccountContent">
-                                    <!-- Single Tab Content Start -->
-                                    <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
-                                        <div class="myaccount-content">
-                                            <h3>Panel de control</h3>    
-                                            <div class="welcome">
-                                                <p>Hola, <strong>{{client.name + " " + client.lastName}}</strong> (Si no es <strong>{{client.name}} !</strong><a @click="logOut" class="logout"> Cierre la sesión</a>)</p>
-                                            </div>
-    
-                                            <p class="mb-0">Desde el panel de control de su cuenta, puede comprobar y ver fácilmente sus pedidos recientes, gestionar sus direcciones de envío y facturación y editar su contraseña y los datos de su cuenta.</p>
-                                        </div>
-                                    </div>
-                                    <!-- Single Tab Content End -->    
-                                    <!-- Single Tab Content Start -->
-                                    <div class="tab-pane fade" id="orders" role="tabpanel">
-                                        <div class="myaccount-content">
-                                            <h3>Mis compras </h3>    
-                                            <div class="myaccount-table table-responsive text-center">
-                                                <table class="table table-bordered">
-                                                    <thead class="thead-light">
-                                                        <tr>
-                                                            <th>n° de Orden</th>
-                                                            <th>A entregar/entregado</th>
-                                                            <th>Estadp</th>
-                                                            <th>Total</th>
-                                                            <th>Ver compra</th>
-                                                        </tr>
-                                                    </thead>    
-                                                    <tbody>
-                                                        <!--v-for de compras ya hechas 1,id 2,dia 3,estado del envia y despues de un dia ponga como entregado 4,total que abono 5,boton de descarga de pdf  --> 
-                                                        <tr>
-                                                            <td class="text-light">1</td>
-                                                            <td class="text-light">Aug 22, 2018</td>
-                                                            <td class="text-light">Pending</td>
-                                                            <td class="text-light">$3000</td>
-                                                            <td class="text-light"><a href="#" class="check-btn sqr-btn ">View</a></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                <!-- My Account Tab Menu End -->
+                                <!-- My Account Tab Content Start -->
+                                <div class="col-lg-9 col-md-8">
+                                    <div class="tab-content" id="myaccountContent">
+                                        <!-- Single Tab Content Start -->
+                                        <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
+                                            <div class="myaccount-content">
+                                                <h3>Panel de control</h3>
+                                                <div class="welcome">
+                                                    <p>Hola, <strong>{{client.name + " " + client.lastName}}</strong>
+                                                        (Si no es <strong>{{client.name}} !</strong><a @click="logOut"
+                                                            class="logout"> Cierre la sesión</a>)</p>
+                                                </div>
+
+                                                <p class="mb-0">Desde el panel de control de su cuenta, puede comprobar
+                                                    y ver fácilmente sus pedidos recientes, gestionar sus direcciones de
+                                                    envío y facturación y editar su contraseña y los datos de su cuenta.
+                                                </p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- Single Tab Content End -->    
-                                       
-                                    <!-- Single Tab Content Start -->
-                                    <div class="tab-pane fade" id="new-address" role="tabpanel">
-                                        <div class="myaccount-content">
-                                            <h3>Metodos de pagos</h3>
-                                            <p class="saved-message parrafoModel">Todavía no puede guardar su método de pago.</p>
+                                        <!-- Single Tab Content End -->
+                                        <!-- Single Tab Content Start -->
+                                        <div class="tab-pane fade" id="orders" role="tabpanel">
+                                            <div class="myaccount-content">
+                                                <h3>Mis compras </h3>
+                                                <div class="myaccount-table table-responsive text-center">
+                                                    <table class="table table-bordered">
+                                                        <thead class="thead-light">
+                                                            <tr>
+                                                                <th>n° de Compra</th>
+                                                                <th>Fecha</th>
+                                                                <th>Direccion de envio</th>
+                                                                <th>Total</th>
+                                                                <th>Ver compra</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <!--v-for de compras ya hechas 1,id 2,dia 3,estado del envia y despues de un dia ponga como entregado 4,total que abono 5,boton de descarga de pdf  -->
+                                                            <tr v-for="(purchase,index) in purchases">
+                                                                <td class="text-light">{{index + 1}}</td>
+                                                                <td class="text-light">{{purchase.purchaseDate.slice(0,10) + " " + purchase.purchaseDate.slice(11,16)}}</td>
+                                                                <td class="text-light">{{purchase.address}}</td>
+                                                                <td class="text-light">{{purchase.totalAmount}}</td>
+                                                                <td class="text-light"><a href="#"
+                                                                        class="check-btn sqr-btn ">View</a></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- Single Tab Content End -->    
-                                    <!-- Single Tab Content Start -->
-                                    <div class="tab-pane fade" id="address-edit" role="tabpanel">
-                                        <div class="myaccount-content">
-                                            <h3 class="w-100">Direcciones</h3> 
-                                            <div class="d-flex" > 
-                                            <address v-for="address in addresses" class="ms-1 me-1">
-                                                <p><strong>Alex Tuntuni</strong></p>
-                                                <p>{{address.locality + ", " +address.province}}<br>
-                                                    {{address.locality + ", " +address.province}}</p>
-                                            </address> 
-                                        </div>    
-                                            <a href="#" class="check-btn sqr-btn "><i class="fa fa-edit"></i> Edit Address</a>
+                                        <!-- Single Tab Content End -->
+
+                                        <!-- Single Tab Content Start -->
+                                        <div class="tab-pane fade" id="new-address" role="tabpanel">
+                                            <form class="myaccount-content" @submit.prevent="addAddress">
+                                                <h3>Nueva Direccion</h3>
+                                                <div class="d-flex  ">
+                                                <fieldset class="d-flex gap-3 flex-wrap m-0">
+                                                    <label class="m-1 d-flex flex-column text-white"> Código postal:
+                                                        <input type="number" style="height: 30px; width: 200px;" v-model="codigoPostal" required>
+                                                    </label>
+                                                    <label class="m-1 d-flex flex-column text-white"> Provincia:
+                                                        <select name="" id="" style="height: 30px; width: 200px;" v-model="provincia" required>
+                                                            <option :value="provincia"
+                                                                v-for="provincia in provincias.sort()">{{provincia}}
+                                                            </option>
+                                                        </select>
+                                                    </label>
+                                                    <label class="m-1 d-flex flex-column text-white"> Localidad:
+                                                        <input type="text" style="height: 30px; width: 200px;" v-model="localidad" required>
+                                                    </label>
+                                                    <label class="m-1 d-flex flex-column text-white"> Calle:
+                                                        <input type="text" style="height: 30px; width: 200px;" v-model="calle" required>
+                                                    </label>
+                                                    <label class="m-1 d-flex flex-column text-white"> Número
+                                                        <input type="number" style="height: 30px; width: 200px;" v-model="numero" required>
+                                                    </label>
+                                                    <label class="m-1 d-flex flex-column text-white"> Apartamento:
+                                                        <input type="text" style="height: 30px; width: 200px;" v-model="apartamento">
+                                                    </label>
+                                                </fieldset>
+                                                <button type="submit" class="align-self-center btnAdd" @submit="addAddress">Añadir</button>
+                                            </div>
+                                            </form>
                                         </div>
-                                    </div>
-                                    <!-- Single Tab Content End -->    
-                                    <!-- Single Tab Content Start -->
-                                    <div class="tab-pane fade" id="account-info" role="tabpanel">
-                                        <div class="myaccount-content">
-                                            <h3>Detalles de cuentas </h3>    
-                                            <div class="account-details-form">
-                                                <form action="#">
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="single-input-item">
-                                                                <label for="first-name" class="required ">Primer nombre</label>
-                                                                <input type="text" class="text-light" id="first-name" />
-                                                            </div>
-                                                        </div>   
-                                                        <div class="col-lg-6">
-                                                            <div class="single-input-item">
-                                                                <label for="last-name" class="required">Segundo nombre</label>
-                                                                <input type="text" id="last-name" class="text-light"/>
-                                                            </div>
-                                                        </div>
-                                                    </div>    
-                                                    <div class="single-input-item">
-                                                        <label for="display-name" class="required">Nombre de usuario</label>
-                                                        <input type="text" id="display-name" class="text-light" />
-                                                    </div>    
-                                                    <div class="single-input-item">
-                                                        <label for="email" class="required">Dirección de mail</label>
-                                                        <input type="email" id="email" class="text-light"/>
-                                                    </div>    
-                                                    <fieldset>
-                                                        <legend>Cambio de contraseña</legend>
-                                                        <div class="single-input-item">
-                                                            <label for="current-pwd" class="required">Contraseña actual</label>
-                                                            <input type="password" id="current-pwd" class="text-light"/>
-                                                        </div>   
+                                        <!-- Single Tab Content End -->
+                                        <!-- Single Tab Content Start -->
+                                        <div class="tab-pane fade" id="address-edit" role="tabpanel">
+                                            <div class="myaccount-content">
+                                                <h3 class="w-100">Direcciones</h3>
+                                                <div class="d-flex">
+                                                    <address v-for="(address, index) in addresses" :key="index"
+                                                        class="ms-1 me-3">
+                                                        <h6>Direccion {{index + 1}}</h6>
+                                                        <p><span class="text-uppercase">{{address.locality + ", " +
+                                                                address.province}}</span><br>
+                                                            {{ address.streetName + " " + address.streetNumber + " " +
+                                                            address.floorApartment}}</p>
+                                                        <p></p>
+                                                    </address>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Single Tab Content End -->
+                                        <!-- Single Tab Content Start -->
+                                        <div class="tab-pane fade" id="account-info" role="tabpanel">
+                                            <div class="myaccount-content">
+                                                <h3  class="text-white">Datos relevantes </h3>
+                                                <div class="account-details-form">
+                                                    <form action="#">
                                                         <div class="row">
                                                             <div class="col-lg-6">
                                                                 <div class="single-input-item">
-                                                                    <label for="new-pwd" class="required">Nueva contraseña</label>
-                                                                    <input type="password" id="new-pwd" class="text-light"/>
-                                                                </div>
-                                                            </div>    
-                                                            <div class="col-lg-6">
-                                                                <div class="single-input-item">
-                                                                    <label for="confirm-pwd" class="required">Confirmar contraseña</label>
-                                                                    <input type="password" id="confirm-pwd" class="text-light"/>
+                                                                    <label for="first-name" class="required ">Número de telefono</label>
+                                                                    <input type="text" class="text-light"
+                                                                        id="first-name" />
                                                                 </div>
                                                             </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="single-input-item">
+                                                                    <label for="last-name" class="required">Documento (DNI)</label>
+                                                                    <input type="text" id="last-name"
+                                                                        class="text-light" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="single-input-item">
+                                                                <button class="check-btn sqr-btn ">Guardar</button>
+                                                            </div>
                                                         </div>
-                                                    </fieldset>
-                                                    <div class="single-input-item">
-                                                        <button class="check-btn sqr-btn ">Save Changes</button>
-                                                    </div>
-                                                </form>
+                                                        <fieldset>
+                                                            <legend><h3 class="text-white">Reestablecer  contraseña</h3></legend>
+                                                            <div class="single-input-item">
+                                                                <label for="current-pwd" class="required">Contraseña
+                                                                    actual</label>
+                                                                <input type="password" id="current-pwd"
+                                                                    class="text-light" />
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-lg-6">
+                                                                    <div class="single-input-item">
+                                                                        <label for="new-pwd" class="required">Nueva
+                                                                            contraseña</label>
+                                                                        <input type="password" id="new-pwd"
+                                                                            class="text-light" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <div class="single-input-item">
+                                                                        <label for="confirm-pwd"
+                                                                            class="required">Confirmar
+                                                                            contraseña</label>
+                                                                        <input type="password" id="confirm-pwd"
+                                                                            class="text-light" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                        <div class="single-input-item">
+                                                            <button class="check-btn sqr-btn ">Reestablecer</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div> <!-- Single Tab Content End -->
-                                </div>
-                            </div> <!-- My Account Tab Content End -->
-                        </div>
-                    </div> <!-- My Account Page End -->
+                                        </div> <!-- Single Tab Content End -->
+                                    </div>
+                                </div> <!-- My Account Tab Content End -->
+                            </div>
+                        </div> <!-- My Account Page End -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- my account wrapper end -->
-    <footer class="footer-area bg-paleturquoise">
-        <div class="container">
-            <div class="footer-top text-center pt-45 pb-45">
-                <nav>
-                    <ul>
-                        <li><a href="#">Home </a></li>
-                        <li><a href="#">Shop </a></li>
-                        <li><a href="#">Accessories  </a></li>
-                        <li><a href="#">Contact </a></li>
-                        <li><a href="#">About </a></li>
-                        <li><a href="#">Blog </a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="footer-bottom border-top-1 pt-20">
+        <!-- my account wrapper end -->
+        <footer class="footer-area bg-paleturquoise">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-5 col-12">
-                        <div class="footer-social pb-20">
-                            <a href="#">Facebok</a>
-                            <a href="#">Twitter</a>
-                            <a href="#">Linkedin</a>
-                            <a href="#">Instagram</a>
+                <div class="footer-top text-center pt-45 pb-45">
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home </a></li>
+                            <li><a href="#">Shop </a></li>
+                            <li><a href="#">Accessories </a></li>
+                            <li><a href="#">Contact </a></li>
+                            <li><a href="#">About </a></li>
+                            <li><a href="#">Blog </a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom border-top-1 pt-20">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 col-md-5 col-12">
+                            <div class="footer-social pb-20">
+                                <a href="#">Facebok</a>
+                                <a href="#">Twitter</a>
+                                <a href="#">Linkedin</a>
+                                <a href="#">Instagram</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <div class="copyright text-center pb-20">
-                            <p>Copyright © All Right Reserved</p>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="copyright text-center pb-20">
+                                <p>Copyright © All Right Reserved</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-3 col-12">
-                        <div class="payment-mathod pb-20">
-                            <a href="#"><img src="assets/img/icon-img/payment.png" alt=""></a>
+                        <div class="col-lg-4 col-md-3 col-12">
+                            <div class="payment-mathod pb-20">
+                                <a href="#"><img src="assets/img/icon-img/payment.png" alt=""></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-</div>
+        </footer>
+    </div>
 
 
 
@@ -597,30 +681,32 @@
 
 
 
-<!-- All JS is here
+    <!-- All JS is here
 ============================================ -->
 
-<!-- jQuery JS -->
-<script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-<!-- Popper JS -->
-<script src="assets/js/popper.min.js"></script>
-<!-- Bootstrap JS -->
-<!-- <script src="assets/js/bootstrap.min.js"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- jQuery JS -->
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- Popper JS -->
+    <script src="assets/js/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <!-- <script src="assets/js/bootstrap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<!-- VUE -->
-<script src="https://unpkg.com/vue@3"></script>
-<!-- Plugins JS -->
-<script src="assets/js/plugins.js"></script>
-<!-- Ajax Mail -->
-<script src="assets/js/ajax-mail.js"></script>
-<!-- MyAccounts JS -->
-<script src="./data/myAccount.js"></script>
-<!-- Main JS -->
-<script src="assets/js/main.js"></script>
-<!-- logout -->
-<script src="./data/logOut.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- VUE -->
+    <script src="https://unpkg.com/vue@3"></script>
+    <!-- Plugins JS -->
+    <script src="assets/js/plugins.js"></script>
+    <!-- Ajax Mail -->
+    <script src="assets/js/ajax-mail.js"></script>
+    <!-- MyAccounts JS -->
+    <script src="./data/myAccount.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+    <!-- logout -->
+    <script src="./data/logOut.js"></script>
 
 </body>
 
