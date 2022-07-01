@@ -492,8 +492,8 @@ const app = Vue.createApp({
         },
         contact: {
           label: "Factura para:",
-          name: this.currentClient.name,
-          lastName: this.currentClient.lastName,
+          name: `${this.currentClient.name} ${this.currentClient.lastName}`,
+          lastName: "",
           address: `${this.shippmentAddress.streetName} ${this.shippmentAddress.streetNumber},  ${this.shippmentAddress.locality}, ${this.shippmentAddress.province}`,
           phone: this.contactNumber,
           email: this.contactEmail,
@@ -605,7 +605,7 @@ const app = Vue.createApp({
         denyButtonText: `Cancelar`,
       }).then((result) => {
         if (this.currentClient != "") {
-          if (true) {
+            console.log(this.cardType);
             if (result.isConfirmed) {
               axios
                 .post(
@@ -641,13 +641,13 @@ const app = Vue.createApp({
                   });
                 });
             }
-          } else {
-            Swal.fire({
-              title: "No hay mas stock de este producto",
-              showDenyButton: true,
-              denyButtonText: `Cerrar`,
-            });
-          }
+          // else {
+          //   Swal.fire({
+          //     title: "No hay mas stock de este producto",
+          //     showDenyButton: true,
+          //     denyButtonText: `Cerrar`,
+          //   });
+          // }
         } else {
           Swal.fire({
             title: "Debes estar logueado para hacer una compra",
