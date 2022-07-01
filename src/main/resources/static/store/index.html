@@ -46,7 +46,7 @@
                                 <div class="main-menu">
                                     <nav>
                                         <ul>
-                                            <li class=""><a href="index.html">Home</a></li>
+                                            <li class=""><a href="index.html">Inicio</a></li>
                                             <li class="angle-shape"><a href="#"> Categorías <span>new</span>
                                                 </a>
                                                 <ul class="mega-menu">
@@ -186,18 +186,23 @@
                                     </div>
                                     <div class="setting-wrap">
                                         <button class="setting-active">
-                                            <i class="sli sli-settings"></i>
+                                            <i class="sli sli-user"></i>
                                         </button>
                                         <div class="setting-content">
                                             <ul>
                                                 <li>
                                                     <h4>Cuenta</h4>
-                                                    <ul>
-                                                        <li><a href="login-register.html">Crear Cuenta</a></li>
+                                                    <ul v-if="currentClient.active == true">
+                                                        <li class="pt-3"><a href="login-register.html">Crear Cuenta</a></li>
+                                                        <li><a href="my-account.html">Mi cuenta</a></li>
+                                                        <li><a @click="logOut" >Logout</a></li>
+                                                    </ul>
+                                                    <ul v-else>
+                                                        <li class="pt-3"><a href="login-register.html">Crear Cuenta</a></li>
                                                         <li><a href="my-account.html">Mi cuenta</a></li>
                                                         <li><a href="login-register.html">Login</a></li>
-                                                        <li><a @click="logOut">Logout</a></li>
                                                     </ul>
+
                                                 </li>
                                             </ul>
                                         </div>
@@ -321,7 +326,7 @@
                             <!-- mobile menu navigation start -->
                             <nav>
                                 <ul class="mobile-menu">
-                                    <li class="menu-item-has-children"><a href="index.html">Home</a>
+                                    <li class="menu-item-has-children"><a href="index.html">Inicio</a>
                                     </li>
                                     <li class="menu-item-has-children "><a href="shop.html">Categorias</a>
                                         <ul class="dropdown">
@@ -500,8 +505,8 @@
                                 <a v-bind:href="'shop.html?subcategory=Mouse Pad'"><img class="animated"
                                         src="assets/img/banner/stickers2.png" alt=""></a>
                                 <div class="banner-content banner-position-2">
-                                    <h3 id="h3Banner2">35% off Lunes y miércoles</h3>
-                                    <h2>Stickers <br>y pegatinas</h2>
+                                    <h3 id="h3Banner2 pb-15">Mouse Pad personalizados</h3>
+                                    <!-- <h2>Stickers <br>y pegatinas</h2> -->
                                     <a v-bind:href="'shop.html?subcategory=Mouse Pad'" style="background-color: red;">Ver productos</a>
                                 </div>
                             </div>
@@ -533,7 +538,7 @@
                             <h4>Fundas</h4>
                         </a>
                         <a href="#product-3" data-bs-toggle="tab">
-                            <h4>Mangas</h4>
+                            <h4>Mouse pad</h4>
                         </a>
                     </div>
                     <div class="tab-content jump-2">
@@ -666,7 +671,7 @@
                                                 </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="funda.stock <= 5">
-                                                        <span class="newLow">${{(funda.lowStockPrice).toFixed(2)}}</span>
+                                                        <span class="newLow2">${{(funda.lowStockPrice).toFixed(2)}}</span>
                                                         <span class="old">${{funda.price}}</span>
                                                     </div>
                                                     <div v-show="funda.stock > 5">
@@ -747,7 +752,7 @@
                                                 </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="manga.stock <= 5">
-                                                        <span class="newLow">${{manga.lowStockPrice}}</span>
+                                                        <span class="newLow2">${{manga.lowStockPrice}}</span>
                                                         <span class="old">${{manga.price}}</span>
                                                     </div>
                                                     <div v-show="manga.stock > 5">
@@ -948,12 +953,12 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a :href="'shop.html?serie=DCComics'"><img class="animated"
+                                <a :href="'shop.html?serie=DC'"><img class="animated"
                                         src="assets/img/banner/dcComics.png" alt=""></a>
                                 <div class="banner-content banner-position-6">
                                     <h2>DC COMICS</h2>
                                     <!-- <a :href="'shop.html?serie=DCComics'">Ver productos</a> -->
-                                    <a :href="'shop.html?serie=DCComics'" class="batmanA">
+                                    <a :href="'shop.html?serie=DC'" class="batmanA">
                                         <button id="batmanBtn">
                                             <span>Ver productos</span>
                                         </button>
@@ -1010,7 +1015,7 @@
                     <div class="footer-top text-center pt-45 pb-45">
                         <nav>
                             <ul>
-                                <li><a href="index.html">Index </a></li>
+                                <li><a href="index.html">Inicio </a></li>
                                 <li><a href="shop.html">Shop</a></li>
                                 <li><a href="contact-us.html">Contacto</a></li>
                                 <li><a href="about-us.html">Sobre nosotros</a></li>
@@ -1054,7 +1059,7 @@
                             <div class="row">
                                 <div class="col-md-5 col-sm-12 col-xs-12">
                                     <div class="tab-content quickview-big-img">
-                                        <div :id="pro-1" class="tab-pane fade show active">
+                                        <div id="pro-1" class="tab-pane fade show active">
                                             <img :src="productSelect.img" :alt="productSelect.name">
                                         </div>
                                         <div id="pro-2" class="tab-pane fade" v-show="productSelect.imgSec != ''">
@@ -1077,7 +1082,7 @@
                                     <div class="product-details-content quickview-content">
                                         <h2>{{productSelect.name}}</h2>
                                         <div class="product-details-price" v-show="productSelect.stock <=5">
-                                            <span class="new">${{productSelect.lowStockPrice}}</span>
+                                            <span class="new">${{(productSelect.lowStockPrice)}}</span>
                                             <span class="oldModal">${{productSelect.price}}</span>
                                             <span class="text-success">{{offMessage}}</span>
                                         </div>
@@ -1109,7 +1114,7 @@
                                                 <a @click="addProductCartModal(productSelect)">Agregar al carrito</a>
                                             </div>
                                             <div class="pro-details-wishlist">
-                                                <a title="Add To Wishlist" href="#"><i class="sli sli-heart"></i></a>
+                                                <a title="Add To Wishlist" href="#"  @click="addProductFav(product)"><i class="sli sli-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="pro-details-meta">
@@ -1159,8 +1164,6 @@
     <script src="./data/index.js"></script>
     <!-- Main JS JQUERY-->
     <script src="assets/js/main.js"></script>
-    <!-- logout -->
-    <script src="./data/logOut.js"></script>
 </body>
 
 </html>

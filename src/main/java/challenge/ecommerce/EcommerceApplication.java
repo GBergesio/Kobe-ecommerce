@@ -145,13 +145,13 @@ public class EcommerceApplication {
 			productRepository.save(product21);
 			Product product22 = new Product("Marvel Series - Iron Man","Funda edición Marvel para Iphone","https://i.ibb.co/603h0hL/0525968ee93a59b56b41517b7ceddedcf9c3cbb5-original.jpg","https://i.ibb.co/4YHG0Fd/avengers-endgame-iron-man-tony-stark-crop1619139044711-jpg-33663383.jpg", (short)15, 1999.0,"Marvel", Category.ACCESSORIES, "Iphone Cases");
 			productRepository.save(product22);
-			Product product23 = new Product("Marvel Series - Thor","Funda edición Marvel para Iphone","https://i.ibb.co/6FwyFvk/images-q-tbn-ANd9-Gc-Te-ELnsjkpa-L-TNs-Mtudxfa-L5-Z7f-RFgsd55-Ax-H1x-ZHNJPf-Mx-Aw3-LDc4-VTKr-A-u-G5x.jpg","https://i.ibb.co/TgQHRdF/D-NQ-NP-2-X-628203-MLA45669767978-042021-F.webp", (short) 1,6999.0,"Marvel",  Category.ACCESSORIES , "Iphone Cases");
+			Product product23 = new Product("Marvel Series - Thor","Funda edición Marvel para Iphone","https://i.ibb.co/6FwyFvk/images-q-tbn-ANd9-Gc-Te-ELnsjkpa-L-TNs-Mtudxfa-L5-Z7f-RFgsd55-Ax-H1x-ZHNJPf-Mx-Aw3-LDc4-VTKr-A-u-G5x.jpg","https://i.ibb.co/TgQHRdF/D-NQ-NP-2-X-628203-MLA45669767978-042021-F.webp", (short) 10,2999.0,"Marvel",  Category.ACCESSORIES , "Iphone Cases");
 			productRepository.save(product23);
 			Product product24 = new Product("Marvel Series - Spider Man","Funda edición Marvel para Iphone","https://i.ibb.co/72khn8j/icr-iphone-13-soft-back-a-x600-pad-600x600-f8f8f8-u2.jpg","https://i.ibb.co/72khn8j/icr-iphone-13-soft-back-a-x600-pad-600x600-f8f8f8-u2.jpg", (short) 16,1999.0,"Marvel",  Category.ACCESSORIES,  "Iphone Cases");
 			productRepository.save(product24);
 			Product product25 = new Product("Marvel Series - IronMan","Funda edición Marvel para Iphone","https://i.ibb.co/9n2tyVq/images-q-tbn-ANd9-Gc-Tlom-Cd-XOagkg-Uu4d-VSTLd3-Duk-Sk9-Uo-APxy-Rw-usqp-CAU.jpg","https://i.ibb.co/4YHG0Fd/avengers-endgame-iron-man-tony-stark-crop1619139044711-jpg-33663383.jpg", (short) 15,1999.0,"Marvel",  Category.ACCESSORIES,  "Iphone Cases");
 			productRepository.save(product25);
-			Product product26 = new Product("Marvel Series - Capitan America","Funda edición Marvel para Iphone","https://i.ibb.co/9c6QzTS/il-570x-N-1271762446-970y.jpg","https://i.ibb.co/CVDZJfv/YRDRN2-AWWNATVHH3-CPLXR4-FUPA.jpg", (short) 1,1999.0,"Marvel",  Category.ACCESSORIES , "Iphone Cases");
+			Product product26 = new Product("Marvel Series - Capitan America","Funda edición Marvel para Iphone","https://i.ibb.co/9c6QzTS/il-570x-N-1271762446-970y.jpg","https://i.ibb.co/CVDZJfv/YRDRN2-AWWNATVHH3-CPLXR4-FUPA.jpg", (short) 9,1999.0,"Marvel",  Category.ACCESSORIES , "Iphone Cases");
 			productRepository.save(product26);
 			Product product27 = new Product("Marvel Series - Venom","Funda edición Marvel para Iphone","https://i.ibb.co/jhHTfFW/il-570x-N-2489432825-ssxc.jpg","https://i.ibb.co/TgQHRdF/D-NQ-NP-2-X-628203-MLA45669767978-042021-F.webp", (short) 1,1999.0,"Marvel",  Category.ACCESSORIES , "Iphone Cases");
 			productRepository.save(product27);
@@ -476,7 +476,7 @@ public class EcommerceApplication {
 					"Juego de reflejo, el mas rapido en llevarse la pieza gana un punto, aptop para mayores de 14",
 					"https://i.ibb.co/k51NPWf/23.jpg",
 					"https://i.ibb.co/vshwR8g/23s.jpg",
-					(short) 14,3200.0,"varios",
+					(short) 4,3200.0,"varios",
 					Category.BAZARANDTOYSHOP , "Board Games");
 			productRepository.save(product123);
 
@@ -522,7 +522,7 @@ public class EcommerceApplication {
 					"todo decoraciones, ideal para regalo o decoracion de la casa",
 					"https://i.ibb.co/T2P5twY/Baby-Yoda-Cafe.jpg",
 					"https://i.ibb.co/kS1hKtc/image.jpg",
-					(short) 14,1500.0," Star Wars",
+					(short) 3,2500.0," Star Wars",
 					Category.BAZARANDTOYSHOP , "Mugs");
 			productRepository.save(product134);
 			Product product135 = new Product("Star wars - Yoda",
@@ -712,7 +712,7 @@ public class EcommerceApplication {
 					"Funda edición Star Wars para Iphone",
 					"https://i.ibb.co/DRqDKj1/s-l300.jpg",
 					"https://i.ibb.co/kS1hKtc/image.jpg",
-					(short) 14,1999.0," Star Wars",
+					(short) 4,3999.0," Star Wars",
 					Category.ACCESSORIES , "Iphone Cases");
 			productRepository.save(product161);
 			Product product162 = new Product("Star wars - Darth Vader",
@@ -1191,7 +1191,7 @@ public class EcommerceApplication {
 					"todo decoraciones, ideal para regalo o decoracion de la casa",
 					"https://i.ibb.co/MR4yx3K/funko-pop-llavero-dc-flash1-af4c810119c9ec9df416333955026069-1024-1024.jpg",
 					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
-					(short) 14,999.0,"DC",
+					(short) 4,1299.0,"DC",
 					Category.BAZARANDTOYSHOP , "Keychains");
 			productRepository.save(product237);
 			Product product238 = new Product("DC - Batman",
@@ -1650,16 +1650,16 @@ public class EcommerceApplication {
 			productRepository.save(product301);
 			Product product302 = new Product("One Piece - Franky",
 					"Figura de One Piece en vinilo de 9 cm",
-					"",
 					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
-					(short) 14,2499.0,"One Piece",
+					"",
+					(short) 12,2399.0,"One Piece",
 					Category.ACTIONFIGURES, "Funko POP!");
 			productRepository.save(product302);
 			Product product303 = new Product("One Piece - Franky",
 					"Figura de One Piece en vinilo de 9 cm",
 					"https://i.pinimg.com/736x/65/19/49/65194986df9d2bafb1a6150dff0619d1.jpg",
 					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
-					(short) 14,2499.0,"One Piece",
+					(short) 3,2799.0,"One Piece",
 					Category.ACTIONFIGURES, "Funko POP!");
 			productRepository.save(product303);
 			Product product304 = new Product("One Piece - Zoro",
@@ -1673,7 +1673,7 @@ public class EcommerceApplication {
 					"Figura de One Piece en vinilo de 9 cm",
 					"https://i.ibb.co/q0vz9CF/D-NQ-NP-673564-MLM26765562381-022018-O.jpg",
 					"https://i.ibb.co/b3Qsny2/fanart-zoro-one-piece.jpg",
-					(short) 14,2499.0,"One Piece",
+					(short) 5,2699.0,"One Piece",
 					Category.ACTIONFIGURES, "Funko POP!");
 			productRepository.save(product305);
 			//tazas
@@ -1702,7 +1702,7 @@ public class EcommerceApplication {
 					"todo decoraciones, ideal para regalo o decoracion de la casa",
 					"https://i.ibb.co/S00fJqB/tazap66.jpg",
 					"https://i.ibb.co/6gkwCs2/bf1d317827ae2e9592a260db9eda9471eedfa451-00.jpg",
-					(short) 14,1200.0,"One Piece",
+					(short) 6,1300.0,"One Piece",
 					Category.BAZARANDTOYSHOP, "Mugs");
 			productRepository.save(product309);
 			Product product310 = new Product("One Piece - Luffy",
@@ -1752,7 +1752,7 @@ public class EcommerceApplication {
 					"todo decoraciones, ideal para regalo o decoracion de la casa",
 					"https://i.ibb.co/TBwC5t8/LLavero-de-dibujos-animados-de-One-Piece-Zoro-llavero-de-doble-cara-colgante-acr-lico-accesorios-jpg.jpg",
 					"https://i.ibb.co/0KDwRyK/bd25d6710d38539099ba3171cefbeaf4.jpg",
-					(short) 14,999.0,"One Piece",
+					(short) 6,1399.0,"One Piece",
 					Category.BAZARANDTOYSHOP, "Keychains");
 			productRepository.save(product316);
 			Product product317 = new Product("One Piece - Zoro",
@@ -1802,7 +1802,7 @@ public class EcommerceApplication {
 					"todo decoraciones, ideal para regalo o decoracion de la casa",
 					"https://http2.mlstatic.com/D_NQ_NP_820455-MLB42936764802_072020-O.jpg",
 					"",
-					(short) 14,999.0,"One Piece",
+					(short) 3,1299.0,"One Piece",
 					Category.BAZARANDTOYSHOP, "Mouse Pad");
 			productRepository.save(product323);
 

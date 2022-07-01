@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    <div class="wrapper" id="app">
+    <div class="wrapper" id="app" >
         <header class="header-area sticky-bar">
             <div class="main-header-wrap">
                 <div class="container">
@@ -46,7 +46,7 @@
                             <div class="main-menu">
                                 <nav>
                                     <ul>
-                                        <li class=""><a href="index.html">Home</a></li>
+                                        <li class=""><a href="index.html">Inicio</a></li>
                                         <li class="angle-shape"><a href="#"> Categorías <span>new</span>
                                             </a>
                                             <ul class="mega-menu">
@@ -115,7 +115,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-3 col-lg-3">
+                        <div class="col-xl-3 col-lg-3" >
                             <div class="header-right-wrap pt-40">
                                 <div class="header-search">
                                     <a class="search-active" href="#"><i class="sli sli-magnifier"></i></a>
@@ -173,7 +173,7 @@
                                         </ul>
                                         <div class="shopping-cart-bottom">
                                             <div class="shopping-cart-total">
-                                                <h4>Total : <span class="shop-total">${{sumPrice}}</span></h4>
+                                                <h4>Total:<span class="shop-total">${{sumPrice}}</span></h4>
                                             </div>
                                             <div class="shopping-cart-btn btn-hover text-center">
                                                 <a class="default-btn2" @click="emptyCart">Vaciar Carrito</a>
@@ -185,7 +185,7 @@
 
                                 <div class="setting-wrap">
                                     <button class="setting-active">
-                                        <i class="sli sli-settings"></i>
+                                        <i class="sli sli-user"></i>
                                     </button>
                                     <div class="setting-content">
                                         <ul>
@@ -221,7 +221,8 @@
                         </form> -->
                         <form v-on:submit.prevent="findMatch">
                             <div class="form-search">
-                                <input id="search" class="input-text"  placeholder="Search Now" type="text" v-model="searchWord">
+                                <input id="search" class="input-text" placeholder="Search Now" type="text"
+                                    v-model="searchWord">
                                 <button type="submit">
                                     <i class="sli sli-magnifier"></i>
                                 </button>
@@ -312,7 +313,7 @@
                         <!-- mobile menu navigation start -->
                         <nav>
                             <ul class="mobile-menu">
-                                <li class="menu-item-has-children"><a href="index.html">Home</a>
+                                <li class="menu-item-has-children"><a href="index.html">Inicio</a>
                                 </li>
                                 <li class="menu-item-has-children "><a href="shop.html">Categorias</a>
                                     <ul class="dropdown">
@@ -382,47 +383,23 @@
                 </div>
                 <div class="mobile-curr-lang-wrap">
                     <div class="single-mobile-curr-lang">
-                        <a class="mobile-language-active" href="#">Language <i class="sli sli-arrow-down"></i></a>
-                        <div class="lang-curr-dropdown lang-dropdown-active">
-                            <ul>
-                                <li><a href="#">English (US)</a></li>
-                                <li><a href="#">English (UK)</a></li>
-                                <li><a href="#">Spanish</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="single-mobile-curr-lang">
-                        <a class="mobile-currency-active" href="#">Currency <i class="sli sli-arrow-down"></i></a>
-                        <div class="lang-curr-dropdown curr-dropdown-active">
-                            <ul>
-                                <li><a href="#">USD</a></li>
-                                <li><a href="#">EUR</a></li>
-                                <li><a href="#">Real</a></li>
-                                <li><a href="#">BDT</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="single-mobile-curr-lang">
-                        <a class="mobile-account-active" href="#">My Account <i class="sli sli-arrow-down"></i></a>
+                        <a class="mobile-account-active" href="#">Mi cuenta<i class="sli sli-arrow-down"></i></a>
                         <div class="lang-curr-dropdown account-dropdown-active">
                             <ul>
                                 <li><a href="login-register.html">Login</a></li>
-                                <li><a href="login-register.html">Creat Account</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
+                                <li><a href="login-register.html">Crear cuenta</a></li>
+                                <li><a href="my-account.html">Mi cuenta</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="mobile-social-wrap">
                     <a class="facebook" href="#"><i class="sli sli-social-facebook"></i></a>
-                    <a class="twitter" href="#"><i class="sli sli-social-twitter"></i></a>
-                    <a class="pinterest" href="#"><i class="sli sli-social-pinterest"></i></a>
                     <a class="instagram" href="#"><i class="sli sli-social-instagram"></i></a>
-                    <a class="google" href="#"><i class="sli sli-social-google"></i></a>
                 </div>
             </div>
         </div>
-        <div class="breadcrumb-area pt-35 pb-35 bg-gray">
+        <div class="breadcrumb-area pt-35 pb-35 bg-check">
             <div class="container">
                 <div class="breadcrumb-content text-center">
                     <ul>
@@ -460,9 +437,9 @@
                                             <!--Product Start-->
                                             <div
                                                 class="ht-product ht-product-action-on-hover ht-product-category-right-bottom">
-                                                <div class="ht-product-inner" style="height: 501.69px;">
+                                                <div class="ht-product-inner mb-2" style="height: 501.69px;">
                                                     <div class="ht-product-image-wrap">
-                                                        <a href="product-details.html" class="ht-product-image"> <img
+                                                        <a :href="'product-details.html?id=' + product.id" class="ht-product-image"> <img
                                                                 :src="product.img" :alt="product.name"> </a>
                                                         <div class="ht-product-action">
                                                             <ul>
@@ -496,7 +473,7 @@
                                                                     href="#">{{product.subcategory}}</a>
                                                             </div>
                                                             <h4 class="ht-product-title"><a
-                                                                    href="product-details.html">{{product.name}}</a>
+                                                                :href="'product-details.html?id=' + product.id">{{product.name}}</a>
                                                             </h4>
                                                             <div class="ht-product-price" v-if="product.stock <= 5">
                                                                 <span
@@ -539,11 +516,11 @@
                                         <div class="row">
                                             <div class="col-lg-4 col-md-4">
                                                 <div class="product-list-img">
-                                                    <a href="product-details.html">
+                                                    <a :href="'product-details.html?id=' + product.id">
                                                         <img :src="product.img" :alt="product.name">
                                                     </a>
                                                     <div class="product-quickview">
-                                                        <a href="#" title="Quick View" data-bs-toggle="modal"
+                                                        <a @click="productForModal(product)" href="#" title="Quick View" data-bs-toggle="modal"
                                                             data-bs-target="#exampleModal"><i
                                                                 class="sli sli-magnifier-add"></i></a>
                                                     </div>
@@ -551,7 +528,7 @@
                                             </div>
                                             <div class="col-lg-8 col-md-8 align-self-center">
                                                 <div class="shop-list-content">
-                                                    <h3><a href="product-details.html">{{product.name}}</a></h3>
+                                                    <h3><a :href="'product-details.html?id=' + product.id">{{product.name}}</a></h3>
                                                     <p class="text-light">{{product.description}}</p>
                                                     <span class="text-light">{{product.subcategory}}</span>
                                                     <div class="shop-list-price-action-wrap">
@@ -638,22 +615,25 @@
                                 <form v-on:submit.prevent="filterProducts">
                                     <div class="price-filter mt-10">
                                         <label class="d-flex">
-                                            <p class="me-1">Desde:</p><input type="number"
-                                                style="width: 75px; height: 20px;" v-model="minPrice">
+                                            <!-- <p class="me-1">Desde:</p> -->
+                                            <!-- <input type="number" style="width: 75px; height: 20px;" v-model="minPrice"> -->
+                                            <input type="number" placeholder="Desde" v-model="minPrice">
                                         </label>
                                     </div>
 
-                                    <div class="price-filter">
+                                    <div class="price-filter mt-10">
                                         <label class="d-flex">
-                                            <p class="me-2">Hasta:</p><input type="number"
-                                                style="width: 75px; height: 20px;" v-model="maxPrice">
+                                            <!-- <p class="me-2">Hasta:</p><input type="number" style="width: 75px; height: 20px;" v-model="maxPrice"> -->
+                                            <input type="number" placeholder="Hasta" v-model="maxPrice">
                                         </label>
                                     </div>
-
-                                    <div class="price-filter">
-                                        <button type="submit" class="text-dark">Filtrar</button>
-
+                                
+                                    <div class="price-filter mt-10 d-flex justify-content-center">
+                                        <button type="submit" class="btn text-dark" id="btnFilter">Filtrar</button>
                                     </div>
+                                    
+
+
 
                                 </form>
 
@@ -774,87 +754,88 @@
             </div>
         </footer>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true"></span></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-5 col-sm-12 col-xs-12">
-                                
-                                <div class="tab-content quickview-big-img">
-                                    <div :id="pro-1" class="tab-pane fade show active">
-                                        <img :src="productSelect.img" :alt="productSelect.name">
+            <!-- Modal Quick View Producto -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true"></span></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-5 col-sm-12 col-xs-12">
+                                    <div class="tab-content quickview-big-img">
+                                        <div id="pro-1" class="tab-pane fade show active">
+                                            <img :src="productSelect.img" :alt="productSelect.name">
+                                        </div>
+                                        <div id="pro-2" class="tab-pane fade" v-show="productSelect.imgSec != ''">
+                                            <img :src="productSelect.imgSec" :alt="productSelect.name">
+                                        </div>
                                     </div>
-                                    <div id="pro-2" class="tab-pane fade" v-show="productSelect.imgSec != ''">
-                                        <img :src="productSelect.imgSec" :alt="productSelect.name">
+                                    <!-- Thumbnail Large Image End -->
+                                    <!-- Thumbnail Image End -->
+                                    <div class="quickview-wrap mt-15">
+                                        <div class="quickview-slide-active owl-carousel nav nav-style-2" role="tablist">
+                                            <a class="active" data-bs-toggle="tab" href="#pro-1"><img
+                                                    :src="productSelect.img" :alt="productSelect.name"></a>
+                                            <a data-bs-toggle="tab" href="#pro-2"
+                                                v-show="productSelect.imgSec != ''"><img :src="productSelect.imgSec"
+                                                    :alt="productSelect.name"></a>
+                                        </div>
                                     </div>
                                 </div>
-                                <!-- Thumbnail Large Image End -->
-                                <!-- Thumbnail Image End -->
-                                <div class="quickview-wrap mt-15">
-                                    <div class="quickview-slide-active owl-carousel nav nav-style-2" role="tablist">
-                                        <a class="active" data-bs-toggle="tab" href="#pro-1"><img
-                                                :src="productSelect.img" :alt="productSelect.name"></a>
-                                        <a data-bs-toggle="tab" href="#pro-2" v-show="productSelect.imgSec != ''"><img
-                                                :src="productSelect.imgSec" :alt="productSelect.name"></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-7 col-sm-12 col-xs-12">
-                                <div class="product-details-content quickview-content">
-                                    <h2>{{productSelect.name}}</h2>
-                                    <div class="product-details-price" v-show="productSelect.stock <=5">
-                                        <span class="new">${{productSelect.lowStockPrice}}</span>
-                                        <span class="old">${{productSelect.price}}</span>
-                                        <span class="text-success">{{offMessage}}</span>
-                                    </div>
+                                <div class="col-md-7 col-sm-12 col-xs-12">
+                                    <div class="product-details-content quickview-content">
+                                        <h2>{{productSelect.name}}</h2>
+                                        <div class="product-details-price" v-show="productSelect.stock <=5">
+                                            <span class="new">${{productSelect.lowStockPrice}}</span>
+                                            <span class="oldModal">${{productSelect.price}}</span>
+                                            <span class="text-success">{{offMessage}}</span>
+                                        </div>
 
-                                    <div class="product-details-price" v-show="productSelect.stock > 5">
-                                        <span class="new">${{productSelect.price}}</span>
-                                    </div>
+                                        <div class="product-details-price" v-show="productSelect.stock > 5">
+                                            <span class="new">${{productSelect.price}}</span>
+                                        </div>
 
-                                    <div class="pro-details-rating-wrap">
-                                        <span v-show="productSelect.stock > 5">Stock: {{productSelect.stock}}</span>
-                                        <span class="text-danger"
-                                            v-show="productSelect.stock <= 5 && productSelect.stock >= 2">Últimas
-                                            {{productSelect.stock}} unidades!</span>
-                                        <span class="text-danger" v-show="productSelect.stock == 1">Última
-                                            unidad!!!</span>
-                                    </div>
-                                    <p class="text-dark">{{productSelect.description}}</p>
-                                    <div class="pro-details-list">
-                                        <ul>
-                                            <li>Envíos gratis en compras mayores a $20000!</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pro-details-quality">
-                                        <div class="cart-plus-minus">
-                                            <input :id="productSelect.id" class="cart-plus-minus-box" type="number"
-                                                name="qtybutton" value="1" min="1" :max="3">
+                                        <div class="pro-details-rating-wrap">
+                                            <span v-show="productSelect.stock > 5">Stock: {{productSelect.stock}}</span>
+                                            <span class="text-danger"
+                                                v-show="productSelect.stock <= 5 && productSelect.stock >= 2">Últimas
+                                                {{productSelect.stock}} unidades!</span>
+                                            <span class="text-danger" v-show="productSelect.stock == 1">Última
+                                                unidad!!!</span>
                                         </div>
-                                        <div class="pro-details-cart">
-                                            <a @click="addProductCartModal(productSelect)">Agregar al carrito</a>
+                                        <p class="text-dark">{{productSelect.description}}</p>
+                                        <div class="pro-details-list">
+                                            <ul>
+                                                <li>Envíos gratis en compras mayores a $20000!</li>
+                                            </ul>
                                         </div>
-                                        <div class="pro-details-wishlist">
-                                            <a title="Add To Wishlist" href="#"><i class="sli sli-heart"></i></a>
+                                        <div class="pro-details-quality">
+                                            <div class="cart-plus-minus">
+                                                <input :id="productSelect.id" class="cart-plus-minus-box" type="number"
+                                                    name="qtybutton" value="1" min="1" max="productSelect.stock">
+                                            </div>
+                                            <div class="pro-details-cart">
+                                                <a @click="addProductCartModal(productSelect)">Agregar al carrito</a>
+                                            </div>
+                                            <div class="pro-details-wishlist">
+                                                <a title="Add To Wishlist" href="#"><i class="sli sli-heart"></i></a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="pro-details-meta">
-                                        <span>Categorías :</span>
-                                        <ul>
-                                            <li><a href="#">{{productSelect.category}}</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="pro-details-meta">
-                                        <span>Subcategorias:</span>
-                                        <ul>
-                                            <li><a>{{productSelect.subcategory}}</a></li>
-                                        </ul>
+                                        <div class="pro-details-meta">
+                                            <span>Categorías :</span>
+                                            <ul>
+                                                <li><a :href="'shop.html?category=' + productSelect.category">{{productSelect.category}}</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="pro-details-meta">
+                                            <span>Subcategorias:</span>
+                                            <ul>
+                                                <li><a :href="'shop.html?subcategory=' + productSelect.subcategory">{{productSelect.subcategory}}</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -862,8 +843,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Modal end -->
+            <!-- Modal end Quick View Producto -->
 
     </div>
 

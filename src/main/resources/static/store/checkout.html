@@ -1,628 +1,773 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Kōbe - Anime Shop </title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Kōbe - Anime Shop</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
 
-    <!-- CSS
+  <!-- CSS
 	============================================ -->
 
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Icon Font CSS -->
-    <link rel="stylesheet" href="assets/css/icons.min.css">
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="assets/css/plugins.css">
-    <!-- Main Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Modernizer JS -->
-    <script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <!-- Icon Font CSS -->
+  <link rel="stylesheet" href="assets/css/icons.min.css" />
+  <!-- Plugins CSS -->
+  <link rel="stylesheet" href="assets/css/plugins.css" />
+  <!-- Main Style CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Modernizer JS -->
+  <script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
 </head>
 
 <body>
-    <div class="wrapper" id="app">
-        <header class="header-area sticky-bar">
-            <div class="main-header-wrap">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-2 col-lg-2">
-                            <div class="logo pt-40">
-                                <a href="index.html">
-                                    <img src="assets/img/logo/logo.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-7 ">
-                            <div class="main-menu">
-                                <nav>
-                                    <ul>
-                                        <li class=""><a href="index.html">Home</a></li>
-                                        <li class="angle-shape"><a href="#"> Categorías <span>new</span>
-                                            </a>
-                                            <ul class="mega-menu">
-                                                <li>
-                                                    <a class="menu-title"
-                                                        v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
-                                                    <ul>
-                                                        <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a>
-                                                        </li>
-                                                        <li><a
-                                                                v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a>
-                                                        </li>
-                                                        <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a>
-                                                        </li>
-                                                        <li><a
-                                                                v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones
-                                                                Completas</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a class="menu-title"
-                                                        v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras
-                                                        coleccionables</a>
-                                                    <ul>
-                                                        <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko
-                                                                Pops</a></li>
-                                                        <li><a
-                                                                v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a>
-                                                        </li>
-                                                        <li><a
-                                                                v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li><a class="menu-title"
-                                                        v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y
-                                                        juegos</a>
-                                                    <ul>
-                                                        <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
-                                                        <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos
-                                                                de
-                                                                mesa</a></li>
-                                                        <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos
-                                                                de
-                                                                video</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a class="menu-title"
-                                                        v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
-                                                    <ul>
-                                                        <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas
-                                                                Iphone</a>
-                                                        </li>
-                                                        <li><a
-                                                                v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a>
-                                                        </li>
-                                                        <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse
-                                                                Pad</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact-us.html"> Contacto </a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3">
-                            <div class="header-right-wrap pt-40">
-                                <div class="header-search">
-                                    <a class="search-active" href="#"><i class="sli sli-magnifier"></i></a>
-                                </div>
-                                <div class="setting-wrap">
-                                    <button class="setting-active">
-                                        <i class="sli sli-settings"></i>
-                                    </button>
-                                    <div class="setting-content">
-                                        <ul>
-                                            <li>
-                                                <h4>Account</h4>
-                                                <ul>
-                                                    <li><a href="login-register.html">Login</a></li>
-                                                    <li><a href="login-register.html">Creat Account</a></li>
-                                                    <li><a href="my-account.html">My Account</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- main-search start -->
-                <div class="main-search-active">
-                    <div class="sidebar-search-icon">
-                        <button class="search-close"><span class="sli sli-close"></span></button>
-                    </div>
-                    <div class="sidebar-search-input">
-                        <form>
-                            <div class="form-search">
-                                <input id="search" class="input-text" value="" placeholder="Search Now" type="search">
-                                <button>
-                                    <i class="sli sli-magnifier"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+  <div class="wrapper" id="app">
+    <header class="header-area sticky-bar">
+      <div class="main-header-wrap">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-2 col-lg-2">
+              <div class="logo pt-40">
+                <a href="index.html">
+                  <img src="assets/img/logo/logo.png" alt="" />
+                </a>
+              </div>
             </div>
-            <div class="header-small-mobile">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-6">
-                            <div class="mobile-logo">
-                                <a href="index.html">
-                                    <img alt="" src="assets/img/logo/logo.png">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="header-right-wrap">
-                                <div class="mobile-off-canvas">
-                                    <a class="mobile-aside-button" href="#"><i class="sli sli-menu"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <div class="mobile-off-canvas-active">
-            <a class="mobile-aside-close"><i class="sli sli-close"></i></a>
-            <div class="header-mobile-aside-wrap">
-                <div class="mobile-search">
-                    <form class="search-form" action="#">
-                        <input type="text" placeholder="Search entire store…">
-                        <button class="button-search"><i class="sli sli-magnifier"></i></button>
-                    </form>
-                </div>
-                <div class="mobile-menu-wrap">
-                    <!-- mobile menu start -->
-                    <div class="mobile-navigation">
-                        <!-- mobile menu navigation start -->
-                        <nav>
-                            <ul class="mobile-menu">
-                                <li class="menu-item-has-children"><a href="index.html">Home</a>
-                                </li>
-                                <li class="menu-item-has-children "><a href="shop.html">Categorias</a>
-                                    <ul class="dropdown">
-                                        <li class="menu-item-has-children"><a
-                                                v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
-                                            <ul class="dropdown">
-                                                <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a>
-                                                </li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones
-                                                        Completas</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children"><a
-                                                v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras
-                                                coleccionables</a>
-                                            <ul class="dropdown">
-                                                <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops!</a>
-                                                </li>
-                                                <li><a
-                                                        v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a>
-                                                </li>
-                                                <li><a
-                                                        v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children"><a
-                                                v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y Juegos</a>
-                                            <ul class="dropdown">
-                                                <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de
-                                                        mesa</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de
-                                                        video</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children"><a
-                                                v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
-                                            <ul class="dropdown">
-                                                <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas
-                                                        Iphone</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children"><a href="#">Páginas</a>
-                                    <ul class="dropdown">
-                                        <li><a href="about-us.html">Sobre nosotros</a></li>
-                                        <li><a href="cart-page.html">Carrito</a></li>
-                                        <li><a href="checkout.html">Checkout </a></li>
-                                        <li><a href="my-account.html">Mi cuenta</a></li>
-                                        <li><a href="contact-us.html">Contáctenos</a></li>
-                                        <li><a href="login-register.html">login/registro</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact-us.html">Contáctenos</a></li>
-                            </ul>
-                        </nav>
-                        <!-- mobile menu navigation end -->
-                    </div>
-                    <!-- mobile menu end -->
-                </div>
-                <div class="mobile-curr-lang-wrap">
-                    <div class="single-mobile-curr-lang">
-                        <a class="mobile-account-active" href="#">My Account <i class="sli sli-arrow-down"></i></a>
-                        <div class="lang-curr-dropdown account-dropdown-active">
-                            <ul>
-                                <li><a href="login-register.html">Login</a></li>
-                                <li><a href="login-register.html">Creat Account</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="mobile-social-wrap">
-                    <a class="facebook" href="#"><i class="sli sli-social-facebook"></i></a>
-                    <a class="twitter" href="#"><i class="sli sli-social-twitter"></i></a>
-                    <a class="pinterest" href="#"><i class="sli sli-social-pinterest"></i></a>
-                    <a class="instagram" href="#"><i class="sli sli-social-instagram"></i></a>
-                    <a class="google" href="#"><i class="sli sli-social-google"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="breadcrumb-area pt-35 pb-35 bg-gray">
-            <div class="container">
-                <div class="breadcrumb-content text-center">
-                    <ul>
+            <div class="col-xl-7 col-lg-7">
+              <div class="main-menu">
+                <nav>
+                  <ul>
+                    <li class=""><a href="index.html">Inicio</a></li>
+                    <li class="angle-shape">
+                      <a href="#"> Categorías <span>new</span> </a>
+                      <ul class="mega-menu">
                         <li>
-                            <a href="index.html" class="parrafoModel">Home</a>
+                          <a class="menu-title" v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
+                          <ul>
+                            <li>
+                              <a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a>
+                            </li>
+                            <li>
+                              <a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a>
+                            </li>
+                            <li>
+                              <a v-bind:href="'shop.html?subcategory=Comics'">Comics</a>
+                            </li>
+                            <li>
+                              <a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones Completas</a>
+                            </li>
+                          </ul>
                         </li>
-                        <li class="active">Checkout </li>
-                    </ul>
-                </div>
+                        <li>
+                          <a class="menu-title" v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras
+                            coleccionables</a>
+                          <ul>
+                            <li>
+                              <a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops</a>
+                            </li>
+                            <li>
+                              <a v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a>
+                            </li>
+                            <li>
+                              <a v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a class="menu-title" v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y juegos</a>
+                          <ul>
+                            <li>
+                              <a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a>
+                            </li>
+                            <li>
+                              <a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de mesa</a>
+                            </li>
+                            <li>
+                              <a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de video</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a class="menu-title" v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
+                          <ul>
+                            <li>
+                              <a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas Iphone</a>
+                            </li>
+                            <li>
+                              <a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a>
+                            </li>
+                            <li>
+                              <a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse Pad</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="contact-us.html"> Contacto </a></li>
+                  </ul>
+                </nav>
+              </div>
             </div>
-        </div>
-        <!-- compare main wrapper start -->
-        <div class="checkout-main-area pt-70 pb-70">
-            <div class="container">
-                <div class="customer-zone mb-20">
-                    <p class="cart-page-title ">¿Es un cliente habitual? <a class="checkout-click1 text-primary"
-                            href="#">Haga clic aquí para iniciar sesión y continuar con la compra</a></p>
-                    <div class="checkout-login-info">
-                        <p class="parrafoModel">Si ya ha comprado con nosotros, introduzca sus datos en las casillas
-                            siguientes. Si es un cliente nuevo, pase a la sección de facturación y envío.</p>
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="sin-checkout-login">
-                                        <label>Usuario o dirección de correo electrónico <span>*</span></label>
-                                        <input type="email" class="text-light" name="user-name" v-model="email">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="sin-checkout-login">
-                                        <label>contraseña <span>*</span></label>
-                                        <input type="password" class="text-light" name="user-password" v-model="password">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="button-remember-wrap">
-                                <button class="button" type="submit" @click="login">Login</button>
-                            </div>
-                            <div class="lost-password">
-                                <a href="#">Perdiste tu contraseña?</a>
-                            </div>
-                        </form>
-                    </div>
+            <div class="col-xl-3 col-lg-3">
+              <div class="header-right-wrap pt-40">
+                <div class="header-search">
+                  <a class="search-active" href="#"><i class="sli sli-magnifier"></i></a>
                 </div>
-                <div class="customer-zone mb-20">
-                    <p class="cart-page-title ">¿No tienes cuenta? <a class="checkout-click2 text-primary"
-                            href="#">Haga clic aquí para registrarse y continuar con la compra</a></p>
-                    <div class="checkout-login-info2">
-                        <p class="parrafoModel">introduzca los respectivos datos para poder registrarse! Luego deberas validar la cuenta desde tu correo electronico.</p>
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="sin-checkout-login">
-                                        <label>Dirección de correo electrónico <span>*</span></label>
-                                        <input type="email" class="text-light" name="user-name" v-model="emailRegister">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="sin-checkout-login">
-                                        <label>contraseña <span>*</span></label>
-                                        <input type="password" class="text-light" name="user-password" v-model="passwordRegister">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="sin-checkout-login">
-                                        <label>Nombre <span>*</span></label>
-                                        <input type="text" class="text-light" name="user-name" v-model="firstName">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="sin-checkout-login">
-                                        <label>Apellido <span>*</span></label>
-                                        <input type="text" class="text-light" name="user-name" v-model="lastName">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="button-remember-wrap mt-3">
-                                <button class="button" type="submit" @click="register">Register</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="customer-zone mb-20">
-                    <p class="cart-page-title ">¿Tienes un cupón? <a class="checkout-click3 text-primary" href="#">Click
-                            here to enter your code</a></p>
-                    <div class="checkout-login-info3">
-                        <form action="#">
-                            <input type="text" class="text-light" placeholder="Coupon code">
-                            <input type="submit" class="text-light" value="Apply Coupon">
-                        </form>
-                    </div>
-                </div>
-                <div class="checkout-wrap pt-30">
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <div class="billing-info-wrap mr-50">
-                                <h3>Datos de la compra</h3>
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="billing-info mb-20">
-                                            <label>Primer nombre <abbr class="required"
-                                                    title="required">*</abbr></label>
-                                            <input type="text" class="text-light" v-model="contactName">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="billing-info mb-20">
-                                            <label>Apellido <abbr class="required" title="required">*</abbr></label>
-                                            <input type="text" class="text-light" v-model="contactLastName">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12">
-                                        <div class="billing-info mb-20">
-                                            <label>Celular de contacto<abbr class="required" title="required">*</abbr></label>
-                                            <input type="text" class="text-light" v-model="contactNumber">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12">
-                                        <div class="billing-info mb-20">
-                                            <label>Email de contacto<abbr class="required"
-                                                    title="required">*</abbr></label>
-                                            <input type="email" class="text-light" v-model="contactEmail">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12">
-                                        <div class="billing-info mb-20">
-                                            <label>Seleccionar dirección de envio<abbr class="required"
-                                                    title="required">*</abbr></label>
-                                            <p v-show="addresses.length == 0">Aun no tienes ninguna dirección de envió guardada.</p>
-                                            <Select v-show="addresses.length > 0" class="form-select" v-model="shippmentAddress">
-                                                <option selected checked>Seleccionar dirección</option>
-                                                <option v-for="address in addresses" :value="address">{{address.streetName}} {{address.streetNumber}}, {{address.locality}}</option>
-                                            </Select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="checkout-account mt-25">
-                                    <input class="checkout-toggle" type="checkbox">
-                                    <span class="text-light">Enviar a una nueva dirección</span>
-                                </div>
-                                <div class="different-address open-toggle mt-30">
-                                    <div class="row">
-                                        <form @submit.prevent="showAlertAddress">
-                                            <div class="col-lg-12">
-                                                <div class="billing-info mb-20">
-                                                    <div class="tax-select">
-                                                        <label class="billing-info">
-                                                            * Provincia
-                                                        </label>
-                                                        <select class="email s-email s-wid form-select" v-model="newProvince">
-                                                            <option disabled checked selected>Selecciona tu provincia</option>
-                                                            <option v-for="provincia in provincias" :value="provincia">
-                                                                {{provincia}}</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="billing-info mb-20">
-                                                    <label>Localidad</label>
-                                                    <input class="text-light" type="text" v-model="newLocality">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="billing-info mb-20">
-                                                    <label>Cod. postal</label>
-                                                    <input type="number" class="text-light" v-model="newZipCode"> 
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="billing-info mb-20">
-                                                    <label class="text-withe">Calle</label>
-                                                    <input type="text" v-model="newStreetName">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="billing-info mb-20">
-                                                    <label>Dirección de la calle</label>
-                                                    <input class="billing-address text-light"
-                                                        placeholder="Numero de la calle" type="number" v-model="newStreetNumber">
-                                                    <input placeholder="Numero del departamento" class="text-light"
-                                                        type="text" v-model="newFloorApartment">
-                                                </div>
-                                            </div>
-                                            <div class="button-remember-wrap mt-3">
-                                                <button class="button" type="submit">Agregar dirección</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="additional-info-wrap">
-                                    <label class="text-light">Notas de pedido</label>
-                                    <textarea placeholder="Notes about your order, e.g. special notes for delivery. "
-                                        name="message" v-model="description"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-5">
-                            <div class="your-order-area">
-                                <h3>Tus pedidos</h3>
-                                <div class="your-order-wrap gray-bg-4">
-                                    <div class="your-order-info-wrap">
-                                        <div class="your-order-info">
-                                            <ul>
-                                                <li>productos <span>Total</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="your-order-middle">
-                                            <ul>
-                                                <li v-for="productCart in cartStorage">{{productCart.name}} X
-                                                    {{productCart.quantity}} <span>${{productCart.quantity *
-                                                        productCart.price}} </span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="your-order-info order-subtotal">
-                                            <ul>
-                                                <li>Subtotal <span>${{sumPrice}} </span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="your-order-info order-total">
-                                            <ul>
-                                                <li>Total <span>${{sumPriceShipping}} </span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="payment-method">
-                                        <div class="pay-top sin-payment">
-                                            <input id="payment_method_1" class="input-radio" type="radio" value="cheque"
-                                                checked="checked" name="payment_method">
-                                            <label for="payment_method_1"> Transferencia Bancaria Directa</label>
-                                            <div class="payment-box payment_method_bacs">
-                                                <p>Realice su pago directamente en nuestra cuenta bancaria. Por favor,
-                                                    utilice su ID de pedido como referencia de pago. Su pedido no se
-                                                    enviará hasta que los fondos se hayan liquidado en nuestra cuenta.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="pay-top sin-payment sin-payment-3">
-                                            <input id="payment-method-4" class="input-radio" type="radio" value="cheque"
-                                                name="payment_method">
-                                            <label for="payment-method-4">PayPal <img alt=""
-                                                    src="assets/img/icon-img/payment.png"><a href="#">What is
-                                                    PayPal?</a></label>
-                                            <div class="payment-box payment_method_bacs">
-                                                <p>Realice su pago directamente en nuestra cuenta bancaria. Por favor,
-                                                    utilice su ID de pedido como referencia de pago. Su pedido no se
-                                                    enviará hasta que los fondos se hayan liquidado en nuestra cuenta.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="Place-order mt-40">
-                                    <button @click="cardTransactionCredit">Hacer un pedido</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- compare main wrapper end -->
-        <footer class="footer-area bg-paleturquoise">
-            <div class="container">
-                <div class="footer-top text-center pt-45 pb-45">
-                    <nav>
+                <div class="setting-wrap">
+                  <button class="setting-active">
+                    <i class="sli sli-user"></i>
+                  </button>
+                  <div class="setting-content">
+                    <ul>
+                      <li>
+                        <h4>Account</h4>
                         <ul>
-                            <li><a href="#">Home </a></li>
-                            <li><a href="#">Shop </a></li>
-                            <li><a href="#">Accessories </a></li>
-                            <li><a href="#">Contact </a></li>
-                            <li><a href="#">About </a></li>
-                            <li><a href="#">Blog </a></li>
+                          <li><a href="login-register.html">Login</a></li>
+                          <li>
+                            <a href="login-register.html">Creat Account</a>
+                          </li>
+                          <li><a href="my-account.html">My Account</a></li>
                         </ul>
-                    </nav>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="footer-bottom border-top-1 pt-20">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-4 col-md-5 col-12">
-                            <div class="footer-social pb-20">
-                                <a href="#">Facebok</a>
-                                <a href="#">Twitter</a>
-                                <a href="#">Linkedin</a>
-                                <a href="#">Instagram</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="copyright text-center pb-20">
-                                <p>Copyright © All Right Reserved</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-12">
-                            <div class="payment-mathod pb-20">
-                                <a href="#"><img src="assets/img/icon-img/payment.png" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
+          </div>
+        </div>
+        <!-- main-search start -->
+        <div class="main-search-active">
+          <div class="sidebar-search-icon">
+            <button class="search-close">
+              <span class="sli sli-close"></span>
+            </button>
+          </div>
+          <div class="sidebar-search-input">
+            <form>
+              <div class="form-search">
+                <input id="search" class="input-text" value="" placeholder="Search Now" type="search" />
+                <button>
+                  <i class="sli sli-magnifier"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="header-small-mobile">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-6">
+              <div class="mobile-logo">
+                <a href="index.html">
+                  <img alt="" src="assets/img/logo/logo.png" />
+                </a>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="header-right-wrap">
+                <div class="mobile-off-canvas">
+                  <a class="mobile-aside-button" href="#"><i class="sli sli-menu"></i></a>
                 </div>
+              </div>
             </div>
-        </footer>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="mobile-off-canvas-active">
+      <a class="mobile-aside-close"><i class="sli sli-close"></i></a>
+      <div class="header-mobile-aside-wrap">
+        <div class="mobile-search">
+          <form class="search-form" action="#">
+            <input type="text" placeholder="Search entire store…" />
+            <button class="button-search">
+              <i class="sli sli-magnifier"></i>
+            </button>
+          </form>
+        </div>
+        <div class="mobile-menu-wrap">
+          <!-- mobile menu start -->
+          <div class="mobile-navigation">
+            <!-- mobile menu navigation start -->
+            <nav>
+              <ul class="mobile-menu">
+                <li class="menu-item-has-children">
+                  <a href="index.html">Inicio</a>
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="shop.html">Categorias</a>
+                  <ul class="dropdown">
+                    <li class="menu-item-has-children">
+                      <a v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
+                      <ul class="dropdown">
+                        <li>
+                          <a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a>
+                        </li>
+                        <li>
+                          <a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a>
+                        </li>
+                        <li>
+                          <a v-bind:href="'shop.html?subcategory=Comics'">Comics</a>
+                        </li>
+                        <li>
+                          <a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones Completas</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                      <a v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras coleccionables</a>
+                      <ul class="dropdown">
+                        <li>
+                          <a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops!</a>
+                        </li>
+                        <li>
+                          <a v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a>
+                        </li>
+                        <li>
+                          <a v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                      <a v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y Juegos</a>
+                      <ul class="dropdown">
+                        <li>
+                          <a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a>
+                        </li>
+                        <li>
+                          <a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de mesa</a>
+                        </li>
+                        <li>
+                          <a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de video</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                      <a v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
+                      <ul class="dropdown">
+                        <li>
+                          <a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas Iphone</a>
+                        </li>
+                        <li>
+                          <a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a>
+                        </li>
+                        <li>
+                          <a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="#">Páginas</a>
+                  <ul class="dropdown">
+                    <li><a href="about-us.html">Sobre nosotros</a></li>
+                    <li><a href="cart-page.html">Carrito</a></li>
+                    <li><a href="checkout.html">Checkout </a></li>
+                    <li><a href="my-account.html">Mi cuenta</a></li>
+                    <li><a href="contact-us.html">Contáctenos</a></li>
+                    <li><a href="login-register.html">login/registro</a></li>
+                  </ul>
+                </li>
+                <li><a href="contact-us.html">Contáctenos</a></li>
+              </ul>
+            </nav>
+            <!-- mobile menu navigation end -->
+          </div>
+          <!-- mobile menu end -->
+        </div>
+        <div class="mobile-curr-lang-wrap">
+          <div class="single-mobile-curr-lang">
+            <a class="mobile-account-active" href="#">My Account <i class="sli sli-arrow-down"></i></a>
+            <div class="lang-curr-dropdown account-dropdown-active">
+              <ul>
+                <li><a href="login-register.html">Login</a></li>
+                <li><a href="login-register.html">Creat Account</a></li>
+                <li><a href="my-account.html">My Account</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-social-wrap">
+          <a class="facebook" href="#"><i class="sli sli-social-facebook"></i></a>
+          <a class="twitter" href="#"><i class="sli sli-social-twitter"></i></a>
+          <a class="pinterest" href="#"><i class="sli sli-social-pinterest"></i></a>
+          <a class="instagram" href="#"><i class="sli sli-social-instagram"></i></a>
+          <a class="google" href="#"><i class="sli sli-social-google"></i></a>
+        </div>
+      </div>
     </div>
+    <div class="breadcrumb-area pt-35 pb-35 bg-check">
+      <div class="container">
+        <div class="breadcrumb-content text-center">
+          <ul>
+            <li>
+              <a href="index.html" class="parrafoModel">Inicio</a>
+            </li>
+            <li class="active">Checkout</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- compare main wrapper start -->
+    <div class="checkout-main-area pt-70 pb-70">
+      <div class="container">
+        <div class="customer-zone mb-20">
+          <p class="cart-page-title">
+            ¿Es un cliente habitual?
+            <a class="checkout-click1 text-primary" href="#">Haga clic aquí para iniciar sesión y continuar con la
+              compra</a>
+          </p>
+          <div class="checkout-login-info">
+            <p class="parrafoModel">
+              Si ya ha comprado con nosotros, introduzca sus datos en las
+              casillas siguientes. Si es un cliente nuevo, pase a la sección
+              de facturación y envío.
+            </p>
+            <form action="#">
+              <div class="row">
+                <div class="col-lg-6 col-md-6">
+                  <div class="sin-checkout-login">
+                    <label>Usuario o dirección de correo electrónico
+                      <span>*</span></label>
+                    <input type="email" class="text-light" name="user-name" v-model="email" />
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <div class="sin-checkout-login">
+                    <label>contraseña <span>*</span></label>
+                    <input type="password" class="text-light" name="user-password" v-model="password" />
+                  </div>
+                </div>
+              </div>
+              <div class="button-remember-wrap">
+                <button class="button" type="submit" @click="login">
+                  Login
+                </button>
+              </div>
+              <div class="lost-password">
+                <a href="#">Perdiste tu contraseña?</a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="customer-zone mb-20">
+          <p class="cart-page-title">
+            ¿No tienes cuenta?
+            <a class="checkout-click2 text-primary" href="#">Haga clic aquí para registrarse y continuar con la
+              compra</a>
+          </p>
+          <div class="checkout-login-info2">
+            <p class="parrafoModel">
+              introduzca los respectivos datos para poder registrarse! Luego
+              deberas validar la cuenta desde tu correo electronico.
+            </p>
+            <form action="#">
+              <div class="row">
+                <div class="col-lg-6 col-md-6">
+                  <div class="sin-checkout-login">
+                    <label>Dirección de correo electrónico <span>*</span></label>
+                    <input type="email" class="text-light" name="user-name" v-model="emailRegister" />
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <div class="sin-checkout-login">
+                    <label>contraseña <span>*</span></label>
+                    <input type="password" class="text-light" name="user-password" v-model="passwordRegister" />
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <div class="sin-checkout-login">
+                    <label>Nombre <span>*</span></label>
+                    <input type="text" class="text-light" name="user-name" v-model="firstName" />
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <div class="sin-checkout-login">
+                    <label>Apellido <span>*</span></label>
+                    <input type="text" class="text-light" name="user-name" v-model="lastName" />
+                  </div>
+                </div>
+              </div>
+              <div class="button-remember-wrap mt-3">
+                <button class="button" type="submit" @click="register">
+                  Register
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="customer-zone mb-20">
+          <p class="cart-page-title">
+            ¿Tienes un cupón?
+            <a class="checkout-click3 text-primary" href="#">Click here to enter your code</a>
+          </p>
+          <div class="checkout-login-info3">
+            <form action="#">
+              <input type="text" class="text-light" placeholder="Coupon code" />
+              <input type="submit" class="text-light" value="Apply Coupon" />
+            </form>
+          </div>
+        </div>
+        <div class="checkout-wrap pt-30">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="billing-info-wrap mr-50">
+                <h3>Datos de la compra</h3>
+                <div class="row">
+                  <div class="col-lg-6 col-md-6">
+                    <div class="billing-info mb-20">
+                      <label>Primer nombre
+                        <abbr class="required" title="required">*</abbr></label>
+                      <input type="text" class="text-light" v-model="contactName" />
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                    <div class="billing-info mb-20">
+                      <label>Apellido
+                        <abbr class="required" title="required">*</abbr></label>
+                      <input type="text" class="text-light" v-model="contactLastName" />
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-md-12">
+                    <div class="billing-info mb-20">
+                      <label>Celular de contacto<abbr class="required" title="required">*</abbr></label>
+                      <input type="text" class="text-light" v-model="contactNumber" />
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-md-12">
+                    <div class="billing-info mb-20">
+                      <label>Email de contacto<abbr class="required" title="required">*</abbr></label>
+                      <input type="email" class="text-light" v-model="contactEmail" />
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-md-12">
+                    <div class="billing-info mb-20">
+                      <label>Seleccionar dirección de envio<abbr class="required" title="required">*</abbr></label>
+                      <p v-show="addresses.length == 0">
+                        Aun no tienes ninguna dirección de envió guardada.
+                      </p>
+                      <select v-show="addresses.length > 0" class="form-select" v-model="shippmentAddress">
+                        <option selected checked>
+                          Seleccionar dirección
+                        </option>
+                        <option v-for="address in addresses" :value="address">
+                          {{address.streetName}} {{address.streetNumber}},
+                          {{address.locality}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="checkout-account mt-25">
+                  <input class="checkout-toggle" type="checkbox" />
+                  <span class="text-light">Enviar a una nueva dirección</span>
+                </div>
+                <div class="different-address open-toggle mt-30">
+                  <div class="row">
+                    <form @submit.prevent="showAlertAddress">
+                      <div class="col-lg-12">
+                        <div class="billing-info mb-20">
+                          <div class="tax-select">
+                            <label class="billing-info"> * Provincia </label>
+                            <select class="email s-email s-wid form-select" v-model="newProvince">
+                              <option disabled checked selected>
+                                Selecciona tu provincia
+                              </option>
+                              <option v-for="provincia in provincias" :value="provincia">
+                                {{provincia}}
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-12">
+                        <div class="billing-info mb-20">
+                          <label>Localidad</label>
+                          <input class="text-light" type="text" v-model="newLocality" />
+                        </div>
+                      </div>
+                      <div class="col-lg-12">
+                        <div class="billing-info mb-20">
+                          <label>Cod. postal</label>
+                          <input type="number" class="text-light" v-model="newZipCode" />
+                        </div>
+                      </div>
+                      <div class="col-lg-12">
+                        <div class="billing-info mb-20">
+                          <label class="text-withe">Calle</label>
+                          <input type="text" v-model="newStreetName" />
+                        </div>
+                      </div>
+                      <div class="col-lg-12">
+                        <div class="billing-info mb-20">
+                          <label>Dirección de la calle</label>
+                          <input class="billing-address text-light" placeholder="Numero de la calle" type="number"
+                            v-model="newStreetNumber" />
+                          <input placeholder="Numero del departamento" class="text-light" type="text"
+                            v-model="newFloorApartment" />
+                        </div>
+                      </div>
+                      <div class="button-remember-wrap mt-3">
+                        <button class="button" type="submit">
+                          Agregar dirección
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="additional-info-wrap">
+                  <label class="text-light">Notas de pedido</label>
+                  <textarea
+                    placeholder="Ingrese una nota adicional, comentario o algo que quisieras que tengamos en cuenta al realizar el envío"
+                    name="message" v-model="description"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="your-order-area bgColorOrders">
+                <h3>Tus pedidos</h3>
+                <div class="your-order-wrap gray-bg-4">
+                  <div class="your-order-info-wrap">
+                    <div class="your-order-info">
+                      <ul>
+                        <li class="text-light">productos <span class="text-light pe-4">Total</span></li>
+                      </ul>
+                    </div>
+                    <div class="your-order-middle text-light">
+                      <ul>
+                        <li v-for="productCart in cartStorage" class="overli">
+                          {{productCart.name}} X {{productCart.quantity}}
+                          <span>${{productCart.quantity * productCart.price}}
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="your-order-info order-subtotal text-light">
+                      <ul>
+                        <li>Subtotal <span>${{sumPrice}} </span></li>
+                      </ul>
+                    </div>
+                    <div class="your-order-info order-subtotal text-light">
+                      <ul>
+                        <li>
+                          Costo de envio <span>${{shippingPrice}} </span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="your-order-info order-total text-light">
+                      <ul>
+                        <li>Total <span>${{sumPriceShipping}} </span></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="payment-method">
+                    <div class="pay-top sin-payment">
+                      <input id="payment_method_1" class="input-radio" type="radio" value="cheque" checked="checked"
+                        name="payment_method" />
+                      <label for="payment_method_1">
+                        Pagar con tarjeta</label>
+                      <div class="payment-box payment_method_bacs">
+                        <p>
+                          Realice el pago utilizando tarjeta de crédito o débito.
+                          Su pedido no se enviará hasta que los fondos se hayan liquidado en nuestra cuenta.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="pay-top sin-payment sin-payment-3">
+                      <input id="payment-method-4" class="input-radio" type="radio" value="cheque"
+                        name="payment_method" />
+                      <label for="payment-method-4">Transferencia bancaria
+                        <img alt="" src="assets/img/icon-img/payment.png" /></label>
+                      <div class="payment-box payment_method_bacs">
+                        <p>
+                          Realice su pago directamente en nuestra cuenta
+                          bancaria. Por favor, utilice su ID de pedido como
+                          referencia de pago. Su pedido no se enviará hasta
+                          que los fondos se hayan liquidado en nuestra cuenta.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="Place-order mt-40">
+                  <button data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Hacer un pedido
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- compare main wrapper end -->
 
+    <footer class="footer-area bg-midnight">
+      <div class="container">
+        <div class="footer-top text-center pt-45 pb-45">
+          <nav>
+            <ul>
+              <li><a href="index.html">Inicio </a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="contact-us.html">Contacto</a></li>
+              <li><a href="about-us.html">Sobre nosotros</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-bottom border-top-1 pt-20">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-4 col-md-5 col-12">
+              <div class="footer-social pb-20">
+                <a href="#">Facebok</a>
+                <a href="#">Instagram</a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-12">
+              <div class="copyright text-center pb-20">
+                <p>Kōbe Store © 2022</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-3 col-12">
+              <div class="payment-mathod pb-20">
+                <a href="#"><img src="assets/img/icon-img/payment.png" alt=""></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
+    <!-- Modal Quick View Producto -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Completa los datos para continuar con la compra</h2>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <h2>Datos de la tarjeta</h2>
+                <form id="contact-form" @submit.prevent="cardPurchase">
+                  <div class="controls">
+                    <div class="row">
+                      <div class="col-12 mt-1">
+                        <div class="form-group">
+                          <label for="cardNumber">Numero de tarjeta</label>
+                          <input id="cardNumber" type="text" name="name" class="form-control"
+                            placeholder="Ingrese un nombre de producto*" required="required"
+                            data-error="Numero de tarjeta requerido" v-model="cardNumber" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 mt-1">
+                          <div class="form-group">
+                            <label for="cvv">Cvv</label>
+                            <input id="cvv" type="number" class="form-control" placeholder="Ingrese un cvv"
+                              required="required" data-error="Ingrese un cvv" v-model="cvv" />
+                          </div>
+                        </div>
+                      <div class="col-6 mt-1">
+                        <div class="form-group">
+                          <label for="thruDate">Fecha de vencimiento</label>
+                          <input id="thruDate" type="number" name="stock" class="form-control"
+                            placeholder="Ingrese fecha de vencimiento" required="required"
+                            data-error="Ingrese fecha de vencimiento" v-model="thruDate" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row d-flex justify-content-center mt-1">
+                        <label >Tipo de tarjeta</label>
+                      <div class="wrapper2 col-md-12">
+                            <input type="radio" name="select" id="option-1" checked value="CREDIT" v-model="cardType">
+                            <input type="radio" name="select" id="option-2" value="DEBIT" v-model="cardType">
+                              <label for="option-1" class="option option-1">
+                                <div class="dot"></div>
+                                 <span>Credito</span>
+                                 </label>
+                              <label for="option-2" class="option option-2">
+                                <div class="dot"></div>
+                                 <span>Debito</span>
+                              </label>
+                       </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 mt-1">
+                        <div class="form-group">
+                          <label for="cardHolder">Propietario de la tarjeta</label>
+                          <input id="cardHolder" type="number" name="stock" class="form-control"
+                            placeholder="Ingrese stock inicial del producto" required="required"
+                            data-error="Ingrese stock inicial del producto" v-model="cardHolder"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 mt-1">
+                        <div class="form-group">
+                          <label for="form_message">Descripción</label>
+                          <textarea id="form_message" name="Descripción" class="form-control"
+                            placeholder="Escribe una descripción de la compra" rows="4" required="required"
+                            v-model="description"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12 d-flex justify-content-center mt-5">
+                      <button class="btn btn-success" @click="cardTransactionCredit" type="submit">
+                        Realizar compra
+                      </button>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal end Quick View Producto -->
+  </div>
 
-
-
-
-
-
-
-
-    <!-- All JS is here
+  <!-- All JS is here
 ============================================ -->
 
-    <!-- jQuery JS -->
-    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <!-- Popper JS -->
-    <script src="assets/js/popper.min.js"></script>
-    <!-- Bootstrap JS -->
-    <!-- <script src="assets/js/bootstrap.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <!-- Axios -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!-- PDF -->
-    <script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
-    <!-- VUE -->
-    <script src="https://unpkg.com/vue@3"></script>
-    <!-- Sweet Alert -->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- Plugins JS -->
-    <script src="assets/js/plugins.js"></script>
-    <!-- Ajax Mail -->
-    <script src="assets/js/ajax-mail.js"></script>
-    <!-- Index JS VUE -->
-    <script src="./data/index.js"></script>
-    <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
-
+  <!-- jQuery JS -->
+  <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+  <!-- Popper JS -->
+  <script src="assets/js/popper.min.js"></script>
+  <!-- Bootstrap JS -->
+  <!-- <script src="assets/js/bootstrap.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <!-- Axios -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- PDF -->
+  <script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
+  <!-- VUE -->
+  <script src="https://unpkg.com/vue@3"></script>
+  <!-- Sweet Alert -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Plugins JS -->
+  <script src="assets/js/plugins.js"></script>
+  <!-- Ajax Mail -->
+  <script src="assets/js/ajax-mail.js"></script>
+  <!-- Index JS VUE -->
+  <script src="./data/index.js"></script>
+  <!-- Main JS -->
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
