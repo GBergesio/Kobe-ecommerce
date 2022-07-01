@@ -166,7 +166,7 @@ p {
 }
 
 .parrafoModel {
-  color: black;
+  color: white;
 }
 
 p:last-child {
@@ -10717,14 +10717,15 @@ h3.cart-page-title {
 
   border: 1px solid #e8e8e8;
   height: 50px;
-  background-color: transparent;
+  background-color: white;
   padding: 2px 20px;
-  color: #ffffff;
+  color: black;
   font-size: 13px;
 }
 
 .billing-info-wrap .billing-info input:focus {
   border: 1px solid #343538;
+ 
 }
 
 .billing-info-wrap .billing-info input.billing-address {

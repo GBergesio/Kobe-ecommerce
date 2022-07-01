@@ -34,6 +34,10 @@ public class AddressController {
     @PostMapping("/newAddress")
     ResponseEntity<Object> newAddress(@RequestBody NewAddressDTO newAddressDTO, Authentication authentication){
 
+        if(authentication == null){
+            return new ResponseEntity<>("Debes estar logueado para agregar una nueva direccion", HttpStatus.FORBIDDEN);
+        }
+
         Client currentClient = clientService.getCurrentClient(authentication);
 
         Pattern patOnlyLetters = Pattern.compile("^[a-zA-Z\\s+]{1,}");
@@ -44,7 +48,6 @@ public class AddressController {
         Matcher locality = patOnlyLetters.matcher(newAddressDTO.getLocality());
         Matcher streetName = patOnlyLetters.matcher(newAddressDTO.getStreetName());
         Matcher province = patOnlyLetters.matcher(newAddressDTO.getProvince());
-
 
         if(!FloorApartment.matches()){
             return new ResponseEntity<>("This ir not a valid floor apartment", HttpStatus.FORBIDDEN);

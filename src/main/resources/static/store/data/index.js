@@ -481,7 +481,7 @@ const app = Vue.createApp({
           },
         },
         business: {
-          name: "0003 -",
+          name: "0003 - 0034",
           address: "",
           phone: "Payment Date: 01/01/2021 18:12",
           email: "Invoice Date: 02/02/2021 10:17",
@@ -655,7 +655,6 @@ const app = Vue.createApp({
         }
       });
     },
-
     sumPriceProd() {
       this.subtotalCart = 0;
       this.cartStorage.forEach((product) => {
@@ -663,13 +662,33 @@ const app = Vue.createApp({
       });
       return this.subtotalCart;
     },
+    showAlertAddress() {
+      Swal.fire({
+        title: 'Quieres agregar la dirección?',
+        showDenyButton: true,
+        confirmButtonText: 'Guardar',
+        denyButtonText: `Cancelar`,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          axios.post('/api/newAddress', `{
+            "zipCode": ${this.newZipCode},
+            "streetNumber": ${this.newStreetNumber},
+            "floorApartment": "${this.newFloorApartment}",
+            "streetName": "${this.newStreetName}",
+            "province": "${this.newProvince}",
+            "locality": "${this.newLocality}"}`, { headers: { "Content-Type": "application/json" } })
+            .then(() =>
+              Swal.fire('Dirección agregada!', '', 'success')).then(() => window.location.reload())
 
-    logOut() {
-      axios.post("/api/logout").then((response) =>
-        setTimeout(() => {
-          window.location.href = "./index.html";
-        }, 1000)
-      );
+            .catch(error => {
+              Swal.fire({
+                icon: 'error',
+                title: error.response.data,
+                timer: 2000,
+              })
+            })
+        }
+      })
     },
   },
   computed: {

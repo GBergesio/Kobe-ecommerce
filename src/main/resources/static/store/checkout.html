@@ -328,7 +328,7 @@
               compra</a>
           </p>
           <div class="checkout-login-info">
-            <p class="parrafoModel">
+            <p class="parrafoModel text-light">
               Si ya ha comprado con nosotros, introduzca sus datos en las
               casillas siguientes. Si es un cliente nuevo, pase a la sección
               de facturación y envío.
@@ -339,13 +339,13 @@
                   <div class="sin-checkout-login">
                     <label>Usuario o dirección de correo electrónico
                       <span>*</span></label>
-                    <input type="email" class="text-light" name="user-name" v-model="email" />
+                    <input type="email" name="user-name" v-model="email" />
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                   <div class="sin-checkout-login">
                     <label>contraseña <span>*</span></label>
-                    <input type="password" class="text-light" name="user-password" v-model="password" />
+                    <input type="password" name="user-password" v-model="password" />
                   </div>
                 </div>
               </div>
@@ -376,25 +376,25 @@
                 <div class="col-lg-6 col-md-6">
                   <div class="sin-checkout-login">
                     <label>Dirección de correo electrónico <span>*</span></label>
-                    <input type="email" class="text-light" name="user-name" v-model="emailRegister" />
+                    <input type="email"  name="user-name" v-model="emailRegister" />
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                   <div class="sin-checkout-login">
                     <label>contraseña <span>*</span></label>
-                    <input type="password" class="text-light" name="user-password" v-model="passwordRegister" />
+                    <input type="password" name="user-password" v-model="passwordRegister" />
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                   <div class="sin-checkout-login">
                     <label>Nombre <span>*</span></label>
-                    <input type="text" class="text-light" name="user-name" v-model="firstName" />
+                    <input type="text" name="user-name" v-model="firstName" />
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                   <div class="sin-checkout-login">
                     <label>Apellido <span>*</span></label>
-                    <input type="text" class="text-light" name="user-name" v-model="lastName" />
+                    <input type="text" class="text-dark" name="user-name" v-model="lastName" />
                   </div>
                 </div>
               </div>
@@ -406,18 +406,18 @@
             </form>
           </div>
         </div>
-        <div class="customer-zone mb-20">
+        <!-- <div class="customer-zone mb-20">
           <p class="cart-page-title">
             ¿Tienes un cupón?
             <a class="checkout-click3 text-primary" href="#">Click here to enter your code</a>
           </p>
           <div class="checkout-login-info3">
             <form action="#">
-              <input type="text" class="text-light" placeholder="Coupon code" />
-              <input type="submit" class="text-light" value="Apply Coupon" />
+              <input type="text" class="text-dark" placeholder="Coupon code" />
+              <input type="submit" class="text-dark" value="Apply Coupon" />
             </form>
           </div>
-        </div>
+        </div> -->
         <div class="checkout-wrap pt-30">
           <div class="row">
             <div class="col-lg-7">
@@ -428,26 +428,26 @@
                     <div class="billing-info mb-20">
                       <label>Primer nombre
                         <abbr class="required" title="required">*</abbr></label>
-                      <input type="text" class="text-light" v-model="contactName" />
+                      <input type="text" class="text-dark" v-model="contactName" />
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
                     <div class="billing-info mb-20">
                       <label>Apellido
                         <abbr class="required" title="required">*</abbr></label>
-                      <input type="text" class="text-light" v-model="contactLastName" />
+                      <input type="text" class="text-dark" v-model="contactLastName" />
                     </div>
                   </div>
                   <div class="col-lg-12 col-md-12">
                     <div class="billing-info mb-20">
                       <label>Celular de contacto<abbr class="required" title="required">*</abbr></label>
-                      <input type="text" class="text-light" v-model="contactNumber" />
+                      <input type="text" class="text-dark" v-model="contactNumber" />
                     </div>
                   </div>
                   <div class="col-lg-12 col-md-12">
                     <div class="billing-info mb-20">
                       <label>Email de contacto<abbr class="required" title="required">*</abbr></label>
-                      <input type="email" class="text-light" v-model="contactEmail" />
+                      <input type="email" class="text-dark" v-model="contactEmail" />
                     </div>
                   </div>
                   <div class="col-lg-12 col-md-12">
@@ -493,13 +493,13 @@
                       <div class="col-lg-12">
                         <div class="billing-info mb-20">
                           <label>Localidad</label>
-                          <input class="text-light" type="text" v-model="newLocality" />
+                          <input class="text-dark" type="text" v-model="newLocality" />
                         </div>
                       </div>
                       <div class="col-lg-12">
                         <div class="billing-info mb-20">
                           <label>Cod. postal</label>
-                          <input type="number" class="text-light" v-model="newZipCode" />
+                          <input type="number" class="text-dark" v-model="newZipCode" />
                         </div>
                       </div>
                       <div class="col-lg-12">
@@ -511,9 +511,9 @@
                       <div class="col-lg-12">
                         <div class="billing-info mb-20">
                           <label>Dirección de la calle</label>
-                          <input class="billing-address text-light" placeholder="Numero de la calle" type="number"
+                          <input class="billing-address text-dark" placeholder="Numero de la calle" type="number"
                             v-model="newStreetNumber" />
-                          <input placeholder="Numero del departamento" class="text-light" type="text"
+                          <input placeholder="Numero del departamento" class="text-dark" type="text"
                             v-model="newFloorApartment" />
                         </div>
                       </div>
@@ -574,8 +574,8 @@
                     <div class="pay-top sin-payment">
                       <input id="payment_method_1" class="input-radio" type="radio" value="cheque" checked="checked"
                         name="payment_method" />
-                      <label for="payment_method_1">
-                        Pagar con tarjeta</label>
+                      <label for="payment_method_1" > 
+                        Pagar con tarjeta <img alt="" src="assets/img/icon-img/payment.png" /></label>
                       <div class="payment-box payment_method_bacs">
                         <p>
                           Realice el pago utilizando tarjeta de crédito o débito.
@@ -583,11 +583,12 @@
                         </p>
                       </div>
                     </div>
-                    <div class="pay-top sin-payment sin-payment-3">
+                    <!-- <div class="pay-top sin-payment sin-payment-3">
                       <input id="payment-method-4" class="input-radio" type="radio" value="cheque"
                         name="payment_method" />
                       <label for="payment-method-4">Transferencia bancaria
-                        <img alt="" src="assets/img/icon-img/payment.png" /></label>
+                        <img alt="" src="assets/img/icon-img/payment.png" />
+                      </label>
                       <div class="payment-box payment_method_bacs">
                         <p>
                           Realice su pago directamente en nuestra cuenta
@@ -596,7 +597,7 @@
                           que los fondos se hayan liquidado en nuestra cuenta.
                         </p>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <div class="Place-order mt-40">
