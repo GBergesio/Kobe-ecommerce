@@ -444,7 +444,9 @@ const app = Vue.createApp({
         .post("/api/login", `email=${this.email}&password=${this.password}`, {
           headers: { "content-type": "application/x-www-form-urlencoded" },
         })
+        .then(()=>window.location.reload())
         .catch((error) => console.log(error));
+
     },
     register() {
       let registerObject = {
@@ -610,9 +612,9 @@ const app = Vue.createApp({
                   "https://homebankingapplication.herokuapp.com/api/cardTransaction",
                   {
                     cardType: this.cardType,
-                    amount: this.sumPriceShipping(),
+                    amount: this.totalPurchase,
                     cardNumber: this.cardNumber,
-                    cardHolder: this.cardHolder,
+                    cardHolder: "Melba Morel",
                     cvv: this.cvv,
                     thruDate: this.thruDate,
                     description: this.description,
@@ -690,6 +692,14 @@ const app = Vue.createApp({
         }
       })
     },
+  },
+  sumPriceShipping2() {
+    if (this.subtotalCart < 20000) {
+      this.totalPurchase = this.subtotalCart + this.shippingPrice;
+    } else if (this.subtotalCart > 20000) {
+      this.totalPurchase = this.subtotalCart;
+    }
+    return this.totalPurchase;
   },
   computed: {
     sumPriceShipping() {

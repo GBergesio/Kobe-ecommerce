@@ -169,6 +169,10 @@ p {
   color: white;
 }
 
+.parrafoModel2 {
+  color: black;
+}
+
 p:last-child {
   margin-bottom: 0;
 }
@@ -10441,11 +10445,37 @@ h3.cart-page-title {
 .checkout-login-info form .sin-checkout-login input {
   border: 1px solid #e8e8e8;
   height: 50px;
-  background-color: transparent;
+  background-color: white;
 }
 
 .checkout-login-info form .sin-checkout-login input:focus {
   border: 1px solid #343538;
+  background-color: white;
+}
+
+.checkout-login-info form .sin-checkout-login2 {
+  margin-bottom: 30px;
+}
+
+.checkout-login-info form .sin-checkout-login2 label {
+  font-size: 13px;
+  text-transform: uppercase;
+  margin: 0 0 5px;
+}
+
+.checkout-login-info form .sin-checkout-login2 label span {
+  color: red;
+}
+
+.checkout-login-info form .sin-checkout-login2 input {
+  border: 1px solid #e8e8e8;
+  height: 50px;
+  background-color: white;
+}
+
+.checkout-login-info form .sin-checkout-login2 input:focus {
+  border: 1px solid #343538;
+  background-color: white;
 }
 
 .checkout-login-info form .button-remember-wrap {
@@ -10621,6 +10651,7 @@ h3.cart-page-title {
   position: relative;
   top: 5px;
   width: 17px;
+  background-color: white;
 }
 
 .checkout-login-info2 form .button-remember-wrap .checkout-login-toggle-btn label {
@@ -10644,6 +10675,7 @@ h3.cart-page-title {
 
 .checkout-login-info3 form input[type=text]:focus {
   border: 1px solid #1f2226;
+  background-color: white;
 }
 
 .checkout-login-info3 form input[type=submit] {

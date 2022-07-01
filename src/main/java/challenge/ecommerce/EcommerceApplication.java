@@ -50,7 +50,7 @@ public class EcommerceApplication {
 			Client client = new Client("client", "client","client@mail", passwordEncoder.encode("123"),UserType.CLIENT);
 			clientRepository.save(client);
 
-			Client validatedClient = new Client("Marcelo", "Vivas","marcelovivas@gmail.com", passwordEncoder.encode("123"),UserType.CLIENT);
+			Client validatedClient = new Client("Melba", "Morel","melbamorel@gmail.com", passwordEncoder.encode("123"),UserType.CLIENT);
 			validatedClient.setActive(true);
 			clientRepository.save(validatedClient);
 

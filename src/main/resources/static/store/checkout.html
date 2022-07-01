@@ -122,23 +122,27 @@
                 </div>
                 <div class="setting-wrap">
                   <button class="setting-active">
-                    <i class="sli sli-user"></i>
+                      <i class="sli sli-user"></i>
                   </button>
                   <div class="setting-content">
-                    <ul>
-                      <li>
-                        <h4>Account</h4>
-                        <ul>
-                          <li><a href="login-register.html">Login</a></li>
+                      <ul>
                           <li>
-                            <a href="login-register.html">Creat Account</a>
+                              <h4>Cuenta</h4>
+                              <ul v-if="currentClient.active == true">
+                                  <li class="pt-3"><a href="login-register.html">Crear Cuenta</a></li>
+                                  <li><a href="my-account.html">Mi cuenta</a></li>
+                                  <li><a @click="logOut" >Logout</a></li>
+                              </ul>
+                              <ul v-else>
+                                  <li class="pt-3"><a href="login-register.html">Crear Cuenta</a></li>
+                                  <li><a href="my-account.html">Mi cuenta</a></li>
+                                  <li><a href="login-register.html">Login</a></li>
+                              </ul>
+
                           </li>
-                          <li><a href="my-account.html">My Account</a></li>
-                        </ul>
-                      </li>
-                    </ul>
+                      </ul>
                   </div>
-                </div>
+              </div>
               </div>
             </div>
           </div>
@@ -333,7 +337,7 @@
               casillas siguientes. Si es un cliente nuevo, pase a la sección
               de facturación y envío.
             </p>
-            <form action="#">
+            <form action="#" @submit.prevent="login()">
               <div class="row">
                 <div class="col-lg-6 col-md-6">
                   <div class="sin-checkout-login">
@@ -350,8 +354,8 @@
                 </div>
               </div>
               <div class="button-remember-wrap">
-                <button class="button" type="submit" @click="login">
-                  Login
+                <button class="button" type="submit" >
+                  Ingresar
                 </button>
               </div>
               <div class="lost-password">
@@ -368,7 +372,7 @@
           </p>
           <div class="checkout-login-info2">
             <p class="parrafoModel">
-              introduzca los respectivos datos para poder registrarse! Luego
+              Introduzca los respectivos datos para poder registrarse! Luego
               deberas validar la cuenta desde tu correo electronico.
             </p>
             <form action="#">
@@ -376,31 +380,31 @@
                 <div class="col-lg-6 col-md-6">
                   <div class="sin-checkout-login">
                     <label>Dirección de correo electrónico <span>*</span></label>
-                    <input type="email"  name="user-name" v-model="emailRegister" />
+                    <input class="bg-light" type="email"  name="user-name" v-model="emailRegister" />
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                   <div class="sin-checkout-login">
                     <label>contraseña <span>*</span></label>
-                    <input type="password" name="user-password" v-model="passwordRegister" />
+                    <input class="bg-light" type="password" name="user-password" v-model="passwordRegister" />
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                   <div class="sin-checkout-login">
                     <label>Nombre <span>*</span></label>
-                    <input type="text" name="user-name" v-model="firstName" />
+                    <input class="bg-light" type="text" name="user-name" v-model="firstName" />
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                   <div class="sin-checkout-login">
                     <label>Apellido <span>*</span></label>
-                    <input type="text" class="text-dark" name="user-name" v-model="lastName" />
+                    <input class="bg-light" type="text" class="text-dark" name="user-name" v-model="lastName" />
                   </div>
                 </div>
               </div>
               <div class="button-remember-wrap mt-3">
                 <button class="button" type="submit" @click="register">
-                  Register
+                  Registrarse
                 </button>
               </div>
             </form>
@@ -421,21 +425,21 @@
         <div class="checkout-wrap pt-30">
           <div class="row">
             <div class="col-lg-7">
-              <div class="billing-info-wrap mr-50">
+              <div class="billing-info-wrap mr-50" >
                 <h3>Datos de la compra</h3>
-                <div class="row">
-                  <div class="col-lg-6 col-md-6">
+                <div class="row" >
+                  <div class="col-lg-6 col-md-6" v-if="currentClient.active == true">
                     <div class="billing-info mb-20">
                       <label>Primer nombre
                         <abbr class="required" title="required">*</abbr></label>
-                      <input type="text" class="text-dark" v-model="contactName" />
+                      <input type="text" class="text-dark" :placeholder="currentClient.name" v-model="contactName" readonly/>
                     </div>
                   </div>
-                  <div class="col-lg-6 col-md-6">
+                  <div class="col-lg-6 col-md-6" v-if="currentClient.active == true">
                     <div class="billing-info mb-20">
                       <label>Apellido
                         <abbr class="required" title="required">*</abbr></label>
-                      <input type="text" class="text-dark" v-model="contactLastName" />
+                      <input type="text" class="text-dark" :placeholder="currentClient.lastName" v-model="contactLastName" readonly/>
                     </div>
                   </div>
                   <div class="col-lg-12 col-md-12">
@@ -668,7 +672,7 @@
                         <div class="form-group">
                           <label for="cardNumber">Numero de tarjeta</label>
                           <input id="cardNumber" type="text" name="name" class="form-control"
-                            placeholder="Ingrese un nombre de producto*" required="required"
+                            placeholder="Ingrese Numero de tarjeta" required="required"
                             data-error="Numero de tarjeta requerido" v-model="cardNumber" />
                         </div>
                       </div>
@@ -684,7 +688,7 @@
                       <div class="col-6 mt-1">
                         <div class="form-group">
                           <label for="thruDate">Fecha de vencimiento</label>
-                          <input id="thruDate" type="number" name="stock" class="form-control"
+                          <input id="thruDate" type="text" name="stock" class="form-control"
                             placeholder="Ingrese fecha de vencimiento" required="required"
                             data-error="Ingrese fecha de vencimiento" v-model="thruDate" />
                         </div>
@@ -710,9 +714,9 @@
                       <div class="col-md-12 mt-1">
                         <div class="form-group">
                           <label for="cardHolder">Propietario de la tarjeta</label>
-                          <input id="cardHolder" type="number" name="stock" class="form-control"
-                            placeholder="Ingrese stock inicial del producto" required="required"
-                            data-error="Ingrese stock inicial del producto" v-model="cardHolder"/>
+                          <input id="cardHolder" type="name" name="stock" class="form-control"
+                            placeholder="Ingrese nombre del propietario" required="required"
+                            data-error="Ingrese nombre del propietario" v-model="cardHolder"/>
                         </div>
                       </div>
                     </div>
@@ -727,7 +731,7 @@
                       </div>
                     </div>
                     <div class="col-md-12 d-flex justify-content-center mt-5">
-                      <button class="btn btn-success" @click="cardTransactionCredit" type="submit">
+                      <button class="btn btn-success" @click="cardPurchase" type="submit">
                         Realizar compra
                       </button>
                     </div>

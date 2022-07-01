@@ -444,35 +444,23 @@
                                                         <div class="ht-product-action">
                                                             <ul>
                                                                 <li><button @click="productForModal(product)"><a
-<<<<<<< HEAD
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#exampleModal"><i
-=======
-                                                                            data-bs-toggle="modal" data-bs-target="#exampleModal"><i
->>>>>>> corvo
                                                                                 class="sli sli-magnifier"></i><span
                                                                                 class="ht-product-action-tooltip">Vista
                                                                                 rápida</span></a></button>
                                                                 </li>
                                                                 <li><button @click="addProductFav(product)">
                                                                         <a><i class="sli sli-heart"></i><span
-<<<<<<< HEAD
                                                                                 class="ht-product-action-tooltip">Agregar
                                                                                 a
-=======
-                                                                                class="ht-product-action-tooltip">Agregar a
->>>>>>> corvo
                                                                                 favoritos</span></a>
                                                                     </button>
                                                                 </li>
                                                                 <li><button @click="addProductCart(product)">
                                                                         <a><i class="sli sli-bag"></i><span
-<<<<<<< HEAD
                                                                                 class="ht-product-action-tooltip">Agregar
                                                                                 al
-=======
-                                                                                class="ht-product-action-tooltip">Agregar al
->>>>>>> corvo
                                                                                 carrito</span></a>
                                                                     </button>
                                                                 </li>
@@ -766,7 +754,6 @@
             </div>
         </footer>
 
-<<<<<<< HEAD
             <!-- Modal Quick View Producto -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
@@ -849,89 +836,6 @@
                                                 <li><a :href="'shop.html?subcategory=' + productSelect.subcategory">{{productSelect.subcategory}}</a></li>
                                             </ul>
                                         </div>
-=======
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true"></span></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-5 col-sm-12 col-xs-12">
-                                <div class="tab-content quickview-big-img">
-                                    <div :id="pro-1" class="tab-pane fade show active">
-                                        <img :src="productSelect.img" :alt="productSelect.name">
-                                    </div>
-                                    <div id="pro-2" class="tab-pane fade" v-show="productSelect.imgSec != ''">
-                                        <img :src="productSelect.imgSec" :alt="productSelect.name">
-                                    </div>
-                                </div>
-                                <!-- Thumbnail Large Image End -->
-                                <!-- Thumbnail Image End -->
-                                <div class="quickview-wrap mt-15">
-                                    <div class="quickview-slide-active owl-carousel nav nav-style-2" role="tablist">
-                                        <a class="active" data-bs-toggle="tab" href="#pro-1"><img
-                                                :src="productSelect.img" :alt="productSelect.name"></a>
-                                        <a data-bs-toggle="tab" href="#pro-2"
-                                            v-show="productSelect.imgSec != ''"><img :src="productSelect.imgSec"
-                                                :alt="productSelect.name"></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-7 col-sm-12 col-xs-12">
-                                <div class="product-details-content quickview-content">
-                                    <h2>{{productSelect.name}}</h2>
-                                    <div class="product-details-price" v-show="productSelect.stock <=5">
-                                        <span class="new">${{productSelect.lowStockPrice}}</span>
-                                        <span class="old">${{productSelect.price}}</span>
-                                        <span class="text-success">{{offMessage}}</span>
-                                    </div>
-
-                                    <div class="product-details-price" v-show="productSelect.stock > 5">
-                                        <span class="new">${{productSelect.price}}</span>
-                                    </div>
-
-                                    <div class="pro-details-rating-wrap">
-                                        <span v-show="productSelect.stock > 5">Stock: {{productSelect.stock}}</span>
-                                        <span class="text-danger"
-                                            v-show="productSelect.stock <= 5 && productSelect.stock >= 2">Últimas
-                                            {{productSelect.stock}} unidades!</span>
-                                        <span class="text-danger" v-show="productSelect.stock == 1">Última
-                                            unidad!!!</span>
-                                    </div>
-                                    <p class="text-dark">{{productSelect.description}}</p>
-                                    <div class="pro-details-list">
-                                        <ul>
-                                            <li>Envíos gratis en compras mayores a $20000!</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pro-details-quality">
-                                        <div class="cart-plus-minus">
-                                            <input :id="productSelect.id" class="cart-plus-minus-box" type="number"
-                                                name="qtybutton" value="1" min="1" :max="3">
-                                        </div>
-                                        <div class="pro-details-cart">
-                                            <a @click="addProductCartModal(productSelect)">Agregar al carrito</a>
-                                        </div>
-                                        <div class="pro-details-wishlist">
-                                            <a title="Add To Wishlist" href="#"><i class="sli sli-heart"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="pro-details-meta">
-                                        <span>Categorías :</span>
-                                        <ul>
-                                            <li><a href="#">{{productSelect.category}}</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="pro-details-meta">
-                                        <span>Subcategorias:</span>
-                                        <ul>
-                                            <li><a>{{productSelect.subcategory}}</a></li>
-                                        </ul>
->>>>>>> corvo
                                     </div>
                                 </div>
                             </div>
