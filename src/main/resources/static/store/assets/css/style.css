@@ -173,6 +173,19 @@ p:last-child {
   margin-bottom: 0;
 }
 
+.btnAdd{
+  background-color: var(--torch-red);
+  border: none;
+  border-radius: 8%;
+  height: 50px;
+  width: 135px;
+  margin-right: 20px;
+}
+
+.btnAdd:hover{
+  background-color: var(--electric-blue);
+}
+
 a,
 button {
   color: inherit;
@@ -11121,10 +11134,8 @@ h3.cart-page-title {
 
 .myaccount-content fieldset legend {
   font-size: 16px;
-  margin-bottom: 20px;
   font-weight: 500;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ccc;
+
 }
 
 .myaccount-content .account-details-form {

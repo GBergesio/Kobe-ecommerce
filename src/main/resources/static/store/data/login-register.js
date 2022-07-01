@@ -12,7 +12,9 @@ const app = Vue.createApp({
             // Login
             email:"",
             password:"",
-
+            
+            //
+            provincias: ["Buenos Aires", "Jujuy", "Salta", "Chaco", "Formosa", "San Luis", "San Juan", "Mendoza", "Catamarca", "Sant. del Estero", "Tucuman", "Santa Fe", "Misiones", "Corrientes", "Cordoba", "Neuquen", "Rio Negro", "Tierra del Fuego", "Santa Cruz", "La Rioja", "Entre Rios", "La Pampa", "Chubut"], 
         }
     },
     created() {
@@ -30,7 +32,7 @@ const app = Vue.createApp({
             axios.post('/api/login', url, headers)
             .then(response =>
                 setTimeout(function(){
-                window.location.href='./my-account.html'
+                window.location.href='./index.html'
             },1000))
             .catch(error=> console.log(error))
         },

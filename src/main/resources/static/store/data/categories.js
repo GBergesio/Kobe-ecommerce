@@ -4,8 +4,12 @@ const app = Vue.createApp({
             message: 'Hello Vue!',
             searchWord: "",
             searchMessage: "",
+<<<<<<< HEAD
 
             products: [],
+=======
+            products:[],
+>>>>>>> corvo
             filteredProducts: [],
             sortType: "",
             minPrice: "",
@@ -48,6 +52,7 @@ const app = Vue.createApp({
             productsFavStorage: [],
             productsFavId: [],
 
+            productSelect:{},
         }
     },
     created() {
