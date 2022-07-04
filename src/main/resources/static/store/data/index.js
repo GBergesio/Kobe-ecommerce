@@ -485,8 +485,8 @@ const app = Vue.createApp({
         business: {
           name: "0003 - 0034",
           address: "",
-          phone: "Payment Date: 01/01/2021 18:12",
-          email: "Invoice Date: 02/02/2021 10:17",
+          phone: "Fecha de pago: 01/07/2022",
+          email: "Fecha de factura: 01/07/2022",
           email_1: "Responsable inscripto Cuit: 30-20219031-6",
           website: "INICIO ACT.: 01/06/2009 ING. BRUTOS: 28003732",
         },
@@ -632,6 +632,7 @@ const app = Vue.createApp({
                     .then(this.createPurchase())
                     .then(this.downloadFile())
                     .then(this.emptyCart())
+                    .then(()=> window.location.href='./index.html')
                 )
                 .catch((error) => {
                   Swal.fire({

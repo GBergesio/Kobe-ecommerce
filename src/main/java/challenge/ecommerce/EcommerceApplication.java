@@ -926,7 +926,7 @@ public class EcommerceApplication {
 			Product product195= new Product("DC -  Batman","Figura de accion de 20 cm",
 					"https://i.ibb.co/QDLfBZY/Busto-DC-Direct-Heroes-of-the-Universe-Busto-de-Batman-20cm.jpg",
 					"https://i.ibb.co/tDvMVNd/ecbf66484f8439fd7021f3ef224a50a8.jpg",
-					(short) 12,5999.0,"DC",
+					(short) 12,11999.0,"DC",
 					Category.ACTIONFIGURES, "Static Figures");
 			productRepository.save(product195);
 			Product product196= new Product("DC - Batman ","Figura de accion de 20 cm",
@@ -944,13 +944,13 @@ public class EcommerceApplication {
 			Product product198= new Product("DC - Flash ","Figura de accion de 20 cm",
 					"https://i.ibb.co/Y3MVv3N/Bandai-figuras-de-acci-n-de-DC-Comics-para-ni-os-y-ni-as-juguetes-originales-jpg-Q90-jpg.webp",
 					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
-					(short) 12,5999.0,"DC",
+					(short) 12,7999.0,"DC",
 					Category.ACTIONFIGURES, "Static Figures");
 			productRepository.save(product198);
 			Product product199= new Product("DC - Flash ","Figura de accion de 20 cm",
 					"https://i.ibb.co/zf4HxKZ/Figura-de-acci-n-de-16cm-modelo-coleccionable-de-PVC-Juguetes-jpg-Q90-jpg.webp",
 					"https://i.ibb.co/NywdBtF/cdcd8d2b4c87df4eb940083eac793cb3.png",
-					(short) 12,5999.0,"DC",
+					(short) 12,3999.0,"DC",
 					Category.ACTIONFIGURES, "Static Figures");
 			productRepository.save(product199);
 			Product product200 = new Product("DC - Superman","Figura de accion de 20 cm",
