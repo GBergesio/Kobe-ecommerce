@@ -225,6 +225,7 @@ public class EcommerceApplication {
 			productRepository.save(product60);
 			Product product61 = new Product("Marvel Series - Spider Man ","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/5jg0Xfm/images-q-tbn-ANd9-Gc-Sm-Uu5iv0-25ith-Yl-T3t0tew-TQCNz-NMk-R-eeg-usqp-CAU.jpg","https://www.universalorlando.com/webdata/k2/es/us/files/Images/gds/ioa-amazing-adventures-of-spiderman-ride-animation-cf-b.jpg",  (short) 13,999.0,"Marvel",  Category.BAZARANDTOYSHOP , "Keychains");
 			productRepository.save(product61);
+
 			//mousePad
 			Product product62 = new Product("Marvel Series - Iron Man","todo decoraciones, ideal para regalo o decoracion de la casa","https://i.ibb.co/r3btBQ1/a83e0e4cd56d87284872dcaa5e314b4b-product.jpg","https://i.ibb.co/4YHG0Fd/avengers-endgame-iron-man-tony-stark-crop1619139044711-jpg-33663383.jpg",  (short) 13,899.0,"Marvel",  Category.BAZARANDTOYSHOP , "Mouse Pad");
 			productRepository.save(product62);
@@ -487,7 +488,6 @@ public class EcommerceApplication {
 					(short) 14,3000.0,"varios",
 					Category.BAZARANDTOYSHOP , "Board Games");
 			productRepository.save(product124);
-
 
 			//tazas
 			Product product130 = new Product("Star wars - Stormtrooper",

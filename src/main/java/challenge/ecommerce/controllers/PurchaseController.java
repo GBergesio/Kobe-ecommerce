@@ -5,8 +5,6 @@ import challenge.ecommerce.dtos.PurchaseApplicationDto;
 import challenge.ecommerce.dtos.PurchaseDto;
 import challenge.ecommerce.models.Client;
 import challenge.ecommerce.models.Product;
-import challenge.ecommerce.repositories.PurchaseProductRepository;
-import challenge.ecommerce.repositories.PurchaseRepository;
 import challenge.ecommerce.services.ClientService;
 import challenge.ecommerce.services.ProductService;
 import challenge.ecommerce.services.PurchaseService;
@@ -18,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
