@@ -444,16 +444,16 @@ const app = Vue.createApp({
     },
     cardTransactionCredit() {
       Swal.fire({
-          title: 'Do you want to do the transaction?',
+          title: 'Quieres realizar la transacción?',
           showDenyButton: true,
           showCancelButton: true,
           confirmButtonText: 'Save',
           denyButtonText: `Don't save`,
       }).then((result) => {
           if (result.isConfirmed) {
-              axios.post('/api/cardTransaction', `{"cardType": "CREDIT","amount": ${this.amount},"cardNumber": "${this.cardNumber}","cardHolder": "${this.cardHolder}","cvv": "${this.cvv}","thruDate": "${this.thruDate}","description": "${this.description}","accountNumber": "${this.accountNumberFunds}"}`, { headers: { "Content-Type": "application/json" } })
+              axios.post('https://homebankingapplication.herokuapp.com/api/cardTransaction', `{"cardType": "CREDIT","amount": ${this.amount},"cardNumber": "${this.cardNumber}","cardHolder": "${this.cardHolder}","cvv": "${this.cvv}","thruDate": "${this.thruDate}","description": "${this.description}","accountNumber": "${this.accountNumberFunds}"}`, {headers:{"Access-Control-Allow-Headers" : "Content-Type","Access-Control-Allow-Origin" : "*","Access-Control-Allow-Methods": "OPTIONS,POST,GET"}})
               .then(()=>
-              Swal.fire('Transfered!', '', 'success').then(() => window.location.replace("/web/Cards.html")))
+              Swal.fire('Transferido!', '', 'success').then(() => downloadFile()))
               .catch(error => {
                   Swal.fire({
                       icon: 'error',
@@ -463,7 +463,7 @@ const app = Vue.createApp({
               })
           }
       })
-  },
+    },
 
   },
   computed: {
