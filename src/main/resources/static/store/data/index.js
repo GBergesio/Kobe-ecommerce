@@ -601,7 +601,7 @@ const app = Vue.createApp({
       Swal.fire({
         title: "Quieres realizar la transaccion?",
         showDenyButton: true,
-        confirmButtonText: "Guardar",
+        confirmButtonText: "Confirmar",
         denyButtonText: `Cancelar`,
       }).then((result) => {
         if (this.currentClient != "") {

@@ -192,14 +192,16 @@
                                             <ul>
                                                 <li>
                                                     <h4>Cuenta</h4>
-                                                    <ul v-if="currentClient.active == true">
-                                                        <li class="pt-3"><a href="login-register.html">Crear Cuenta</a></li>
+                                                    <ul v-if="currentClient.active == false">
+                                                        <li class="pt-3"><a href="login-register.html">Crear Cuenta</a>
+                                                        </li>
                                                         <li><a href="my-account.html">Mi cuenta</a></li>
-                                                        <li><a @click="logOut" >Logout</a></li>
+                                                        <li><a @click="logOut">Logout</a></li>
                                                     </ul>
                                                     <ul v-else>
-                                                        <li class="pt-3"><a href="login-register.html">Crear Cuenta</a></li>
-                                                        <li><a href="my-account.html">Mi cuenta</a></li>
+                                                        <li class="pt-3"><a href="login-register.html">Crear Cuenta</a>
+                                                        </li>
+                                                        <!-- <li><a href="my-account.html">Mi cuenta</a></li> -->
                                                         <li><a href="login-register.html">Login</a></li>
                                                     </ul>
 
@@ -488,8 +490,8 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a v-bind:href="'shop.html?category=ACTIONFIGURES'"><img class="animated" src="assets/img/banner/funko2.png"
-                                        alt="imgFunkosYfiguras"></a>
+                                <a v-bind:href="'shop.html?category=ACTIONFIGURES'"><img class="animated"
+                                        src="assets/img/banner/funko2.png" alt="imgFunkosYfiguras"></a>
                                 <div class="banner-content banner-position-1">
                                     <h2 id="funkosyfiguras">Funkos <br>y figuras</h2>
                                     <h3>Disponibles individuales<br>y en colecciones</h3>
@@ -505,12 +507,13 @@
                                 <div class="banner-content banner-position-2">
                                     <h3 id="h3Banner2 pb-15">Mouse Pad personalizados</h3>
                                     <!-- <h2>Stickers <br>y pegatinas</h2> -->
-                                    <a v-bind:href="'shop.html?subcategory=Mouse Pad'" style="background-color: red;">Ver productos</a>
+                                    <a v-bind:href="'shop.html?subcategory=Mouse Pad'"
+                                        style="background-color: red;">Ver productos</a>
                                 </div>
                             </div>
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a :href="'shop.html?category=BAZARANDTOYSHOP'"><img class="animated" src="assets/img/banner/mugs2.png"
-                                        alt=""></a>
+                                <a :href="'shop.html?category=BAZARANDTOYSHOP'"><img class="animated"
+                                        src="assets/img/banner/mugs2.png" alt=""></a>
                                 <div class="banner-content banner-position-3">
                                     <h3>Artículos bazar</h3>
                                     <h2>Tazas, llaveros <br>y fundas</h2>
@@ -576,14 +579,16 @@
                                         </div>
                                         <div class="ht-product-content">
                                             <div class="ht-product-content-inner">
-                                                <div class="ht-product-categories"><a :href="'shop.html?subcategory=' + funko.subcategory">{{funko.subcategory}}</a>
+                                                <div class="ht-product-categories"><a
+                                                        :href="'shop.html?subcategory=' + funko.subcategory">{{funko.subcategory}}</a>
                                                 </div>
                                                 <h4 class="ht-product-title"><a
                                                         :href="'product-details.html?id=' + funko.id">{{funko.name}}</a>
                                                 </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="funko.stock <= 5">
-                                                        <span class="newLow2">${{(funko.lowStockPrice).toFixed(2)}}</span>
+                                                        <span
+                                                            class="newLow2">${{(funko.lowStockPrice).toFixed(2)}}</span>
                                                         <span class="old">${{funko.price}}</span>
                                                     </div>
                                                     <div v-show="funko.stock > 5">
@@ -662,14 +667,16 @@
                                         </div>
                                         <div class="ht-product-content">
                                             <div class="ht-product-content-inner">
-                                                <div class="ht-product-categories"><a :href="'shop.html?subcategory=' + funda.subcategory">{{funda.subcategory}}</a>
+                                                <div class="ht-product-categories"><a
+                                                        :href="'shop.html?subcategory=' + funda.subcategory">{{funda.subcategory}}</a>
                                                 </div>
                                                 <h4 class="ht-product-title"><a
                                                         :href="'product-details.html?id=' + funda.id">{{funda.name}}</a>
                                                 </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="funda.stock <= 5">
-                                                        <span class="newLow2">${{(funda.lowStockPrice).toFixed(2)}}</span>
+                                                        <span
+                                                            class="newLow2">${{(funda.lowStockPrice).toFixed(2)}}</span>
                                                         <span class="old">${{funda.price}}</span>
                                                     </div>
                                                     <div v-show="funda.stock > 5">
@@ -743,7 +750,8 @@
                                         </div>
                                         <div class="ht-product-content">
                                             <div class="ht-product-content-inner">
-                                                <div class="ht-product-categories"><a :href="'shop.html?subcategory=' + manga.subcategory">{{manga.subcategory}}</a>
+                                                <div class="ht-product-categories"><a
+                                                        :href="'shop.html?subcategory=' + manga.subcategory">{{manga.subcategory}}</a>
                                                 </div>
                                                 <h4 class="ht-product-title"><a
                                                         :href="'product-details.html?id=' + manga.id">{{manga.name}}</a>
@@ -839,8 +847,8 @@
                                 v-for="product in lowStock" div>
                                 <div class="ht-product-inner" style="height: 501.69px;">
                                     <div class="ht-product-image-wrap">
-                                        <a :href="'product-details.html?id=' + product.id" class="ht-product-image"><img :src="product.img"
-                                                :alt="product.name"></a>
+                                        <a :href="'product-details.html?id=' + product.id" class="ht-product-image"><img
+                                                :src="product.img" :alt="product.name"></a>
                                         <div class="ht-product-action">
                                             <ul>
                                                 <li><button @click="productForModal(product)"><a data-bs-toggle="modal"
@@ -866,9 +874,12 @@
                                     </div>
                                     <div class="ht-product-content">
                                         <div class="ht-product-content-inner">
-                                            <div class="ht-product-categories"><a v-bind:href="'shop.html?subcategory=' + product.subcategory">{{product.subcategory}}</a>
+                                            <div class="ht-product-categories"><a
+                                                    v-bind:href="'shop.html?subcategory=' + product.subcategory">{{product.subcategory}}</a>
                                             </div>
-                                            <h4 class="ht-product-title"><a :href="'product-details.html?id=' + product.id">{{product.name}}</a></h4>
+                                            <h4 class="ht-product-title"><a
+                                                    :href="'product-details.html?id=' + product.id">{{product.name}}</a>
+                                            </h4>
                                             <div class="ht-product-price" v-show="product.stock <=5">
                                                 <span class="newLow">${{(product.lowStockPrice).toFixed(2)}}</span>
                                                 <span class="old">${{product.price}}</span>
@@ -885,12 +896,15 @@
                                         <div class="ht-product-action">
                                             <ul>
                                                 <li><a href="#"><i class="sli sli-magnifier"></i><span
-                                                            class="ht-product-action-tooltip">Vista rápida</span></a></li>
+                                                            class="ht-product-action-tooltip">Vista rápida</span></a>
+                                                </li>
                                                 <li><a href="#"><i class="sli sli-heart"></i><span
-                                                            class="ht-product-action-tooltip">Agregar a favoritos</span></a>
+                                                            class="ht-product-action-tooltip">Agregar a
+                                                            favoritos</span></a>
                                                 </li>
                                                 <li><a href="#"><i class="sli sli-bag"></i><span
-                                                            class="ht-product-action-tooltip">Agregar al carrito</span></a>
+                                                            class="ht-product-action-tooltip">Agregar al
+                                                            carrito</span></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -932,8 +946,8 @@
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a :href="'shop.html?serie=Naruto'"><img class="animated" src="assets/img/banner/naruto.png"
-                                        alt=""></a>
+                                <a :href="'shop.html?serie=Naruto'"><img class="animated"
+                                        src="assets/img/banner/naruto.png" alt=""></a>
                                 <div class="banner-content-2 banner-position-5">
                                     <h3 class="text-light">NARUTO</h3>
                                 </div>
@@ -941,8 +955,8 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a :href="'shop.html?serie=Marvel'"><img class="animated" src="assets/img/banner/marvel.png"
-                                        alt=""></a>
+                                <a :href="'shop.html?serie=Marvel'"><img class="animated"
+                                        src="assets/img/banner/marvel.png" alt=""></a>
                                 <div class="banner-content banner-position-6">
                                     <h2>MARVEL</h2>
                                     <a :href="'shop.html?serie=Marvel'">Ver productos</a>
@@ -1009,125 +1023,128 @@
             </div>
         </div>
 
-            <footer class="footer-area bg-midnight">
+        <footer class="footer-area bg-midnight">
+            <div class="container">
+                <div class="footer-top text-center pt-45 pb-45">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Index </a></li>
+                            <li><a href="shop.html">Shop</a></li>
+                            <li><a href="contact-us.html">Contacto</a></li>
+                            <li><a href="about-us.html">Sobre nosotros</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom border-top-1 pt-20">
                 <div class="container">
-                    <div class="footer-top text-center pt-45 pb-45">
-                        <nav>
-                            <ul>
-                                <li><a href="index.html">Inicio </a></li>
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="contact-us.html">Contacto</a></li>
-                                <li><a href="about-us.html">Sobre nosotros</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="footer-bottom border-top-1 pt-20">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-4 col-md-5 col-12">
-                                <div class="footer-social pb-20">
-                                    <a href="#">Facebok</a>
-                                    <a href="#">Instagram</a>
-                                </div>
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 col-md-5 col-12">
+                            <div class="footer-social pb-20">
+                                <a href="#">Facebok</a>
+                                <a href="#">Instagram</a>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <div class="copyright text-center pb-20">
-                                    <p>Kōbe Store © 2022</p>
-                                </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="copyright text-center pb-20">
+                                <p>Kōbe Store © 2022</p>
                             </div>
-                            <div class="col-lg-4 col-md-3 col-12">
-                                <div class="payment-mathod pb-20">
-                                    <a href="#"><img src="assets/img/icon-img/payment.png" alt=""></a>
-                                </div>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-12">
+                            <div class="payment-mathod pb-20">
+                                <a href="#"><img src="assets/img/icon-img/payment.png" alt=""></a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </footer>
+            </div>
+        </footer>
 
-            <!-- Modal Quick View Producto -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span
-                                    aria-hidden="true"></span></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-5 col-sm-12 col-xs-12">
-                                    <div class="tab-content quickview-big-img">
-                                        <div id="pro-1" class="tab-pane fade show active">
-                                            <img :src="productSelect.img" :alt="productSelect.name">
-                                        </div>
-                                        <div id="pro-2" class="tab-pane fade" v-show="productSelect.imgSec != ''">
-                                            <img :src="productSelect.imgSec" :alt="productSelect.name">
-                                        </div>
+        <!-- Modal Quick View Producto -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true"></span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-5 col-sm-12 col-xs-12">
+                                <div class="tab-content quickview-big-img">
+                                    <div id="pro-1" class="tab-pane fade show active">
+                                        <img :src="productSelect.img" :alt="productSelect.name">
                                     </div>
-                                    <!-- Thumbnail Large Image End -->
-                                    <!-- Thumbnail Image End -->
-                                    <div class="quickview-wrap mt-15">
-                                        <div class="quickview-slide-active owl-carousel nav nav-style-2" role="tablist">
-                                            <a class="active" data-bs-toggle="tab" href="#pro-1"><img
-                                                    :src="productSelect.img" :alt="productSelect.name"></a>
-                                            <a data-bs-toggle="tab" href="#pro-2"
-                                                v-show="productSelect.imgSec != ''"><img :src="productSelect.imgSec"
-                                                    :alt="productSelect.name"></a>
-                                        </div>
+                                    <div id="pro-2" class="tab-pane fade" v-show="productSelect.imgSec != ''">
+                                        <img :src="productSelect.imgSec" :alt="productSelect.name">
                                     </div>
                                 </div>
-                                <div class="col-md-7 col-sm-12 col-xs-12">
-                                    <div class="product-details-content quickview-content">
-                                        <h2>{{productSelect.name}}</h2>
-                                        <div class="product-details-price" v-show="productSelect.stock <=5">
-                                            <span class="new">${{(productSelect.lowStockPrice)}}</span>
-                                            <span class="oldModal">${{productSelect.price}}</span>
-                                            <span class="text-success">{{offMessage}}</span>
-                                        </div>
+                                <!-- Thumbnail Large Image End -->
+                                <!-- Thumbnail Image End -->
+                                <div class="quickview-wrap mt-15">
+                                    <div class="quickview-slide-active owl-carousel nav nav-style-2" role="tablist">
+                                        <a class="active" data-bs-toggle="tab" href="#pro-1"><img
+                                                :src="productSelect.img" :alt="productSelect.name"></a>
+                                        <a data-bs-toggle="tab" href="#pro-2" v-show="productSelect.imgSec != ''"><img
+                                                :src="productSelect.imgSec" :alt="productSelect.name"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-sm-12 col-xs-12">
+                                <div class="product-details-content quickview-content">
+                                    <h2>{{productSelect.name}}</h2>
+                                    <div class="product-details-price" v-show="productSelect.stock <=5">
+                                        <span class="new">${{(productSelect.lowStockPrice)}}</span>
+                                        <span class="oldModal">${{productSelect.price}}</span>
+                                        <span class="text-success">{{offMessage}}</span>
+                                    </div>
 
-                                        <div class="product-details-price" v-show="productSelect.stock > 5">
-                                            <span class="new">${{productSelect.price}}</span>
-                                        </div>
+                                    <div class="product-details-price" v-show="productSelect.stock > 5">
+                                        <span class="new">${{productSelect.price}}</span>
+                                    </div>
 
-                                        <div class="pro-details-rating-wrap">
-                                            <span v-show="productSelect.stock > 5">Stock: {{productSelect.stock}}</span>
-                                            <span class="text-danger"
-                                                v-show="productSelect.stock <= 5 && productSelect.stock >= 2">Últimas
-                                                {{productSelect.stock}} unidades!</span>
-                                            <span class="text-danger" v-show="productSelect.stock == 1">Última
-                                                unidad!!!</span>
+                                    <div class="pro-details-rating-wrap">
+                                        <span v-show="productSelect.stock > 5">Stock: {{productSelect.stock}}</span>
+                                        <span class="text-danger"
+                                            v-show="productSelect.stock <= 5 && productSelect.stock >= 2">Últimas
+                                            {{productSelect.stock}} unidades!</span>
+                                        <span class="text-danger" v-show="productSelect.stock == 1">Última
+                                            unidad!!!</span>
+                                    </div>
+                                    <p class="text-dark">{{productSelect.description}}</p>
+                                    <div class="pro-details-list">
+                                        <ul>
+                                            <li>Envíos gratis en compras mayores a $20000!</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pro-details-quality">
+                                        <div class="cart-plus-minus">
+                                            <input :id="productSelect.id" class="cart-plus-minus-box" type="number"
+                                                name="qtybutton" value="1" min="1" max="productSelect.stock">
                                         </div>
-                                        <p class="text-dark">{{productSelect.description}}</p>
-                                        <div class="pro-details-list">
-                                            <ul>
-                                                <li>Envíos gratis en compras mayores a $20000!</li>
-                                            </ul>
+                                        <div class="pro-details-cart">
+                                            <a @click="addProductCartModal(productSelect)">Agregar al carrito</a>
                                         </div>
-                                        <div class="pro-details-quality">
-                                            <div class="cart-plus-minus">
-                                                <input :id="productSelect.id" class="cart-plus-minus-box" type="number"
-                                                    name="qtybutton" value="1" min="1" max="productSelect.stock">
-                                            </div>
-                                            <div class="pro-details-cart">
-                                                <a @click="addProductCartModal(productSelect)">Agregar al carrito</a>
-                                            </div>
-                                            <div class="pro-details-wishlist">
-                                                <a title="Add To Wishlist" href="#"  @click="addProductFav(product)"><i class="sli sli-heart"></i></a>
-                                            </div>
+                                        <div class="pro-details-wishlist">
+                                            <a title="Add To Wishlist" href="#" @click="addProductFav(product)"><i
+                                                    class="sli sli-heart"></i></a>
                                         </div>
-                                        <div class="pro-details-meta">
-                                            <span>Categorías :</span>
-                                            <ul>
-                                                <li><a :href="'shop.html?category=' + productSelect.category">{{productSelect.category}}</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="pro-details-meta">
-                                            <span>Subcategorias:</span>
-                                            <ul>
-                                                <li><a :href="'shop.html?subcategory=' + productSelect.subcategory">{{productSelect.subcategory}}</a></li>
-                                            </ul>
-                                        </div>
+                                    </div>
+                                    <div class="pro-details-meta">
+                                        <span>Categorías :</span>
+                                        <ul>
+                                            <li><a
+                                                    :href="'shop.html?category=' + productSelect.category">{{productSelect.category}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="pro-details-meta">
+                                        <span>Subcategorias:</span>
+                                        <ul>
+                                            <li><a
+                                                    :href="'shop.html?subcategory=' + productSelect.subcategory">{{productSelect.subcategory}}</a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -1135,7 +1152,8 @@
                     </div>
                 </div>
             </div>
-            <!-- Modal end Quick View Producto -->
+        </div>
+        <!-- Modal end Quick View Producto -->
 
     </div>
 

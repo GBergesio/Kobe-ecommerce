@@ -49,7 +49,7 @@
                             <div class="main-menu">
                                 <nav>
                                     <ul>
-                                        <li class=""><a href="index.html">Home</a></li>
+                                        <li class=""><a href="index.html">Inicio</a></li>
                                         <li class="angle-shape"><a href="#"> Categorías <span>new</span>
                                             </a>
                                             <ul class="mega-menu">
@@ -193,7 +193,7 @@
                     <div class="sidebar-search-input">
                         <form>
                             <div class="form-search">
-                                <input id="search" class="input-text" value="" placeholder="Search Now" type="search">
+                                <input id="search" class="input-text" value="" placeholder="Buscar ahora" type="search">
                                 <button>
                                     <i class="sli sli-magnifier"></i>
                                 </button>
@@ -218,44 +218,59 @@
                                     <button class="icon-cart-active">
                                         <span class="icon-cart">
                                             <i class="sli sli-bag"></i>
-                                            <span class="count-style">02</span>
+                                            <span class="count-style">{{cartStorage.length}}</span>
                                         </span>
                                         <span class="cart-price">
-                                            $320.00
+                                            ${{sumPrice}}
                                         </span>
                                     </button>
                                     <div class="shopping-cart-content">
                                         <div class="shopping-cart-top">
-                                            <h4>Shoping Cart</h4>
+                                            <h4>Carrito de compra</h4>
                                             <a class="cart-close" href="#"><i class="sli sli-close"></i></a>
                                         </div>
                                         <ul>
-                                            <li class="single-shopping-cart">
+                                            <li class="single-shopping-cart" v-for="productCart in cartStorage">
                                                 <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-1.svg"></a>
+                                                    <img :alt='productCart.name' :src='productCart.img'>
+                                                    <div class="item-close">
+                                                        <button @click="deleteProductCart(productCart)"><a><i
+                                                                    class="sli sli-close"></i></a></button>
+                                                    </div>
                                                 </div>
                                                 <div class="shopping-cart-title">
-                                                    <h4><a href="#">Product Name </a></h4>
-                                                    <span>1 x 90.00</span>
-                                                </div>
-                                            </li>
-                                            <li class="single-shopping-cart">
-                                                <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-2.svg"></a>
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="#">Product Name</a></h4>
-                                                    <span>1 x 90.00</span>
+                                                    <h4><a href="#">{{productCart.name}}</a></h4>
+                                                    <span>{{productCart.quantity}} x ${{productCart.price}}</span>
+                                                    <div class="row">
+                                                        <button class="cssbuttons-io-button-disabled mb-2"
+                                                            v-show="productCart.quantity == productCart.stock">
+                                                            <span class="text-light">Agregar</span>
+                                                        </button>
+                                                        <button class="cssbuttons-io-button mb-2"
+                                                            @click="sumCart(productCart)"
+                                                            v-show="productCart.quantity < productCart.stock">
+                                                            <span class="text-light">Agregar</span>
+                                                        </button>
+                                                        <button class="cssbuttons-io-buttonRemove-disabled"
+                                                            v-show="productCart.quantity == 1">
+                                                            <span class="text-light">Remover</span>
+                                                        </button>
+                                                        <button class="cssbuttons-io-buttonRemove"
+                                                            @click="minusCart(productCart)"
+                                                            v-show="productCart.quantity > 1">
+                                                            <span class="text-light">Remover</span>
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </li>
                                         </ul>
                                         <div class="shopping-cart-bottom">
                                             <div class="shopping-cart-total">
-                                                <h4>Total : <span class="shop-total">$260.00</span></h4>
+                                                <h4>Total : <span class="shop-total">${{sumPrice}}</span></h4>
                                             </div>
                                             <div class="shopping-cart-btn btn-hover text-center">
-                                                <a class="default-btn" href="checkout.html">checkout</a>
-                                                <a class="default-btn" href="cart-page.html">view cart</a>
+                                                <a class="default-btn2" @click="emptyCart">Vaciar Carrito</a>
+                                                <a class="default-btn" href="cart-page.html">Ver Carrito</a>
                                             </div>
                                         </div>
                                     </div>
@@ -274,7 +289,7 @@
             <div class="header-mobile-aside-wrap">
                 <div class="mobile-search">
                     <form class="search-form" action="#">
-                        <input type="text" placeholder="Search entire store…">
+                        <input type="text" placeholder="Buscar ahora">
                         <button class="button-search"><i class="sli sli-magnifier"></i></button>
                     </form>
                 </div>
@@ -284,37 +299,53 @@
                         <!-- mobile menu navigation start -->
                         <nav>
                             <ul class="mobile-menu">
-                                <li class="menu-item-has-children"><a href="index.html">Home</a>
+                                <li class="menu-item-has-children"><a href="index.html">Inicio</a>
                                 </li>
                                 <li class="menu-item-has-children "><a href="shop.html">Categorias</a>
                                     <ul class="dropdown">
-                                        <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
                                             <ul class="dropdown">
                                                 <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a>
+                                                </li>
                                                 <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones Completas</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones
+                                                        Completas</a></li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras coleccionables</a>
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras
+                                                coleccionables</a>
                                             <ul class="dropdown">
-                                                <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops!</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops!</a>
+                                                </li>
+                                                <li><a
+                                                        v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a>
+                                                </li>
+                                                <li><a
+                                                        v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a>
+                                                </li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y Juegos</a>
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y Juegos</a>
                                             <ul class="dropdown">
                                                 <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de mesa</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de video</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de
+                                                        mesa</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de
+                                                        video</a></li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
                                             <ul class="dropdown">
-                                                <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas Iphone</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas
+                                                        Iphone</a></li>
                                                 <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a>
+                                                </li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -338,43 +369,19 @@
                 </div>
                 <div class="mobile-curr-lang-wrap">
                     <div class="single-mobile-curr-lang">
-                        <a class="mobile-language-active" href="#">Language <i class="sli sli-arrow-down"></i></a>
-                        <div class="lang-curr-dropdown lang-dropdown-active">
-                            <ul>
-                                <li><a href="#">English (US)</a></li>
-                                <li><a href="#">English (UK)</a></li>
-                                <li><a href="#">Spanish</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="single-mobile-curr-lang">
-                        <a class="mobile-currency-active" href="#">Currencssy <i class="sli sli-arrow-down"></i></a>
-                        <div class="lang-curr-dropdown curr-dropdown-active">
-                            <ul>
-                                <li><a href="#">USD</a></li>
-                                <li><a href="#">EUR</a></li>
-                                <li><a href="#">Real</a></li>
-                                <li><a href="#">BDT</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="single-mobile-curr-lang">
-                        <a class="mobile-account-active" href="#">My Account <i class="sli sli-arrow-down"></i></a>
+                        <a class="mobile-account-active" href="#">Mi cuenta<i class="sli sli-arrow-down"></i></a>
                         <div class="lang-curr-dropdown account-dropdown-active">
                             <ul>
                                 <li><a href="login-register.html">Login</a></li>
-                                <li><a href="login-register.html">Creat Account</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
+                                <li><a href="login-register.html">Crear cuenta</a></li>
+                                <!-- <li><a href="my-account.html">Mi cuenta</a></li> -->
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="mobile-social-wrap">
                     <a class="facebook" href="#"><i class="sli sli-social-facebook"></i></a>
-                    <a class="twitter" href="#"><i class="sli sli-social-twitter"></i></a>
-                    <a class="pinterest" href="#"><i class="sli sli-social-pinterest"></i></a>
                     <a class="instagram" href="#"><i class="sli sli-social-instagram"></i></a>
-                    <a class="google" href="#"><i class="sli sli-social-google"></i></a>
                 </div>
             </div>
         </div>
@@ -383,7 +390,7 @@
                 <div class="breadcrumb-content text-center">
                     <ul>
                         <li>
-                            <a class="parrafoModel" href="index.html">Home</a>
+                            <a class="parrafoModel text-dark" href="index.html">Inicio</a>
                         </li>
                         <li class="active">Detalles del producto </li>
                     </ul>

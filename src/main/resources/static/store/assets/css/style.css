@@ -1532,6 +1532,13 @@ textarea:focus {
   background-size: cover;
 }
 
+.bg-yugioh {
+  background-image: url(../img/banner/totoro2.jpg);
+  background-position-y: 90%;
+  background-position-x: 90%;
+  background-size: cover;
+}
+
 .bg-aliceblue {
   background-color: #e7eaf0;
 }
@@ -11255,8 +11262,8 @@ h3.cart-page-title {
 
 .wrapper2{
   display: inline-flex;
-  background: #fff;
-  height: 75px;
+  /* background: #fff; */
+  height: 100px;
   width: 400px;
   align-items: center;
   justify-content: space-evenly;
@@ -11301,8 +11308,8 @@ input[type="radio"]{
 }
 #option-1:checked:checked ~ .option-1,
 #option-2:checked:checked ~ .option-2{
-  border-color: #0069d9;
-  background: #0069d9;
+  border-color: var(--torch-red);
+  background: var(--torch-red);
 }
 #option-1:checked:checked ~ .option-1 .dot,
 #option-2:checked:checked ~ .option-2 .dot{

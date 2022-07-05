@@ -129,16 +129,14 @@
                           <li>
                               <h4>Cuenta</h4>
                               <ul v-if="currentClient.active == true">
-                                  <li class="pt-3"><a href="login-register.html">Crear Cuenta</a></li>
+                                  <li class="pt-3"><a href="login-register.html#lg2">Crear Cuenta</a></li>
                                   <li><a href="my-account.html">Mi cuenta</a></li>
                                   <li><a @click="logOut" >Logout</a></li>
                               </ul>
                               <ul v-else>
                                   <li class="pt-3"><a href="login-register.html">Crear Cuenta</a></li>
-                                  <li><a href="my-account.html">Mi cuenta</a></li>
                                   <li><a href="login-register.html">Login</a></li>
                               </ul>
-
                           </li>
                       </ul>
                   </div>
@@ -157,7 +155,7 @@
           <div class="sidebar-search-input">
             <form>
               <div class="form-search">
-                <input id="search" class="input-text" value="" placeholder="Search Now" type="search" />
+                <input id="search" class="input-text" value="" placeholder="Buscar ahora" type="search" />
                 <button>
                   <i class="sli sli-magnifier"></i>
                 </button>
@@ -190,132 +188,110 @@
     <div class="mobile-off-canvas-active">
       <a class="mobile-aside-close"><i class="sli sli-close"></i></a>
       <div class="header-mobile-aside-wrap">
-        <div class="mobile-search">
-          <form class="search-form" action="#">
-            <input type="text" placeholder="Search entire store…" />
-            <button class="button-search">
-              <i class="sli sli-magnifier"></i>
-            </button>
-          </form>
-        </div>
-        <div class="mobile-menu-wrap">
-          <!-- mobile menu start -->
-          <div class="mobile-navigation">
-            <!-- mobile menu navigation start -->
-            <nav>
-              <ul class="mobile-menu">
-                <li class="menu-item-has-children">
-                  <a href="index.html">Inicio</a>
-                </li>
-                <li class="menu-item-has-children">
-                  <a href="shop.html">Categorias</a>
-                  <ul class="dropdown">
-                    <li class="menu-item-has-children">
-                      <a v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
-                      <ul class="dropdown">
-                        <li>
-                          <a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a>
-                        </li>
-                        <li>
-                          <a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a>
-                        </li>
-                        <li>
-                          <a v-bind:href="'shop.html?subcategory=Comics'">Comics</a>
-                        </li>
-                        <li>
-                          <a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones Completas</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                      <a v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras coleccionables</a>
-                      <ul class="dropdown">
-                        <li>
-                          <a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops!</a>
-                        </li>
-                        <li>
-                          <a v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a>
-                        </li>
-                        <li>
-                          <a v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                      <a v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y Juegos</a>
-                      <ul class="dropdown">
-                        <li>
-                          <a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a>
-                        </li>
-                        <li>
-                          <a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de mesa</a>
-                        </li>
-                        <li>
-                          <a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de video</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                      <a v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
-                      <ul class="dropdown">
-                        <li>
-                          <a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas Iphone</a>
-                        </li>
-                        <li>
-                          <a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a>
-                        </li>
-                        <li>
-                          <a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li class="menu-item-has-children">
-                  <a href="#">Páginas</a>
-                  <ul class="dropdown">
-                    <li><a href="about-us.html">Sobre nosotros</a></li>
-                    <li><a href="cart-page.html">Carrito</a></li>
-                    <li><a href="checkout.html">Checkout </a></li>
-                    <li><a href="my-account.html">Mi cuenta</a></li>
-                    <li><a href="contact-us.html">Contáctenos</a></li>
-                    <li><a href="login-register.html">login/registro</a></li>
-                  </ul>
-                </li>
-                <li><a href="contact-us.html">Contáctenos</a></li>
-              </ul>
-            </nav>
-            <!-- mobile menu navigation end -->
+          <div class="mobile-search">
+              <form class="search-form" action="#">
+                  <input type="text" placeholder="Buscar ahora">
+                  <button class="button-search"><i class="sli sli-magnifier"></i></button>
+              </form>
           </div>
-          <!-- mobile menu end -->
-        </div>
-        <div class="mobile-curr-lang-wrap">
-          <div class="single-mobile-curr-lang">
-            <a class="mobile-account-active" href="#">My Account <i class="sli sli-arrow-down"></i></a>
-            <div class="lang-curr-dropdown account-dropdown-active">
-              <ul>
-                <li><a href="login-register.html">Login</a></li>
-                <li><a href="login-register.html">Creat Account</a></li>
-                <li><a href="my-account.html">My Account</a></li>
-              </ul>
-            </div>
+          <div class="mobile-menu-wrap">
+              <!-- mobile menu start -->
+              <div class="mobile-navigation">
+                  <!-- mobile menu navigation start -->
+                  <nav>
+                      <ul class="mobile-menu">
+                          <li class="menu-item-has-children"><a href="index.html">Inicio</a>
+                          </li>
+                          <li class="menu-item-has-children "><a href="shop.html">Categorias</a>
+                              <ul class="dropdown">
+                                  <li class="menu-item-has-children"><a
+                                          v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
+                                      <ul class="dropdown">
+                                          <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
+                                          <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a>
+                                          </li>
+                                          <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
+                                          <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones
+                                                  Completas</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="menu-item-has-children"><a
+                                          v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras
+                                          coleccionables</a>
+                                      <ul class="dropdown">
+                                          <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops!</a>
+                                          </li>
+                                          <li><a
+                                                  v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a>
+                                          </li>
+                                          <li><a
+                                                  v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li class="menu-item-has-children"><a
+                                          v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y Juegos</a>
+                                      <ul class="dropdown">
+                                          <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
+                                          <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de
+                                                  mesa</a></li>
+                                          <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de
+                                                  video</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="menu-item-has-children"><a
+                                          v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
+                                      <ul class="dropdown">
+                                          <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas
+                                                  Iphone</a></li>
+                                          <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a></li>
+                                          <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li class="menu-item-has-children"><a href="#">Páginas</a>
+                              <ul class="dropdown">
+                                  <li><a href="about-us.html">Sobre nosotros</a></li>
+                                  <li><a href="cart-page.html">Carrito</a></li>
+                                  <li><a href="checkout.html">Checkout </a></li>
+                                  <li><a href="my-account.html">Mi cuenta</a></li>
+                                  <li><a href="contact-us.html">Contáctenos</a></li>
+                                  <li><a href="login-register.html">login/registro</a></li>
+                              </ul>
+                          </li>
+                          <li><a href="contact-us.html">Contáctenos</a></li>
+                      </ul>
+                  </nav>
+                  <!-- mobile menu navigation end -->
+              </div>
+              <!-- mobile menu end -->
           </div>
-        </div>
-        <div class="mobile-social-wrap">
-          <a class="facebook" href="#"><i class="sli sli-social-facebook"></i></a>
-          <a class="twitter" href="#"><i class="sli sli-social-twitter"></i></a>
-          <a class="pinterest" href="#"><i class="sli sli-social-pinterest"></i></a>
-          <a class="instagram" href="#"><i class="sli sli-social-instagram"></i></a>
-          <a class="google" href="#"><i class="sli sli-social-google"></i></a>
-        </div>
+          <div class="mobile-curr-lang-wrap">
+              <div class="single-mobile-curr-lang">
+                  <a class="mobile-account-active" href="#">Mi cuenta<i class="sli sli-arrow-down"></i></a>
+                  <div class="lang-curr-dropdown account-dropdown-active">
+                      <ul>
+                          <li><a href="login-register.html">Login</a></li>
+                          <li><a href="login-register.html">Crear cuenta</a></li>
+                          <!-- <li><a href="my-account.html">Mi cuenta</a></li> -->
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="mobile-social-wrap">
+              <a class="facebook" href="#"><i class="sli sli-social-facebook"></i></a>
+              <a class="instagram" href="#"><i class="sli sli-social-instagram"></i></a>
+          </div>
       </div>
-    </div>
+  </div>
     <div class="breadcrumb-area pt-35 pb-35 bg-check">
       <div class="container">
         <div class="breadcrumb-content text-center">
           <ul>
             <li>
-              <a href="index.html" class="parrafoModel">Inicio</a>
+              <a href="index.html" class="parrafoModel text-dark">Inicio</a>
             </li>
             <li class="active">Checkout</li>
           </ul>
@@ -324,7 +300,7 @@
     </div>
     <!-- compare main wrapper start -->
     <div class="checkout-main-area pt-70 pb-70">
-      <div class="container">
+      <div class="container ">
         <div class="customer-zone mb-20">
           <p class="cart-page-title">
             ¿Es un cliente habitual?
@@ -364,7 +340,7 @@
             </form>
           </div>
         </div>
-        <div class="customer-zone mb-20">
+        <div class="customer-zone mb-20" >
           <p class="cart-page-title">
             ¿No tienes cuenta?
             <a class="checkout-click2 text-primary" href="#">Haga clic aquí para registrarse y continuar con la
@@ -657,9 +633,9 @@
     <!-- Modal Quick View Producto -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2>Completa los datos para continuar con la compra</h2>
+        <div class="modal-content bg-yugioh">
+          <div class="modal-header ">
+            <h2 class="text-light">Completa los datos para continuar con la compra</h2>
           </div>
           <div class="modal-body">
             <div class="row">
@@ -670,7 +646,7 @@
                     <div class="row">
                       <div class="col-12 mt-1">
                         <div class="form-group">
-                          <label for="cardNumber">Numero de tarjeta</label>
+                          <label for="cardNumber" class="text-light">Numero de tarjeta</label>
                           <input id="cardNumber" type="text" name="name" class="form-control"
                             placeholder="Ingrese Numero de tarjeta" required="required"
                             data-error="Numero de tarjeta requerido" v-model="cardNumber" />
@@ -680,14 +656,14 @@
                     <div class="row">
                         <div class="col-6 mt-1">
                           <div class="form-group">
-                            <label for="cvv">Cvv</label>
+                            <label for="cvv" class="text-light">Cvv</label>
                             <input id="cvv" type="number" class="form-control" placeholder="Ingrese un cvv"
                               required="required" data-error="Ingrese un cvv" v-model="cvv" />
                           </div>
                         </div>
                       <div class="col-6 mt-1">
                         <div class="form-group">
-                          <label for="thruDate">Fecha de vencimiento</label>
+                          <label for="thruDate" class="text-light">Fecha de vencimiento</label>
                           <input id="thruDate" type="text" name="stock" class="form-control"
                             placeholder="Ingrese fecha de vencimiento" required="required"
                             data-error="Ingrese fecha de vencimiento" v-model="thruDate" />
@@ -695,7 +671,7 @@
                       </div>
                     </div>
                     <div class="row d-flex justify-content-center mt-1">
-                        <label >Tipo de tarjeta</label>
+                        <label class="text-light text-center">Tipo de tarjeta</label>
                       <div class="wrapper2 col-md-12">
                             <input type="radio" name="select" id="option-1" checked value="CREDIT" v-model="cardType">
                             <input type="radio" name="select" id="option-2" value="DEBIT" v-model="cardType">
@@ -713,7 +689,7 @@
                     <div class="row">
                       <div class="col-md-12 mt-1">
                         <div class="form-group">
-                          <label for="cardHolder">Propietario de la tarjeta</label>
+                          <label for="cardHolder" class="text-light">Propietario de la tarjeta</label>
                           <input id="cardHolder" type="name" name="stock" class="form-control"
                             placeholder="Ingrese nombre del propietario" required="required"
                             data-error="Ingrese nombre del propietario" v-model="cardHolder"/>
@@ -723,15 +699,15 @@
                     <div class="row">
                       <div class="col-md-12 mt-1">
                         <div class="form-group">
-                          <label for="form_message">Descripción</label>
+                          <label for="form_message" class="text-light">Descripción</label>
                           <textarea id="form_message" name="Descripción" class="form-control"
-                            placeholder="Escribe una descripción de la compra" rows="4" required="required"
+                            placeholder="Ingrese una nota adicional, comentario o algo que quisieras que tengamos en cuenta al realizar el envio" rows="4" required="required"
                             v-model="description"></textarea>
                         </div>
                       </div>
                     </div>
                     <div class="col-md-12 d-flex justify-content-center mt-5">
-                      <button class="btn btn-success" @click="cardPurchase" type="submit">
+                      <button class="btn btn-warning text-light" @click="cardPurchase" type="submit">
                         Realizar compra
                       </button>
                     </div>

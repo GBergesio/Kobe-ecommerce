@@ -9,14 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-
     <!-- CSS
 	============================================ -->
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <!-- Icon Font CSS -->
     <link rel="stylesheet" href="assets/css/icons.min.css">
     <!-- Plugins CSS -->
@@ -247,44 +245,59 @@
                                     <button class="icon-cart-active">
                                         <span class="icon-cart">
                                             <i class="sli sli-bag"></i>
-                                            <span class="count-style">02</span>
+                                            <span class="count-style">{{cartStorage.length}}</span>
                                         </span>
                                         <span class="cart-price">
-                                            $320.00
+                                            ${{sumPrice}}
                                         </span>
                                     </button>
                                     <div class="shopping-cart-content">
                                         <div class="shopping-cart-top">
-                                            <h4>Shoping Cart</h4>
+                                            <h4>Carrito de compra</h4>
                                             <a class="cart-close" href="#"><i class="sli sli-close"></i></a>
                                         </div>
                                         <ul>
-                                            <li class="single-shopping-cart">
+                                            <li class="single-shopping-cart" v-for="productCart in cartStorage">
                                                 <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-1.svg"></a>
+                                                    <img :alt='productCart.name' :src='productCart.img'>
+                                                    <div class="item-close">
+                                                        <button @click="deleteProductCart(productCart)"><a><i
+                                                                    class="sli sli-close"></i></a></button>
+                                                    </div>
                                                 </div>
                                                 <div class="shopping-cart-title">
-                                                    <h4><a href="#">Product Name </a></h4>
-                                                    <span>1 x 90.00</span>
-                                                </div>
-                                            </li>
-                                            <li class="single-shopping-cart">
-                                                <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-2.svg"></a>
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="#">Product Name</a></h4>
-                                                    <span>1 x 90.00</span>
+                                                    <h4><a href="#">{{productCart.name}}</a></h4>
+                                                    <span>{{productCart.quantity}} x ${{productCart.price}}</span>
+                                                    <div class="row">
+                                                        <button class="cssbuttons-io-button-disabled mb-2"
+                                                            v-show="productCart.quantity == productCart.stock">
+                                                            <span class="text-light">Agregar</span>
+                                                        </button>
+                                                        <button class="cssbuttons-io-button mb-2"
+                                                            @click="sumCart(productCart)"
+                                                            v-show="productCart.quantity < productCart.stock">
+                                                            <span class="text-light">Agregar</span>
+                                                        </button>
+                                                        <button class="cssbuttons-io-buttonRemove-disabled"
+                                                            v-show="productCart.quantity == 1">
+                                                            <span class="text-light">Remover</span>
+                                                        </button>
+                                                        <button class="cssbuttons-io-buttonRemove"
+                                                            @click="minusCart(productCart)"
+                                                            v-show="productCart.quantity > 1">
+                                                            <span class="text-light">Remover</span>
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </li>
                                         </ul>
                                         <div class="shopping-cart-bottom">
                                             <div class="shopping-cart-total">
-                                                <h4>Total : <span class="shop-total">$260.00</span></h4>
+                                                <h4>Total : <span class="shop-total">${{sumPrice}}</span></h4>
                                             </div>
                                             <div class="shopping-cart-btn btn-hover text-center">
-                                                <a class="default-btn" href="checkout.html">checkout</a>
-                                                <a class="default-btn" href="cart-page.html">view cart</a>
+                                                <a class="default-btn2" @click="emptyCart">Vaciar Carrito</a>
+                                                <a class="default-btn" href="cart-page.html">Ver Carrito</a>
                                             </div>
                                         </div>
                                     </div>
@@ -303,7 +316,7 @@
             <div class="header-mobile-aside-wrap">
                 <div class="mobile-search">
                     <form class="search-form" action="#">
-                        <input type="text" placeholder="Search entire store…">
+                        <input type="text" placeholder="Buscar ahora">
                         <button class="button-search"><i class="sli sli-magnifier"></i></button>
                     </form>
                 </div>
@@ -404,7 +417,7 @@
                 <div class="breadcrumb-content text-center">
                     <ul>
                         <li>
-                            <a class="parrafoModel" href="index.html">Inicio</a>
+                            <a class="parrafoModel text-dark" href="index.html">Inicio</a>
                         </li>
                         <li class="active">Tu búsqueda</li>
                     </ul>
