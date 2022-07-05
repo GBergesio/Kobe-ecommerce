@@ -201,7 +201,7 @@
                 }
             }
         })
-    },500)
+    },1000)
     
     
     
@@ -297,7 +297,8 @@
             // Don't allow decrementing below zero
             if (oldValue > 0) {
                 var newVal = parseFloat(oldValue) - 1;
-            } else {
+            }
+            else {
                 newVal = 1;
             }
         }
@@ -375,7 +376,7 @@
         });
     }
     setTimeout(()=>{
-        itemToggler()},500)
+        itemToggler()},1000)
     
     /*-----------------------------------
         Scroll zoom

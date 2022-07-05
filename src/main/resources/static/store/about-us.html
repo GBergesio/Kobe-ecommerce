@@ -4,18 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Parlo - eCommerce Bootstrap 4 Template</title>
+    <title>Kōbe - Anime Shop </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-    
     <!-- CSS
 	============================================ -->
-   
     <!-- Bootstrap CSS 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Icon Font CSS -->
     <link rel="stylesheet" href="assets/css/icons.min.css">
     <!-- Plugins CSS -->
@@ -27,491 +26,438 @@
 </head>
 
 <body>
-<div class="wrapper">
-    <header class="header-area sticky-bar">
-        <div class="main-header-wrap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-2 col-lg-2">
-                        <div class="logo pt-40">
-                            <a href="index.html">
-                                <img src="assets/img/logo/logo.png" alt="">
-                            </a>
+    <div class="wrapper" id="app">
+        <header class="header-area sticky-bar">
+            <div class="main-header-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo pt-40">
+                                <a href="index.html">
+                                    <img src="assets/img/logo/logo.png" alt="">
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-7 col-lg-7 ">
-                        <div class="main-menu">
-                            <nav>
-                                <ul>
-                                    <li class=""><a href="index.html">Home</a></li>
-                                    <li class="angle-shape"><a href="#"> Categorías <span>new</span>
-                                        </a>
-                                        <ul class="mega-menu">
+                        <div class="col-xl-7 col-lg-7 ">
+                            <div class="main-menu">
+                                <nav>
+                                    <ul>
+                                        <li class=""><a href="index.html">Home</a></li>
+                                        <li class="angle-shape"><a href="#"> Categorías <span>new</span>
+                                            </a>
+                                            <ul class="mega-menu">
+                                                <li>
+                                                    <a class="menu-title"
+                                                        v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
+                                                    <ul>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a>
+                                                        </li>
+                                                        <li><a
+                                                                v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a>
+                                                        </li>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a>
+                                                        </li>
+                                                        <li><a
+                                                                v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones
+                                                                Completas</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a class="menu-title"
+                                                        v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras
+                                                        coleccionables</a>
+                                                    <ul>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko
+                                                                Pops</a></li>
+                                                        <li><a
+                                                                v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a>
+                                                        </li>
+                                                        <li><a
+                                                                v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li><a class="menu-title"
+                                                        v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y
+                                                        juegos</a>
+                                                    <ul>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a>
+                                                        </li>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos
+                                                                de
+                                                                mesa</a></li>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos
+                                                                de
+                                                                video</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a class="menu-title"
+                                                        v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
+                                                    <ul>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas
+                                                                Iphone</a>
+                                                        </li>
+                                                        <li><a
+                                                                v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a>
+                                                        </li>
+                                                        <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse
+                                                                Pad</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact-us.html"> Contacto </a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="header-right-wrap pt-40">
+                                <div class="header-search">
+                                    <a class="search-active" href="#"><i class="sli sli-magnifier"></i></a>
+                                </div>
+                                <div class="setting-wrap">
+                                    <button class="setting-active">
+                                        <i class="sli sli-user"></i>
+                                    </button>
+                                    <div class="setting-content">
+                                        <ul>
                                             <li>
-                                                <a class="menu-title"
-                                                    v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
-                                                <ul>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones Completas</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a class="menu-title" v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras coleccionables</a>
-                                                <ul>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a class="menu-title" v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y juegos</a>
-                                                <ul>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de
-                                                            mesa</a></li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de
-                                                            video</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a class="menu-title" v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
-                                                <ul>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas Iphone</a>
+                                                <h4>Cuenta</h4>
+                                                <ul v-if="currentClient.active == true">
+                                                    <li class="pt-3"><a href="login-register.html#lg2">Crear Cuenta</a>
                                                     </li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a>
-                                                    </li>
-                                                    <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse Pad</a>
-                                                    </li>
+                                                    <li><a href="my-account.html">Mi cuenta</a></li>
+                                                    <li><a @click="logOut">Logout</a></li>
+                                                </ul>
+                                                <ul v-else>
+                                                    <li class="pt-3"><a href="login-register.html">Crear Cuenta</a></li>
+                                                    <li><a href="login-register.html">Login</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
-                                    </li>
-                                    <li><a href="contact-us.html"> Contacto </a></li>
-                                </ul>
-                            </nav>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3">
-                        <div class="header-right-wrap pt-40">
-                            <div class="header-search">
-                                <a class="search-active" href="#"><i class="sli sli-magnifier"></i></a>
-                            </div>
-                            <div class="cart-wrap">
-                                <button class="icon-cart-active">
-                                    <span class="icon-cart">
-                                        <i class="sli sli-bag"></i>
-                                        <span class="count-style">02</span>
-                                    </span>
-                                    <span class="cart-price">
-                                        $320.00
-                                    </span>
+                </div>
+                <!-- main-search start -->
+                <div class="main-search-active">
+                    <div class="sidebar-search-icon">
+                        <button class="search-close"><span class="sli sli-close"></span></button>
+                    </div>
+                    <div class="sidebar-search-input">
+                        <form>
+                            <div class="form-search">
+                                <input id="search" class="input-text" value="" placeholder="Buscar ahora" type="search">
+                                <button>
+                                    <i class="sli sli-magnifier"></i>
                                 </button>
-                                <div class="shopping-cart-content">
-                                    <div class="shopping-cart-top">
-                                        <h4>Shoping Cart</h4>
-                                        <a class="cart-close" href="#"><i class="sli sli-close"></i></a>
-                                    </div>
-                                    <ul>
-                                        <li class="single-shopping-cart">
-                                            <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="assets/img/cart/cart-1.svg"></a>
-                                                <div class="item-close">
-                                                    <a href="#"><i class="sli sli-close"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="shopping-cart-title">
-                                                <h4><a href="#">Product Name </a></h4>
-                                                <span>1 x 90.00</span>
-                                            </div>
-                                        </li>
-                                        <li class="single-shopping-cart">
-                                            <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="assets/img/cart/cart-2.svg"></a>
-                                                <div class="item-close">
-                                                    <a href="#"><i class="sli sli-close"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="shopping-cart-title">
-                                                <h4><a href="#">Product Name</a></h4>
-                                                <span>1 x 90.00</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="shopping-cart-bottom">
-                                        <div class="shopping-cart-total">
-                                            <h4>Total : <span class="shop-total">$260.00</span></h4>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="header-small-mobile">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <div class="mobile-logo">
+                                <a href="index.html">
+                                    <img alt="" src="assets/img/logo/logo.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="header-right-wrap">
+                                <div class="cart-wrap">
+                                    <button class="icon-cart-active">
+                                        <span class="icon-cart">
+                                            <i class="sli sli-bag"></i>
+                                            <span class="count-style">{{cartStorage.length}}</span>
+                                        </span>
+                                        <span class="cart-price">
+                                            ${{sumPrice}}
+                                        </span>
+                                    </button>
+                                    <div class="shopping-cart-content">
+                                        <div class="shopping-cart-top">
+                                            <h4>Carrito de compra</h4>
+                                            <a class="cart-close" href="#"><i class="sli sli-close"></i></a>
                                         </div>
-                                        <div class="shopping-cart-btn btn-hover text-center">
-                                            <a class="default-btn" href="checkout.html">checkout</a>
-                                            <a class="default-btn" href="cart-page.html">view cart</a>
+                                        <ul>
+                                            <li class="single-shopping-cart" v-for="productCart in cartStorage">
+                                                <div class="shopping-cart-img">
+                                                    <img :alt='productCart.name' :src='productCart.img'>
+                                                    <div class="item-close">
+                                                        <button @click="deleteProductCart(productCart)"><a><i
+                                                                    class="sli sli-close"></i></a></button>
+                                                    </div>
+                                                </div>
+                                                <div class="shopping-cart-title">
+                                                    <h4><a href="#">{{productCart.name}}</a></h4>
+                                                    <span>{{productCart.quantity}} x ${{productCart.price}}</span>
+                                                    <div class="row">
+                                                        <button class="cssbuttons-io-button-disabled mb-2"
+                                                            v-show="productCart.quantity == productCart.stock">
+                                                            <span class="text-light">Agregar</span>
+                                                        </button>
+                                                        <button class="cssbuttons-io-button mb-2"
+                                                            @click="sumCart(productCart)"
+                                                            v-show="productCart.quantity < productCart.stock">
+                                                            <span class="text-light">Agregar</span>
+                                                        </button>
+                                                        <button class="cssbuttons-io-buttonRemove-disabled"
+                                                            v-show="productCart.quantity == 1">
+                                                            <span class="text-light">Remover</span>
+                                                        </button>
+                                                        <button class="cssbuttons-io-buttonRemove"
+                                                            @click="minusCart(productCart)"
+                                                            v-show="productCart.quantity > 1">
+                                                            <span class="text-light">Remover</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="shopping-cart-bottom">
+                                            <div class="shopping-cart-total">
+                                                <h4>Total : <span class="shop-total">${{sumPrice}}</span></h4>
+                                            </div>
+                                            <div class="shopping-cart-btn btn-hover text-center">
+                                                <a class="default-btn2" @click="emptyCart">Vaciar Carrito</a>
+                                                <a class="default-btn" href="cart-page.html">Ver Carrito</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="setting-wrap">
-                                <button class="setting-active">
-                                    <i class="sli sli-settings"></i>
-                                </button>
-                                <div class="setting-content">
-                                    <ul>
-                                        <li>
-                                            <h4>Currency</h4>
-                                            <ul>
-                                                <li><a href="#">USD</a></li>
-                                                <li><a href="#">Euro</a></li>
-                                                <li><a href="#">Real</a></li>
-                                                <li><a href="#">BDT</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <h4>Language</h4>
-                                            <ul>
-                                                <li><a href="#">English (US)</a></li>
-                                                <li><a href="#">English (UK)</a></li>
-                                                <li><a href="#">Spanish</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <h4>Account</h4>
-                                            <ul>
-                                                <li><a href="login-register.html">Login</a></li>
-                                                <li><a href="login-register.html">Creat Account</a></li>
-                                                <li><a href="my-account.html">My Account</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <div class="mobile-off-canvas">
+                                    <a class="mobile-aside-button" href="#"><i class="sli sli-menu"></i></a>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- main-search start -->
-            <div class="main-search-active">
-                <div class="sidebar-search-icon">
-                    <button class="search-close"><span class="sli sli-close"></span></button>
-                </div>
-                <div class="sidebar-search-input">
-                    <form>
-                        <div class="form-search">
-                            <input id="search" class="input-text" value="" placeholder="Search Now" type="search">
-                            <button>
-                                <i class="sli sli-magnifier"></i>
-                            </button>
-                        </div>
+        </header>
+        <div class="mobile-off-canvas-active">
+            <a class="mobile-aside-close"><i class="sli sli-close"></i></a>
+            <div class="header-mobile-aside-wrap">
+                <div class="mobile-search">
+                    <form class="search-form" action="#">
+                        <input type="text" placeholder="Buscar ahora">
+                        <button class="button-search"><i class="sli sli-magnifier"></i></button>
                     </form>
                 </div>
-            </div>
-        </div>
-        <div class="header-small-mobile">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-6">
-                        <div class="mobile-logo">
-                            <a href="index.html">
-                                <img alt="" src="assets/img/logo/logo.png">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="header-right-wrap">
-                            <div class="cart-wrap">
-                                <button class="icon-cart-active">
-                                    <span class="icon-cart">
-                                        <i class="sli sli-bag"></i>
-                                        <span class="count-style">02</span>
-                                    </span>
-                                    <span class="cart-price">
-                                        $320.00
-                                    </span>
-                                </button>
-                                <div class="shopping-cart-content">
-                                    <div class="shopping-cart-top">
-                                        <h4>Shoping Cart</h4>
-                                        <a class="cart-close" href="#"><i class="sli sli-close"></i></a>
-                                    </div>
-                                    <ul>
-                                        <li class="single-shopping-cart">
-                                            <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="assets/img/cart/cart-1.svg"></a>
-                                            </div>
-                                            <div class="shopping-cart-title">
-                                                <h4><a href="#">Product Name </a></h4>
-                                                <span>1 x 90.00</span>
-                                            </div>
+                <div class="mobile-menu-wrap">
+                    <!-- mobile menu start -->
+                    <div class="mobile-navigation">
+                        <!-- mobile menu navigation start -->
+                        <nav>
+                            <ul class="mobile-menu">
+                                <li class="menu-item-has-children"><a href="index.html">Inicio</a>
+                                </li>
+                                <li class="menu-item-has-children "><a href="shop.html">Categorias</a>
+                                    <ul class="dropdown">
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
+                                            <ul class="dropdown">
+                                                <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a>
+                                                </li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones
+                                                        Completas</a></li>
+                                            </ul>
                                         </li>
-                                        <li class="single-shopping-cart">
-                                            <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="assets/img/cart/cart-2.svg"></a>
-                                            </div>
-                                            <div class="shopping-cart-title">
-                                                <h4><a href="#">Product Name</a></h4>
-                                                <span>1 x 90.00</span>
-                                            </div>
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras
+                                                coleccionables</a>
+                                            <ul class="dropdown">
+                                                <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko
+                                                        Pops!</a></li>
+                                                <li><a
+                                                        v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a>
+                                                </li>
+                                                <li><a
+                                                        v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y
+                                                Juegos</a>
+                                            <ul class="dropdown">
+                                                <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de
+                                                        mesa</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de
+                                                        video</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
+                                            <ul class="dropdown">
+                                                <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas
+                                                        Iphone</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a>
+                                                </li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a>
+                                                </li>
+                                            </ul>
                                         </li>
                                     </ul>
-                                    <div class="shopping-cart-bottom">
-                                        <div class="shopping-cart-total">
-                                            <h4>Total : <span class="shop-total">$260.00</span></h4>
-                                        </div>
-                                        <div class="shopping-cart-btn btn-hover text-center">
-                                            <a class="default-btn" href="checkout.html">checkout</a>
-                                            <a class="default-btn" href="cart-page.html">view cart</a>
-                                        </div>
-                                    </div>
+                                </li>
+                                <li class="menu-item-has-children"><a href="#">Páginas</a>
+                                    <ul class="dropdown">
+                                        <li><a href="about-us.html">Sobre nosotros</a></li>
+                                        <li><a href="cart-page.html">Carrito</a></li>
+                                        <li><a href="checkout.html">Checkout </a></li>
+                                        <li><a href="my-account.html">Mi cuenta</a></li>
+                                        <li><a href="contact-us.html">Contáctenos</a></li>
+                                        <li><a href="login-register.html">login/registro</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact-us.html">Contáctenos</a></li>
+                            </ul>
+                        </nav>
+                        <!-- mobile menu navigation end -->
+                    </div>
+                    <!-- mobile menu end -->
+                </div>
+                <div class="mobile-curr-lang-wrap">
+                    <div class="single-mobile-curr-lang">
+                        <a class="mobile-account-active" href="#">Mi cuenta<i class="sli sli-arrow-down"></i></a>
+                        <div class="lang-curr-dropdown account-dropdown-active">
+                            <ul>
+                                <li><a href="login-register.html">Login</a></li>
+                                <li><a href="login-register.html">Crear cuenta</a></li>
+                                <li><a href="my-account.html">Mi cuenta</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-social-wrap">
+                    <a class="facebook" href="#"><i class="sli sli-social-facebook"></i></a>
+                    <a class="instagram" href="#"><i class="sli sli-social-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumb-area pt-35 pb-35 bg-check">
+            <div class="container">
+                <div class="breadcrumb-content text-center">
+                    <ul>
+                        <li>
+                            <a href="index.html" class="parrafoModel">Inicio</a>
+                        </li>
+                        <li class="active">Acerca de nosotros </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="about-story-area pt-100 pb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="story-img">
+                            <a href="#"><img src="./assets/img/localAboutUs.jpeg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="story-details pl-50">
+                            <div class="story-details-top">
+                                <h2>Bienvenido a <span>Kobe</span></h2>
+                                <p>Tienda especializada en Anime, Coleccionables y geek.</p>
+                            </div>
+                            <div class="story-details-bottom">
+                                <h4>COMENZAMOS EN 2009</h4>
+                                <p>Comenzamos como una pequeña empresa familiar hasta llegar al día de hoy contando con
+                                    amplia variedad
+                                    de stock en diversos productos.
+                                    Podemos ofrecer gran variedad de colecciones de Mangas, magazines y figuras
+                                    coleccionables únicas.
+                                </p>
+                            </div>
+                            <div class="story-details-bottom">
+                                <h4>LA MEJOR TIENDA ONLINE DESDE 2020</h4>
+                                <p>Nos actualizamos constantemente y hoy gran parte de nuestro comercio es online para
+                                    poder llegar a todas partes del país</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-area pb-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4">
+                        <div class="single-feature mb-40">
+                            <div class="feature-icon">
+                                <img src="assets/img/icon-img/free-shipping.png" alt="">
+                            </div>
+                            <div class="feature-content">
+                                <h4>Envíos</h4>
+                                <p>Realizamos envíos a todo el país.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-4 col-md-4">
+                        <div class="single-feature mb-40 pl-50">
+                            <div class="feature-icon">
+                                <img src="assets/img/icon-img/support.png" alt="">
+                            </div>
+                            <div class="feature-content">
+                                <h4>Atención al cliente</h4>
+                                <p>Lunes a viernes de 9hs a 20hs</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-4">
+                        <div class="single-feature mb-40">
+                            <div class="feature-icon">
+                                <img src="assets/img/icon-img/security.png" alt="">
+                            </div>
+                            <div class="feature-content">
+                                <h4>Pago seguro</h4>
+                                <p>Pasarela de pago segura.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-area pt-80 pb-95 section-margin-1 mb-5"
+            style="background-image: url(assets/img/bg/demonSlayer.png);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 ms-auto me-auto">
+                        <div class="testimonial-active owl-carousel nav-style-1">
+                            <div class="single-testimonial text-center">
+                                <img src="assets/img/testimonial/testi-1.png" alt="">
+                                <p>Tú tienes la libertad de defender la libertad del mundo y yo tengo la libertad de seguir avanzando.</p>
+                                <div class="client-info">
+                                    <img src="assets/img/icon-img/testi.png" alt="">
+                                    <h5>Eren Yeager</h5>
                                 </div>
                             </div>
-                            <div class="mobile-off-canvas">
-                                <a class="mobile-aside-button" href="#"><i class="sli sli-menu"></i></a>
+                            <div class="single-testimonial text-center">
+                                <img src="assets/img/testimonial/testi-2.png" alt="">
+                                <p>Lo único que se nos permite hacer es creer que no nos arrepentiremos de la elección que hicimos</p>
+                                <div class="client-info">
+                                    <img src="assets/img/icon-img/testi.png" alt="">
+                                    <h5>Eren Yeager</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
-    <div class="mobile-off-canvas-active">
-        <a class="mobile-aside-close"><i class="sli sli-close"></i></a>
-        <div class="header-mobile-aside-wrap">
-            <div class="mobile-search">
-                <form class="search-form" action="#">
-                    <input type="text" placeholder="Search entire store…">
-                    <button class="button-search"><i class="sli sli-magnifier"></i></button>
-                </form>
-            </div>
-            <div class="mobile-menu-wrap">
-                <!-- mobile menu start -->
-                <div class="mobile-navigation">
-                    <!-- mobile menu navigation start -->
-                    <nav>
-                        <ul class="mobile-menu">
-                            <li class="menu-item-has-children"><a href="index.html">Home</a>
-                            </li>
-                            <li class="menu-item-has-children "><a href="shop.html">Categorias</a>
-                                <ul class="dropdown">
-                                    <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
-                                        <ul class="dropdown">
-                                            <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones Completas</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras coleccionables</a>
-                                        <ul class="dropdown">
-                                            <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops!</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y Juegos</a>
-                                        <ul class="dropdown">
-                                            <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de mesa</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de video</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
-                                        <ul class="dropdown">
-                                            <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas Iphone</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a></li>
-                                            <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="#">Páginas</a>
-                                <ul class="dropdown">
-                                    <li><a href="about-us.html">Sobre nosotros</a></li>
-                                    <li><a href="cart-page.html">Carrito</a></li>
-                                    <li><a href="checkout.html">Checkout </a></li>
-                                    <li><a href="my-account.html">Mi cuenta</a></li>
-                                    <li><a href="contact-us.html">Contáctenos</a></li>
-                                    <li><a href="login-register.html">login/registro</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact-us.html">Contáctenos</a></li>
-                        </ul>
-                    </nav>
-                    <!-- mobile menu navigation end -->
-                </div>
-                <!-- mobile menu end -->
-            </div>
-            <div class="mobile-curr-lang-wrap">
-                <div class="single-mobile-curr-lang">
-                    <a class="mobile-language-active" href="#">Language <i class="sli sli-arrow-down"></i></a>
-                    <div class="lang-curr-dropdown lang-dropdown-active">
-                        <ul>
-                            <li><a href="#">English (US)</a></li>
-                            <li><a href="#">English (UK)</a></li>
-                            <li><a href="#">Spanish</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="single-mobile-curr-lang">
-                    <a class="mobile-currency-active" href="#">Currency <i class="sli sli-arrow-down"></i></a>
-                    <div class="lang-curr-dropdown curr-dropdown-active">
-                        <ul>
-                            <li><a href="#">USD</a></li>
-                            <li><a href="#">EUR</a></li>
-                            <li><a href="#">Real</a></li>
-                            <li><a href="#">BDT</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="single-mobile-curr-lang">
-                    <a class="mobile-account-active" href="#">My Account <i class="sli sli-arrow-down"></i></a>
-                    <div class="lang-curr-dropdown account-dropdown-active">
-                        <ul>
-                            <li><a href="login-register.html">Login</a></li>
-                            <li><a href="login-register.html">Creat Account</a></li>
-                            <li><a href="my-account.html">My Account</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="mobile-social-wrap">
-                <a class="facebook" href="#"><i class="sli sli-social-facebook"></i></a>
-                <a class="twitter" href="#"><i class="sli sli-social-twitter"></i></a>
-                <a class="pinterest" href="#"><i class="sli sli-social-pinterest"></i></a>
-                <a class="instagram" href="#"><i class="sli sli-social-instagram"></i></a>
-                <a class="google" href="#"><i class="sli sli-social-google"></i></a>
-            </div>
-        </div>
-    </div>
-    <div class="breadcrumb-area pt-35 pb-35 bg-gray">
-        <div class="container">
-            <div class="breadcrumb-content text-center">
-                <ul>
-                    <li>
-                        <a href="index.html" class="parrafoModel">Home</a>
-                    </li>
-                    <li class="active">Acerca de nosotros </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="about-story-area pt-100 pb-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="story-img">
-                        <a href="#"><img src="assets/img/banner/banner-16.png" alt=""></a>
-                        <div class="about-logo">
-                            <h3>Parlos</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="story-details pl-50">
-                        <div class="story-details-top">
-                            <h2>Bienvenido a <span>Kobe</span></h2>
-                            <p>Kobe proporcionar cómo toda esta idea errónea de denunciar el placer y cantar el dolor nació un le dará una cuenta completa del sistema, y exponer las enseñanzas reales de la comer explorador. </p>
-                        </div>
-                        <div class="story-details-bottom">
-                            <h4>COMENZAMOS EN 2015</h4>
-                            <p>kobe proporcionar cómo toda esta idea errónea de denunciar el placer y cantar el dolor nació un le dará una cuenta completa del sistema, y exponer las enseñanzas reales de la comer explorador.</p>
-                        </div>
-                        <div class="story-details-bottom">
-                            <h4>LA MEJOR TIENDA ONLINE EN 2017</h4>
-                            <p>Kobe proporcionar cómo toda esta idea errónea de denunciar el placer y cantar el dolor nació un le dará una cuenta completa del sistema, y exponer las enseñanzas reales de la comer explorador.</p>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="banner-area pb-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="single-banner mb-30 scroll-zoom">
-                        <a href="#"><img class="animated" src="assets/img/banner/banner-9.png" alt=""></a>
-                        <div class="banner-content banner-position-6">
-                            <h3>HOT Sale</h3>
-                            <h2>Oferta que se van<br>HOY.</h2>
-                            <a href="#">Ir al SHOP</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="single-banner mb-30 text-center scroll-zoom">
-                        <a href="#"><img class="animated" src="assets/img/banner/banner-10.png" alt=""></a>
-                        <div class="banner-content-3 banner-position-7">
-                            <h2 class="text-light">Ofertas que se van HOY.</h2>
-                            <a href="#">Ir al SHOP</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="feature-area pb-60">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-4">
-                    <div class="single-feature mb-40">
-                        <div class="feature-icon">
-                            <img src="assets/img/icon-img/free-shipping.png" alt="">
-                        </div>
-                        <div class="feature-content">
-                            <h4>Envío gratuito</h4>
-                            <p>La mayoría de los productos son de envío <br>gratuito.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-4 col-md-4">
-                    <div class="single-feature mb-40 pl-50">
-                        <div class="feature-icon">
-                            <img src="assets/img/icon-img/support.png" alt="">
-                        </div>
-                        <div class="feature-content">
-                            <h4>Asistencia al cliente</h4>
-                            <p>24x7 Asistencia al cliente</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-4">
-                    <div class="single-feature mb-40">
-                        <div class="feature-icon">
-                            <img src="assets/img/icon-img/security.png" alt="">
-                        </div>
-                        <div class="feature-content">
-                            <h4>Pago seguro</h4>
-                            <p>Pago más seguro <br>para el cliente.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="testimonial-area pt-80 pb-95 section-margin-1" style="background-image: url(assets/img/bg/bg-1.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 ms-auto me-auto">
-                    <div class="testimonial-active owl-carousel nav-style-1">
-                        <div class="single-testimonial text-center">
-                            <img src="assets/img/testimonial/testi-1.png" alt="">
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. Lorem ipsum dolor sit amet, consectetur adipiscing elit, didunt.</p>
-                            <div class="client-info">
-                                <img src="assets/img/icon-img/testi.png" alt="">
-                                <h5>Nikolas Dehlli</h5>
-                            </div>
-                        </div>
-                        <div class="single-testimonial text-center">
-                            <img src="assets/img/testimonial/testi-2.png" alt="">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit.</p>
-                            <div class="client-info">
-                                <img src="assets/img/icon-img/testi.png" alt="">
-                                <h5>Grace Alvarado</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="team-area pt-95 pb-70">
+        <!-- <div class="team-area pt-95 pb-70">
         <div class="container">
             <div class="section-title text-center pb-60">
                 <h2>Miembros del equipo</h2>
@@ -616,48 +562,44 @@
                 </div>
             </div>
         </div>
-    </div>
-    <footer class="footer-area bg-paleturquoise">
-        <div class="container">
-            <div class="footer-top text-center pt-45 pb-45">
-                <nav>
-                    <ul>
-                        <li><a href="#">Home </a></li>
-                        <li><a href="#">Shop </a></li>
-                        <li><a href="#">Accessories  </a></li>
-                        <li><a href="#">Contact </a></li>
-                        <li><a href="#">About </a></li>
-                        <li><a href="#">Blog </a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="footer-bottom border-top-1 pt-20">
+    </div> -->
+        <footer class="footer-area bg-midnight">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-5 col-12">
-                        <div class="footer-social pb-20">
-                            <a href="#">Facebok</a>
-                            <a href="#">Twitter</a>
-                            <a href="#">Linkedin</a>
-                            <a href="#">Instagram</a>
+                <div class="footer-top text-center pt-45 pb-45">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Index </a></li>
+                            <li><a href="shop.html">Shop</a></li>
+                            <li><a href="contact-us.html">Contacto</a></li>
+                            <li><a href="about-us.html">Sobre nosotros</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom border-top-1 pt-20">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 col-md-5 col-12">
+                            <div class="footer-social pb-20">
+                                <a href="#">Facebok</a>
+                                <a href="#">Instagram</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <div class="copyright text-center pb-20">
-                            <p>Copyright © All Right Reserved</p>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="copyright text-center pb-20">
+                                <p>Kōbe Store © 2022</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-3 col-12">
-                        <div class="payment-mathod pb-20">
-                            <a href="#"><img src="assets/img/icon-img/payment.png" alt=""></a>
+                        <div class="col-lg-4 col-md-3 col-12">
+                            <div class="payment-mathod pb-20">
+                                <a href="#"><img src="assets/img/icon-img/payment.png" alt=""></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-</div>
+        </footer>
+    </div>
 
 
 
@@ -668,25 +610,24 @@
 
 
 
-<!-- All JS is here
-============================================ -->
-
-<!-- jQuery JS -->
-<script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-<!-- Popper JS -->
-<script src="assets/js/popper.min.js"></script>
-<!-- Bootstrap JS 
-<script src="assets/js/bootstrap.min.js"></script>-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<!-- Plugins JS -->
-<script src="assets/js/plugins.js"></script>
-<!-- Ajax Mail -->
-<script src="assets/js/ajax-mail.js"></script>
-<!-- Main JS -->
-<script src="assets/js/main.js"></script>
-
-
-
+    <!-- jQuery JS -->
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- Popper JS -->
+    <script src="assets/js/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- VUE -->
+    <script src="https://unpkg.com/vue@3"></script>
+    <!-- Plugins JS -->
+    <script src="assets/js/plugins.js"></script>
+    <!-- Index JS VUE -->
+    <script src="./data/index.js"></script>
+    <!-- Main JS JQUERY-->
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

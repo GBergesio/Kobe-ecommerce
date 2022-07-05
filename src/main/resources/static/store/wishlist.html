@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Parlo - eCommerce Bootstrap 4 Template</title>
+    <title>Kōbe - Anime Shop </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -25,10 +25,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Modernizer JS -->
     <script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
+     <!-- Swal.fire-->
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
-<div class="wrapper">
+<div class="wrapper" id="app">
     <header class="header-area sticky-bar">
         <div class="main-header-wrap">
             <div class="container">
@@ -100,57 +102,67 @@
                                 <button class="icon-cart-active">
                                     <span class="icon-cart">
                                         <i class="sli sli-bag"></i>
-                                        <span class="count-style">02</span>
+                                        <span class="count-style">{{cartStorage.length}}</span>
                                     </span>
                                     <span class="cart-price">
-                                        $320.00
+                                        ${{sumPrice}}
                                     </span>
                                 </button>
                                 <div class="shopping-cart-content">
                                     <div class="shopping-cart-top">
-                                        <h4>Shoping Cart</h4>
+                                        <h4>Carrito de compra</h4>
                                         <a class="cart-close" href="#"><i class="sli sli-close"></i></a>
                                     </div>
                                     <ul>
-                                        <li class="single-shopping-cart">
-                                            <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="assets/img/cart/cart-1.svg"></a>
+                                        <li class="single-shopping-cart" v-for="productCart in cartStorage">
+                                            <div class="shopping-cart-img col-6">
+                                                <img :alt='productCart.name' :src='productCart.img'>
                                                 <div class="item-close">
-                                                    <a href="#"><i class="sli sli-close"></i></a>
+                                                    <button @click="deleteProductCart(productCart)"><a><i
+                                                                class="sli sli-close"></i></a></button>
                                                 </div>
                                             </div>
-                                            <div class="shopping-cart-title">
-                                                <h4><a href="#">Product Name </a></h4>
-                                                <span>1 x 90.00</span>
-                                            </div>
-                                        </li>
-                                        <li class="single-shopping-cart">
-                                            <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="assets/img/cart/cart-2.svg"></a>
-                                                <div class="item-close">
-                                                    <a href="#"><i class="sli sli-close"></i></a>
+                                            <div class="shopping-cart-title col-6">
+                                                <h4><a href="#">{{productCart.name}}</a></h4>
+                                                <span>{{productCart.quantity}} x ${{productCart.price}}</span>
+                                                <div class="row">
+                                                    <button class="cssbuttons-io-button-disabled mb-2"
+                                                        v-show="productCart.quantity == productCart.stock"
+                                                        @click="sumCart(productCart)">
+                                                        <span class="text-light">Agregar</span>
+                                                    </button>
+                                                    <button class="cssbuttons-io-button mb-2"
+                                                        @click="sumCart(productCart)"
+                                                        v-show="productCart.quantity < productCart.stock">
+                                                        <span class="text-light">Agregar</span>
+                                                    </button>
+                                                    <button class="cssbuttons-io-buttonRemove-disabled"
+                                                        v-show="productCart.quantity == 1">
+                                                        <span class="text-light">Remover</span>
+                                                    </button>
+                                                    <button class="cssbuttons-io-buttonRemove"
+                                                        @click="minusCart(productCart)"
+                                                        v-show="productCart.quantity > 1">
+                                                        <span class="text-light">Remover</span>
+                                                    </button>
                                                 </div>
-                                            </div>
-                                            <div class="shopping-cart-title">
-                                                <h4><a href="#">Product Name</a></h4>
-                                                <span>1 x 90.00</span>
                                             </div>
                                         </li>
                                     </ul>
                                     <div class="shopping-cart-bottom">
                                         <div class="shopping-cart-total">
-                                            <h4>Total : <span class="shop-total">$260.00</span></h4>
+                                            <h4>Total : <span class="shop-total">${{sumPrice}}</span></h4>
                                         </div>
                                         <div class="shopping-cart-btn btn-hover text-center">
-                                            <a class="default-btn" href="checkout.html">checkout</a>
-                                            <a class="default-btn" href="cart-page.html">view cart</a>
+                                            <a class="default-btn2" @click="emptyCart">Vaciar Carrito</a>
+                                            <a class="default-btn" href="cart-page.html">Ver Carrito</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="setting-wrap">
                                 <button class="setting-active">
-                                    <i class="sli sli-settings"></i>
+                                    <i class="sli sli-user"></i>
                                 </button>
                                 <div class="setting-content">
                                     <ul>
@@ -379,84 +391,47 @@
             </div>
         </div>
     </div>
-    <div class="breadcrumb-area pt-35 pb-35 bg-gray">
+    <div class="breadcrumb-area pt-35 pb-35 bg-check">
         <div class="container">
             <div class="breadcrumb-content text-center">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="index.html">Inicio</a>
                     </li>
-                    <li class="active">wishlist </li>
+                    <li class="active">Productos favoritos </li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="cart-main-area pt-95 pb-100">
+    <div class="cart-main-area pt-95 pb-100 ">
         <div class="container">
-            <h3 class="cart-page-title">Your cart items</h3>
-            <div class="row">
+            <div class="pb-100">
+                <h3 class="cart-page-title pb-100" v-show="favStorage.length == 0">Agrega productos a tus favoritos!</h3>
+            </div>
+            <h3 class="cart-page-title" v-show="favStorage.length > 0">Tus productos favoritos</h3>
+            <div class="row" v-show="favStorage.length > 0">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                     <form action="#">
                         <div class="table-content table-responsive cart-table-content">
-                            <table>
-                                <thead>
+                            <table class="theadImg">
+                                <thead >
                                     <tr>
-                                        <th>Image</th>
-                                        <th>Product Name</th>
-                                        <th>Until Price</th>
-                                        <th>Qty</th>
-                                        <th>Subtotal</th>
-                                        <th>Add To Cart</th>
+                                        <th>Imagen</th>
+                                        <th>Nombre del producto</th>
+                                        <th>Precio</th>
+                                        <th>Agregar al carrito</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
+                                <tbody >
+                                    <tr v-for="product in favStorage">
                                         <td class="product-thumbnail">
-                                            <a href="#"><img src="assets/img/cart/cart-3.svg" alt=""></a>
+                                            <a :href="'product-details.html?id=' + product.id"><img :src="product.img" :alt="product.name" class="imgInCart"></a>
                                         </td>
-                                        <td class="product-name"><a href="#">Product Name</a></td>
-                                        <td class="product-price-cart"><span class="amount">$260.00</span></td>
-                                        <td class="product-quantity">
-                                            <div class="cart-plus-minus">
-                                                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                                            </div>
-                                        </td>
-                                        <td class="product-subtotal">$110.00</td>
-                                        <td class="product-wishlist-cart">
-                                            <a href="#">add to cart</a>
+                                        <td class="product-name text-dark"><a :href="'product-details.html?id=' + product.id">{{product.name}}</a></td>
+                                        <td class="product-price-cart text-dark"><span class="amount amountCart">${{product.price}}</span></td>
+                                        <td class="product-wishlist-cart text-dark">
+                                            <a href="#" @click="addProductCart(product)">Agregar al carrito</a>
                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="product-thumbnail">
-                                            <a href="#"><img src="assets/img/cart/cart-4.svg" alt=""></a>
-                                        </td>
-                                        <td class="product-name"><a href="#">Product Name</a></td>
-                                        <td class="product-price-cart"><span class="amount">$150.00</span></td>
-                                        <td class="product-quantity">
-                                            <div class="cart-plus-minus">
-                                                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                                            </div>
-                                        </td>
-                                        <td class="product-subtotal">$150.00</td>
-                                        <td class="product-wishlist-cart">
-                                            <a href="#">add to cart</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="product-thumbnail">
-                                            <a href="#"><img src="assets/img/cart/cart-5.svg" alt=""></a>
-                                        </td>
-                                        <td class="product-name"><a href="#">Product Name</a></td>
-                                        <td class="product-price-cart"><span class="amount">$170.00</span></td>
-                                        <td class="product-quantity">
-                                            <div class="cart-plus-minus">
-                                                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                                            </div>
-                                        </td>
-                                        <td class="product-subtotal">$170.00</td>
-                                        <td class="product-wishlist-cart">
-                                            <a href="#">add to cart</a>
-                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -466,17 +441,16 @@
             </div>
         </div>
     </div>
-    <footer class="footer-area bg-paleturquoise">
+
+    <footer class="footer-area bg-midnight pt-100">
         <div class="container">
             <div class="footer-top text-center pt-45 pb-45">
                 <nav>
                     <ul>
-                        <li><a href="#">Home </a></li>
-                        <li><a href="#">Shop </a></li>
-                        <li><a href="#">Accessories  </a></li>
-                        <li><a href="#">Contact </a></li>
-                        <li><a href="#">About </a></li>
-                        <li><a href="#">Blog </a></li>
+                        <li><a href="index.html">Inicio </a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="contact-us.html">Contacto</a></li>
+                        <li><a href="about-us.html">Sobre nosotros</a></li>
                     </ul>
                 </nav>
             </div>
@@ -487,14 +461,12 @@
                     <div class="col-lg-4 col-md-5 col-12">
                         <div class="footer-social pb-20">
                             <a href="#">Facebok</a>
-                            <a href="#">Twitter</a>
-                            <a href="#">Linkedin</a>
                             <a href="#">Instagram</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-12">
                         <div class="copyright text-center pb-20">
-                            <p>Copyright © All Right Reserved</p>
+                            <p>Kōbe Store © 2022</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-3 col-12">
@@ -517,23 +489,30 @@
 
 
 
-<!-- All JS is here
+    <!-- All JS is here
 ============================================ -->
 
-<!-- jQuery JS -->
-<script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-<!-- Popper JS -->
-<script src="assets/js/popper.min.js"></script>
-<!-- Bootstrap JS -->
-<!-- <script src="assets/js/bootstrap.min.js"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-<!-- Plugins JS -->
-<script src="assets/js/plugins.js"></script>
-<!-- Ajax Mail -->
-<script src="assets/js/ajax-mail.js"></script>
-<!-- Main JS -->
-<script src="assets/js/main.js"></script>
+    <!-- jQuery JS -->
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- Popper JS -->
+    <script src="assets/js/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <!-- <script src="assets/js/bootstrap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- VUE -->
+    <script src="https://unpkg.com/vue@3"></script>
+    <!-- Plugins JS -->
+    <script src="assets/js/plugins.js"></script>
+    <!-- Ajax Mail -->
+    <script src="assets/js/ajax-mail.js"></script>
+    <!-- Index JS VUE -->
+    <script src="./data/index.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
 
 </body>
 

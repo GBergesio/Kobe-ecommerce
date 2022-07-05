@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Modernizer JS -->
     <script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
+        <!-- Swal.fire-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -47,7 +49,7 @@
                             <div class="main-menu">
                                 <nav>
                                     <ul>
-                                        <li class=""><a href="index.html">Home</a></li>
+                                        <li class=""><a href="index.html">Inicio</a></li>
                                         <li class="angle-shape"><a href="#"> Categorías <span>new</span>
                                             </a>
                                             <ul class="mega-menu">
@@ -103,88 +105,82 @@
                                     <button class="icon-cart-active">
                                         <span class="icon-cart">
                                             <i class="sli sli-bag"></i>
-                                            <span class="count-style">02</span>
+                                            <span class="count-style">{{cartStorage.length}}</span>
                                         </span>
                                         <span class="cart-price">
-                                            $320.00
+                                            ${{sumPrice}}
                                         </span>
                                     </button>
                                     <div class="shopping-cart-content">
                                         <div class="shopping-cart-top">
-                                            <h4>Shoping Cart</h4>
+                                            <h4>Carrito de compra</h4>
                                             <a class="cart-close" href="#"><i class="sli sli-close"></i></a>
                                         </div>
                                         <ul>
-                                            <li class="single-shopping-cart">
-                                                <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-1.svg"></a>
+                                            <li class="single-shopping-cart" v-for="productCart in cartStorage">
+                                                <div class="shopping-cart-img col-6">
+                                                    <img :alt='productCart.name' :src='productCart.img'>
                                                     <div class="item-close">
-                                                        <a href="#"><i class="sli sli-close"></i></a>
+                                                        <button @click="deleteProductCart(productCart)"><a><i
+                                                                    class="sli sli-close"></i></a></button>
                                                     </div>
                                                 </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="#">Product Name </a></h4>
-                                                    <span>1 x 90.00</span>
-                                                </div>
-                                            </li>
-                                            <li class="single-shopping-cart">
-                                                <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-2.svg"></a>
-                                                    <div class="item-close">
-                                                        <a href="#"><i class="sli sli-close"></i></a>
+                                                <div class="shopping-cart-title col-6">
+                                                    <h4><a href="#">{{productCart.name}}</a></h4>
+                                                    <span>{{productCart.quantity}} x ${{productCart.price}}</span>
+                                                    <div class="row">
+                                                        <button class="cssbuttons-io-button-disabled mb-2"
+                                                            v-show="productCart.quantity == productCart.stock"
+                                                            @click="sumCart(productCart)">
+                                                            <span class="text-light">Agregar</span>
+                                                        </button>
+                                                        <button class="cssbuttons-io-button mb-2"
+                                                            @click="sumCart(productCart)"
+                                                            v-show="productCart.quantity < productCart.stock">
+                                                            <span class="text-light">Agregar</span>
+                                                        </button>
+                                                        <button class="cssbuttons-io-buttonRemove-disabled"
+                                                            v-show="productCart.quantity == 1">
+                                                            <span class="text-light">Remover</span>
+                                                        </button>
+                                                        <button class="cssbuttons-io-buttonRemove"
+                                                            @click="minusCart(productCart)"
+                                                            v-show="productCart.quantity > 1">
+                                                            <span class="text-light">Remover</span>
+                                                        </button>
                                                     </div>
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="#">Product Name</a></h4>
-                                                    <span>1 x 90.00</span>
                                                 </div>
                                             </li>
                                         </ul>
                                         <div class="shopping-cart-bottom">
                                             <div class="shopping-cart-total">
-                                                <h4>Total : <span class="shop-total">$260.00</span></h4>
+                                                <h4>Total : <span class="shop-total">${{sumPrice}}</span></h4>
                                             </div>
                                             <div class="shopping-cart-btn btn-hover text-center">
-                                                <a class="default-btn" href="checkout.html">checkout</a>
-                                                <a class="default-btn" href="cart-page.html">view cart</a>
+                                                <a class="default-btn2" @click="emptyCart">Vaciar Carrito</a>
+                                                <a class="default-btn" href="cart-page.html">Ver Carrito</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="setting-wrap">
-                                    <button class="setting-active">
-                                        <i class="sli sli-settings"></i>
-                                    </button>
-                                    <div class="setting-content">
-                                        <ul>
-                                            <li>
-                                                <h4>Currency</h4>
-                                                <ul>
-                                                    <li><a href="#">USD</a></li>
-                                                    <li><a href="#">Euro</a></li>
-                                                    <li><a href="#">Real</a></li>
-                                                    <li><a href="#">BDT</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <h4>Language</h4>
-                                                <ul>
-                                                    <li><a href="#">English (US)</a></li>
-                                                    <li><a href="#">English (UK)</a></li>
-                                                    <li><a href="#">Spanish</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <h4>Account</h4>
-                                                <ul>
-                                                    <li><a href="login-register.html">Login</a></li>
-                                                    <li><a href="login-register.html">Creat Account</a></li>
-                                                    <li><a href="my-account.html">My Account</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                    <div class="setting-wrap">
+                                        <button class="setting-active">
+                                            <i class="sli sli-user"></i>
+                                        </button>
+                                        <div class="setting-content">
+                                            <ul>
+                                                <li>
+                                                    <h4>Cuenta</h4>
+                                                    <ul>
+                                                        <li><a href="login-register.html">Crear Cuenta</a></li>
+                                                        <li><a href="my-account.html">Mi cuenta</a></li>
+                                                        <li><a href="login-register.html">Login</a></li>
+                                                        <li><a @click="logOut">Logout</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -197,7 +193,7 @@
                     <div class="sidebar-search-input">
                         <form>
                             <div class="form-search">
-                                <input id="search" class="input-text" value="" placeholder="Search Now" type="search">
+                                <input id="search" class="input-text" value="" placeholder="Buscar ahora" type="search">
                                 <button>
                                     <i class="sli sli-magnifier"></i>
                                 </button>
@@ -222,44 +218,59 @@
                                     <button class="icon-cart-active">
                                         <span class="icon-cart">
                                             <i class="sli sli-bag"></i>
-                                            <span class="count-style">02</span>
+                                            <span class="count-style">{{cartStorage.length}}</span>
                                         </span>
                                         <span class="cart-price">
-                                            $320.00
+                                            ${{sumPrice}}
                                         </span>
                                     </button>
                                     <div class="shopping-cart-content">
                                         <div class="shopping-cart-top">
-                                            <h4>Shoping Cart</h4>
+                                            <h4>Carrito de compra</h4>
                                             <a class="cart-close" href="#"><i class="sli sli-close"></i></a>
                                         </div>
                                         <ul>
-                                            <li class="single-shopping-cart">
+                                            <li class="single-shopping-cart" v-for="productCart in cartStorage">
                                                 <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-1.svg"></a>
+                                                    <img :alt='productCart.name' :src='productCart.img'>
+                                                    <div class="item-close">
+                                                        <button @click="deleteProductCart(productCart)"><a><i
+                                                                    class="sli sli-close"></i></a></button>
+                                                    </div>
                                                 </div>
                                                 <div class="shopping-cart-title">
-                                                    <h4><a href="#">Product Name </a></h4>
-                                                    <span>1 x 90.00</span>
-                                                </div>
-                                            </li>
-                                            <li class="single-shopping-cart">
-                                                <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-2.svg"></a>
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="#">Product Name</a></h4>
-                                                    <span>1 x 90.00</span>
+                                                    <h4><a href="#">{{productCart.name}}</a></h4>
+                                                    <span>{{productCart.quantity}} x ${{productCart.price}}</span>
+                                                    <div class="row">
+                                                        <button class="cssbuttons-io-button-disabled mb-2"
+                                                            v-show="productCart.quantity == productCart.stock">
+                                                            <span class="text-light">Agregar</span>
+                                                        </button>
+                                                        <button class="cssbuttons-io-button mb-2"
+                                                            @click="sumCart(productCart)"
+                                                            v-show="productCart.quantity < productCart.stock">
+                                                            <span class="text-light">Agregar</span>
+                                                        </button>
+                                                        <button class="cssbuttons-io-buttonRemove-disabled"
+                                                            v-show="productCart.quantity == 1">
+                                                            <span class="text-light">Remover</span>
+                                                        </button>
+                                                        <button class="cssbuttons-io-buttonRemove"
+                                                            @click="minusCart(productCart)"
+                                                            v-show="productCart.quantity > 1">
+                                                            <span class="text-light">Remover</span>
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </li>
                                         </ul>
                                         <div class="shopping-cart-bottom">
                                             <div class="shopping-cart-total">
-                                                <h4>Total : <span class="shop-total">$260.00</span></h4>
+                                                <h4>Total : <span class="shop-total">${{sumPrice}}</span></h4>
                                             </div>
                                             <div class="shopping-cart-btn btn-hover text-center">
-                                                <a class="default-btn" href="checkout.html">checkout</a>
-                                                <a class="default-btn" href="cart-page.html">view cart</a>
+                                                <a class="default-btn2" @click="emptyCart">Vaciar Carrito</a>
+                                                <a class="default-btn" href="cart-page.html">Ver Carrito</a>
                                             </div>
                                         </div>
                                     </div>
@@ -278,7 +289,7 @@
             <div class="header-mobile-aside-wrap">
                 <div class="mobile-search">
                     <form class="search-form" action="#">
-                        <input type="text" placeholder="Search entire store…">
+                        <input type="text" placeholder="Buscar ahora">
                         <button class="button-search"><i class="sli sli-magnifier"></i></button>
                     </form>
                 </div>
@@ -288,37 +299,53 @@
                         <!-- mobile menu navigation start -->
                         <nav>
                             <ul class="mobile-menu">
-                                <li class="menu-item-has-children"><a href="index.html">Home</a>
+                                <li class="menu-item-has-children"><a href="index.html">Inicio</a>
                                 </li>
                                 <li class="menu-item-has-children "><a href="shop.html">Categorias</a>
                                     <ul class="dropdown">
-                                        <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=BOOKSHOP'">Librería</a>
                                             <ul class="dropdown">
                                                 <li><a v-bind:href="'shop.html?subcategory=Mangas'">Mangas</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Magazines'">Magazines</a>
+                                                </li>
                                                 <li><a v-bind:href="'shop.html?subcategory=Comics'">Comics</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones Completas</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Complete collections'">Colecciones
+                                                        Completas</a></li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras coleccionables</a>
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=ACTIONFIGURES'">Figuras
+                                                coleccionables</a>
                                             <ul class="dropdown">
-                                                <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops!</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Funko POP!'">Funko Pops!</a>
+                                                </li>
+                                                <li><a
+                                                        v-bind:href="'shop.html?subcategory=Articulated Figures'">Articulados</a>
+                                                </li>
+                                                <li><a
+                                                        v-bind:href="'shop.html?subcategory=Static Figures'">Estáticos</a>
+                                                </li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y Juegos</a>
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=BAZARANDTOYSHOP'">Bazar y Juegos</a>
                                             <ul class="dropdown">
                                                 <li><a v-bind:href="'shop.html?subcategory=Mugs'">Tazas</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de mesa</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de video</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Board Games'">Juegos de
+                                                        mesa</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Video Games'">Juegos de
+                                                        video</a></li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item-has-children"><a v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
+                                        <li class="menu-item-has-children"><a
+                                                v-bind:href="'shop.html?category=ACCESSORIES'">Accesorios</a>
                                             <ul class="dropdown">
-                                                <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas Iphone</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Iphone Cases'">Fundas
+                                                        Iphone</a></li>
                                                 <li><a v-bind:href="'shop.html?subcategory=Keychains'">Llaveros</a></li>
-                                                <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a></li>
+                                                <li><a v-bind:href="'shop.html?subcategory=Mouse Pad'">Mouse pad</a>
+                                                </li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -342,52 +369,28 @@
                 </div>
                 <div class="mobile-curr-lang-wrap">
                     <div class="single-mobile-curr-lang">
-                        <a class="mobile-language-active" href="#">Language <i class="sli sli-arrow-down"></i></a>
-                        <div class="lang-curr-dropdown lang-dropdown-active">
-                            <ul>
-                                <li><a href="#">English (US)</a></li>
-                                <li><a href="#">English (UK)</a></li>
-                                <li><a href="#">Spanish</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="single-mobile-curr-lang">
-                        <a class="mobile-currency-active" href="#">Currency <i class="sli sli-arrow-down"></i></a>
-                        <div class="lang-curr-dropdown curr-dropdown-active">
-                            <ul>
-                                <li><a href="#">USD</a></li>
-                                <li><a href="#">EUR</a></li>
-                                <li><a href="#">Real</a></li>
-                                <li><a href="#">BDT</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="single-mobile-curr-lang">
-                        <a class="mobile-account-active" href="#">My Account <i class="sli sli-arrow-down"></i></a>
+                        <a class="mobile-account-active" href="#">Mi cuenta<i class="sli sli-arrow-down"></i></a>
                         <div class="lang-curr-dropdown account-dropdown-active">
                             <ul>
                                 <li><a href="login-register.html">Login</a></li>
-                                <li><a href="login-register.html">Creat Account</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
+                                <li><a href="login-register.html">Crear cuenta</a></li>
+                                <!-- <li><a href="my-account.html">Mi cuenta</a></li> -->
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="mobile-social-wrap">
                     <a class="facebook" href="#"><i class="sli sli-social-facebook"></i></a>
-                    <a class="twitter" href="#"><i class="sli sli-social-twitter"></i></a>
-                    <a class="pinterest" href="#"><i class="sli sli-social-pinterest"></i></a>
                     <a class="instagram" href="#"><i class="sli sli-social-instagram"></i></a>
-                    <a class="google" href="#"><i class="sli sli-social-google"></i></a>
                 </div>
             </div>
         </div>
-        <div class="breadcrumb-area pt-35 pb-35 bg-gray">
+        <div class="breadcrumb-area pt-35 pb-35 bg-check">
             <div class="container">
                 <div class="breadcrumb-content text-center">
                     <ul>
                         <li>
-                            <a class="parrafoModel" href="index.html">Home</a>
+                            <a class="parrafoModel text-dark" href="index.html">Inicio</a>
                         </li>
                         <li class="active">Detalles del producto </li>
                     </ul>
@@ -487,15 +490,15 @@
                             </div>
                         </div> -->
                             <div class="pro-details-quality">
-                                <div class="cart-plus-minus">
+                                <!-- <div class="cart-plus-minus">
                                     <input class="cart-plus-minus-box text-light" type="number" name="qtybutton"
                                         value="1">
-                                </div>
+                                </div> -->
                                 <div class="pro-details-cart btn-hover">
-                                    <a href="#">Añadir al carrito</a>
+                                    <a href="#" @click="addProductCart(product)">Agregar al carrito</a>
                                 </div>
                                 <div class="pro-details-wishlist">
-                                    <a title="Add To Wishlist" href="#"><i class="sli sli-heart"></i></a>
+                                    <a title="Add To Wishlist" href="#" @click="addProductFav(product)"><i class="sli sli-heart"></i></a>
                                 </div>
                             </div>
                             <div class="pro-details-meta">
@@ -508,7 +511,7 @@
                             <div class="pro-details-meta">
                                 <span class="text-light">Subcategorias :</span>
                                 <ul>
-                                    <li><a href="#">{{product.subcategory}}</a></li>
+                                    <li><a :href="'shop.html?subcategory=' + product.subcategory">{{product.subcategory}}</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -516,7 +519,7 @@
                 </div>
             </div>
         </div>
-        <div class="description-review-area pb-95">
+        <!-- <div class="description-review-area pb-95">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-8">
@@ -525,13 +528,11 @@
                                 <a class="active" data-bs-toggle="tab" href="#des-details1">Descripción</a>
 
                                 <a data-bs-toggle="tab" href="#des-details2">Reviews (3)</a>
-                                <!--. lengt a los reviuews                           /para eso -->
+
                             </div>
                             <div class="tab-content description-review-bottom">
                                 <div id="des-details1" class="tab-pane active">
                                     <div class="product-description-wrapper">
-                                        <!--v for descripcion del articulo 
-                                    -->
                                         <p>Pellentesque orci lectus, bibendum iaculis aliquet id, ullamcorper nec ipsum.
                                             In laoreet ligula vitae tristique viverra. Suspendisse augue nunc, laoreet
                                             in arcu ut, vulputate malesuada justo. Donec porttitor elit justo, sed
@@ -553,14 +554,13 @@
                                                 <img src="assets/img/product-details/client-1.jpg" alt="">
                                             </div>
                                             <div class="review-content">
-                                                <!--comentarios-->
+
                                                 <p>“In convallis nulla et magna congue convallis. Donec eu nunc vel
                                                     justo maximus posuere. Sed viverra nunc erat, a efficitur nibh”</p>
                                                 <div class="review-top-wrap">
                                                     <div class="review-name">
                                                         <h4>Stella McGee</h4>
                                                     </div>
-                                                    <!-- Estrellas value -->
                                                     <div class="review-rating">
                                                         <i class="sli sli-star"></i>
                                                         <i class="sli sli-star"></i>
@@ -610,7 +610,6 @@
                                                     <div class="col-md-12">
                                                         <div class="rating-form-style mb-20">
                                                             <label>Your review <span>*</span></label>
-                                                            <!--v model -->
                                                             <textarea class="text-light" name="Your Review"></textarea>
                                                         </div>
                                                     </div>
@@ -646,8 +645,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="product-area pb-70">
+        </div> -->
+        <!-- <div class="product-area pb-70">
             <div class="container">
                 <div class="section-title text-center pb-60">
                     <h2>Productos relacionados</h2>
@@ -656,7 +655,6 @@
                 </div>
                 <div class="arrivals-wrap scroll-zoom">
                     <div class="ht-products product-slider-active owl-carousel">
-                        <!--Product Start v for -->
                         <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom mb-30">
                             <div class="ht-product-inner">
                                 <div class="ht-product-image-wrap">
@@ -703,23 +701,21 @@
                                 </div>
                             </div>
                         </div>
-                        <!--Product End-->
+
 
                     </div>
                 </div>
             </div>
-        </div>
-        <footer class="footer-area bg-paleturquoise">
+        </div> -->
+        <footer class="footer-area bg-midnight">
             <div class="container">
                 <div class="footer-top text-center pt-45 pb-45">
                     <nav>
                         <ul>
-                            <li><a href="#">Home </a></li>
-                            <li><a href="#">Shop </a></li>
-                            <li><a href="#">Accessories </a></li>
-                            <li><a href="#">Contact </a></li>
-                            <li><a href="#">About </a></li>
-                            <li><a href="#">Blog </a></li>
+                            <li><a href="index.html">Index </a></li>
+                            <li><a href="shop.html">Shop</a></li>
+                            <li><a href="contact-us.html">Contacto</a></li>
+                            <li><a href="about-us.html">Sobre nosotros</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -730,14 +726,12 @@
                         <div class="col-lg-4 col-md-5 col-12">
                             <div class="footer-social pb-20">
                                 <a href="#">Facebok</a>
-                                <a href="#">Twitter</a>
-                                <a href="#">Linkedin</a>
                                 <a href="#">Instagram</a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="copyright text-center pb-20">
-                                <p>Copyright © All Right Reserved</p>
+                                <p>Kōbe Store © 2022</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-3 col-12">
@@ -862,8 +856,6 @@
                                     <div class="pro-details-meta">
                                         <span class="">Categories :</span>
                                         <ul>
-                                            <!--v for-->
-
                                             <li><a class="parrafoModel" href="#">Minimal,</a></li>
 
                                         </ul>
@@ -871,7 +863,6 @@
                                     <div class="pro-details-meta">
                                         <span>Tag :</span>
                                         <ul>
-                                            <!--v for-->
                                             <li><a class="parrafoModel" href="#">Fashion, </a></li>
                                         </ul>
                                     </div>

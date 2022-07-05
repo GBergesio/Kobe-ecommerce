@@ -46,7 +46,7 @@
                                 <div class="main-menu">
                                     <nav>
                                         <ul>
-                                            <li class=""><a href="index.html">Home</a></li>
+                                            <li class=""><a href="index.html">Inicio</a></li>
                                             <li class="angle-shape"><a href="#"> Categorías <span>new</span>
                                                 </a>
                                                 <ul class="mega-menu">
@@ -186,18 +186,25 @@
                                     </div>
                                     <div class="setting-wrap">
                                         <button class="setting-active">
-                                            <i class="sli sli-settings"></i>
+                                            <i class="sli sli-user"></i>
                                         </button>
                                         <div class="setting-content">
                                             <ul>
                                                 <li>
                                                     <h4>Cuenta</h4>
-                                                    <ul>
-                                                        <li><a href="login-register.html">Crear Cuenta</a></li>
+                                                    <ul v-if="currentClient.active == false">
+                                                        <li class="pt-3"><a href="login-register.html">Crear Cuenta</a>
+                                                        </li>
                                                         <li><a href="my-account.html">Mi cuenta</a></li>
-                                                        <li><a href="login-register.html">Login</a></li>
                                                         <li><a @click="logOut">Logout</a></li>
                                                     </ul>
+                                                    <ul v-else>
+                                                        <li class="pt-3"><a href="login-register.html">Crear Cuenta</a>
+                                                        </li>
+                                                        <!-- <li><a href="my-account.html">Mi cuenta</a></li> -->
+                                                        <li><a href="login-register.html">Login</a></li>
+                                                    </ul>
+
                                                 </li>
                                             </ul>
                                         </div>
@@ -212,7 +219,7 @@
                             <button class="search-close"><span class="sli sli-close"></span></button>
                         </div>
                         <div class="sidebar-search-input">
-                            <form>
+                            <!-- <form>
                                 <div class="form-search">
                                     <input id="search" class="input-text" value="" placeholder="Buscar ahora"
                                         type="search">
@@ -220,7 +227,7 @@
                                         <i class="sli sli-magnifier"></i>
                                     </button>
                                 </div>
-                            </form>
+                            </form> -->
                         </div>
                     </div>
                 </div>
@@ -321,7 +328,7 @@
                             <!-- mobile menu navigation start -->
                             <nav>
                                 <ul class="mobile-menu">
-                                    <li class="menu-item-has-children"><a href="index.html">Home</a>
+                                    <li class="menu-item-has-children"><a href="index.html">Inicio</a>
                                     </li>
                                     <li class="menu-item-has-children "><a href="shop.html">Categorias</a>
                                         <ul class="dropdown">
@@ -419,8 +426,7 @@
                                         <h1 class="animated">Bienvenido a <span>Kōbe</span></h1>
                                         <p class="animated">Tienda especializada en merchandising anime y ficción</p>
                                         <div class="slider-btn btn-hover">
-                                            <a class="animated">Ver productos!<i
-                                                    class="sli sli-basket-loaded"></i></a>
+                                            <a class="animated">Ver productos!<i class="sli sli-basket-loaded"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -438,12 +444,10 @@
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-12 col-sm-6">
                                     <div class="slider-content slider-animated-1">
                                         <h1 class="animated">Mangas y comics</h1>
-                                        <p class="animated">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting
-                                            industry. It is a long established fact that a reader.</p>
+                                        <p class="animated"></p>
                                         <div class="slider-btn btn-hover">
-                                            <a class="animated" v-bind:href="'shop.html?category=BOOKSHOP'">Comprar ahora<i
-                                                    class="sli sli-basket-loaded"></i></a>
+                                            <a class="animated" v-bind:href="'shop.html?category=BOOKSHOP'">Comprar
+                                                ahora<i class="sli sli-basket-loaded"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -464,7 +468,8 @@
                                         <p class="animated">Variedad en fundas para iPhone 11, 12 y 13</p>
                                         <p class="animated">15% de descuento en fundas seleccionadas</p>
                                         <div class="slider-btn btn-hover">
-                                            <a class="animated" v-bind:href="'shop.html?subcategory=Iphone Cases'">Comprar ahora<i
+                                            <a class="animated"
+                                                v-bind:href="'shop.html?subcategory=Iphone Cases'">Comprar ahora<i
                                                     class="sli sli-basket-loaded"></i></a>
                                         </div>
                                     </div>
@@ -480,41 +485,39 @@
                 </div>
             </div>
 
-
-
-
             <div class="banner-area pt-100 pb-65" id="goShop">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated" src="assets/img/banner/funko2.png"
-                                        alt=""></a>
+                                <a v-bind:href="'shop.html?category=ACTIONFIGURES'"><img class="animated"
+                                        src="assets/img/banner/funko2.png" alt="imgFunkosYfiguras"></a>
                                 <div class="banner-content banner-position-1">
                                     <h2 id="funkosyfiguras">Funkos <br>y figuras</h2>
                                     <h3>Disponibles individuales<br>y en colecciones</h3>
                                     <br>
-                                    <a href="product-details.html">Comprar ahora!</a>
+                                    <a v-bind:href="'shop.html?category=ACTIONFIGURES'">Comprar ahora!</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated"
+                                <a v-bind:href="'shop.html?subcategory=Mouse Pad'"><img class="animated"
                                         src="assets/img/banner/stickers2.png" alt=""></a>
                                 <div class="banner-content banner-position-2">
-                                    <h3 id="h3Banner2">35% off Lunes y miércoles</h3>
-                                    <h2>Stickers <br>y pegatinas</h2>
-                                    <a href="product-details.html" style="background-color: red;">Shop Now</a>
+                                    <h3 id="h3Banner2 pb-15">Mouse Pad personalizados</h3>
+                                    <!-- <h2>Stickers <br>y pegatinas</h2> -->
+                                    <a v-bind:href="'shop.html?subcategory=Mouse Pad'"
+                                        style="background-color: red;">Ver productos</a>
                                 </div>
                             </div>
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated" src="assets/img/banner/mugs2.png"
-                                        alt=""></a>
+                                <a :href="'shop.html?category=BAZARANDTOYSHOP'"><img class="animated"
+                                        src="assets/img/banner/mugs2.png" alt=""></a>
                                 <div class="banner-content banner-position-3">
                                     <h3>Artículos bazar</h3>
                                     <h2>Tazas, llaveros <br>y fundas</h2>
-                                    <a href="product-details.html">Shop Now</a>
+                                    <a :href="'shop.html?category=BAZARANDTOYSHOP'">Ver productos</a>
                                 </div>
                             </div>
                         </div>
@@ -536,7 +539,7 @@
                             <h4>Fundas</h4>
                         </a>
                         <a href="#product-3" data-bs-toggle="tab">
-                            <h4>Mangas</h4>
+                            <h4>Mouse pad</h4>
                         </a>
                     </div>
                     <div class="tab-content jump-2">
@@ -576,14 +579,16 @@
                                         </div>
                                         <div class="ht-product-content">
                                             <div class="ht-product-content-inner">
-                                                <div class="ht-product-categories"><a href="#">{{funko.category}}</a>
+                                                <div class="ht-product-categories"><a
+                                                        :href="'shop.html?subcategory=' + funko.subcategory">{{funko.subcategory}}</a>
                                                 </div>
                                                 <h4 class="ht-product-title"><a
                                                         :href="'product-details.html?id=' + funko.id">{{funko.name}}</a>
                                                 </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="funko.stock <= 5">
-                                                        <span class="new">${{(funko.lowStockPrice).toFixed(2)}}</span>
+                                                        <span
+                                                            class="newLow2">${{(funko.lowStockPrice).toFixed(2)}}</span>
                                                         <span class="old">${{funko.price}}</span>
                                                     </div>
                                                     <div v-show="funko.stock > 5">
@@ -597,17 +602,23 @@
                                             </div>
                                             <div class="ht-product-action">
                                                 <ul>
-                                                    <li><a href="#"><i class="sli sli-magnifier"></i><span
-                                                                class="ht-product-action-tooltip">Vista
-                                                                rápida</span></a>
+                                                    <li><button @click="productForModal(funko)"><a
+                                                                data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                                                    class="sli sli-magnifier"></i><span
+                                                                    class="ht-product-action-tooltip">Vista
+                                                                    rápida</span></a></button>
                                                     </li>
-                                                    <li><a href="#"><i class="sli sli-heart"></i><span
-                                                                class="ht-product-action-tooltip">Agregar a
-                                                                favoritos</span></a>
+                                                    <li><button @click="addProductFav(funko)">
+                                                            <a><i class="sli sli-heart"></i><span
+                                                                    class="ht-product-action-tooltip">Agregar a
+                                                                    favoritos</span></a>
+                                                        </button>
                                                     </li>
-                                                    <li><a href="#"><i class="sli sli-bag"></i><span
-                                                                class="ht-product-action-tooltip">Agregar al
-                                                                carrito</span></a>
+                                                    <li><button @click="addProductCart(funko)">
+                                                            <a><i class="sli sli-bag"></i><span
+                                                                    class="ht-product-action-tooltip">Agregar al
+                                                                    carrito</span></a>
+                                                        </button>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -656,14 +667,16 @@
                                         </div>
                                         <div class="ht-product-content">
                                             <div class="ht-product-content-inner">
-                                                <div class="ht-product-categories"><a href="#">{{funda.category}}</a>
+                                                <div class="ht-product-categories"><a
+                                                        :href="'shop.html?subcategory=' + funda.subcategory">{{funda.subcategory}}</a>
                                                 </div>
                                                 <h4 class="ht-product-title"><a
                                                         :href="'product-details.html?id=' + funda.id">{{funda.name}}</a>
                                                 </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="funda.stock <= 5">
-                                                        <span class="new">${{(funda.lowStockPrice).toFixed(2)}}</span>
+                                                        <span
+                                                            class="newLow2">${{(funda.lowStockPrice).toFixed(2)}}</span>
                                                         <span class="old">${{funda.price}}</span>
                                                     </div>
                                                     <div v-show="funda.stock > 5">
@@ -737,14 +750,15 @@
                                         </div>
                                         <div class="ht-product-content">
                                             <div class="ht-product-content-inner">
-                                                <div class="ht-product-categories"><a href="#">{{manga.category}}</a>
+                                                <div class="ht-product-categories"><a
+                                                        :href="'shop.html?subcategory=' + manga.subcategory">{{manga.subcategory}}</a>
                                                 </div>
                                                 <h4 class="ht-product-title"><a
                                                         :href="'product-details.html?id=' + manga.id">{{manga.name}}</a>
                                                 </h4>
                                                 <div class="ht-product-price">
                                                     <div v-show="manga.stock <= 5">
-                                                        <span class="new">${{manga.lowStockPrice}}</span>
+                                                        <span class="newLow2">${{manga.lowStockPrice}}</span>
                                                         <span class="old">${{manga.price}}</span>
                                                     </div>
                                                     <div v-show="manga.stock > 5">
@@ -791,7 +805,6 @@
                 </div>
             </div>
 
-
             <div class="testimonial-area pt-80 pb-95 section-margin-1"
                 style="background-image: url(assets/img/bg/demonSlayer.png);">
                 <div class="container">
@@ -830,12 +843,12 @@
                     <div class="arrivals-wrap item-wrapper">
                         <div class="ht-products row">
                             <!--Product Start-->
-                            <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom toggle-item-active col-lg-3 col-md-6 col-sm-6 col-12"
-                                v-for="product in lowStock">
+                            <div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom toggle-item-active col-lg-3 col-md-6 col-sm-6 col-12 mb-20"
+                                v-for="product in lowStock" div>
                                 <div class="ht-product-inner" style="height: 501.69px;">
                                     <div class="ht-product-image-wrap">
-                                        <a href="product-details.html" class="ht-product-image"><img :src="product.img"
-                                                :alt="product.name"></a>
+                                        <a :href="'product-details.html?id=' + product.id" class="ht-product-image"><img
+                                                :src="product.img" :alt="product.name"></a>
                                         <div class="ht-product-action">
                                             <ul>
                                                 <li><button @click="productForModal(product)"><a data-bs-toggle="modal"
@@ -861,11 +874,14 @@
                                     </div>
                                     <div class="ht-product-content">
                                         <div class="ht-product-content-inner">
-                                            <div class="ht-product-categories"><a href="#">{{product.category}}</a>
+                                            <div class="ht-product-categories"><a
+                                                    v-bind:href="'shop.html?subcategory=' + product.subcategory">{{product.subcategory}}</a>
                                             </div>
-                                            <h4 class="ht-product-title"><a href="#">{{product.name}}</a></h4>
+                                            <h4 class="ht-product-title"><a
+                                                    :href="'product-details.html?id=' + product.id">{{product.name}}</a>
+                                            </h4>
                                             <div class="ht-product-price" v-show="product.stock <=5">
-                                                <span class="new">${{(product.lowStockPrice).toFixed(2)}}</span>
+                                                <span class="newLow">${{(product.lowStockPrice).toFixed(2)}}</span>
                                                 <span class="old">${{product.price}}</span>
                                             </div>
                                             <div class="ht-product-price" v-show="product.stock > 5">
@@ -880,15 +896,15 @@
                                         <div class="ht-product-action">
                                             <ul>
                                                 <li><a href="#"><i class="sli sli-magnifier"></i><span
-                                                            class="ht-product-action-tooltip">Quick View</span></a></li>
-                                                <li><a href="#"><i class="sli sli-heart"></i><span
-                                                            class="ht-product-action-tooltip">Add to Wishlist</span></a>
+                                                            class="ht-product-action-tooltip">Vista rápida</span></a>
                                                 </li>
-                                                <li><a href="#"><i class="sli sli-refresh"></i><span
-                                                            class="ht-product-action-tooltip">Add to Compare</span></a>
+                                                <li><a href="#"><i class="sli sli-heart"></i><span
+                                                            class="ht-product-action-tooltip">Agregar a
+                                                            favoritos</span></a>
                                                 </li>
                                                 <li><a href="#"><i class="sli sli-bag"></i><span
-                                                            class="ht-product-action-tooltip">Add to Cart</span></a>
+                                                            class="ht-product-action-tooltip">Agregar al
+                                                            carrito</span></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -899,21 +915,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="show-more-btn text-center mt-10 toggle-btn">
+                        <div class="show-more-btn text-center mt-40 toggle-btn">
                             <a class="loadMore" href="#">Mostrar mas productos</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-
-            <div class="banner-area pt-100 pb-65">
+            <div class="banner-area pt-50 pb-65">
                 <h2 class="text-center text-light pb-25">Productos por Licencia</h2>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4 col-md-4">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated"
+                                <a :href="'shop.html?serie=Star Wars'"><img class="animated"
                                         src="assets/img/banner/starwars.png" alt=""></a>
                                 <div class="banner-content-2 banner-position-5">
                                     <h3 class="text-light">STAR WARS</h3>
@@ -922,7 +937,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated"
+                                <a :href="'shop.html?serie=One Piece'"><img class="animated"
                                         src="assets/img/banner/onePiece.png" alt=""></a>
                                 <div class="banner-content-2 banner-position-5">
                                     <h3>ONE PIECE</h3>
@@ -931,8 +946,8 @@
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated" src="assets/img/banner/naruto.png"
-                                        alt=""></a>
+                                <a :href="'shop.html?serie=Naruto'"><img class="animated"
+                                        src="assets/img/banner/naruto.png" alt=""></a>
                                 <div class="banner-content-2 banner-position-5">
                                     <h3 class="text-light">NARUTO</h3>
                                 </div>
@@ -940,24 +955,26 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated" src="assets/img/banner/marvel.png"
-                                        alt=""></a>
+                                <a :href="'shop.html?serie=Marvel'"><img class="animated"
+                                        src="assets/img/banner/marvel.png" alt=""></a>
                                 <div class="banner-content banner-position-6">
                                     <h2>MARVEL</h2>
-                                    <a href="product-details.html">Ver productos</a>
+                                    <a :href="'shop.html?serie=Marvel'">Ver productos</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="single-banner mb-30 scroll-zoom">
-                                <a href="product-details.html"><img class="animated"
+                                <a :href="'shop.html?serie=DC'"><img class="animated"
                                         src="assets/img/banner/dcComics.png" alt=""></a>
                                 <div class="banner-content banner-position-6">
                                     <h2>DC COMICS</h2>
-                                    <!-- <a href="product-details.html">Shop Now</a> -->
-                                    <button id="batmanBtn">
-                                        <span>Ver productos</span>
-                                    </button>
+                                    <!-- <a :href="'shop.html?serie=DCComics'">Ver productos</a> -->
+                                    <a :href="'shop.html?serie=DC'" class="batmanA">
+                                        <button id="batmanBtn">
+                                            <span>Ver productos</span>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -1004,127 +1021,130 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <footer class="footer-area bg-midnight">
+        <footer class="footer-area bg-midnight">
+            <div class="container">
+                <div class="footer-top text-center pt-45 pb-45">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Index </a></li>
+                            <li><a href="shop.html">Shop</a></li>
+                            <li><a href="contact-us.html">Contacto</a></li>
+                            <li><a href="about-us.html">Sobre nosotros</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom border-top-1 pt-20">
                 <div class="container">
-                    <div class="footer-top text-center pt-45 pb-45">
-                        <nav>
-                            <ul>
-                                <li><a href="index.html">Index </a></li>
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="contact-us.html">Contacto</a></li>
-                                <li><a href="about-us.html">Sobre nosotros</a></li>
-                                <!-- <li><a href="blog.html">Blog </a></li> -->
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="footer-bottom border-top-1 pt-20">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-4 col-md-5 col-12">
-                                <div class="footer-social pb-20">
-                                    <a href="#">Facebok</a>
-                                    <a href="#">Instagram</a>
-                                </div>
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 col-md-5 col-12">
+                            <div class="footer-social pb-20">
+                                <a href="#">Facebok</a>
+                                <a href="#">Instagram</a>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <div class="copyright text-center pb-20">
-                                    <p>Copyright © All Right Reserved</p>
-                                </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="copyright text-center pb-20">
+                                <p>Kōbe Store © 2022</p>
                             </div>
-                            <div class="col-lg-4 col-md-3 col-12">
-                                <div class="payment-mathod pb-20">
-                                    <a href="#"><img src="assets/img/icon-img/payment.png" alt=""></a>
-                                </div>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-12">
+                            <div class="payment-mathod pb-20">
+                                <a href="#"><img src="assets/img/icon-img/payment.png" alt=""></a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </footer>
+            </div>
+        </footer>
 
-            <!-- Modal Quick View Producto -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span
-                                    aria-hidden="true"></span></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-5 col-sm-12 col-xs-12">
-                                    <div class="tab-content quickview-big-img">
-                                        <div :id="pro-1" class="tab-pane fade show active">
-                                            <img :src="productSelect.img" :alt="productSelect.name">
-                                        </div>
-                                        <div id="pro-2" class="tab-pane fade" v-show="productSelect.imgSec != ''">
-                                            <img :src="productSelect.imgSec" :alt="productSelect.name">
-                                        </div>
+        <!-- Modal Quick View Producto -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true"></span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-5 col-sm-12 col-xs-12">
+                                <div class="tab-content quickview-big-img">
+                                    <div id="pro-1" class="tab-pane fade show active">
+                                        <img :src="productSelect.img" :alt="productSelect.name">
                                     </div>
-                                    <!-- Thumbnail Large Image End -->
-                                    <!-- Thumbnail Image End -->
-                                    <div class="quickview-wrap mt-15">
-                                        <div class="quickview-slide-active owl-carousel nav nav-style-2" role="tablist">
-                                            <a class="active" data-bs-toggle="tab" href="#pro-1"><img
-                                                    :src="productSelect.img" :alt="productSelect.name"></a>
-                                            <a data-bs-toggle="tab" href="#pro-2"
-                                                v-show="productSelect.imgSec != ''"><img :src="productSelect.imgSec"
-                                                    :alt="productSelect.name"></a>
-                                        </div>
+                                    <div id="pro-2" class="tab-pane fade" v-show="productSelect.imgSec != ''">
+                                        <img :src="productSelect.imgSec" :alt="productSelect.name">
                                     </div>
                                 </div>
-                                <div class="col-md-7 col-sm-12 col-xs-12">
-                                    <div class="product-details-content quickview-content">
-                                        <h2>{{productSelect.name}}</h2>
-                                        <div class="product-details-price" v-show="productSelect.stock <=5">
-                                            <span class="new">${{productSelect.lowStockPrice}}</span>
-                                            <span class="old">${{productSelect.price}}</span>
-                                            <span class="text-success">{{offMessage}}</span>
-                                        </div>
+                                <!-- Thumbnail Large Image End -->
+                                <!-- Thumbnail Image End -->
+                                <div class="quickview-wrap mt-15">
+                                    <div class="quickview-slide-active owl-carousel nav nav-style-2" role="tablist">
+                                        <a class="active" data-bs-toggle="tab" href="#pro-1"><img
+                                                :src="productSelect.img" :alt="productSelect.name"></a>
+                                        <a data-bs-toggle="tab" href="#pro-2" v-show="productSelect.imgSec != ''"><img
+                                                :src="productSelect.imgSec" :alt="productSelect.name"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-sm-12 col-xs-12">
+                                <div class="product-details-content quickview-content">
+                                    <h2>{{productSelect.name}}</h2>
+                                    <div class="product-details-price" v-show="productSelect.stock <=5">
+                                        <span class="new">${{(productSelect.lowStockPrice)}}</span>
+                                        <span class="oldModal">${{productSelect.price}}</span>
+                                        <span class="text-success">{{offMessage}}</span>
+                                    </div>
 
-                                        <div class="product-details-price" v-show="productSelect.stock > 5">
-                                            <span class="new">${{productSelect.price}}</span>
-                                        </div>
+                                    <div class="product-details-price" v-show="productSelect.stock > 5">
+                                        <span class="new">${{productSelect.price}}</span>
+                                    </div>
 
-                                        <div class="pro-details-rating-wrap">
-                                            <span v-show="productSelect.stock > 5">Stock: {{productSelect.stock}}</span>
-                                            <span class="text-danger"
-                                                v-show="productSelect.stock <= 5 && productSelect.stock >= 2">Últimas
-                                                {{productSelect.stock}} unidades!</span>
-                                            <span class="text-danger" v-show="productSelect.stock == 1">Última
-                                                unidad!!!</span>
+                                    <div class="pro-details-rating-wrap">
+                                        <span v-show="productSelect.stock > 5">Stock: {{productSelect.stock}}</span>
+                                        <span class="text-danger"
+                                            v-show="productSelect.stock <= 5 && productSelect.stock >= 2">Últimas
+                                            {{productSelect.stock}} unidades!</span>
+                                        <span class="text-danger" v-show="productSelect.stock == 1">Última
+                                            unidad!!!</span>
+                                    </div>
+                                    <p class="text-dark">{{productSelect.description}}</p>
+                                    <div class="pro-details-list">
+                                        <ul>
+                                            <li>Envíos gratis en compras mayores a $20000!</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pro-details-quality">
+                                        <div class="cart-plus-minus">
+                                            <input :id="productSelect.id" class="cart-plus-minus-box" type="number"
+                                                name="qtybutton" value="1" min="1" max="productSelect.stock">
                                         </div>
-                                        <p class="text-dark">{{productSelect.description}}</p>
-                                        <div class="pro-details-list">
-                                            <ul>
-                                                <li>Envíos gratis en compras mayores a $20000!</li>
-                                            </ul>
+                                        <div class="pro-details-cart">
+                                            <a @click="addProductCartModal(productSelect)">Agregar al carrito</a>
                                         </div>
-                                        <div class="pro-details-quality">
-                                            <div class="cart-plus-minus">
-                                                <input :id="productSelect.id" class="cart-plus-minus-box" type="number"
-                                                    name="qtybutton" value="1" min="1" :max="3">
-                                            </div>
-                                            <div class="pro-details-cart">
-                                                <a @click="addProductCartModal(productSelect)">Agregar al carrito</a>
-                                            </div>
-                                            <div class="pro-details-wishlist">
-                                                <a title="Add To Wishlist" href="#"><i class="sli sli-heart"></i></a>
-                                            </div>
+                                        <div class="pro-details-wishlist">
+                                            <a title="Add To Wishlist" href="#" @click="addProductFav(product)"><i
+                                                    class="sli sli-heart"></i></a>
                                         </div>
-                                        <div class="pro-details-meta">
-                                            <span>Categorías :</span>
-                                            <ul>
-                                                <li><a href="#">{{productSelect.category}}</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="pro-details-meta">
-                                            <span>Subcategorias:</span>
-                                            <ul>
-                                                <li><a>{{productSelect.subcategory}}</a></li>
-                                            </ul>
-                                        </div>
+                                    </div>
+                                    <div class="pro-details-meta">
+                                        <span>Categorías :</span>
+                                        <ul>
+                                            <li><a
+                                                    :href="'shop.html?category=' + productSelect.category">{{productSelect.category}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="pro-details-meta">
+                                        <span>Subcategorias:</span>
+                                        <ul>
+                                            <li><a
+                                                    :href="'shop.html?subcategory=' + productSelect.subcategory">{{productSelect.subcategory}}</a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -1132,8 +1152,9 @@
                     </div>
                 </div>
             </div>
-            <!-- Modal end Quick View Producto -->
         </div>
+        <!-- Modal end Quick View Producto -->
+
     </div>
 
 
@@ -1160,8 +1181,6 @@
     <script src="./data/index.js"></script>
     <!-- Main JS JQUERY-->
     <script src="assets/js/main.js"></script>
-    <!-- logout -->
-    <script src="./data/logOut.js"></script>
 </body>
 
 </html>

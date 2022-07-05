@@ -3,11 +3,9 @@ package challenge.ecommerce.controllers;
 import challenge.ecommerce.dtos.AddPersonalInformationDto;
 import challenge.ecommerce.dtos.ClientDTO;
 import challenge.ecommerce.dtos.RegisterDTO;
-import challenge.ecommerce.enums.UserType;
 import challenge.ecommerce.models.Address;
 import challenge.ecommerce.models.Client;
 import challenge.ecommerce.services.AddressService;
-import challenge.ecommerce.email.EmailValidator;
 import challenge.ecommerce.models.RegistrationRequest;
 import challenge.ecommerce.services.ClientService;
 import challenge.ecommerce.services.implement.ClientServiceImpl;
@@ -77,39 +75,39 @@ public class ClientController {
 
 
         if(registerDTO.getEmail().isEmpty()){
-            return new ResponseEntity<>("Email is empty", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Email vacio", HttpStatus.FORBIDDEN);
         }
 
         if(!email.matches()){
-            return new ResponseEntity<>("Not a valid email", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Email invalido", HttpStatus.FORBIDDEN);
         }
 
         if(registerDTO.getPassword().isEmpty()){
-            return new ResponseEntity<>("Password must have at least 8 letters and require a number", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Password inválido, Se requiere al menos 8 caracteres, una mayúscula y un numero", HttpStatus.FORBIDDEN);
         }
 
         if(!password.matches()){
-            return new ResponseEntity<>("Not a valid password", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Password inválido", HttpStatus.FORBIDDEN);
         }
 
         if(registerDTO.getFirstName().isEmpty()){
-            return new ResponseEntity<>("Name is empty", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Nombre vacio", HttpStatus.FORBIDDEN);
         }
 
         if(!name.matches()){
-            return new ResponseEntity<>("The name can't contain numbers or symbols", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Nombre no puede contener simbolos ni numeros", HttpStatus.FORBIDDEN);
         }
 
         if(registerDTO.getLastName().isEmpty()){
-            return new ResponseEntity<>("Last name is empty", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Apellido vacio", HttpStatus.FORBIDDEN);
         }
 
         if(!lastName.matches()){
-            return new ResponseEntity<>("The last name can't contain numbers or symbols", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Apellido no puede contener simbolos ni numeros", HttpStatus.FORBIDDEN);
         }
 
         if(clientService.findByEmail(registerDTO.getEmail()) != null){
-            return new ResponseEntity<>("Email is already in use", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Email en uso, prueba otro", HttpStatus.FORBIDDEN);
         }
 
         registrationRequest.setName(registerDTO.getFirstName());
@@ -118,10 +116,10 @@ public class ClientController {
         registrationRequest.setPassword(registerDTO.getPassword());
 
         if(clientServiceImpl.createClient(registrationRequest)){
-            return new ResponseEntity<>("Client register, review the email", HttpStatus.ACCEPTED);
+            return new ResponseEntity<>("Cliente registardo, revisa tu email", HttpStatus.ACCEPTED);
         }
 
-        return new ResponseEntity<>("Registered successfully, please activate your email to use your account", HttpStatus.CREATED);
+        return new ResponseEntity<>("Registro exitoso, activa tu cuenta desde tu correo electrónico", HttpStatus.CREATED);
     }
 
     @Transactional
